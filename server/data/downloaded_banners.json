@@ -1,0 +1,38 @@
+[
+  {
+    "id": "banner-1",
+    "title": "SUMMER TRAVEL ESSENTIALS",
+    "subtitle": "240 GSM BIO-WASHED COTTON & 4-WAY FLEX WEAVE",
+    "ctaText": "SHOP NOW",
+    "ctaLink": "/men",
+    "badge": "NEW ARRIVAL",
+    "desktopImage": "/images/nobero/hero_banner_1.jpg",
+    "mobileImage": "/images/nobero/hero_banner_1.jpg",
+    "active": true,
+    "order": 1
+  },
+  {
+    "id": "banner-2",
+    "title": "AIR-FLEX CARGO & JOGGERS",
+    "subtitle": "240 GSM BIO-WASHED COTTON & 4-WAY FLEX WEAVE",
+    "ctaText": "SHOP NOW",
+    "ctaLink": "/men",
+    "badge": "BESTSELLER",
+    "desktopImage": "/images/nobero/hero_banner_2.jpg",
+    "mobileImage": "/images/nobero/hero_banner_2.jpg",
+    "active": true,
+    "order": 2
+  },
+  {
+    "id": "banner-3",
+    "title": "HEAVYWEIGHT OVERSIZED TEES",
+    "subtitle": "240 GSM BIO-WASHED COTTON & 4-WAY FLEX WEAVE",
+    "ctaText": "SHOP NOW",
+    "ctaLink": "/men",
+    "badge": "BESTSELLER",
+    "desktopImage": "/images/nobero/hero_banner_3.jpg",
+    "mobileImage": "/images/nobero/hero_banner_3.jpg",
+    "active": true,
+    "order": 3
+  }
+]
