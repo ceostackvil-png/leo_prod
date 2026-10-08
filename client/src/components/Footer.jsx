@@ -5,7 +5,7 @@ import StorefrontContainer from './StorefrontContainer';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#242F66] text-white select-none">
+    <footer className="bg-[#242F66] text-white select-none pb-16 lg:pb-0">
       {/* Main Footer Grid */}
       <div className="py-10 lg:py-16">
         <StorefrontContainer>

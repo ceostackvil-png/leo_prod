@@ -152,7 +152,7 @@ const ProductDetailPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pb-20 lg:pb-0">
       {/* Breadcrumb Navigation */}
       <div className="border-b border-gray-100 bg-[#F7F8FA] py-2.5">
         <StorefrontContainer>
@@ -181,12 +181,12 @@ const ProductDetailPage = () => {
             <div className="lg:col-span-7 flex flex-col-reverse sm:flex-row gap-3 sm:gap-4 sticky top-24">
               
               {/* Thumbnail Strip */}
-              <div className="flex sm:flex-col gap-2 overflow-x-auto sm:overflow-visible no-scrollbar shrink-0">
+              <div className="flex sm:flex-col gap-2 overflow-x-auto sm:overflow-visible no-scrollbar shrink-0 py-1">
                 {gallery.map((img, idx) => (
                   <button
                     key={idx}
                     onClick={() => setSelectedImageIdx(idx)}
-                    className={`w-16 sm:w-20 aspect-[3/4] rounded-lg overflow-hidden bg-gray-50 border-2 transition-all shrink-0 ${
+                    className={`w-14 sm:w-20 aspect-[3/4] rounded-lg overflow-hidden bg-gray-50 border-2 transition-all shrink-0 ${
                       idx === selectedImageIdx
                         ? 'border-[#242F66] ring-1 ring-[#242F66]'
                         : 'border-gray-200 opacity-70 hover:opacity-100'
@@ -197,8 +197,28 @@ const ProductDetailPage = () => {
                 ))}
               </div>
 
-              {/* Main Image View */}
-              <div className="flex-1 relative aspect-[3/4] rounded-xl overflow-hidden bg-[#F7F8FA] border border-gray-200 shadow-sm">
+              {/* Main Image View with Touch Swipe */}
+              <div
+                className="flex-1 relative aspect-[3/4] rounded-xl overflow-hidden bg-[#F7F8FA] border border-gray-200 shadow-sm select-none"
+                onTouchStart={(e) => {
+                  window._pdpTouchX = e.touches[0].clientX;
+                }}
+                onTouchEnd={(e) => {
+                  if (window._pdpTouchX) {
+                    const diff = window._pdpTouchX - e.changedTouches[0].clientX;
+                    if (Math.abs(diff) > 40) {
+                      if (diff > 0) {
+                        // swipe left -> next image
+                        setSelectedImageIdx((prev) => (prev + 1) % gallery.length);
+                      } else {
+                        // swipe right -> prev image
+                        setSelectedImageIdx((prev) => (prev - 1 + gallery.length) % gallery.length);
+                      }
+                    }
+                    window._pdpTouchX = null;
+                  }
+                }}
+              >
                 <img
                   src={currentImage}
                   alt={product.title}
@@ -233,6 +253,19 @@ const ProductDetailPage = () => {
                     <Share2 className="w-4 h-4" />
                   </button>
                 </div>
+
+                {/* Mobile Gallery Indicator Dots */}
+                <div className="sm:hidden absolute bottom-2.5 left-1/2 -translate-x-1/2 z-10 flex items-center gap-1.5 bg-black/30 backdrop-blur-xs px-2.5 py-1 rounded-full">
+                  {gallery.map((_, i) => (
+                    <span
+                      key={i}
+                      className={`w-1.5 h-1.5 rounded-full transition-all ${
+                        i === selectedImageIdx ? 'w-4 bg-white' : 'bg-white/50'
+                      }`}
+                    />
+                  ))}
+                </div>
+
                 {copiedLink && (
                   <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/80 text-white text-[11px] font-bold px-3 py-1 rounded-full">
                     Link Copied!
@@ -580,6 +613,34 @@ const ProductDetailPage = () => {
         onClose={() => setIsSizeGuideOpen(false)}
         categoryType={product.category}
       />
+
+      {/* Sticky Mobile Bottom Buy Bar (Nobero Exact Experience) */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 px-4 py-2.5 flex items-center justify-between gap-3 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
+        <div className="flex flex-col shrink-0">
+          <div className="flex items-baseline gap-1">
+            <span className="text-base font-bold text-[#1A1E31]">₹{product.price}</span>
+            {product.mrp && <span className="text-[11px] text-[#666875] line-through">₹{product.mrp}</span>}
+          </div>
+          <span className="text-[10px] text-[#12B76A] font-semibold">
+            {selectedSize ? `Size: ${selectedSize}` : 'Free Delivery'}
+          </span>
+        </div>
+
+        <div className="flex items-center gap-2 flex-1">
+          <button
+            onClick={handleAddToCart}
+            className="flex-1 bg-[#242F66] active:bg-[#1A1E31] text-white py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1 transition-transform active:scale-95 shadow-xs"
+          >
+            <ShoppingBag className="w-3.5 h-3.5" /> ADD
+          </button>
+          <button
+            onClick={handleBuyNow}
+            className="flex-1 bg-[#F59E0B] active:bg-[#d97706] text-[#1A1E31] py-2.5 rounded-lg text-xs font-extrabold uppercase tracking-wider flex items-center justify-center gap-1 transition-transform active:scale-95 shadow-xs"
+          >
+            <Zap className="w-3.5 h-3.5 fill-[#1A1E31]" /> BUY NOW
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

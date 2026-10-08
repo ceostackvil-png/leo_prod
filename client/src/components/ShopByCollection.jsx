@@ -60,12 +60,12 @@ const ShopByCollection = () => {
     <section className="py-6 sm:py-10 bg-white">
       <StorefrontContainer>
         {/* Section Heading */}
-        <h2 className="text-center text-[#1A1E31] font-bold text-lg sm:text-2xl mb-5 sm:mb-8 font-display">
+        <h2 className="text-center text-[#1A1E31] font-bold text-lg sm:text-2xl mb-4 sm:mb-8 font-display">
           Shop by Collection
         </h2>
 
-        {/* Collections Grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6">
+        {/* Collections Grid (Smooth 3-5 columns on mobile/tablet/desktop) */}
+        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-2.5 sm:gap-4 lg:gap-6">
           {MEN_COLLECTIONS.map((col, idx) => (
             <Link
               key={idx}
@@ -73,7 +73,7 @@ const ShopByCollection = () => {
               className="group flex flex-col items-center text-center select-none"
             >
               {/* Image Container */}
-              <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-100 shadow-sm transition-transform duration-300 group-hover:scale-105">
+              <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-100 shadow-xs transition-transform duration-300 group-hover:scale-105 active:scale-95">
                 <img
                   src={col.image}
                   alt={col.name}
@@ -83,7 +83,7 @@ const ShopByCollection = () => {
               </div>
 
               {/* Label */}
-              <span className="text-[11px] sm:text-[13px] font-semibold text-[#1A1E31] mt-2 group-hover:text-[#242F66] transition-colors leading-tight line-clamp-1">
+              <span className="text-[11px] sm:text-[13px] font-semibold text-[#1A1E31] mt-1.5 sm:mt-2 group-hover:text-[#242F66] transition-colors leading-tight line-clamp-1">
                 {col.name}
               </span>
             </Link>

@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import MegaMenu from './MegaMenu';
 import SearchDrawer from './SearchDrawer';
+import BottomNav from './BottomNav';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import { useAuth } from '../context/AuthContext';
@@ -359,6 +360,9 @@ const Navbar = () => {
           </div>
         </div>
       )}
+
+      {/* Global Mobile Bottom Navigation Bar (Home, Categories, Search, Wishlist, Profile) */}
+      <BottomNav onOpenSearch={() => setIsSearchOpen(true)} />
     </>
   );
 };

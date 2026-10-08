@@ -141,6 +141,7 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+  const [isMobileSortOpen, setIsMobileSortOpen] = useState(false);
 
   // Filters state
   const [selectedCategory, setSelectedCategory] = useState(activeCategorySlug);
@@ -212,6 +213,7 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
   };
 
   const hasActiveFilters = selectedSizes.length > 0 || selectedColors.length > 0 || selectedFits.length > 0 || selectedPriceRange !== null || (selectedCategory !== 'all' && selectedCategory !== 'men');
+  const activeFilterCount = selectedSizes.length + selectedColors.length + (selectedPriceRange ? 1 : 0) + (selectedCategory !== 'all' && selectedCategory !== 'men' ? 1 : 0);
 
   const meta = CATEGORY_META[activeCategorySlug] || {
     title: `${activeCategorySlug.replace('-', ' ').toUpperCase()} COLLECTION`,
@@ -221,7 +223,7 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pb-16 lg:pb-0">
       {/* Category Header Banner (Exact Nobero style) */}
       <div className="relative bg-[#242F66] text-white py-8 sm:py-12 overflow-hidden">
         <div className="absolute inset-0 opacity-20 mix-blend-overlay">
@@ -481,18 +483,77 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
       {/* App Promotion Banner */}
       <AppPromotion />
 
+      {/* Sticky Bottom Mobile Sort & Filter Bar (Nobero Exact Pattern) */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-30 bg-white border-t border-gray-200 grid grid-cols-2 divide-x divide-gray-200 shadow-[0_-4px_16px_rgba(0,0,0,0.08)]">
+        <button
+          onClick={() => setIsMobileSortOpen(true)}
+          className="py-3 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1A1E31] active:bg-gray-50 transition-colors"
+        >
+          <ArrowUpDown className="w-4 h-4 text-[#242F66]" />
+          <span>Sort By</span>
+        </button>
+
+        <button
+          onClick={() => setIsMobileFilterOpen(true)}
+          className="py-3 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1A1E31] active:bg-gray-50 transition-colors relative"
+        >
+          <SlidersHorizontal className="w-4 h-4 text-[#242F66]" />
+          <span>Filters</span>
+          {activeFilterCount > 0 && (
+            <span className="bg-[#242F66] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+              {activeFilterCount}
+            </span>
+          )}
+        </button>
+      </div>
+
+      {/* Mobile Sort Bottom Sheet */}
+      {isMobileSortOpen && (
+        <div className="fixed inset-0 z-50 lg:hidden">
+          <div
+            className="fixed inset-0 bg-black/60 backdrop-blur-xs"
+            onClick={() => setIsMobileSortOpen(false)}
+          />
+          <div className="fixed inset-x-0 bottom-0 bg-white rounded-t-2xl shadow-2xl p-5 animate-slide-up z-10 max-h-[80vh] overflow-y-auto">
+            <div className="flex items-center justify-between pb-3 border-b border-gray-100">
+              <h3 className="text-sm font-bold uppercase text-[#1A1E31]">Sort Products</h3>
+              <button onClick={() => setIsMobileSortOpen(false)} className="p-1 text-gray-400 hover:text-black">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="py-2 divide-y divide-gray-100">
+              {SORT_OPTIONS.map((opt) => (
+                <button
+                  key={opt.id}
+                  onClick={() => {
+                    setSortBy(opt.id);
+                    setIsMobileSortOpen(false);
+                  }}
+                  className="w-full py-3 text-left text-xs font-semibold text-[#1A1E31] flex items-center justify-between"
+                >
+                  <span>{opt.label}</span>
+                  {sortBy === opt.id && <Check className="w-4 h-4 text-[#242F66] font-bold" />}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Mobile Filters Drawer */}
       {isMobileFilterOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/60 backdrop-blur-xs"
             onClick={() => setIsMobileFilterOpen(false)}
           />
-          <div className="fixed inset-y-0 right-0 w-4/5 max-w-sm bg-white shadow-2xl flex flex-col justify-between p-5 overflow-y-auto animate-drawer-right">
+          <div className="fixed inset-y-0 right-0 w-[85%] max-w-sm bg-white shadow-2xl flex flex-col justify-between p-5 overflow-y-auto z-10 animate-drawer-right">
             <div>
               <div className="flex items-center justify-between pb-3 border-b border-gray-200">
                 <h3 className="text-sm font-bold uppercase text-[#1A1E31]">Filter Men's Wear</h3>
-                <button onClick={() => setIsMobileFilterOpen(false)}><X className="w-5 h-5 text-gray-500" /></button>
+                <button onClick={() => setIsMobileFilterOpen(false)} className="p-1 text-gray-500">
+                  <X className="w-5 h-5" />
+                </button>
               </div>
 
               {/* Categories */}
@@ -532,6 +593,50 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
                       {s}
                     </button>
                   ))}
+                </div>
+              </div>
+
+              {/* Colors */}
+              <div className="py-3 border-b border-gray-100">
+                <span className="text-[11px] font-bold uppercase text-gray-400 block mb-2">Colors</span>
+                <div className="grid grid-cols-2 gap-1.5">
+                  {MEN_FILTERS_CONFIG.colors.map((color) => {
+                    const isSelected = selectedColors.includes(color.name);
+                    return (
+                      <button
+                        key={color.name}
+                        onClick={() => toggleColor(color.name)}
+                        className={`text-left text-xs py-1 px-2 rounded flex items-center gap-2 border ${
+                          isSelected ? 'border-[#242F66] bg-[#242F66]/5 font-bold' : 'border-gray-200'
+                        }`}
+                      >
+                        <span className="w-3.5 h-3.5 rounded-full border border-gray-300" style={{ backgroundColor: color.hex }} />
+                        <span className="truncate">{color.name}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Price Ranges */}
+              <div className="py-3 border-b border-gray-100">
+                <span className="text-[11px] font-bold uppercase text-gray-400 block mb-2">Price</span>
+                <div className="space-y-1">
+                  {MEN_FILTERS_CONFIG.priceRanges.map((range, idx) => {
+                    const isSelected = selectedPriceRange?.label === range.label;
+                    return (
+                      <button
+                        key={idx}
+                        onClick={() => setSelectedPriceRange(isSelected ? null : range)}
+                        className={`w-full text-left text-xs py-1.5 px-2 rounded-md transition-all flex items-center justify-between ${
+                          isSelected ? 'bg-[#242F66] text-white font-bold' : 'text-[#4A4D5E] hover:bg-gray-100'
+                        }`}
+                      >
+                        <span>{range.label}</span>
+                        {isSelected && <Check className="w-3.5 h-3.5" />}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
