@@ -8,8 +8,7 @@ import {
   Tag,
   CheckCircle2,
   Lock,
-  ArrowRight,
-  Sparkles
+  ArrowRight
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';

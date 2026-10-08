@@ -10,8 +10,7 @@ import {
   ArrowRight,
   ShieldCheck,
   Truck,
-  CheckCircle2,
-  Sparkles
+  CheckCircle2
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
@@ -248,7 +247,7 @@ const CartDrawer = () => {
                         onClick={() => handleApply(cpn.code)}
                         className="text-[10px] font-semibold bg-white border border-dashed border-gray-300 hover:border-[#242F66] text-gray-700 px-2.5 py-1 rounded transition-colors inline-flex items-center gap-1"
                       >
-                        <Sparkles className="w-2.5 h-2.5 text-amber-500" />
+                        <Tag className="w-2.5 h-2.5 text-[#242F66]" />
                         <strong>{cpn.code}</strong> ({cpn.desc})
                       </button>
                     ))}

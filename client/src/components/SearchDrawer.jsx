@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Search, X, TrendingUp, History, ArrowRight, Star, Sparkles } from 'lucide-react';
+import { Search, X, TrendingUp, History, ArrowRight, Star } from 'lucide-react';
 import { api } from '../services/api';
 
 const POPULAR_SEARCHES = [
@@ -217,7 +217,7 @@ const SearchDrawer = ({ isOpen, onClose }) => {
               {/* Quick Category Discovery */}
               <div>
                 <span className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-gray-400 mb-2.5">
-                  <Sparkles className="w-3.5 h-3.5 text-[#242F66]" /> Explore Categories
+                  Explore Categories
                 </span>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                   {SEARCH_CATEGORIES.map((cat, idx) => (

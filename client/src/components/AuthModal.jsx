@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Sparkles, ShieldCheck, ArrowRight, Lock, Phone, Mail } from 'lucide-react';
+import { X, ShieldCheck, ArrowRight, Lock, Phone, Mail } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 const AuthModal = () => {
@@ -61,7 +61,7 @@ const AuthModal = () => {
         {/* Modal Banner */}
         <div className="bg-zinc-950 p-6 text-white text-center relative overflow-hidden">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-amber-300 text-[10px] font-bold tracking-widest uppercase mb-2">
-            <Sparkles className="w-3 h-3" /> LEO CLUB MEMBERSHIP
+            LEO CLUB MEMBERSHIP
           </div>
           <h3 className="text-xl font-black uppercase tracking-tight text-white font-display">
             Unlock Exclusive Perks

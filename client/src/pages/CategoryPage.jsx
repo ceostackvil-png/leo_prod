@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useSearchParams, useParams, Link, useLocation } from 'react-router-dom';
-import { SlidersHorizontal, X, RotateCcw, ChevronDown, ChevronUp, Check, ArrowUpDown, Sparkles } from 'lucide-react';
+import { SlidersHorizontal, X, RotateCcw, ChevronDown, ChevronUp, Check, ArrowUpDown } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import StorefrontContainer from '../components/StorefrontContainer';
 import AppPromotion from '../components/AppPromotion';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import StorefrontContainer from './StorefrontContainer';
 
 const MOODS = [
@@ -45,7 +45,7 @@ const MatchTheMood = () => {
         {/* Section Heading */}
         <div className="text-center max-w-xl mx-auto mb-6 sm:mb-10">
           <span className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest text-[#242F66] mb-1">
-            <Sparkles className="w-3.5 h-3.5 text-amber-500" /> CURATED OUTFIT EDITS
+            CURATED OUTFIT EDITS
           </span>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-tight text-[#1A1E31]">
             Match The Mood

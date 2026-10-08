@@ -1,9 +1,9 @@
 import React from 'react';
-import { ShieldCheck, RotateCcw, Truck, Sparkles } from 'lucide-react';
+import { ShieldCheck, RotateCcw, Truck, Award } from 'lucide-react';
 
 const FEATURES = [
   {
-    icon: Sparkles,
+    icon: Award,
     title: '240+ GSM Heavyweight Cotton',
     desc: 'Crafted with premium super combed French Terry for non-sheer, structured drape.'
   },

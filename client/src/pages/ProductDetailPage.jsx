@@ -14,7 +14,6 @@ import {
   Check,
   Tag,
   Share2,
-  Sparkles,
   CheckCircle2,
   ThumbsUp
 } from 'lucide-react';
@@ -248,7 +247,7 @@ const ProductDetailPage = () => {
               {/* Product Header */}
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-[#666875] flex items-center gap-1">
-                  <Sparkles className="w-3 h-3 text-amber-500" /> {product.fit || 'Oversized Boxy Fit'}
+                  {product.fit || 'Oversized Boxy Fit'}
                 </span>
                 <h1 className="text-xl sm:text-2xl font-bold text-[#1A1E31] mt-1 leading-tight">
                   {product.title}

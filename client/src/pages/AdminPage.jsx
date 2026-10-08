@@ -16,7 +16,6 @@ import {
   XCircle,
   Eye,
   RefreshCw,
-  Sparkles,
   ArrowRight,
   ShieldCheck
 } from 'lucide-react';

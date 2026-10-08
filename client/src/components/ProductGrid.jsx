@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import ProductCard from './ProductCard';
 import StorefrontContainer from './StorefrontContainer';
 
@@ -44,7 +44,6 @@ const ProductGrid = ({
             <div>
               {badge && (
                 <span className="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#666875] mb-1">
-                  <Sparkles className="w-3 h-3 text-amber-500" />
                   {badge}
                 </span>
               )}
