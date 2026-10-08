@@ -39,11 +39,26 @@
   scrollbar-width: none;
 }
 
-/* Header & Announcement Marquee */
-.announcement-bar-track {
+/* Continuous Right-to-Left Marquee */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
   display: flex;
-  width: 100%;
-  justify-content: center;
+  width: max-content;
+  animation: marqueeScroll 22s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 /* Custom Product Grid Styles */

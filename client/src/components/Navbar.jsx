@@ -53,10 +53,25 @@ const Navbar = () => {
   return (
     <>
       <header className="sticky top-0 z-40 w-full bg-white">
-        {/* 1. Top Announcement Bar (Exact Nobero Style) */}
-        <div className="h-8 bg-[#242F66] text-white text-[12px] sm:text-[13px] font-normal flex items-center justify-center px-4 overflow-hidden select-none">
-          <div className="announcement-bar-track text-center font-medium">
-            <span>100% Refund Guarantee if you don't ❤️ the product. Shop with Confidence.</span>
+        {/* 1. Top Announcement Bar (Continuous Right to Left Infinite Marquee) */}
+        <div className="h-8 bg-[#242F66] text-white text-[12px] sm:text-[13px] font-normal flex items-center overflow-hidden select-none relative">
+          <div className="flex animate-marquee whitespace-nowrap">
+            <div className="flex items-center gap-8 sm:gap-16 px-4 sm:px-8 shrink-0">
+              <span className="font-medium tracking-wide">100% Refund Guarantee if you don't ❤️ the product. Shop with Confidence.</span>
+              <span className="text-white/40">•</span>
+              <span className="font-medium tracking-wide">Free Express Shipping on all Prepaid Orders across India</span>
+              <span className="text-white/40">•</span>
+              <span className="font-medium tracking-wide">Heavyweight 240 GSM French Terry Collection Now Live</span>
+              <span className="text-white/40">•</span>
+            </div>
+            <div className="flex items-center gap-8 sm:gap-16 px-4 sm:px-8 shrink-0" aria-hidden="true">
+              <span className="font-medium tracking-wide">100% Refund Guarantee if you don't ❤️ the product. Shop with Confidence.</span>
+              <span className="text-white/40">•</span>
+              <span className="font-medium tracking-wide">Free Express Shipping on all Prepaid Orders across India</span>
+              <span className="text-white/40">•</span>
+              <span className="font-medium tracking-wide">Heavyweight 240 GSM French Terry Collection Now Live</span>
+              <span className="text-white/40">•</span>
+            </div>
           </div>
         </div>
 
