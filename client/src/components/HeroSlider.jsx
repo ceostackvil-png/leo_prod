@@ -61,8 +61,8 @@ const HeroSlider = ({ banners = [] }) => {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Banner Slider Container */}
-      <div className="relative w-full aspect-[4/5] sm:aspect-[16/7] lg:aspect-[16/6] max-h-[560px]">
+      {/* Banner Slider Container (Exact 1800:1438 aspect ratio for mobile and 7680:2888 for desktop so zero content/text is cropped) */}
+      <div className="relative w-full aspect-[1800/1438] sm:aspect-[16/7] lg:aspect-[7680/2888] max-h-[600px]">
         {banners.map((banner, idx) => {
           const isActive = idx === currentIndex;
           return (
@@ -73,7 +73,7 @@ const HeroSlider = ({ banners = [] }) => {
                 isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
               }`}
             >
-              <picture>
+              <picture className="w-full h-full block">
                 <source media="(max-width: 640px)" srcSet={banner.mobileImage || banner.desktopImage} />
                 <img
                   src={banner.desktopImage}
