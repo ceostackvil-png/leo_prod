@@ -64,14 +64,14 @@ const TrackOrderPage = () => {
         
         {/* Header */}
         <div className="text-center max-w-xl mx-auto mb-8">
-          <div className="w-12 h-12 rounded-xl bg-[#242F66] text-white flex items-center justify-center mx-auto mb-3 shadow-sm">
+          <div className="w-12 h-12 rounded-xl bg-[#282C3F] text-white flex items-center justify-center mx-auto mb-3 shadow-sm">
             <Truck className="w-6 h-6 text-amber-400" />
           </div>
-          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-tight text-[#1A1E31]">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-tight text-[#212121]">
             Track Your Order
           </h1>
           <p className="text-xs sm:text-sm text-[#666875] mt-1">
-            Enter your Order ID (e.g. <strong className="text-[#1A1E31]">LEO-98421</strong>) to view real-time delivery status.
+            Enter your Order ID (e.g. <strong className="text-[#212121]">LEO-98421</strong>) to view real-time delivery status.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ const TrackOrderPage = () => {
         <div className="bg-[#F7F8FA] rounded-xl p-5 sm:p-6 border border-gray-200 max-w-2xl mx-auto mb-8">
           <form onSubmit={handleSearch} className="grid grid-cols-1 sm:grid-cols-12 gap-3">
             <div className="sm:col-span-6">
-              <label className="block text-xs font-bold uppercase text-[#1A1E31] mb-1">
+              <label className="block text-xs font-bold uppercase text-[#212121] mb-1">
                 Order ID *
               </label>
               <input
@@ -88,12 +88,12 @@ const TrackOrderPage = () => {
                 placeholder="e.g. LEO-98421"
                 value={orderId}
                 onChange={(e) => setOrderId(e.target.value.toUpperCase())}
-                className="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-md text-xs font-bold uppercase focus:outline-none focus:border-[#242F66]"
+                className="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-md text-xs font-bold uppercase focus:outline-none focus:border-[#282C3F]"
               />
             </div>
 
             <div className="sm:col-span-4">
-              <label className="block text-xs font-bold uppercase text-[#1A1E31] mb-1">
+              <label className="block text-xs font-bold uppercase text-[#212121] mb-1">
                 Phone / Email (Optional)
               </label>
               <input
@@ -101,7 +101,7 @@ const TrackOrderPage = () => {
                 placeholder="Mobile or email"
                 value={phoneOrEmail}
                 onChange={(e) => setPhoneOrEmail(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-md text-xs font-medium focus:outline-none focus:border-[#242F66]"
+                className="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-md text-xs font-medium focus:outline-none focus:border-[#282C3F]"
               />
             </div>
 
@@ -109,7 +109,7 @@ const TrackOrderPage = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-[#242F66] hover:bg-[#1A1E31] text-white py-2.5 rounded-md text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors"
+                className="w-full bg-[#282C3F] hover:bg-[#212121] text-white py-2.5 rounded-md text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors"
               >
                 {loading ? 'Searching...' : 'Track'}
               </button>
@@ -134,7 +134,7 @@ const TrackOrderPage = () => {
                 <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400">
                   CURRENT STATUS
                 </span>
-                <h3 className="text-lg font-bold uppercase text-[#1A1E31]">
+                <h3 className="text-lg font-bold uppercase text-[#212121]">
                   {order.orderStatus}
                 </h3>
                 <p className="text-xs text-[#666875] mt-0.5">
@@ -144,7 +144,7 @@ const TrackOrderPage = () => {
 
               <div className="bg-[#F7F8FA] px-3.5 py-2 rounded-lg border border-gray-200 text-right">
                 <span className="text-[10px] text-gray-400 uppercase font-bold block">Order ID</span>
-                <span className="text-xs font-bold text-[#1A1E31]">{order.id}</span>
+                <span className="text-xs font-bold text-[#212121]">{order.id}</span>
               </div>
             </div>
 
@@ -177,7 +177,7 @@ const TrackOrderPage = () => {
                       </div>
                       <span
                         className={`text-[11px] font-bold ${
-                          isDone ? 'text-[#1A1E31]' : 'text-gray-400'
+                          isDone ? 'text-[#212121]' : 'text-gray-400'
                         }`}
                       >
                         {s.label}
@@ -190,8 +190,8 @@ const TrackOrderPage = () => {
 
             {/* Package Contents */}
             <div className="space-y-2 pt-3 border-t border-gray-200">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#1A1E31] flex items-center gap-1.5">
-                <Package className="w-3.5 h-3.5 text-[#242F66]" /> Items in Package
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#212121] flex items-center gap-1.5">
+                <Package className="w-3.5 h-3.5 text-[#282C3F]" /> Items in Package
               </h4>
               <div className="space-y-2">
                 {order.items?.map((item, idx) => (
@@ -199,11 +199,11 @@ const TrackOrderPage = () => {
                     <div className="flex items-center gap-3">
                       <img src={item.image} alt="" className="w-10 h-12 object-cover rounded bg-gray-200 shrink-0" />
                       <div>
-                        <p className="font-semibold text-[#1A1E31]">{item.title}</p>
+                        <p className="font-semibold text-[#212121]">{item.title}</p>
                         <p className="text-[10px] text-[#666875]">Size: {item.size} • {item.color} • Qty: {item.quantity}</p>
                       </div>
                     </div>
-                    <span className="font-bold text-[#1A1E31]">₹{item.price * item.quantity}</span>
+                    <span className="font-bold text-[#212121]">₹{item.price * item.quantity}</span>
                   </div>
                 ))}
               </div>

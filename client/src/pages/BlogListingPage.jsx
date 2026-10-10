@@ -30,7 +30,7 @@ const BlogListingPage = () => {
           <span className="text-xs font-bold uppercase tracking-widest text-[#666875] block mb-1">
             LEO JOURNAL
           </span>
-          <h1 className="text-2xl sm:text-3xl font-bold uppercase text-[#1A1E31]">
+          <h1 className="text-2xl sm:text-3xl font-bold uppercase text-[#212121]">
             Men's Fashion & Style Guides
           </h1>
           <p className="text-xs sm:text-sm text-[#666875] mt-1.5">
@@ -58,7 +58,7 @@ const BlogListingPage = () => {
                     alt={blog.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <span className="absolute top-3 left-3 bg-[#242F66] text-white text-[10px] font-bold uppercase px-2 py-0.5 rounded">
+                  <span className="absolute top-3 left-3 bg-[#282C3F] text-white text-[10px] font-bold uppercase px-2 py-0.5 rounded">
                     {blog.category}
                   </span>
                 </div>
@@ -74,7 +74,7 @@ const BlogListingPage = () => {
                       </span>
                     </div>
 
-                    <h2 className="text-sm sm:text-base font-bold text-[#1A1E31] group-hover:text-[#242F66] transition-colors line-clamp-2">
+                    <h2 className="text-sm sm:text-base font-bold text-[#212121] group-hover:text-[#282C3F] transition-colors line-clamp-2">
                       {blog.title}
                     </h2>
 
@@ -83,7 +83,7 @@ const BlogListingPage = () => {
                     </p>
                   </div>
 
-                  <div className="pt-4 mt-4 border-t border-gray-200 flex items-center gap-1 text-xs font-bold text-[#242F66] group-hover:translate-x-1 transition-transform">
+                  <div className="pt-4 mt-4 border-t border-gray-200 flex items-center gap-1 text-xs font-bold text-[#282C3F] group-hover:translate-x-1 transition-transform">
                     Read Article <ArrowRight className="w-3.5 h-3.5" />
                   </div>
                 </div>

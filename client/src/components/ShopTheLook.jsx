@@ -23,7 +23,7 @@ const ShopTheLook = ({ looks = [], products = [] }) => {
           <h5 className="text-[#666875] text-xs font-semibold uppercase tracking-wider mb-0.5">
             Latest
           </h5>
-          <h2 className="text-[#1A1E31] text-xl lg:text-2xl font-bold font-display">
+          <h2 className="text-[#212121] text-xl lg:text-2xl font-bold font-display">
             Shop the Full Look
           </h2>
         </div>
@@ -43,7 +43,7 @@ const ShopTheLook = ({ looks = [], products = [] }) => {
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500"
                 />
-                <span className="absolute top-2.5 left-2.5 bg-[#D9534F] text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">
+                <span className="absolute top-2.5 left-2.5 bg-[#D9232D] text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">
                   {look.discount}
                 </span>
               </div>
@@ -51,7 +51,7 @@ const ShopTheLook = ({ looks = [], products = [] }) => {
               {/* Look Info */}
               <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-between space-y-3">
                 <div>
-                  <h3 className="text-sm font-bold text-[#1A1E31] group-hover:text-[#242F66] transition-colors line-clamp-1">
+                  <h3 className="text-sm font-bold text-[#212121] group-hover:text-[#282C3F] transition-colors line-clamp-1">
                     {look.title}
                   </h3>
                   <div className="mt-1 space-y-0.5">
@@ -67,7 +67,7 @@ const ShopTheLook = ({ looks = [], products = [] }) => {
                 <div className="pt-2 border-t border-gray-100 flex items-center justify-between gap-2">
                   <div>
                     <div className="flex items-baseline gap-1.5">
-                      <span className="text-sm sm:text-base font-bold text-[#1A1E31]">
+                      <span className="text-sm sm:text-base font-bold text-[#212121]">
                         ₹{look.bundlePrice}
                       </span>
                       {look.originalPrice && (
@@ -77,7 +77,7 @@ const ShopTheLook = ({ looks = [], products = [] }) => {
                       )}
                     </div>
                     {look.lowestPrice && (
-                      <span className="text-[10px] text-[#12B76A] font-semibold block">
+                      <span className="text-[10px] text-[#00B852] font-semibold block">
                         Lowest price in 30 days: ₹{look.lowestPrice}
                       </span>
                     )}
@@ -85,7 +85,7 @@ const ShopTheLook = ({ looks = [], products = [] }) => {
 
                   <button
                     onClick={() => handleAddLook(look)}
-                    className="bg-[#242F66] hover:bg-[#1a224a] text-white text-[11px] font-bold px-3 py-2 rounded-md transition-colors flex items-center gap-1 shrink-0"
+                    className="bg-[#282C3F] hover:bg-[#1a224a] text-white text-[11px] font-bold px-3 py-2 rounded-md transition-colors flex items-center gap-1 shrink-0"
                   >
                     {addedId === look.id ? (
                       <>

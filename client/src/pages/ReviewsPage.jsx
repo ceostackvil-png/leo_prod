@@ -29,14 +29,14 @@ const ReviewsPage = () => {
           <span className="text-xs font-bold uppercase tracking-widest text-[#666875] block mb-1">
             VERIFIED FEEDBACK
           </span>
-          <h1 className="text-2xl sm:text-3xl font-bold uppercase text-[#1A1E31]">
+          <h1 className="text-2xl sm:text-3xl font-bold uppercase text-[#212121]">
             What Our Customers Say
           </h1>
           <p className="text-xs sm:text-sm text-[#666875] mt-1.5">
             Real reviews from verified buyers across India experiencing LEO heavyweight quality and comfort.
           </p>
 
-          <div className="mt-4 inline-flex items-center gap-2 bg-[#F7F8FA] border border-gray-200 px-4 py-2 rounded-full text-xs font-bold text-[#1A1E31]">
+          <div className="mt-4 inline-flex items-center gap-2 bg-[#F7F8FA] border border-gray-200 px-4 py-2 rounded-full text-xs font-bold text-[#212121]">
             <span className="text-amber-500">★★★★★</span>
             <span>4.9 / 5.0 Overall Rating across 12,000+ Men's Orders</span>
           </div>
@@ -64,21 +64,21 @@ const ReviewsPage = () => {
                     <span className="text-[10px] text-[#666875]">{rev.date || 'Recent'}</span>
                   </div>
 
-                  <p className="text-xs text-[#1A1E31] leading-relaxed font-medium">
+                  <p className="text-xs text-[#212121] leading-relaxed font-medium">
                     "{rev.comment}"
                   </p>
                 </div>
 
                 <div className="pt-3 border-t border-gray-200 flex items-center justify-between text-xs">
                   <div>
-                    <div className="flex items-center gap-1 font-bold text-[#1A1E31]">
+                    <div className="flex items-center gap-1 font-bold text-[#212121]">
                       <span>{rev.userName}</span>
                       {rev.verified && <CheckCircle className="w-3.5 h-3.5 text-emerald-600" />}
                     </div>
                     {rev.location && <p className="text-[10px] text-[#666875]">{rev.location}</p>}
                   </div>
                   {rev.productTitle && (
-                    <span className="text-[10px] bg-white border border-gray-200 px-2 py-0.5 rounded text-[#242F66] font-semibold max-w-[120px] truncate">
+                    <span className="text-[10px] bg-white border border-gray-200 px-2 py-0.5 rounded text-[#282C3F] font-semibold max-w-[120px] truncate">
                       {rev.productTitle}
                     </span>
                   )}

@@ -45,9 +45,9 @@ const AccountPage = () => {
         <StorefrontContainer>
           <div className="max-w-md mx-auto bg-[#F7F8FA] rounded-xl border border-gray-200 p-8 text-center">
             <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-3 shadow-sm border border-gray-200 mx-auto">
-              <User className="w-7 h-7 text-[#242F66]" />
+              <User className="w-7 h-7 text-[#282C3F]" />
             </div>
-            <h2 className="text-xl font-bold uppercase tracking-tight text-[#1A1E31]">
+            <h2 className="text-xl font-bold uppercase tracking-tight text-[#212121]">
               Account Sign In Required
             </h2>
             <p className="text-xs text-[#666875] mt-1 max-w-sm mx-auto">
@@ -55,7 +55,7 @@ const AccountPage = () => {
             </p>
             <button
               onClick={() => navigate('/login')}
-              className="mt-5 bg-[#242F66] hover:bg-[#1A1E31] text-white text-xs font-bold uppercase tracking-wider px-8 py-3 rounded-md transition-colors shadow-sm"
+              className="mt-5 bg-[#282C3F] hover:bg-[#212121] text-white text-xs font-bold uppercase tracking-wider px-8 py-3 rounded-md transition-colors shadow-sm"
             >
               Sign In / Register
             </button>
@@ -72,12 +72,12 @@ const AccountPage = () => {
         {/* Header Profile Bar */}
         <div className="bg-[#F7F8FA] rounded-xl p-6 sm:p-8 border border-gray-200 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-xl bg-[#242F66] text-white flex items-center justify-center text-2xl font-black font-display shadow-sm">
+            <div className="w-14 h-14 rounded-xl bg-[#282C3F] text-white flex items-center justify-center text-2xl font-black font-display shadow-sm">
               {user.name.charAt(0).toUpperCase()}
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-lg sm:text-xl font-bold uppercase text-[#1A1E31]">
+                <h1 className="text-lg sm:text-xl font-bold uppercase text-[#212121]">
                   {user.name}
                 </h1>
                 {user.isAdmin && (
@@ -100,7 +100,7 @@ const AccountPage = () => {
             </Link>
             <button
               onClick={logout}
-              className="bg-white hover:bg-rose-50 hover:text-rose-600 text-[#1A1E31] border border-gray-300 px-3.5 py-2 rounded-md text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors"
+              className="bg-white hover:bg-rose-50 hover:text-rose-600 text-[#212121] border border-gray-300 px-3.5 py-2 rounded-md text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors"
             >
               <LogOut className="w-4 h-4" /> Sign Out
             </button>
@@ -115,7 +115,7 @@ const AccountPage = () => {
             <button
               onClick={() => setActiveTab('orders')}
               className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors ${
-                activeTab === 'orders' ? 'bg-[#242F66] text-white' : 'text-[#4A4D5E] hover:bg-white hover:text-black'
+                activeTab === 'orders' ? 'bg-[#282C3F] text-white' : 'text-[#4A4D5E] hover:bg-white hover:text-black'
               }`}
             >
               <span className="flex items-center gap-2">
@@ -141,7 +141,7 @@ const AccountPage = () => {
             <button
               onClick={() => setActiveTab('addresses')}
               className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors ${
-                activeTab === 'addresses' ? 'bg-[#242F66] text-white' : 'text-[#4A4D5E] hover:bg-white hover:text-black'
+                activeTab === 'addresses' ? 'bg-[#282C3F] text-white' : 'text-[#4A4D5E] hover:bg-white hover:text-black'
               }`}
             >
               <span className="flex items-center gap-2">
@@ -163,7 +163,7 @@ const AccountPage = () => {
           <div className="lg:col-span-9">
             {activeTab === 'orders' && (
               <div className="space-y-4">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-[#1A1E31]">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-[#212121]">
                   Recent Orders & Shipments
                 </h3>
 
@@ -181,7 +181,7 @@ const AccountPage = () => {
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-gray-100 gap-2">
                         <div>
                           <span className="text-[10px] text-gray-400 uppercase font-bold">Order ID</span>
-                          <h4 className="text-xs font-bold text-[#1A1E31]">{ord.id}</h4>
+                          <h4 className="text-xs font-bold text-[#212121]">{ord.id}</h4>
                         </div>
                         <div className="flex items-center gap-3">
                           <span className="text-[11px] font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded">
@@ -189,7 +189,7 @@ const AccountPage = () => {
                           </span>
                           <Link
                             to={`/track-order?orderId=${ord.id}`}
-                            className="text-xs font-bold bg-[#242F66] text-white px-3 py-1 rounded-md hover:bg-[#1A1E31] transition-colors inline-flex items-center gap-1"
+                            className="text-xs font-bold bg-[#282C3F] text-white px-3 py-1 rounded-md hover:bg-[#212121] transition-colors inline-flex items-center gap-1"
                           >
                             Track <ArrowRight className="w-3.5 h-3.5" />
                           </Link>
@@ -203,18 +203,18 @@ const AccountPage = () => {
                             <div className="flex items-center gap-3">
                               <img src={item.image} alt="" className="w-10 h-12 object-cover rounded bg-gray-100" />
                               <div>
-                                <p className="font-semibold text-[#1A1E31]">{item.title}</p>
+                                <p className="font-semibold text-[#212121]">{item.title}</p>
                                 <p className="text-[10px] text-[#666875]">Size: {item.size} • {item.color} • Qty: {item.quantity}</p>
                               </div>
                             </div>
-                            <span className="font-bold text-[#1A1E31]">₹{item.price * item.quantity}</span>
+                            <span className="font-bold text-[#212121]">₹{item.price * item.quantity}</span>
                           </div>
                         ))}
                       </div>
 
                       <div className="pt-3 border-t border-gray-100 flex justify-between items-center text-xs">
                         <span className="text-[#666875]">Paid via {ord.paymentMethod}</span>
-                        <span className="text-sm font-bold text-[#242F66]">Total: ₹{ord.totalAmount}</span>
+                        <span className="text-sm font-bold text-[#282C3F]">Total: ₹{ord.totalAmount}</span>
                       </div>
                     </div>
                   ))
@@ -224,14 +224,14 @@ const AccountPage = () => {
 
             {activeTab === 'addresses' && (
               <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm space-y-4">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-[#1A1E31]">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-[#212121]">
                   Primary Shipping Address
                 </h3>
                 <div className="p-4 bg-[#F7F8FA] rounded-lg border border-gray-200 text-xs text-[#4A4D5E] space-y-1">
-                  <span className="bg-[#242F66] text-white text-[10px] font-bold px-2 py-0.5 rounded inline-block mb-1">
+                  <span className="bg-[#282C3F] text-white text-[10px] font-bold px-2 py-0.5 rounded inline-block mb-1">
                     DEFAULT
                   </span>
-                  <p className="font-bold text-[#1A1E31]">{user.name}</p>
+                  <p className="font-bold text-[#212121]">{user.name}</p>
                   <p>Flat 402, Oakwood Residency, 12th Main Road, Indiranagar</p>
                   <p>Bengaluru, Karnataka - 560038</p>
                   <p>Phone: {user.phone}</p>

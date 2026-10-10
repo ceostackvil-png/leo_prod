@@ -54,7 +54,7 @@ const AuthPage = () => {
           
           {/* Brand header */}
           <div className="text-center mb-6">
-            <span className="text-2xl sm:text-3xl font-black text-[#242F66] tracking-tighter uppercase font-display">
+            <span className="text-2xl sm:text-3xl font-black text-[#282C3F] tracking-tighter uppercase font-display">
               LEO
             </span>
             <p className="text-xs text-[#666875] mt-1">
@@ -68,7 +68,7 @@ const AuthPage = () => {
               type="button"
               onClick={() => { setIsSignup(false); setError(''); }}
               className={`flex-1 py-2 text-xs font-bold rounded-md transition-all ${
-                !isSignup ? 'bg-white text-[#1A1E31] shadow-sm' : 'text-[#666875]'
+                !isSignup ? 'bg-white text-[#212121] shadow-sm' : 'text-[#666875]'
               }`}
             >
               LOG IN
@@ -77,7 +77,7 @@ const AuthPage = () => {
               type="button"
               onClick={() => { setIsSignup(true); setError(''); }}
               className={`flex-1 py-2 text-xs font-bold rounded-md transition-all ${
-                isSignup ? 'bg-white text-[#1A1E31] shadow-sm' : 'text-[#666875]'
+                isSignup ? 'bg-white text-[#212121] shadow-sm' : 'text-[#666875]'
               }`}
             >
               SIGN UP
@@ -93,7 +93,7 @@ const AuthPage = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             {isSignup && (
               <div>
-                <label className="block text-xs font-bold uppercase text-[#1A1E31] mb-1">
+                <label className="block text-xs font-bold uppercase text-[#212121] mb-1">
                   Full Name
                 </label>
                 <div className="relative">
@@ -104,14 +104,14 @@ const AuthPage = () => {
                     placeholder="e.g. Rahul Sharma"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full pl-9 pr-3 py-2.5 bg-white border border-gray-300 rounded-md text-xs font-semibold text-[#1A1E31] focus:outline-none focus:border-[#242F66]"
+                    className="w-full pl-9 pr-3 py-2.5 bg-white border border-gray-300 rounded-md text-xs font-semibold text-[#212121] focus:outline-none focus:border-[#282C3F]"
                   />
                 </div>
               </div>
             )}
 
             <div>
-              <label className="block text-xs font-bold uppercase text-[#1A1E31] mb-1">
+              <label className="block text-xs font-bold uppercase text-[#212121] mb-1">
                 Email Address or Mobile Number
               </label>
               <div className="relative">
@@ -122,13 +122,13 @@ const AuthPage = () => {
                   placeholder="name@example.com or 10-digit mobile"
                   value={emailOrPhone}
                   onChange={(e) => setEmailOrPhone(e.target.value)}
-                  className="w-full pl-9 pr-3 py-2.5 bg-white border border-gray-300 rounded-md text-xs font-semibold text-[#1A1E31] focus:outline-none focus:border-[#242F66]"
+                  className="w-full pl-9 pr-3 py-2.5 bg-white border border-gray-300 rounded-md text-xs font-semibold text-[#212121] focus:outline-none focus:border-[#282C3F]"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold uppercase text-[#1A1E31] mb-1">
+              <label className="block text-xs font-bold uppercase text-[#212121] mb-1">
                 Password
               </label>
               <div className="relative">
@@ -139,7 +139,7 @@ const AuthPage = () => {
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-9 pr-3 py-2.5 bg-white border border-gray-300 rounded-md text-xs font-semibold text-[#1A1E31] focus:outline-none focus:border-[#242F66]"
+                  className="w-full pl-9 pr-3 py-2.5 bg-white border border-gray-300 rounded-md text-xs font-semibold text-[#212121] focus:outline-none focus:border-[#282C3F]"
                 />
               </div>
             </div>
@@ -147,7 +147,7 @@ const AuthPage = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-[#242F66] hover:bg-[#1A1E31] text-white py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-all disabled:opacity-50"
+              className="w-full bg-[#282C3F] hover:bg-[#212121] text-white py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-all disabled:opacity-50"
             >
               {loading ? 'Processing...' : isSignup ? 'Create Account' : 'Log In'}
             </button>

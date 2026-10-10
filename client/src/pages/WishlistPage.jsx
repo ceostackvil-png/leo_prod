@@ -18,14 +18,14 @@ const WishlistPage = () => {
               <Heart className="w-3.5 h-3.5 fill-rose-600" />
               <span>SAVED STYLES</span>
             </div>
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-tight text-[#1A1E31]">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-tight text-[#212121]">
               My Wishlist ({wishlist.length})
             </h1>
           </div>
 
           <Link
             to="/men"
-            className="text-xs sm:text-sm font-bold text-[#242F66] hover:underline inline-flex items-center gap-1 transition-colors"
+            className="text-xs sm:text-sm font-bold text-[#282C3F] hover:underline inline-flex items-center gap-1 transition-colors"
           >
             Continue Shopping <ArrowRight className="w-4 h-4" />
           </Link>
@@ -37,13 +37,13 @@ const WishlistPage = () => {
             <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mx-auto mb-3 text-gray-400 shadow-sm border border-gray-200">
               <Heart className="w-6 h-6" />
             </div>
-            <h3 className="text-base font-bold text-[#1A1E31]">Your wishlist is empty</h3>
+            <h3 className="text-base font-bold text-[#212121]">Your wishlist is empty</h3>
             <p className="text-xs text-[#666875] mt-1 max-w-sm mx-auto">
               Tap the heart icon on any Men's oversized tee, polo, or cargo jogger to save it here.
             </p>
             <Link
               to="/men"
-              className="mt-5 inline-flex items-center gap-2 bg-[#242F66] hover:bg-[#1A1E31] text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-md transition-all shadow-sm"
+              className="mt-5 inline-flex items-center gap-2 bg-[#282C3F] hover:bg-[#212121] text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-md transition-all shadow-sm"
             >
               EXPLORE MEN'S COLLECTION <ArrowRight className="w-4 h-4" />
             </Link>

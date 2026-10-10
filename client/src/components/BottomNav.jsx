@@ -27,7 +27,7 @@ const BottomNav = ({ onOpenSearch }) => {
         <Link
           to="/"
           className={`flex flex-col items-center justify-center h-full transition-colors ${
-            isActive('/') ? 'text-[#242F66]' : 'text-gray-500 hover:text-gray-900'
+            isActive('/') ? 'text-[#282C3F]' : 'text-gray-500 hover:text-gray-900'
           }`}
         >
           <Home className={`w-5 h-5 ${isActive('/') ? 'stroke-[2.5]' : 'stroke-2'}`} />
@@ -38,7 +38,7 @@ const BottomNav = ({ onOpenSearch }) => {
         <Link
           to="/shop"
           className={`flex flex-col items-center justify-center h-full transition-colors ${
-            isActive('/shop') || isActive('/men') ? 'text-[#242F66]' : 'text-gray-500 hover:text-gray-900'
+            isActive('/shop') || isActive('/men') ? 'text-[#282C3F]' : 'text-gray-500 hover:text-gray-900'
           }`}
         >
           <Grid className={`w-5 h-5 ${isActive('/shop') || isActive('/men') ? 'stroke-[2.5]' : 'stroke-2'}`} />
@@ -48,7 +48,7 @@ const BottomNav = ({ onOpenSearch }) => {
         {/* 3. Search Trigger */}
         <button
           onClick={onOpenSearch}
-          className="flex flex-col items-center justify-center h-full text-gray-500 hover:text-[#242F66] transition-colors"
+          className="flex flex-col items-center justify-center h-full text-gray-500 hover:text-[#282C3F] transition-colors"
           aria-label="Search"
         >
           <Search className="w-5 h-5 stroke-2" />
@@ -59,13 +59,13 @@ const BottomNav = ({ onOpenSearch }) => {
         <Link
           to="/wishlist"
           className={`relative flex flex-col items-center justify-center h-full transition-colors ${
-            isActive('/wishlist') ? 'text-[#242F66]' : 'text-gray-500 hover:text-gray-900'
+            isActive('/wishlist') ? 'text-[#282C3F]' : 'text-gray-500 hover:text-gray-900'
           }`}
         >
           <div className="relative">
             <Heart className={`w-5 h-5 ${isActive('/wishlist') ? 'stroke-[2.5]' : 'stroke-2'}`} />
             {wishlistCount > 0 && (
-              <span className="absolute -top-1 -right-2 bg-[#D9534F] text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">
+              <span className="absolute -top-1 -right-2 bg-[#D9232D] text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">
                 {wishlistCount}
               </span>
             )}
@@ -80,7 +80,7 @@ const BottomNav = ({ onOpenSearch }) => {
             else window.location.href = '/account';
           }}
           className={`flex flex-col items-center justify-center h-full transition-colors ${
-            isActive('/account') ? 'text-[#242F66]' : 'text-gray-500 hover:text-gray-900'
+            isActive('/account') ? 'text-[#282C3F]' : 'text-gray-500 hover:text-gray-900'
           }`}
         >
           <User className={`w-5 h-5 ${isActive('/account') ? 'stroke-[2.5]' : 'stroke-2'}`} />

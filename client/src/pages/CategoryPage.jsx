@@ -62,8 +62,8 @@ const CATEGORY_META = {
     banner: "/images/hero-1.jpg"
   },
   'oversized-tees': {
-    title: "Men's Oversized T-Shirts",
-    subtitle: "240 GSM heavy combed cotton featuring authentic streetwear drop-shoulder boxy cuts.",
+    title: "Trending T Shirt",
+    subtitle: "Your everyday essentials",
     seo: "Shop our bestselling Men's Oversized T-Shirts. Built with high-grade 240 GSM bio-washed cotton that holds its structure wash after wash.",
     banner: "/images/mood-street.jpg"
   },
@@ -74,32 +74,32 @@ const CATEGORY_META = {
     banner: "/images/hero-1.jpg"
   },
   'polos': {
-    title: "Men's Travel & Classic Polos",
+    title: "Polo Tshirt for Men",
     subtitle: "Breathable pique knit polos with structured collars that stay sharp all day.",
     seo: "Explore our collection of versatile Men's Polos designed for effortless smart-casual transitions and wrinkle-resistant travel.",
     banner: "/images/hero-2.jpg"
   },
   'shirts': {
-    title: "Men's Casual Shirts",
-    subtitle: "Relaxed resort-collar shirts and structured overshirts built from textured cotton.",
+    title: "Men's Shirts",
+    subtitle: "Made for breezy plans",
     seo: "Discover LEO casual shirts for men. Breathable weaves, effortless layering, and contemporary cuts.",
     banner: "/images/hero-2.jpg"
   },
   'hoodies': {
-    title: "Men's French Terry Hoodies",
-    subtitle: "380 GSM brushed fleece with generous kangaroo pockets and double-layer structured hoods.",
+    title: "Jackets and Hoodies for Men",
+    subtitle: "Made for changing weather",
     seo: "Keep warm in style with LEO's heavyweight French Terry hoodies for men. Pre-shrunk, fleece-lined, and built for cozy longevity.",
     banner: "/images/mood-cozy.jpg"
   },
   'joggers': {
-    title: "Men's Cargo Joggers & Flex Pants",
-    subtitle: "Multi-pocket cargo pants and four-way stretch joggers designed for dynamic urban motion.",
+    title: "Joggers for Men",
+    subtitle: "Your everyday essentials",
     seo: "Shop LEO Men's Cargo Joggers. Engineered with deep utility pockets, gusseted crotches, and tapered ankle cuffs.",
     banner: "/images/mood-travel.jpg"
   },
   'shorts': {
-    title: "Men's French Terry Shorts",
-    subtitle: "Comfort-engineered active shorts with drawstring waists and secure zip pockets.",
+    title: "Shorts for Men",
+    subtitle: "Made for outdoor plans",
     seo: "LEO Men's shorts offer relaxed weekend ease and gym-ready mobility with heavyweight French Terry construction.",
     banner: "/images/mood-relax.jpg"
   },
@@ -224,63 +224,108 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
 
   return (
     <div className="min-h-screen bg-white pb-16 lg:pb-0">
-      {/* Category Header Banner (Exact Nobero style) */}
-      <div className="relative bg-[#242F66] text-white py-8 sm:py-12 overflow-hidden">
-        <div className="absolute inset-0 opacity-20 mix-blend-overlay">
-          <img src={meta.banner} alt="" className="w-full h-full object-cover" />
+      {/* --- CUSTOM PROMO BANNERS (Pre-baked Images) --- */}
+      {(['polos', 'hoodies', 'joggers', 'shorts', 'shirts', 'oversized-tees'].includes(activeCategorySlug)) && (
+        <div className="w-full bg-[#E5E6E6]">
+          <img 
+            src={`/images/${activeCategorySlug}_promo_bg.${['shorts', 'polos'].includes(activeCategorySlug) ? 'webp' : 'jxl'}`} 
+            alt={`${activeCategorySlug} Promo Background`} 
+            className="w-full h-auto block" 
+          />
         </div>
+      )}
 
-        <StorefrontContainer className="relative z-10">
-          <div className="text-[11px] sm:text-xs text-gray-300 font-semibold uppercase tracking-wider mb-2 flex items-center gap-1.5">
-            <Link to="/" className="hover:text-white">Home</Link>
-            <span>/</span>
-            <Link to="/men" className="hover:text-white">Men's Apparel</Link>
-            <span>/</span>
-            <span className="text-white font-bold">
-              {isSearchPage ? `Search: "${searchQuery}"` : meta.title.split('-')[0].trim()}
-            </span>
+      {/* Generic Category Header Banner (Hidden for custom banners) */}
+      {!['polos', 'hoodies', 'joggers', 'shorts', 'shirts', 'oversized-tees'].includes(activeCategorySlug) && (
+        <div className="relative bg-[#282C3F] text-white py-8 sm:py-12 overflow-hidden">
+          <div className="absolute inset-0 opacity-20 mix-blend-overlay">
+            <img src={meta.banner} alt="" className="w-full h-full object-cover" />
           </div>
 
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-white font-display">
-            {isSearchPage ? `Search Results for "${searchQuery}"` : meta.title}
-          </h1>
-          <p className="text-xs sm:text-sm text-gray-300 mt-1 max-w-2xl font-medium">
-            {meta.subtitle}
-          </p>
+          <StorefrontContainer className="relative z-10">
+            <div className="text-[11px] sm:text-xs text-gray-300 font-semibold uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <Link to="/" className="hover:text-white">Home</Link>
+              <span>/</span>
+              <Link to="/men" className="hover:text-white">Men's Apparel</Link>
+              <span>/</span>
+              <span className="text-white font-bold">
+                {isSearchPage ? `Search: "${searchQuery}"` : meta.title.split('-')[0].trim()}
+              </span>
+            </div>
+
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-white font-display">
+              {isSearchPage ? `Search Results for "${searchQuery}"` : meta.title}
+            </h1>
+            <p className="text-xs sm:text-sm text-gray-300 mt-1 max-w-2xl font-medium">
+              {meta.subtitle}
+            </p>
+          </StorefrontContainer>
+        </div>
+      )}
+      
+      {/* Isolated Breadcrumbs just for Custom Banners (Since we hid the generic header) */}
+      {(['polos', 'hoodies', 'joggers', 'shorts', 'shirts', 'oversized-tees'].includes(activeCategorySlug)) && (
+        <StorefrontContainer className="pt-6 pb-2">
+          <div className="text-[11px] sm:text-xs text-[#666875] font-medium capitalize tracking-wide flex items-center gap-1.5">
+            <Link to="/" className="hover:text-[#212121]">Home</Link>
+            <span>&gt;</span>
+            {!['polos', 'oversized-tees'].includes(activeCategorySlug) && (
+              <>
+                <Link to="/men" className="hover:text-[#212121]">Men</Link>
+                <span>&gt;</span>
+              </>
+            )}
+            <span className="text-[#212121]">
+              {meta.title.split('-')[0].trim()}
+            </span>
+          </div>
         </StorefrontContainer>
-      </div>
+      )}
 
       {/* Main Catalog View */}
-      <div className="py-6 sm:py-10">
+      <div className="pb-10 pt-2 lg:pt-4">
         <StorefrontContainer>
           
-          {/* Controls Bar */}
-          <div className="flex items-center justify-between pb-4 border-b border-gray-200 gap-4">
-            {/* Mobile Filter trigger */}
-            <button
-              onClick={() => setIsMobileFilterOpen(true)}
-              className="lg:hidden inline-flex items-center gap-1.5 bg-[#242F66] text-white text-xs font-bold px-4 py-2 rounded-md shadow-sm"
-            >
-              <SlidersHorizontal className="w-3.5 h-3.5" /> Filters
-            </button>
+          {/* Nobero Title & Controls Bar */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 gap-4">
+            
+            {/* Title & Count */}
+            <div className="flex items-baseline gap-3">
+              {/* Only inject the Title text here if we are using the custom banner (since it doesn't have the text overlay below) */}
+              {(['polos', 'hoodies', 'joggers', 'shorts', 'shirts', 'oversized-tees'].includes(activeCategorySlug)) && (
+                <h2 className="text-[22px] sm:text-[28px] font-bold text-[#212121] tracking-tight">
+                  {meta.title.split('-')[0].trim()}
+                </h2>
+              )}
+              <span className="text-[11px] sm:text-xs text-[#666875] font-medium">
+                {products.length} Items
+              </span>
+            </div>
 
-            {/* Total Count */}
-            <span className="text-xs sm:text-sm text-[#666875] font-medium">
-              <strong className="text-[#1A1E31]">{products.length}</strong> Men's Styles
-            </span>
-
-            {/* Sort Dropdown */}
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-bold text-[#666875] hidden sm:inline-block">Sort By:</span>
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="bg-white border border-gray-300 rounded-md text-xs font-semibold text-[#1A1E31] py-1.5 px-3 focus:outline-none focus:border-[#242F66] cursor-pointer"
+            <div className="flex items-center gap-4">
+              {/* Mobile Filter trigger */}
+              <button
+                onClick={() => setIsMobileFilterOpen(true)}
+                className="lg:hidden inline-flex items-center gap-1.5 bg-white border border-gray-300 text-[#212121] text-xs font-bold px-4 py-2 rounded-md shadow-sm"
               >
-                {SORT_OPTIONS.map((opt) => (
-                  <option key={opt.id} value={opt.id}>{opt.label}</option>
-                ))}
-              </select>
+                <SlidersHorizontal className="w-3.5 h-3.5" /> Filter
+              </button>
+
+              {/* Sort Dropdown */}
+              <div className="flex items-center gap-2 bg-white border border-gray-200 rounded-md px-3 py-1.5 hover:border-gray-300 transition-colors">
+                <ArrowUpDown className="w-3.5 h-3.5 text-[#212121]" />
+                <span className="text-xs font-semibold text-[#212121] hidden sm:inline-block">Sort:</span>
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="bg-transparent text-xs font-semibold text-[#212121] focus:outline-none cursor-pointer pl-1 pr-4 appearance-none"
+                  style={{ backgroundImage: 'url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23212121%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right center', backgroundSize: '8px auto' }}
+                >
+                  {SORT_OPTIONS.map((opt) => (
+                    <option key={opt.id} value={opt.id}>{opt.label.replace('Price: ', '')}</option>
+                  ))}
+                </select>
+              </div>
             </div>
           </div>
 
@@ -288,19 +333,19 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
           {hasActiveFilters && (
             <div className="flex flex-wrap items-center gap-2 py-3 border-b border-gray-100">
               {selectedSizes.map(s => (
-                <span key={s} className="inline-flex items-center gap-1 bg-gray-100 text-[#1A1E31] text-[11px] font-bold px-2.5 py-1 rounded-md">
+                <span key={s} className="inline-flex items-center gap-1 bg-gray-100 text-[#212121] text-[11px] font-bold px-2.5 py-1 rounded-md">
                   Size: {s}
                   <button onClick={() => toggleSize(s)}><X className="w-3 h-3 text-gray-500" /></button>
                 </span>
               ))}
               {selectedColors.map(c => (
-                <span key={c} className="inline-flex items-center gap-1 bg-gray-100 text-[#1A1E31] text-[11px] font-bold px-2.5 py-1 rounded-md">
+                <span key={c} className="inline-flex items-center gap-1 bg-gray-100 text-[#212121] text-[11px] font-bold px-2.5 py-1 rounded-md">
                   Color: {c}
                   <button onClick={() => toggleColor(c)}><X className="w-3 h-3 text-gray-500" /></button>
                 </span>
               ))}
               {selectedPriceRange && (
-                <span key={selectedPriceRange.label} className="inline-flex items-center gap-1 bg-gray-100 text-[#1A1E31] text-[11px] font-bold px-2.5 py-1 rounded-md">
+                <span key={selectedPriceRange.label} className="inline-flex items-center gap-1 bg-gray-100 text-[#212121] text-[11px] font-bold px-2.5 py-1 rounded-md">
                   Price: {selectedPriceRange.label}
                   <button onClick={() => setSelectedPriceRange(null)}><X className="w-3 h-3 text-gray-500" /></button>
                 </span>
@@ -322,7 +367,7 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
               
               {/* Category Tree */}
               <div className="space-y-2">
-                <h4 className="text-xs font-bold uppercase text-[#1A1E31] tracking-wider border-b border-gray-100 pb-1.5">
+                <h4 className="text-xs font-bold uppercase text-[#212121] tracking-wider border-b border-gray-100 pb-1.5">
                   Category
                 </h4>
                 <div className="space-y-1">
@@ -332,7 +377,7 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
                       onClick={() => setSelectedCategory(cat.id)}
                       className={`w-full text-left text-xs py-1.5 px-2.5 rounded-md transition-all flex items-center justify-between ${
                         selectedCategory === cat.id
-                          ? 'bg-[#242F66] text-white font-bold'
+                          ? 'bg-[#282C3F] text-white font-bold'
                           : 'text-[#4A4D5E] hover:bg-gray-100'
                       }`}
                     >
@@ -345,7 +390,7 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
 
               {/* Sizes */}
               <div className="space-y-2 pt-4 border-t border-gray-200">
-                <h4 className="text-xs font-bold uppercase text-[#1A1E31] tracking-wider border-b border-gray-100 pb-1.5">
+                <h4 className="text-xs font-bold uppercase text-[#212121] tracking-wider border-b border-gray-100 pb-1.5">
                   Size
                 </h4>
                 <div className="grid grid-cols-3 gap-1.5">
@@ -357,8 +402,8 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
                         onClick={() => toggleSize(size)}
                         className={`py-1.5 text-xs font-bold rounded border text-center transition-all ${
                           isSelected
-                            ? 'bg-[#242F66] text-white border-[#242F66]'
-                            : 'bg-white text-[#1A1E31] border-gray-300 hover:border-black'
+                            ? 'bg-[#282C3F] text-white border-[#282C3F]'
+                            : 'bg-white text-[#212121] border-gray-300 hover:border-black'
                         }`}
                       >
                         {size}
@@ -370,7 +415,7 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
 
               {/* Colors */}
               <div className="space-y-2 pt-4 border-t border-gray-200">
-                <h4 className="text-xs font-bold uppercase text-[#1A1E31] tracking-wider border-b border-gray-100 pb-1.5">
+                <h4 className="text-xs font-bold uppercase text-[#212121] tracking-wider border-b border-gray-100 pb-1.5">
                   Color
                 </h4>
                 <div className="space-y-1.5">
@@ -386,10 +431,10 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
                           className="w-4 h-4 rounded-full border border-gray-300 shadow-sm shrink-0"
                           style={{ backgroundColor: color.hex }}
                         />
-                        <span className={`flex-1 ${isSelected ? 'font-bold text-[#1A1E31]' : 'text-[#4A4D5E]'}`}>
+                        <span className={`flex-1 ${isSelected ? 'font-bold text-[#212121]' : 'text-[#4A4D5E]'}`}>
                           {color.name}
                         </span>
-                        {isSelected && <Check className="w-3.5 h-3.5 text-[#242F66]" />}
+                        {isSelected && <Check className="w-3.5 h-3.5 text-[#282C3F]" />}
                       </button>
                     );
                   })}
@@ -398,7 +443,7 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
 
               {/* Price Ranges */}
               <div className="space-y-2 pt-4 border-t border-gray-200">
-                <h4 className="text-xs font-bold uppercase text-[#1A1E31] tracking-wider border-b border-gray-100 pb-1.5">
+                <h4 className="text-xs font-bold uppercase text-[#212121] tracking-wider border-b border-gray-100 pb-1.5">
                   Price
                 </h4>
                 <div className="space-y-1">
@@ -409,7 +454,7 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
                         key={idx}
                         onClick={() => setSelectedPriceRange(isSelected ? null : range)}
                         className={`w-full text-left text-xs py-1.5 px-2 rounded-md transition-all flex items-center justify-between ${
-                          isSelected ? 'bg-[#242F66] text-white font-bold' : 'text-[#4A4D5E] hover:bg-gray-100'
+                          isSelected ? 'bg-[#282C3F] text-white font-bold' : 'text-[#4A4D5E] hover:bg-gray-100'
                         }`}
                       >
                         <span>{range.label}</span>
@@ -430,11 +475,11 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
                 </div>
               ) : products.length === 0 ? (
                 <div className="py-16 text-center bg-[#F7F8FA] rounded-xl border border-gray-200 p-8">
-                  <h3 className="text-base font-bold text-[#1A1E31]">No products match the selected filters</h3>
+                  <h3 className="text-base font-bold text-[#212121]">No products match the selected filters</h3>
                   <p className="text-xs text-[#666875] mt-1">Try clearing some filters or searching for another category.</p>
                   <button
                     onClick={clearAllFilters}
-                    className="mt-4 bg-[#242F66] hover:bg-[#1A1E31] text-white text-xs font-bold px-6 py-2.5 rounded-md uppercase tracking-wider"
+                    className="mt-4 bg-[#282C3F] hover:bg-[#212121] text-white text-xs font-bold px-6 py-2.5 rounded-md uppercase tracking-wider"
                   >
                     Clear All Filters
                   </button>
@@ -452,7 +497,7 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
 
           {/* SEO / Read More Section */}
           <div className="mt-14 pt-8 border-t border-gray-200">
-            <h3 className="text-sm font-bold uppercase text-[#1A1E31] mb-2">
+            <h3 className="text-sm font-bold uppercase text-[#212121] mb-2">
               About LEO {meta.title.split('-')[0].trim()}
             </h3>
             <p className="text-xs text-[#666875] leading-relaxed">
@@ -470,7 +515,7 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
             )}
             <button
               onClick={() => setSeoExpanded(!seoExpanded)}
-              className="mt-2 text-xs font-bold text-[#242F66] hover:underline inline-flex items-center gap-1"
+              className="mt-2 text-xs font-bold text-[#282C3F] hover:underline inline-flex items-center gap-1"
             >
               {seoExpanded ? 'Read Less' : 'Read More'}
               {seoExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
@@ -487,20 +532,20 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
       <div className="lg:hidden fixed bottom-0 left-0 right-0 z-30 bg-white border-t border-gray-200 grid grid-cols-2 divide-x divide-gray-200 shadow-[0_-4px_16px_rgba(0,0,0,0.08)]">
         <button
           onClick={() => setIsMobileSortOpen(true)}
-          className="py-3 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1A1E31] active:bg-gray-50 transition-colors"
+          className="py-3 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-[#212121] active:bg-gray-50 transition-colors"
         >
-          <ArrowUpDown className="w-4 h-4 text-[#242F66]" />
+          <ArrowUpDown className="w-4 h-4 text-[#282C3F]" />
           <span>Sort By</span>
         </button>
 
         <button
           onClick={() => setIsMobileFilterOpen(true)}
-          className="py-3 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1A1E31] active:bg-gray-50 transition-colors relative"
+          className="py-3 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-[#212121] active:bg-gray-50 transition-colors relative"
         >
-          <SlidersHorizontal className="w-4 h-4 text-[#242F66]" />
+          <SlidersHorizontal className="w-4 h-4 text-[#282C3F]" />
           <span>Filters</span>
           {activeFilterCount > 0 && (
-            <span className="bg-[#242F66] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+            <span className="bg-[#282C3F] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
               {activeFilterCount}
             </span>
           )}
@@ -516,7 +561,7 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
           />
           <div className="fixed inset-x-0 bottom-0 bg-white rounded-t-2xl shadow-2xl p-5 animate-slide-up z-10 max-h-[80vh] overflow-y-auto">
             <div className="flex items-center justify-between pb-3 border-b border-gray-100">
-              <h3 className="text-sm font-bold uppercase text-[#1A1E31]">Sort Products</h3>
+              <h3 className="text-sm font-bold uppercase text-[#212121]">Sort Products</h3>
               <button onClick={() => setIsMobileSortOpen(false)} className="p-1 text-gray-400 hover:text-black">
                 <X className="w-5 h-5" />
               </button>
@@ -529,10 +574,10 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
                     setSortBy(opt.id);
                     setIsMobileSortOpen(false);
                   }}
-                  className="w-full py-3 text-left text-xs font-semibold text-[#1A1E31] flex items-center justify-between"
+                  className="w-full py-3 text-left text-xs font-semibold text-[#212121] flex items-center justify-between"
                 >
                   <span>{opt.label}</span>
-                  {sortBy === opt.id && <Check className="w-4 h-4 text-[#242F66] font-bold" />}
+                  {sortBy === opt.id && <Check className="w-4 h-4 text-[#282C3F] font-bold" />}
                 </button>
               ))}
             </div>
@@ -550,7 +595,7 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
           <div className="fixed inset-y-0 right-0 w-[85%] max-w-sm bg-white shadow-2xl flex flex-col justify-between p-5 overflow-y-auto z-10 animate-drawer-right">
             <div>
               <div className="flex items-center justify-between pb-3 border-b border-gray-200">
-                <h3 className="text-sm font-bold uppercase text-[#1A1E31]">Filter Men's Wear</h3>
+                <h3 className="text-sm font-bold uppercase text-[#212121]">Filter Men's Wear</h3>
                 <button onClick={() => setIsMobileFilterOpen(false)} className="p-1 text-gray-500">
                   <X className="w-5 h-5" />
                 </button>
@@ -566,8 +611,8 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
                       onClick={() => setSelectedCategory(c.id)}
                       className={`text-[11px] px-2.5 py-1 rounded-md border font-medium ${
                         selectedCategory === c.id
-                          ? 'bg-[#242F66] text-white border-[#242F66]'
-                          : 'bg-white text-[#1A1E31] border-gray-300'
+                          ? 'bg-[#282C3F] text-white border-[#282C3F]'
+                          : 'bg-white text-[#212121] border-gray-300'
                       }`}
                     >
                       {c.label}
@@ -586,8 +631,8 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
                       onClick={() => toggleSize(s)}
                       className={`w-9 h-8 text-xs font-bold rounded border ${
                         selectedSizes.includes(s)
-                          ? 'bg-[#242F66] text-white border-[#242F66]'
-                          : 'bg-white text-[#1A1E31] border-gray-300'
+                          ? 'bg-[#282C3F] text-white border-[#282C3F]'
+                          : 'bg-white text-[#212121] border-gray-300'
                       }`}
                     >
                       {s}
@@ -607,7 +652,7 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
                         key={color.name}
                         onClick={() => toggleColor(color.name)}
                         className={`text-left text-xs py-1 px-2 rounded flex items-center gap-2 border ${
-                          isSelected ? 'border-[#242F66] bg-[#242F66]/5 font-bold' : 'border-gray-200'
+                          isSelected ? 'border-[#282C3F] bg-[#282C3F]/5 font-bold' : 'border-gray-200'
                         }`}
                       >
                         <span className="w-3.5 h-3.5 rounded-full border border-gray-300" style={{ backgroundColor: color.hex }} />
@@ -629,7 +674,7 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
                         key={idx}
                         onClick={() => setSelectedPriceRange(isSelected ? null : range)}
                         className={`w-full text-left text-xs py-1.5 px-2 rounded-md transition-all flex items-center justify-between ${
-                          isSelected ? 'bg-[#242F66] text-white font-bold' : 'text-[#4A4D5E] hover:bg-gray-100'
+                          isSelected ? 'bg-[#282C3F] text-white font-bold' : 'text-[#4A4D5E] hover:bg-gray-100'
                         }`}
                       >
                         <span>{range.label}</span>
@@ -648,7 +693,7 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
               </button>
               <button
                 onClick={() => setIsMobileFilterOpen(false)}
-                className="flex-1 py-2.5 text-xs font-bold text-white bg-[#242F66] rounded-md"
+                className="flex-1 py-2.5 text-xs font-bold text-white bg-[#282C3F] rounded-md"
               >
                 Apply ({products.length})
               </button>

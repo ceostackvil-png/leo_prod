@@ -13,7 +13,7 @@ const Bestsellers = ({ products = [] }) => {
         
         {/* Section Header (Exact Nobero) */}
         <div className="text-center mb-6 lg:mb-8">
-          <h2 className="text-[#1A1E31] text-xl lg:text-2xl font-bold font-display mb-0.5">
+          <h2 className="text-[#212121] text-xl lg:text-2xl font-bold font-display mb-0.5">
             Our Bestsellers
           </h2>
           <p className="text-xs sm:text-sm text-[#666875]">
@@ -32,7 +32,7 @@ const Bestsellers = ({ products = [] }) => {
         <div className="mt-8 lg:mt-10 text-center">
           <Link
             to="/shop?filter=bestseller"
-            className="inline-block bg-[#242F66] hover:bg-[#1a224a] text-white text-xs sm:text-[13px] font-bold uppercase tracking-wider px-8 py-3 rounded-md transition-colors"
+            className="inline-block bg-[#282C3F] hover:bg-[#1a224a] text-white text-xs sm:text-[13px] font-bold uppercase tracking-wider px-8 py-3 rounded-md transition-colors"
           >
             SHOP ALL PRODUCTS
           </Link>

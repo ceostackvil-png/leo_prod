@@ -12,7 +12,7 @@ const LeoFavourites = ({ products = [] }) => {
         
         {/* Section Header (Exact Nobero) */}
         <div className="text-center mb-6 lg:mb-8">
-          <h2 className="text-[#1A1E31] text-xl lg:text-2xl font-bold font-display mb-0.5">
+          <h2 className="text-[#212121] text-xl lg:text-2xl font-bold font-display mb-0.5">
             LEO Favourite
           </h2>
           <p className="text-xs sm:text-sm text-[#666875]">

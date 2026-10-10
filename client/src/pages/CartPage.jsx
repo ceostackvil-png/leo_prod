@@ -47,15 +47,15 @@ const CartPage = () => {
         <StorefrontContainer>
           <div className="py-16 text-center bg-[#F7F8FA] rounded-xl border border-gray-200 p-8 max-w-xl mx-auto">
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 text-gray-400 border border-gray-200 shadow-sm">
-              <ShoppingBag className="w-8 h-8 text-[#242F66]" />
+              <ShoppingBag className="w-8 h-8 text-[#282C3F]" />
             </div>
-            <h2 className="text-xl font-bold text-[#1A1E31]">Your Shopping Bag is Empty</h2>
+            <h2 className="text-xl font-bold text-[#212121]">Your Shopping Bag is Empty</h2>
             <p className="text-xs text-[#666875] mt-1.5 max-w-sm mx-auto">
               Explore our bestselling heavyweight oversized tees, cargo joggers, and travel polos.
             </p>
             <Link
               to="/men"
-              className="mt-6 inline-flex items-center gap-2 bg-[#242F66] hover:bg-[#1A1E31] text-white text-xs font-bold uppercase tracking-wider px-8 py-3 rounded-md transition-all shadow-sm"
+              className="mt-6 inline-flex items-center gap-2 bg-[#282C3F] hover:bg-[#212121] text-white text-xs font-bold uppercase tracking-wider px-8 py-3 rounded-md transition-all shadow-sm"
             >
               SHOP MEN'S WEAR <ArrowRight className="w-4 h-4" />
             </Link>
@@ -70,24 +70,24 @@ const CartPage = () => {
       <StorefrontContainer>
         {/* Header */}
         <div className="pb-4 border-b border-gray-200 mb-6">
-          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#1A1E31] uppercase">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#212121] uppercase">
             Shopping Bag ({cart.length} {cart.length === 1 ? 'Item' : 'Items'})
           </h1>
         </div>
 
         {/* Free Shipping Progress Bar */}
         <div className="bg-[#F7F8FA] border border-gray-200 rounded-lg p-3.5 mb-8">
-          <div className="flex items-center justify-between text-xs font-semibold text-[#1A1E31] mb-1.5">
+          <div className="flex items-center justify-between text-xs font-semibold text-[#212121] mb-1.5">
             {remainingForFreeShipping === 0 ? (
               <span className="text-emerald-700 font-bold">🎉 Congratulations! You have unlocked FREE Express Delivery!</span>
             ) : (
-              <span>Add items worth <strong className="text-[#242F66]">₹{remainingForFreeShipping}</strong> more to unlock FREE Delivery</span>
+              <span>Add items worth <strong className="text-[#282C3F]">₹{remainingForFreeShipping}</strong> more to unlock FREE Delivery</span>
             )}
             <span className="text-[#666875] text-[11px] font-bold">{Math.round(progressToFreeShipping)}%</span>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
             <div
-              className="bg-[#242F66] h-2 rounded-full transition-all duration-500"
+              className="bg-[#282C3F] h-2 rounded-full transition-all duration-500"
               style={{ width: `${progressToFreeShipping}%` }}
             />
           </div>
@@ -111,7 +111,7 @@ const CartPage = () => {
                 <div className="flex-1 flex flex-col justify-between">
                   <div>
                     <div className="flex items-start justify-between gap-2">
-                      <Link to={`/product/${item.slug || item.id}`} className="text-xs sm:text-sm font-bold text-[#1A1E31] hover:text-[#242F66]">
+                      <Link to={`/product/${item.slug || item.id}`} className="text-xs sm:text-sm font-bold text-[#212121] hover:text-[#282C3F]">
                         {item.title}
                       </Link>
                       <button
@@ -124,15 +124,15 @@ const CartPage = () => {
                     </div>
 
                     <div className="flex items-center gap-3 text-xs text-[#666875] mt-1">
-                      <span>Size: <strong className="text-[#1A1E31]">{item.selectedSize}</strong></span>
+                      <span>Size: <strong className="text-[#212121]">{item.selectedSize}</strong></span>
                       {item.selectedColor && (
-                        <span>Color: <strong className="text-[#1A1E31]">{item.selectedColor}</strong></span>
+                        <span>Color: <strong className="text-[#212121]">{item.selectedColor}</strong></span>
                       )}
                     </div>
 
                     {/* Price */}
                     <div className="flex items-baseline gap-2 mt-1.5">
-                      <span className="text-sm sm:text-base font-bold text-[#1A1E31]">
+                      <span className="text-sm sm:text-base font-bold text-[#212121]">
                         ₹{item.price * item.quantity}
                       </span>
                       {item.mrp && (
@@ -141,7 +141,7 @@ const CartPage = () => {
                         </span>
                       )}
                       {item.discount && (
-                        <span className="text-[11px] font-semibold text-[#12B76A]">
+                        <span className="text-[11px] font-semibold text-[#00B852]">
                           {item.discount}
                         </span>
                       )}
@@ -158,7 +158,7 @@ const CartPage = () => {
                       >
                         <Minus className="w-3.5 h-3.5" />
                       </button>
-                      <span className="px-3 text-xs font-bold text-[#1A1E31]">{item.quantity}</span>
+                      <span className="px-3 text-xs font-bold text-[#212121]">{item.quantity}</span>
                       <button
                         onClick={() => updateQuantity(item.cartItemId, item.quantity + 1)}
                         className="p-1.5 text-gray-500 hover:text-black hover:bg-gray-100"
@@ -178,8 +178,8 @@ const CartPage = () => {
             
             {/* Coupon Box */}
             <div className="p-4 bg-[#F7F8FA] border border-gray-200 rounded-lg">
-              <div className="flex items-center gap-1.5 text-xs font-bold uppercase text-[#1A1E31] mb-2.5">
-                <Tag className="w-4 h-4 text-[#242F66]" /> Apply Promo Coupon
+              <div className="flex items-center gap-1.5 text-xs font-bold uppercase text-[#212121] mb-2.5">
+                <Tag className="w-4 h-4 text-[#282C3F]" /> Apply Promo Coupon
               </div>
 
               {appliedCoupon ? (
@@ -199,11 +199,11 @@ const CartPage = () => {
                     placeholder="e.g. WELCOME10, LEO50"
                     value={couponCode}
                     onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
-                    className="flex-1 px-3 py-2 bg-white border border-gray-300 rounded-md text-xs font-bold uppercase focus:outline-none focus:border-[#242F66]"
+                    className="flex-1 px-3 py-2 bg-white border border-gray-300 rounded-md text-xs font-bold uppercase focus:outline-none focus:border-[#282C3F]"
                   />
                   <button
                     type="submit"
-                    className="bg-[#242F66] hover:bg-[#1A1E31] text-white text-xs font-bold px-4 py-2 rounded-md uppercase"
+                    className="bg-[#282C3F] hover:bg-[#212121] text-white text-xs font-bold px-4 py-2 rounded-md uppercase"
                   >
                     Apply
                   </button>
@@ -214,14 +214,14 @@ const CartPage = () => {
 
             {/* Bill Breakdown */}
             <div className="p-5 border border-gray-200 rounded-lg bg-white space-y-3">
-              <h3 className="text-sm font-bold uppercase text-[#1A1E31] border-b border-gray-100 pb-2">
+              <h3 className="text-sm font-bold uppercase text-[#212121] border-b border-gray-100 pb-2">
                 Order Summary
               </h3>
 
               <div className="space-y-2 text-xs text-[#4A4D5E]">
                 <div className="flex justify-between">
                   <span>Bag Total</span>
-                  <span className="font-semibold text-[#1A1E31]">₹{cartSubtotal}</span>
+                  <span className="font-semibold text-[#212121]">₹{cartSubtotal}</span>
                 </div>
 
                 {cartDiscount > 0 && (
@@ -240,15 +240,15 @@ const CartPage = () => {
               </div>
 
               <div className="pt-3 border-t border-gray-200 flex justify-between items-baseline">
-                <span className="text-sm font-bold text-[#1A1E31]">Total Amount</span>
-                <span className="text-lg font-black text-[#242F66]">
+                <span className="text-sm font-bold text-[#212121]">Total Amount</span>
+                <span className="text-lg font-black text-[#282C3F]">
                   ₹{cartTotal + (remainingForFreeShipping === 0 ? 0 : 99)}
                 </span>
               </div>
 
               <button
                 onClick={() => navigate('/checkout')}
-                className="w-full mt-3 bg-[#242F66] hover:bg-[#1A1E31] text-white py-3.5 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all"
+                className="w-full mt-3 bg-[#282C3F] hover:bg-[#212121] text-white py-3.5 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all"
               >
                 PROCEED TO CHECKOUT <ArrowRight className="w-4 h-4" />
               </button>
@@ -266,7 +266,7 @@ const CartPage = () => {
         {/* Recommended Products */}
         {recommended.length > 0 && (
           <div className="mt-16 pt-10 border-t border-gray-200">
-            <h3 className="text-lg font-bold uppercase text-[#1A1E31] mb-6">
+            <h3 className="text-lg font-bold uppercase text-[#212121] mb-6">
               Customers Also Purchased
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">

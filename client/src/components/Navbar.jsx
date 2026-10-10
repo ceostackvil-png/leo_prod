@@ -36,7 +36,12 @@ const Navbar = () => {
       try {
         const res = await api.getCategories();
         if (res.success) {
-          setCategories(res.data);
+          const filteredCategories = res.data.filter(cat => cat.id !== 'women' && cat.id !== 'new-arrivals');
+          // Rename 'oversized-tees' to 'TEES'
+          const renamedCategories = filteredCategories.map(cat => 
+            cat.id === 'oversized-tees' ? { ...cat, name: 'TEES' } : cat
+          );
+          setCategories(renamedCategories);
         }
       } catch (e) {
         console.error(e);
@@ -54,7 +59,7 @@ const Navbar = () => {
     <>
       <header className="sticky top-0 z-40 w-full bg-white">
         {/* 1. Top Announcement Bar (Continuous Right to Left Infinite Marquee) */}
-        <div className="h-8 bg-[#242F66] text-white text-[12px] sm:text-[13px] font-normal flex items-center overflow-hidden select-none relative">
+        <div className="h-8 bg-[#282C3F] text-white text-[12px] sm:text-[13px] font-normal flex items-center overflow-hidden select-none relative">
           <div className="flex animate-marquee whitespace-nowrap">
             <div className="flex items-center gap-8 sm:gap-16 px-4 sm:px-8 shrink-0">
               <span className="font-medium tracking-wide">100% Refund Guarantee if you don't ❤️ the product. Shop with Confidence.</span>
@@ -86,14 +91,14 @@ const Navbar = () => {
                 <div className="flex items-center gap-1.5 lg:hidden">
                   <button
                     onClick={() => setIsMobileMenuOpen(true)}
-                    className="p-1.5 text-[#242F66] focus:outline-none"
+                    className="p-1.5 text-[#282C3F] focus:outline-none"
                     aria-label="Open menu"
                   >
                     <Menu className="w-5 h-5" />
                   </button>
                   <button
                     onClick={() => setIsSearchOpen(true)}
-                    className="p-1.5 text-[#242F66] focus:outline-none"
+                    className="p-1.5 text-[#282C3F] focus:outline-none"
                     aria-label="Search"
                   >
                     <Search className="w-4 h-4" />
@@ -123,13 +128,18 @@ const Navbar = () => {
                   >
                     <Link
                       to={`/shop?category=${cat.slug}`}
-                      className={`text-[13px] uppercase font-bold tracking-wide transition-colors py-7 border-b-2 flex items-center gap-1 ${
+                      className={`text-[13px] uppercase font-bold tracking-wide transition-colors py-7 border-b-2 flex items-center gap-1.5 ${
                         cat.isSale
-                          ? 'text-[#D9534F] border-transparent hover:border-[#D9534F]'
-                          : 'text-[#1A1E31] hover:text-[#242F66] border-transparent hover:border-[#242F66]'
+                          ? 'text-[#D9232D] border-transparent hover:border-[#D9232D]'
+                          : 'text-[#212121] hover:text-[#282C3F] border-transparent hover:border-[#282C3F]'
                       }`}
                     >
-                      {cat.name}
+                      <span>{cat.name}</span>
+                      {cat.isNew && (
+                        <span className="bg-[#4285F4] text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">
+                          New
+                        </span>
+                      )}
                       {cat.groups && <ChevronDown className="w-3 h-3 text-gray-400" />}
                     </Link>
                   </div>
@@ -141,7 +151,7 @@ const Navbar = () => {
                 {/* Search Button */}
                 <button
                   onClick={() => setIsSearchOpen(true)}
-                  className="hidden lg:flex p-2 text-[#242F66] hover:text-black transition-colors"
+                  className="hidden lg:flex p-2 text-[#282C3F] hover:text-black transition-colors"
                   aria-label="Search products"
                 >
                   <Search className="w-5 h-5" />
@@ -150,12 +160,12 @@ const Navbar = () => {
                 {/* Wishlist Icon */}
                 <Link
                   to="/wishlist"
-                  className="relative p-2 text-[#242F66] hover:text-black transition-colors"
+                  className="relative p-2 text-[#282C3F] hover:text-black transition-colors"
                   aria-label="Wishlist"
                 >
                   <Heart className="w-5 h-5" />
                   {wishlistCount > 0 && (
-                    <span className="absolute top-1 right-1 bg-[#D9534F] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                    <span className="absolute top-1 right-1 bg-[#D9232D] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
                       {wishlistCount}
                     </span>
                   )}
@@ -168,7 +178,7 @@ const Navbar = () => {
                       if (!user) setIsAuthModalOpen(true);
                       else navigate('/account');
                     }}
-                    className="p-2 text-[#242F66] hover:text-black transition-colors flex items-center gap-1"
+                    className="p-2 text-[#282C3F] hover:text-black transition-colors flex items-center gap-1"
                     aria-label="Account"
                   >
                     <User className="w-5 h-5" />
@@ -176,12 +186,12 @@ const Navbar = () => {
 
                   {/* Account Dropdown Menu */}
                   <div className="absolute right-0 top-full pt-1.5 hidden group-hover:block z-50">
-                    <div className="w-56 bg-white border border-gray-200 shadow-xl rounded-xl py-2 text-xs font-semibold text-[#1A1E31]">
+                    <div className="w-56 bg-white border border-gray-200 shadow-xl rounded-xl py-2 text-xs font-semibold text-[#212121]">
                       {user ? (
                         <>
                           <div className="px-4 py-2.5 border-b border-gray-100 bg-gray-50/80">
                             <p className="text-[10px] uppercase font-bold tracking-wider text-gray-400">Welcome Back</p>
-                            <p className="font-bold text-sm text-[#242F66] truncate">{user.name}</p>
+                            <p className="font-bold text-sm text-[#282C3F] truncate">{user.name}</p>
                             <p className="text-[11px] text-gray-500 truncate">{user.email || user.phone}</p>
                           </div>
                           <div className="py-1">
@@ -212,7 +222,7 @@ const Navbar = () => {
                           <p className="text-[11px] text-gray-600 font-medium">Log in to view your orders & saved wishlist</p>
                           <button
                             onClick={() => setIsAuthModalOpen(true)}
-                            className="w-full bg-[#242F66] hover:bg-[#1A1E31] text-white py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
+                            className="w-full bg-[#282C3F] hover:bg-[#212121] text-white py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
                           >
                             Log In / Sign Up
                           </button>
@@ -233,12 +243,12 @@ const Navbar = () => {
                 {/* Cart Bag Icon */}
                 <button
                   onClick={() => setIsDrawerOpen(true)}
-                  className="relative p-2 text-[#242F66] hover:text-black transition-colors"
+                  className="relative p-2 text-[#282C3F] hover:text-black transition-colors"
                   aria-label="Cart"
                 >
                   <ShoppingBag className="w-5 h-5" />
                   {totalItemCount > 0 && (
-                    <span className="absolute top-1 right-1 bg-[#242F66] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                    <span className="absolute top-1 right-1 bg-[#282C3F] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
                       {totalItemCount}
                     </span>
                   )}
@@ -293,7 +303,7 @@ const Navbar = () => {
                           to={`/shop?category=${cat.slug}`}
                           onClick={() => setIsMobileMenuOpen(false)}
                           className={`text-xs font-bold uppercase tracking-wider py-2 ${
-                            cat.isSale ? 'text-[#D9534F]' : 'text-[#1A1E31]'
+                            cat.isSale ? 'text-[#D9232D]' : 'text-[#212121]'
                           }`}
                         >
                           {cat.name}
@@ -312,7 +322,7 @@ const Navbar = () => {
                         <div className="pl-3 pb-2 space-y-3 bg-gray-50 rounded-lg p-3 mt-1 text-xs">
                           {cat.groups.map((grp, i) => (
                             <div key={i} className="space-y-1">
-                              <span className="font-bold text-[11px] text-[#242F66] uppercase block">{grp.title}</span>
+                              <span className="font-bold text-[11px] text-[#282C3F] uppercase block">{grp.title}</span>
                               <div className="pl-2 space-y-1">
                                 {grp.items.map((it, idx) => (
                                   <Link
@@ -335,7 +345,7 @@ const Navbar = () => {
               </div>
 
               {/* Utility links */}
-              <div className="p-4 pt-1 space-y-2.5 text-xs font-bold text-[#1A1E31]">
+              <div className="p-4 pt-1 space-y-2.5 text-xs font-bold text-[#212121]">
                 <Link to="/track-order" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between py-2 border-b border-gray-100">
                   <span>Track Live Order</span>
                   <ChevronRight className="w-4 h-4 text-gray-400" />
@@ -355,7 +365,7 @@ const Navbar = () => {
               {user ? (
                 <div className="flex items-center justify-between text-xs">
                   <div>
-                    <p className="font-bold text-[#1A1E31]">{user.name}</p>
+                    <p className="font-bold text-[#212121]">{user.name}</p>
                     <p className="text-[10px] text-gray-500">{user.email || user.phone}</p>
                   </div>
                   <button onClick={logout} className="font-bold text-rose-600">Logout</button>
@@ -366,7 +376,7 @@ const Navbar = () => {
                     setIsMobileMenuOpen(false);
                     setIsAuthModalOpen(true);
                   }}
-                  className="w-full bg-[#242F66] text-white text-xs font-bold py-2.5 rounded-md uppercase tracking-wider"
+                  className="w-full bg-[#282C3F] text-white text-xs font-bold py-2.5 rounded-md uppercase tracking-wider"
                 >
                   Log In / Sign Up
                 </button>

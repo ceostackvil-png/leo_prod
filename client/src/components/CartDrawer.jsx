@@ -77,8 +77,8 @@ const CartDrawer = () => {
           {/* Header (Exact Nobero) */}
           <div className="p-4 sm:p-5 border-b border-gray-200 flex items-center justify-between bg-white">
             <div className="flex items-center gap-2">
-              <ShoppingBag className="w-5 h-5 text-[#242F66]" />
-              <h2 className="text-sm sm:text-base font-bold text-[#1A1E31] uppercase tracking-wide font-display">
+              <ShoppingBag className="w-5 h-5 text-[#282C3F]" />
+              <h2 className="text-sm sm:text-base font-bold text-[#212121] uppercase tracking-wide font-display">
                 MY CART ({totalItemCount} {totalItemCount === 1 ? 'ITEM' : 'ITEMS'})
               </h2>
             </div>
@@ -92,7 +92,7 @@ const CartDrawer = () => {
           </div>
 
           {/* Free Shipping Progress Bar (Exact Nobero) */}
-          <div className="bg-[#242F66] text-white px-5 py-3 text-xs">
+          <div className="bg-[#282C3F] text-white px-5 py-3 text-xs">
             <div className="flex items-center justify-between mb-1.5 font-medium">
               <span className="flex items-center gap-1.5">
                 <Truck className="w-4 h-4 text-emerald-400" />
@@ -122,7 +122,7 @@ const CartDrawer = () => {
                 <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 text-gray-400">
                   <ShoppingBag className="w-8 h-8" />
                 </div>
-                <h3 className="text-base font-bold text-[#1A1E31]">Your cart is empty</h3>
+                <h3 className="text-base font-bold text-[#212121]">Your cart is empty</h3>
                 <p className="text-xs text-gray-500 mt-1 max-w-xs mx-auto">
                   Explore our heavy-weight oversized tees, travel joggers and curated sets.
                 </p>
@@ -131,7 +131,7 @@ const CartDrawer = () => {
                     setIsDrawerOpen(false);
                     navigate('/shop');
                   }}
-                  className="mt-6 inline-flex items-center gap-2 bg-[#242F66] text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-md hover:bg-[#1A1E31] transition-all shadow-sm"
+                  className="mt-6 inline-flex items-center gap-2 bg-[#282C3F] text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-md hover:bg-[#212121] transition-all shadow-sm"
                 >
                   EXPLORE BESTSELLERS <ArrowRight className="w-4 h-4" />
                 </button>
@@ -150,7 +150,7 @@ const CartDrawer = () => {
                   <div className="flex-1 min-w-0 flex flex-col justify-between">
                     <div>
                       <div className="flex justify-between items-start pr-6">
-                        <h4 className="text-xs font-bold text-[#1A1E31] leading-snug line-clamp-1">
+                        <h4 className="text-xs font-bold text-[#212121] leading-snug line-clamp-1">
                           {item.title}
                         </h4>
                       </div>
@@ -174,7 +174,7 @@ const CartDrawer = () => {
                         >
                           <Minus className="w-3 h-3" />
                         </button>
-                        <span className="px-2.5 text-xs font-bold text-[#1A1E31]">
+                        <span className="px-2.5 text-xs font-bold text-[#212121]">
                           {item.quantity}
                         </span>
                         <button
@@ -188,7 +188,7 @@ const CartDrawer = () => {
 
                       {/* Price */}
                       <div className="text-right">
-                        <span className="text-xs sm:text-sm font-bold text-[#1A1E31]">
+                        <span className="text-xs sm:text-sm font-bold text-[#212121]">
                           ₹{item.price * item.quantity}
                         </span>
                         {item.mrp && (
@@ -226,13 +226,13 @@ const CartDrawer = () => {
                       placeholder="Enter Coupon Code"
                       value={inputCoupon}
                       onChange={(e) => setInputCoupon(e.target.value.toUpperCase())}
-                      className="w-full pl-9 pr-3 py-2 text-xs font-semibold bg-white border border-gray-300 rounded-md uppercase placeholder:normal-case focus:outline-none focus:border-[#242F66]"
+                      className="w-full pl-9 pr-3 py-2 text-xs font-semibold bg-white border border-gray-300 rounded-md uppercase placeholder:normal-case focus:outline-none focus:border-[#282C3F]"
                     />
                   </div>
                   <button
                     onClick={() => handleApply()}
                     disabled={isApplyingCoupon || !inputCoupon.trim()}
-                    className="bg-[#242F66] text-white text-xs font-bold px-4 py-2 rounded-md hover:bg-[#1A1E31] disabled:opacity-50 transition-colors"
+                    className="bg-[#282C3F] text-white text-xs font-bold px-4 py-2 rounded-md hover:bg-[#212121] disabled:opacity-50 transition-colors"
                   >
                     {isApplyingCoupon ? 'APPLYING...' : 'APPLY'}
                   </button>
@@ -245,9 +245,9 @@ const CartDrawer = () => {
                       <button
                         key={cpn.code}
                         onClick={() => handleApply(cpn.code)}
-                        className="text-[10px] font-semibold bg-white border border-dashed border-gray-300 hover:border-[#242F66] text-gray-700 px-2.5 py-1 rounded transition-colors inline-flex items-center gap-1"
+                        className="text-[10px] font-semibold bg-white border border-dashed border-gray-300 hover:border-[#282C3F] text-gray-700 px-2.5 py-1 rounded transition-colors inline-flex items-center gap-1"
                       >
-                        <Tag className="w-2.5 h-2.5 text-[#242F66]" />
+                        <Tag className="w-2.5 h-2.5 text-[#282C3F]" />
                         <strong>{cpn.code}</strong> ({cpn.desc})
                       </button>
                     ))}
@@ -285,13 +285,13 @@ const CartDrawer = () => {
                   <span className="font-semibold text-gray-900">₹{totalMrp || subtotal}</span>
                 </div>
                 {totalSavings > 0 && (
-                  <div className="flex justify-between text-[#12B76A] font-medium">
+                  <div className="flex justify-between text-[#00B852] font-medium">
                     <span>Discount on MRP</span>
                     <span>-₹{totalSavings}</span>
                   </div>
                 )}
                 {discountAmount > 0 && (
-                  <div className="flex justify-between text-[#12B76A] font-medium">
+                  <div className="flex justify-between text-[#00B852] font-medium">
                     <span>Coupon Discount</span>
                     <span>-₹{discountAmount}</span>
                   </div>
@@ -299,23 +299,23 @@ const CartDrawer = () => {
                 <div className="flex justify-between">
                   <span>Delivery Charges</span>
                   {shippingFee === 0 ? (
-                    <span className="text-[#12B76A] font-bold uppercase text-[11px]">
+                    <span className="text-[#00B852] font-bold uppercase text-[11px]">
                       FREE
                     </span>
                   ) : (
                     <span className="font-semibold text-gray-900">₹{shippingFee}</span>
                   )}
                 </div>
-                <div className="flex justify-between text-sm font-bold text-[#1A1E31] pt-2 border-t border-gray-200">
+                <div className="flex justify-between text-sm font-bold text-[#212121] pt-2 border-t border-gray-200">
                   <span>Total Payable</span>
-                  <span className="text-base text-[#242F66]">₹{finalTotal}</span>
+                  <span className="text-base text-[#282C3F]">₹{finalTotal}</span>
                 </div>
               </div>
 
               {/* Checkout CTA */}
               <button
                 onClick={handleProceedCheckout}
-                className="w-full bg-[#242F66] hover:bg-[#1A1E31] text-white py-3.5 rounded-lg font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all"
+                className="w-full bg-[#282C3F] hover:bg-[#212121] text-white py-3.5 rounded-lg font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all"
               >
                 CONTINUE TO CHECKOUT • ₹{finalTotal}
                 <ArrowRight className="w-4 h-4" />

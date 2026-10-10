@@ -26,7 +26,10 @@ const HomePage = () => {
           api.getBlogs()
         ]);
 
-        if (banRes.success) setBanners(banRes.data);
+        if (banRes.success) {
+          // Filter out the AI-generated banner on the client side
+          setBanners(banRes.data.filter(b => b.desktopImage !== '/images/nobero/hero_banner_joggers_des.jpg'));
+        }
         if (prodRes.success) setProducts(prodRes.data);
         if (lookRes.success) setLooks(lookRes.data);
         if (blogRes.success) setBlogs(blogRes.data);
@@ -62,9 +65,6 @@ const HomePage = () => {
 
       {/* 7. Explore Men's Fashion Blogs */}
       <ExploreBlogs blogs={blogs} />
-
-      {/* 8. App Download Banner */}
-      <AppPromotion />
     </div>
   );
 };

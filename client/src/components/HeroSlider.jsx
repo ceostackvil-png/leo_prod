@@ -55,8 +55,6 @@ const HeroSlider = ({ banners = [] }) => {
   return (
     <div
       className="relative w-full overflow-hidden group select-none bg-gray-100"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -90,7 +88,7 @@ const HeroSlider = ({ banners = [] }) => {
       {/* Desktop Navigation Arrows */}
       <button
         onClick={handlePrev}
-        className="hidden sm:flex absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-[#1A1E31] items-center justify-center shadow-md transition-all opacity-0 group-hover:opacity-100"
+        className="hidden sm:flex absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-[#212121] items-center justify-center shadow-md transition-all opacity-0 group-hover:opacity-100"
         aria-label="Previous Slide"
       >
         <ChevronLeft className="w-5 h-5" />
@@ -98,7 +96,7 @@ const HeroSlider = ({ banners = [] }) => {
 
       <button
         onClick={handleNext}
-        className="hidden sm:flex absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-[#1A1E31] items-center justify-center shadow-md transition-all opacity-0 group-hover:opacity-100"
+        className="hidden sm:flex absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-[#212121] items-center justify-center shadow-md transition-all opacity-0 group-hover:opacity-100"
         aria-label="Next Slide"
       >
         <ChevronRight className="w-5 h-5" />
@@ -112,7 +110,7 @@ const HeroSlider = ({ banners = [] }) => {
             onClick={() => setCurrentIndex(idx)}
             className={`transition-all duration-300 rounded-full ${
               idx === currentIndex
-                ? 'w-5 sm:w-6 h-1.5 bg-[#242F66]'
+                ? 'w-5 sm:w-6 h-1.5 bg-[#282C3F]'
                 : 'w-1.5 h-1.5 bg-gray-300/80 hover:bg-gray-400'
             }`}
             aria-label={`Go to slide ${idx + 1}`}

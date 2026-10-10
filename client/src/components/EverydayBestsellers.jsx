@@ -26,10 +26,10 @@ const EverydayBestsellers = ({ products = [] }) => {
         {/* Header & Tabs */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 gap-4">
           <div>
-            <span className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest text-[#D9534F] mb-1">
-              <Flame className="w-3.5 h-3.5 fill-[#D9534F]" /> MOST LOVED STYLES
+            <span className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest text-[#D9232D] mb-1">
+              <Flame className="w-3.5 h-3.5 fill-[#D9232D]" /> MOST LOVED STYLES
             </span>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-tight text-[#1A1E31]">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-tight text-[#212121]">
               Everyday Bestsellers
             </h2>
             <p className="text-xs sm:text-sm text-[#666875] mt-1 font-medium">
@@ -45,8 +45,8 @@ const EverydayBestsellers = ({ products = [] }) => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`text-xs font-bold px-3.5 py-1.5 rounded-full whitespace-nowrap transition-all ${
                   activeTab === tab.id
-                    ? 'bg-[#242F66] text-white shadow-sm'
-                    : 'bg-gray-100 text-[#666875] hover:text-[#1A1E31] hover:bg-gray-200'
+                    ? 'bg-[#282C3F] text-white shadow-sm'
+                    : 'bg-gray-100 text-[#666875] hover:text-[#212121] hover:bg-gray-200'
                 }`}
               >
                 {tab.label}
@@ -66,7 +66,7 @@ const EverydayBestsellers = ({ products = [] }) => {
         <div className="mt-8 sm:mt-10 text-center">
           <Link
             to="/men"
-            className="inline-flex items-center gap-2 bg-[#242F66] hover:bg-[#1A1E31] text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-8 py-3 rounded-md transition-all shadow-sm hover:shadow"
+            className="inline-flex items-center gap-2 bg-[#282C3F] hover:bg-[#212121] text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-8 py-3 rounded-md transition-all shadow-sm hover:shadow"
           >
             VIEW ALL BESTSELLERS <ArrowRight className="w-4 h-4" />
           </Link>

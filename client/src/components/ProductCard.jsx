@@ -62,7 +62,7 @@ const ProductCard = ({ product }) => {
 
         {/* Bestseller Badge */}
         {product.isBestseller && (
-          <span className="absolute top-2 left-2 bg-[#242F66] text-white text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm">
+          <span className="absolute top-2 left-2 bg-[#282C3F] text-white text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm">
             BESTSELLER
           </span>
         )}
@@ -73,7 +73,7 @@ const ProductCard = ({ product }) => {
           className={`absolute top-2 right-2 z-10 w-7 h-7 rounded-full flex items-center justify-center transition-all ${
             isWishlisted
               ? 'bg-white text-rose-600 shadow'
-              : 'bg-white/80 hover:bg-white text-[#1A1E31] hover:text-rose-600 shadow-sm'
+              : 'bg-white/80 hover:bg-white text-[#212121] hover:text-rose-600 shadow-sm'
           }`}
           aria-label="Wishlist"
         >
@@ -84,7 +84,7 @@ const ProductCard = ({ product }) => {
 
         {/* Rating Badge on Image */}
         {product.rating && (
-          <div className="absolute bottom-2 left-2 z-10 bg-white/95 px-1.5 py-0.5 rounded text-[10px] font-bold text-[#1A1E31] flex items-center gap-1 shadow-sm">
+          <div className="absolute bottom-2 left-2 z-10 bg-white/95 px-1.5 py-0.5 rounded text-[10px] font-bold text-[#212121] flex items-center gap-1 shadow-sm">
             <span>{product.rating}</span>
             <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
             <span className="text-[#666875] font-normal">({product.reviewCount || 100})</span>
@@ -111,7 +111,7 @@ const ProductCard = ({ product }) => {
                   className={`flex-1 py-1 text-[10px] font-bold rounded border transition-all ${
                     addedSize === sizeName
                       ? 'bg-emerald-600 text-white border-emerald-600'
-                      : 'bg-white hover:bg-[#242F66] hover:text-white border-gray-300 text-[#1A1E31]'
+                      : 'bg-white hover:bg-[#282C3F] hover:text-white border-gray-300 text-[#212121]'
                   }`}
                 >
                   {addedSize === sizeName ? <Check className="w-3 h-3 mx-auto" /> : sizeName}
@@ -125,7 +125,7 @@ const ProductCard = ({ product }) => {
         {!showQuickSizes && (
           <button
             onClick={() => setShowQuickSizes(true)}
-            className="absolute inset-x-0 bottom-0 z-10 bg-[#242F66]/90 hover:bg-[#242F66] text-white py-2 text-[11px] font-bold uppercase tracking-wider hidden lg:flex items-center justify-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute inset-x-0 bottom-0 z-10 bg-[#282C3F]/90 hover:bg-[#282C3F] text-white py-2 text-[11px] font-bold uppercase tracking-wider hidden lg:flex items-center justify-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"
           >
             <ShoppingBag className="w-3.5 h-3.5" /> Quick Add
           </button>
@@ -158,14 +158,14 @@ const ProductCard = ({ product }) => {
         {/* Product Title */}
         <Link
           to={`/product/${product.slug || product.id}`}
-          className="text-[13px] sm:text-[14px] font-semibold text-[#1A1E31] hover:text-[#242F66] truncate transition-colors"
+          className="text-[13px] sm:text-[14px] font-semibold text-[#212121] hover:text-[#282C3F] truncate transition-colors"
         >
           {product.title}
         </Link>
 
         {/* Price Breakdown */}
         <div className="flex items-baseline gap-1.5 mt-0.5">
-          <span className="text-sm sm:text-base font-bold text-[#1A1E31]">
+          <span className="text-sm sm:text-base font-bold text-[#212121]">
             ₹{product.price}
           </span>
           {product.mrp && (
@@ -174,7 +174,7 @@ const ProductCard = ({ product }) => {
             </span>
           )}
           {product.discount && (
-            <span className="text-xs font-semibold text-[#12B76A]">
+            <span className="text-xs font-semibold text-[#00B852]">
               {product.discount}
             </span>
           )}
@@ -182,7 +182,7 @@ const ProductCard = ({ product }) => {
 
         {/* Lowest price note */}
         {product.lowestPrice30Days && (
-          <p className="text-[10px] text-[#12B76A] font-medium">
+          <p className="text-[10px] text-[#00B852] font-medium">
             Lowest price in 30 days: ₹{product.lowestPrice30Days}
           </p>
         )}

@@ -10,7 +10,7 @@ const ExploreBlogs = ({ blogs = [] }) => {
         
         {/* Section Header */}
         <div className="text-center mb-6 lg:mb-8">
-          <h2 className="text-[#1A1E31] text-xl lg:text-2xl font-bold font-display">
+          <h2 className="text-[#212121] text-xl lg:text-2xl font-bold font-display">
             Explore Blogs
           </h2>
         </div>
@@ -39,7 +39,7 @@ const ExploreBlogs = ({ blogs = [] }) => {
                   <div className="text-[11px] font-semibold text-[#666875] mb-1">
                     <span>{blog.date}</span> • <span>{blog.category}</span>
                   </div>
-                  <h3 className="text-sm font-bold text-[#1A1E31] group-hover:text-[#242F66] transition-colors line-clamp-2 leading-snug">
+                  <h3 className="text-sm font-bold text-[#212121] group-hover:text-[#282C3F] transition-colors line-clamp-2 leading-snug">
                     {blog.title}
                   </h3>
                   <p className="text-xs text-[#666875] line-clamp-2 mt-1">
@@ -47,7 +47,7 @@ const ExploreBlogs = ({ blogs = [] }) => {
                   </p>
                 </div>
 
-                <span className="text-xs font-bold text-[#242F66] group-hover:underline pt-2 inline-block">
+                <span className="text-xs font-bold text-[#282C3F] group-hover:underline pt-2 inline-block">
                   Read More →
                 </span>
               </div>

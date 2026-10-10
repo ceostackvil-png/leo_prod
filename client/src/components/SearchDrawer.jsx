@@ -134,7 +134,7 @@ const SearchDrawer = ({ isOpen, onClose }) => {
           
           {/* 1. Header Search Bar (Exact Nobero Style) */}
           <div className="flex items-center justify-between gap-3 pb-4 border-b border-gray-200">
-            <form onSubmit={handleSearchSubmit} className="flex-1 flex items-center gap-3 bg-gray-50 rounded-full px-4 py-2.5 sm:py-3 border border-gray-200 focus-within:border-[#242F66] focus-within:bg-white transition-all shadow-inner">
+            <form onSubmit={handleSearchSubmit} className="flex-1 flex items-center gap-3 bg-gray-50 rounded-full px-4 py-2.5 sm:py-3 border border-gray-200 focus-within:border-[#282C3F] focus-within:bg-white transition-all shadow-inner">
               <Search className="w-5 h-5 text-gray-400 shrink-0" />
               <input
                 ref={inputRef}
@@ -142,7 +142,7 @@ const SearchDrawer = ({ isOpen, onClose }) => {
                 placeholder="Search for Oversized Tees, Joggers, Polos, Hoodies..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="w-full text-sm sm:text-base font-medium text-[#1A1E31] placeholder:text-gray-400 bg-transparent border-none outline-none"
+                className="w-full text-sm sm:text-base font-medium text-[#212121] placeholder:text-gray-400 bg-transparent border-none outline-none"
               />
               {query && (
                 <button
@@ -157,7 +157,7 @@ const SearchDrawer = ({ isOpen, onClose }) => {
 
             <button
               onClick={onClose}
-              className="p-2.5 text-gray-500 hover:text-[#1A1E31] rounded-full hover:bg-gray-100 transition-colors shrink-0"
+              className="p-2.5 text-gray-500 hover:text-[#212121] rounded-full hover:bg-gray-100 transition-colors shrink-0"
               aria-label="Close search"
             >
               <X className="w-6 h-6" />
@@ -173,7 +173,7 @@ const SearchDrawer = ({ isOpen, onClose }) => {
                 <div>
                   <div className="flex items-center justify-between mb-2.5">
                     <span className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-gray-400">
-                      <History className="w-3.5 h-3.5 text-[#242F66]" /> Recent Searches
+                      <History className="w-3.5 h-3.5 text-[#282C3F]" /> Recent Searches
                     </span>
                     <button
                       onClick={clearRecentSearches}
@@ -187,7 +187,7 @@ const SearchDrawer = ({ isOpen, onClose }) => {
                       <button
                         key={idx}
                         onClick={() => handleTagClick(item)}
-                        className="text-xs font-semibold bg-gray-100 hover:bg-[#242F66] hover:text-white text-[#1A1E31] px-3.5 py-1.5 rounded-full transition-all flex items-center gap-1"
+                        className="text-xs font-semibold bg-gray-100 hover:bg-[#282C3F] hover:text-white text-[#212121] px-3.5 py-1.5 rounded-full transition-all flex items-center gap-1"
                       >
                         {item}
                       </button>
@@ -206,7 +206,7 @@ const SearchDrawer = ({ isOpen, onClose }) => {
                     <button
                       key={idx}
                       onClick={() => handleTagClick(item)}
-                      className="text-xs font-semibold bg-gray-50 hover:bg-[#242F66] hover:text-white text-gray-700 px-3.5 py-1.5 rounded-full border border-gray-200 transition-all"
+                      className="text-xs font-semibold bg-gray-50 hover:bg-[#282C3F] hover:text-white text-gray-700 px-3.5 py-1.5 rounded-full border border-gray-200 transition-all"
                     >
                       {item}
                     </button>
@@ -225,7 +225,7 @@ const SearchDrawer = ({ isOpen, onClose }) => {
                       key={idx}
                       to={`/shop?category=${cat.slug}`}
                       onClick={onClose}
-                      className="p-3 bg-gray-50 hover:bg-gray-100 rounded-xl border border-gray-200 text-xs font-bold text-[#1A1E31] flex items-center justify-between transition-colors group"
+                      className="p-3 bg-gray-50 hover:bg-gray-100 rounded-xl border border-gray-200 text-xs font-bold text-[#212121] flex items-center justify-between transition-colors group"
                     >
                       <span>{cat.label}</span>
                       <ArrowRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-black group-hover:translate-x-0.5 transition-transform" />
@@ -247,7 +247,7 @@ const SearchDrawer = ({ isOpen, onClose }) => {
           {/* 4. No Results Found */}
           {!loading && query && results.length === 0 && (
             <div className="py-12 text-center space-y-2">
-              <p className="text-base font-bold text-[#1A1E31]">No products found for "{query}"</p>
+              <p className="text-base font-bold text-[#212121]">No products found for "{query}"</p>
               <p className="text-xs text-gray-500">
                 Try searching for "Oversized", "Joggers", "Polos", or "Co-Ords"
               </p>
@@ -263,7 +263,7 @@ const SearchDrawer = ({ isOpen, onClose }) => {
                 </h3>
                 <button
                   onClick={handleSearchSubmit}
-                  className="text-xs font-bold text-[#242F66] hover:underline inline-flex items-center gap-1"
+                  className="text-xs font-bold text-[#282C3F] hover:underline inline-flex items-center gap-1"
                 >
                   View all results <ArrowRight className="w-3.5 h-3.5" />
                 </button>
@@ -285,7 +285,7 @@ const SearchDrawer = ({ isOpen, onClose }) => {
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                         {product.discount && (
-                          <span className="absolute top-1.5 left-1.5 bg-[#D9534F] text-white text-[9px] font-bold px-1.5 py-0.5 rounded">
+                          <span className="absolute top-1.5 left-1.5 bg-[#D9232D] text-white text-[9px] font-bold px-1.5 py-0.5 rounded">
                             {product.discount}
                           </span>
                         )}
@@ -296,13 +296,13 @@ const SearchDrawer = ({ isOpen, onClose }) => {
                         )}
                       </div>
                       
-                      <h4 className="text-xs font-bold text-[#1A1E31] line-clamp-1 group-hover:text-[#242F66] transition-colors">
+                      <h4 className="text-xs font-bold text-[#212121] line-clamp-1 group-hover:text-[#282C3F] transition-colors">
                         {product.title}
                       </h4>
                       <p className="text-[10px] text-gray-500 truncate">{product.subtitle}</p>
                       
                       <div className="flex items-baseline gap-1.5 mt-1">
-                        <span className="text-xs sm:text-sm font-bold text-[#1A1E31]">₹{product.price}</span>
+                        <span className="text-xs sm:text-sm font-bold text-[#212121]">₹{product.price}</span>
                         {product.mrp && (
                           <span className="text-[10px] text-gray-400 line-through">₹{product.mrp}</span>
                         )}
@@ -316,7 +316,7 @@ const SearchDrawer = ({ isOpen, onClose }) => {
               <div className="mt-6 text-center">
                 <button
                   onClick={handleSearchSubmit}
-                  className="bg-[#242F66] hover:bg-[#1A1E31] text-white text-xs font-bold uppercase tracking-wider px-8 py-2.5 rounded-lg transition-colors shadow-sm"
+                  className="bg-[#282C3F] hover:bg-[#212121] text-white text-xs font-bold uppercase tracking-wider px-8 py-2.5 rounded-lg transition-colors shadow-sm"
                 >
                   View All Results for "{query}"
                 </button>

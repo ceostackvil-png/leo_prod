@@ -58,13 +58,13 @@ const CategoryGrid = () => {
             <span className="text-xs font-bold uppercase tracking-widest text-[#666875]">
               Curated Wardrobe
             </span>
-            <h2 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#1A1E31] mt-0.5">
+            <h2 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#212121] mt-0.5">
               Shop By Category
             </h2>
           </div>
           <Link
             to="/shop"
-            className="text-xs sm:text-sm font-bold text-[#1A1E31] hover:text-[#242F66] inline-flex items-center gap-1.5 mt-2 sm:mt-0 transition-colors"
+            className="text-xs sm:text-sm font-bold text-[#212121] hover:text-[#282C3F] inline-flex items-center gap-1.5 mt-2 sm:mt-0 transition-colors"
           >
             Explore All Categories <ArrowRight className="w-4 h-4" />
           </Link>
@@ -91,7 +91,7 @@ const CategoryGrid = () => {
 
                 {/* Badge */}
                 {cat.badge && (
-                  <span className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm text-[#1A1E31] text-[9px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
+                  <span className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm text-[#212121] text-[9px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
                     {cat.badge}
                   </span>
                 )}

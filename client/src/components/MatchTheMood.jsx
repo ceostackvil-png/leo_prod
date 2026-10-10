@@ -44,10 +44,10 @@ const MatchTheMood = () => {
       <StorefrontContainer>
         {/* Section Heading */}
         <div className="text-center max-w-xl mx-auto mb-6 sm:mb-10">
-          <span className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest text-[#242F66] mb-1">
+          <span className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest text-[#282C3F] mb-1">
             CURATED OUTFIT EDITS
           </span>
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-tight text-[#1A1E31]">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-tight text-[#212121]">
             Match The Mood
           </h2>
           <p className="text-xs sm:text-sm text-[#666875] mt-1 font-medium">

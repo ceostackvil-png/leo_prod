@@ -9,19 +9,19 @@ export const AboutUsPage = () => (
       <div className="max-w-3xl mx-auto space-y-6 text-[#4A4D5E] text-xs sm:text-sm leading-relaxed">
         <div className="text-center pb-4 border-b border-gray-200">
           <span className="text-xs font-bold uppercase tracking-widest text-[#666875] block mb-1">OUR PHILOSOPHY</span>
-          <h1 className="text-2xl sm:text-3xl font-bold uppercase text-[#1A1E31]">About LEO Men's Wear</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold uppercase text-[#212121]">About LEO Men's Wear</h1>
         </div>
 
         <p>
           Founded in 2024, <strong>LEO</strong> is built around a singular mission: engineering comfortable, durable, and style-forward Men's fashion staples that elevate everyday streetwear.
         </p>
 
-        <h3 className="text-sm sm:text-base font-bold uppercase text-[#1A1E31] pt-2">The 240 GSM Difference</h3>
+        <h3 className="text-sm sm:text-base font-bold uppercase text-[#212121] pt-2">The 240 GSM Difference</h3>
         <p>
           While standard fast-fashion tees warp and lose shape after a single cycle in the wash, our flagship Oversized Tees are woven from premium 240 GSM combed cotton with high-density bio-washing. The result is a substantial, structured drape that maintains its clean boxy silhouette year-round.
         </p>
 
-        <h3 className="text-sm sm:text-base font-bold uppercase text-[#1A1E31] pt-2">Zero Fast-Fashion Compromises</h3>
+        <h3 className="text-sm sm:text-base font-bold uppercase text-[#212121] pt-2">Zero Fast-Fashion Compromises</h3>
         <p>
           From Air-Flex 4-way stretch cargo joggers to 380 GSM fleece hoodies, every garment is double-stitched, pre-shrunk, and engineered for the modern man on the move.
         </p>
@@ -35,12 +35,12 @@ export const ShippingPolicyPage = () => (
     <StorefrontContainer>
       <div className="max-w-3xl mx-auto space-y-6 text-[#4A4D5E] text-xs sm:text-sm leading-relaxed">
         <div className="text-center pb-4 border-b border-gray-200">
-          <Truck className="w-8 h-8 text-[#242F66] mx-auto mb-2" />
-          <h1 className="text-2xl sm:text-3xl font-bold uppercase text-[#1A1E31]">Shipping & Delivery Policy</h1>
+          <Truck className="w-8 h-8 text-[#282C3F] mx-auto mb-2" />
+          <h1 className="text-2xl sm:text-3xl font-bold uppercase text-[#212121]">Shipping & Delivery Policy</h1>
         </div>
 
         <div className="p-4 bg-[#F7F8FA] rounded-lg border border-gray-200">
-          <p className="font-bold text-[#1A1E31]">Key Highlights:</p>
+          <p className="font-bold text-[#212121]">Key Highlights:</p>
           <ul className="list-disc pl-5 space-y-1 mt-1">
             <li><strong>FREE Express Shipping</strong> on all prepaid & COD orders above ₹799.</li>
             <li>Standard delivery fee of ₹99 applies to orders under ₹799.</li>
@@ -48,7 +48,7 @@ export const ShippingPolicyPage = () => (
           </ul>
         </div>
 
-        <h3 className="text-sm sm:text-base font-bold uppercase text-[#1A1E31]">Delivery Timelines</h3>
+        <h3 className="text-sm sm:text-base font-bold uppercase text-[#212121]">Delivery Timelines</h3>
         <p>
           • Metro Cities (Bengaluru, Mumbai, Delhi-NCR, Hyderabad, Chennai, Kolkata): <strong>2 - 4 Business Days</strong>.<br />
           • Rest of India: <strong>4 - 7 Business Days</strong>.
@@ -63,8 +63,8 @@ export const ReturnsPolicyPage = () => (
     <StorefrontContainer>
       <div className="max-w-3xl mx-auto space-y-6 text-[#4A4D5E] text-xs sm:text-sm leading-relaxed">
         <div className="text-center pb-4 border-b border-gray-200">
-          <RotateCcw className="w-8 h-8 text-[#242F66] mx-auto mb-2" />
-          <h1 className="text-2xl sm:text-3xl font-bold uppercase text-[#1A1E31]">7-Day Returns & Exchanges</h1>
+          <RotateCcw className="w-8 h-8 text-[#282C3F] mx-auto mb-2" />
+          <h1 className="text-2xl sm:text-3xl font-bold uppercase text-[#212121]">7-Day Returns & Exchanges</h1>
         </div>
 
         <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-200 text-emerald-900">
@@ -74,7 +74,7 @@ export const ReturnsPolicyPage = () => (
           </p>
         </div>
 
-        <h3 className="text-sm sm:text-base font-bold uppercase text-[#1A1E31]">Return Guidelines</h3>
+        <h3 className="text-sm sm:text-base font-bold uppercase text-[#212121]">Return Guidelines</h3>
         <p>
           1. Items must be unworn, unwashed, with all original tags attached.<br />
           2. Doorstep reverse pickup is arranged free of charge in over 19,000 pincodes across India.<br />
@@ -98,14 +98,14 @@ export const FaqPage = () => {
       <StorefrontContainer>
         <div className="max-w-3xl mx-auto space-y-6">
           <div className="text-center pb-4 border-b border-gray-200">
-            <HelpCircle className="w-8 h-8 text-[#242F66] mx-auto mb-2" />
-            <h1 className="text-2xl sm:text-3xl font-bold uppercase text-[#1A1E31]">Frequently Asked Questions</h1>
+            <HelpCircle className="w-8 h-8 text-[#282C3F] mx-auto mb-2" />
+            <h1 className="text-2xl sm:text-3xl font-bold uppercase text-[#212121]">Frequently Asked Questions</h1>
           </div>
 
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
               <div key={idx} className="p-5 bg-[#F7F8FA] rounded-xl border border-gray-200">
-                <h3 className="text-xs sm:text-sm font-bold text-[#1A1E31] mb-1.5">{faq.q}</h3>
+                <h3 className="text-xs sm:text-sm font-bold text-[#212121] mb-1.5">{faq.q}</h3>
                 <p className="text-xs text-[#4A4D5E] leading-relaxed">{faq.a}</p>
               </div>
             ))}
@@ -121,8 +121,8 @@ export const PrivacyPolicyPage = () => (
     <StorefrontContainer>
       <div className="max-w-3xl mx-auto space-y-6 text-[#4A4D5E] text-xs sm:text-sm leading-relaxed">
         <div className="text-center pb-4 border-b border-gray-200">
-          <Lock className="w-8 h-8 text-[#242F66] mx-auto mb-2" />
-          <h1 className="text-2xl sm:text-3xl font-bold uppercase text-[#1A1E31]">Privacy Policy</h1>
+          <Lock className="w-8 h-8 text-[#282C3F] mx-auto mb-2" />
+          <h1 className="text-2xl sm:text-3xl font-bold uppercase text-[#212121]">Privacy Policy</h1>
         </div>
         <p>
           LEO Apparel values your privacy. We collect personal details strictly to process orders, facilitate doorstep delivery, and provide personalized support. We never sell or share your data with unauthorized third parties.
@@ -137,8 +137,8 @@ export const TermsOfServicePage = () => (
     <StorefrontContainer>
       <div className="max-w-3xl mx-auto space-y-6 text-[#4A4D5E] text-xs sm:text-sm leading-relaxed">
         <div className="text-center pb-4 border-b border-gray-200">
-          <FileText className="w-8 h-8 text-[#242F66] mx-auto mb-2" />
-          <h1 className="text-2xl sm:text-3xl font-bold uppercase text-[#1A1E31]">Terms of Service</h1>
+          <FileText className="w-8 h-8 text-[#282C3F] mx-auto mb-2" />
+          <h1 className="text-2xl sm:text-3xl font-bold uppercase text-[#212121]">Terms of Service</h1>
         </div>
         <p>
           By accessing and placing orders on LEO Men's Wear (leo.com / localhost:3000), you agree to our standard terms of purchase, billing, return timelines, and intellectual property conditions.
