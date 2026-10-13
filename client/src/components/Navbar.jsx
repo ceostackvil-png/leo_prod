@@ -17,6 +17,7 @@ import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import { useAuth } from '../context/AuthContext';
 import { api } from '../services/api';
+import BrandLogo from './BrandLogo';
 
 const Navbar = () => {
   const [categories, setCategories] = useState([]);
@@ -105,13 +106,9 @@ const Navbar = () => {
                   </button>
                 </div>
 
-                {/* Brand Logo: LEO (Clean left-aligned with proper margin) */}
-                <Link to="/" className="flex items-center shrink-0 pr-4 sm:pr-8 lg:pr-12">
-                  <img
-                    src="/images/logo (1).png"
-                    alt="LEO"
-                    className="h-8 sm:h-10 lg:h-11 w-auto object-contain"
-                  />
+                {/* Brand Logo: LEO KING */}
+                <Link to="/" className="flex items-center shrink-0 pr-4 sm:pr-8 lg:pr-12 hover:opacity-90 transition-opacity">
+                  <BrandLogo variant="light" subtitle="KING" size="sm" />
                 </Link>
               </div>
 
@@ -282,11 +279,9 @@ const Navbar = () => {
             <div>
               {/* Drawer Header */}
               <div className="p-4 border-b border-gray-200 flex items-center justify-between bg-white">
-                <img
-                  src="/images/logo (1).png"
-                  alt="LEO"
-                  className="h-8 w-auto object-contain"
-                />
+                <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
+                  <BrandLogo variant="light" subtitle="KING" size="sm" />
+                </Link>
                 <button onClick={() => setIsMobileMenuOpen(false)} className="p-1 text-gray-500">
                   <X className="w-5 h-5" />
                 </button>

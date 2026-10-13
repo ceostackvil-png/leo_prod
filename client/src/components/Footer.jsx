@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Instagram, Facebook, Youtube, Twitter } from 'lucide-react';
 import StorefrontContainer from './StorefrontContainer';
 
+import BrandLogo from './BrandLogo';
+
 const Footer = () => {
   return (
     <footer className="bg-[#282C3F] text-white select-none pb-16 lg:pb-0">
@@ -13,12 +15,8 @@ const Footer = () => {
             
             {/* Col 1: Brand & App */}
             <div className="col-span-2 lg:col-span-2 space-y-4">
-              <Link to="/" className="inline-block bg-white/90 px-3 py-1.5 rounded-lg shadow-sm">
-                <img
-                  src="/images/logo (1).png"
-                  alt="LEO"
-                  className="h-9 w-auto object-contain"
-                />
+              <Link to="/" className="inline-block hover:opacity-90 transition-opacity">
+                <BrandLogo variant="dark" subtitle="KING" size="md" />
               </Link>
               <p className="text-xs text-gray-300 max-w-sm leading-relaxed">
                 LEO is India's premium Men's everyday fashion brand built for effortless style and all-day comfort. Specializing in 240 GSM heavyweight tees, air-flex travel joggers, and premium co-ord sets.

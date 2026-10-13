@@ -756,6 +756,15 @@ const initialData = {
 
   coupons: [
     {
+      code: "B2G10",
+      type: "percent",
+      value: 10,
+      minOrder: 999,
+      description: "Buy 2 & Get 10% Off",
+      active: true,
+      usageCount: 512
+    },
+    {
       code: "LEO100",
       type: "flat",
       value: 100,
