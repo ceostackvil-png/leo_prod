@@ -288,30 +288,38 @@ const ProductDetailPage = () => {
                   </button>
                 )}
 
+                {/* LEO Official Luxury Brand Badge in Top-Left (Replacing color box with LEO symbol & name) */}
+                <div className="absolute top-4 left-4 z-20 flex items-center gap-2 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full shadow-md border border-gray-100 select-none">
+                  <div className="w-5 h-5 rounded-full p-[1px] bg-black border border-gray-400 overflow-hidden shrink-0">
+                    <img src="/images/logo (1).png" alt="LEO" className="w-full h-full object-cover" />
+                  </div>
+                  <span className="text-[11px] font-bold tracking-[0.22em] text-[#181B2D] uppercase">LEO KING</span>
+                </div>
+
                 {/* Front / Back Interactive Floating Pill */}
-                <div className="absolute top-4 left-4 z-20 flex items-center bg-black/80 backdrop-blur-md p-1 rounded-full shadow-md">
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedImageIdx(0);
-                    }}
-                    className={`px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase transition-all ${
-                      selectedImageIdx === 0
-                        ? 'bg-white text-black shadow-sm'
-                        : 'text-white/80 hover:text-white'
-                    }`}
-                  >
-                    Front View
-                  </button>
-                  {gallery.length > 1 && (
+                {gallery.length > 1 && (
+                  <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex items-center bg-black/85 backdrop-blur-md p-1 rounded-full shadow-lg">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedImageIdx(0);
+                      }}
+                      className={`px-3.5 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase transition-all ${
+                        selectedImageIdx === 0
+                          ? 'bg-white text-black shadow-sm'
+                          : 'text-white/80 hover:text-white'
+                      }`}
+                    >
+                      Front View
+                    </button>
                     <button
                       type="button"
                       onClick={(e) => {
                         e.stopPropagation();
                         setSelectedImageIdx(1);
                       }}
-                      className={`px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase transition-all ${
+                      className={`px-3.5 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase transition-all ${
                         selectedImageIdx === 1
                           ? 'bg-white text-black shadow-sm'
                           : 'text-white/80 hover:text-white'
@@ -319,8 +327,8 @@ const ProductDetailPage = () => {
                     >
                       Back View
                     </button>
-                  )}
-                </div>
+                  </div>
+                )}
 
                 {/* Bottom carousel dots indicator */}
                 {gallery.length > 1 && (
