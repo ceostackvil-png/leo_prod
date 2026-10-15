@@ -19,12 +19,15 @@ import { useAuth } from '../context/AuthContext';
 import { api } from '../services/api';
 import BrandLogo from './BrandLogo';
 
+const SEARCH_KEYWORDS = ['“T-shirts”', '“Polos”', '“Joggers”', '“Hoodies”', '“Co-ords”'];
+
 const Navbar = () => {
   const [categories, setCategories] = useState([]);
   const [activeMegaCategory, setActiveMegaCategory] = useState(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [expandedMobileCat, setExpandedMobileCat] = useState(null);
+  const [keywordIndex, setKeywordIndex] = useState(0);
 
   const { totalItemCount, setIsDrawerOpen } = useCart();
   const { wishlistCount } = useWishlist();
@@ -95,6 +98,13 @@ const Navbar = () => {
       }
     };
     loadCategories();
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setKeywordIndex((prev) => (prev + 1) % SEARCH_KEYWORDS.length);
+    }, 2800);
+    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
@@ -212,16 +222,22 @@ const Navbar = () => {
                 })}
               </nav>
 
-              {/* Right Utility Icons (Search, Wishlist, Account, Cart) */}
+              {/* Right Utility Icons (Search Bar, Wishlist, Account, Cart) */}
               <div className="flex items-center space-x-2 sm:space-x-3.5 shrink-0 pl-2">
-                {/* Search Button */}
-                <button
-                  onClick={() => setIsSearchOpen(true)}
-                  className="hidden lg:flex p-2 text-[#282C3F] hover:text-black transition-colors"
-                  aria-label="Search products"
-                >
-                  <Search className="w-5 h-5" />
-                </button>
+                {/* Search Bar matching Nobero reference */}
+                <div className="hidden lg:flex items-center mr-1">
+                  <button
+                    type="button"
+                    onClick={() => setIsSearchOpen(true)}
+                    className="w-[215px] xl:w-[250px] 2xl:w-[270px] h-[38px] xl:h-[40px] px-3.5 flex items-center justify-between bg-white border border-[#E8E9EA] hover:border-[#CBD5E1] rounded-[6px] text-left transition-all duration-150 group cursor-pointer shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
+                    aria-label="Search products"
+                  >
+                    <span className="text-[13px] text-[#9698A0] font-normal truncate select-none">
+                      Try searching {SEARCH_KEYWORDS[keywordIndex]}
+                    </span>
+                    <Search className="w-[18px] h-[18px] text-[#181B2D] shrink-0 stroke-[1.8] group-hover:scale-105 transition-transform ml-2" />
+                  </button>
+                </div>
 
                 {/* Wishlist Icon */}
                 <Link
@@ -353,6 +369,24 @@ const Navbar = () => {
                 </Link>
                 <button onClick={() => setIsMobileMenuOpen(false)} className="p-1 text-gray-500">
                   <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Mobile Drawer Search Bar */}
+              <div className="p-3 border-b border-gray-100 bg-gray-50/50">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setIsSearchOpen(true);
+                  }}
+                  className="w-full h-[40px] px-3.5 flex items-center justify-between bg-white border border-[#E8E9EA] rounded-[6px] text-left shadow-sm"
+                  aria-label="Search"
+                >
+                  <span className="text-[13px] text-[#9698A0] font-normal truncate">
+                    Try searching {SEARCH_KEYWORDS[keywordIndex]}
+                  </span>
+                  <Search className="w-[18px] h-[18px] text-[#181B2D] stroke-[1.8] shrink-0" />
                 </button>
               </div>
 

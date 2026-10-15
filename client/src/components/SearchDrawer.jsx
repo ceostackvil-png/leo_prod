@@ -23,13 +23,23 @@ const SEARCH_CATEGORIES = [
   { label: 'Travel Essentials', slug: 'travel' }
 ];
 
+const SEARCH_KEYWORDS = ['“T-shirts”', '“Polos”', '“Joggers”', '“Hoodies”', '“Co-ords”'];
+
 const SearchDrawer = ({ isOpen, onClose }) => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [recentSearches, setRecentSearches] = useState([]);
+  const [keywordIndex, setKeywordIndex] = useState(0);
   const inputRef = useRef(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setKeywordIndex((prev) => (prev + 1) % SEARCH_KEYWORDS.length);
+    }, 2800);
+    return () => clearInterval(interval);
+  }, []);
 
   // Load recent searches from localStorage
   useEffect(() => {
@@ -134,25 +144,36 @@ const SearchDrawer = ({ isOpen, onClose }) => {
           
           {/* 1. Header Search Bar (Exact Nobero Style) */}
           <div className="flex items-center justify-between gap-3 pb-4 border-b border-gray-200">
-            <form onSubmit={handleSearchSubmit} className="flex-1 flex items-center gap-3 bg-gray-50 rounded-full px-4 py-2.5 sm:py-3 border border-gray-200 focus-within:border-[#282C3F] focus-within:bg-white transition-all shadow-inner">
-              <Search className="w-5 h-5 text-gray-400 shrink-0" />
+            <form
+              onSubmit={handleSearchSubmit}
+              className="flex-1 flex items-center justify-between bg-white rounded-[6px] px-3.5 h-[42px] sm:h-[46px] border border-[#E8E9EA] focus-within:border-[#181B2D] transition-all shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
+            >
               <input
                 ref={inputRef}
                 type="text"
-                placeholder="Search for Oversized Tees, Joggers, Polos, Hoodies..."
+                placeholder={`Try searching ${SEARCH_KEYWORDS[keywordIndex]}`}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="w-full text-sm sm:text-base font-medium text-[#212121] placeholder:text-gray-400 bg-transparent border-none outline-none"
+                className="w-full text-xs sm:text-sm font-normal text-[#181B2D] placeholder:text-[#9698A0] bg-transparent border-none outline-none pr-2"
               />
-              {query && (
+              <div className="flex items-center gap-2 shrink-0">
+                {query && (
+                  <button
+                    type="button"
+                    onClick={() => setQuery('')}
+                    className="p-1 text-[#9698A0] hover:text-[#181B2D] rounded-full transition-colors"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                )}
                 <button
-                  type="button"
-                  onClick={() => setQuery('')}
-                  className="p-1 text-gray-400 hover:text-black rounded-full transition-colors"
+                  type="submit"
+                  aria-label="Search"
+                  className="text-[#181B2D] hover:opacity-80 transition-opacity pl-1"
                 >
-                  <X className="w-4 h-4" />
+                  <Search className="w-[18px] h-[18px] stroke-[1.8]" />
                 </button>
-              )}
+              </div>
             </form>
 
             <button
