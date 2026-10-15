@@ -32,17 +32,63 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Determine active category from route
+  const getActiveFromRoute = (fallback = 'men') => {
+    const searchParams = new URLSearchParams(location.search);
+    const catQuery = searchParams.get('category');
+    if (catQuery) {
+      if (catQuery === 't-shirts') return 'oversized-tees';
+      return catQuery;
+    }
+    const path = location.pathname.replace(/^\/+/, '').toLowerCase();
+    if (!path || path === 'men') return 'men';
+    if (path === 'tees' || path === 't-shirts' || path === 'oversized-tees') return 'oversized-tees';
+    if (path === 'polos') return 'polos';
+    if (path === 'shirts') return 'shirts';
+    if (path === 'hoodies' || path === 'jackets') return 'hoodies';
+    if (path === 'joggers') return 'joggers';
+    if (path === 'shorts') return 'shorts';
+    if (path === 'co-ords') return 'co-ords';
+    if (path === 'travel') return 'travel';
+    if (path === 'sale') return 'sale';
+    return fallback;
+  };
+
+  const [selectedCatId, setSelectedCatId] = useState(() => getActiveFromRoute('men'));
+  const [hoveredCatId, setHoveredCatId] = useState(null);
+
   useEffect(() => {
     const loadCategories = async () => {
       try {
         const res = await api.getCategories();
         if (res.success) {
-          const filteredCategories = res.data.filter(cat => cat.id !== 'women' && cat.id !== 'new-arrivals');
-          // Rename 'oversized-tees' to 'TEES'
-          const renamedCategories = filteredCategories.map(cat => 
-            cat.id === 'oversized-tees' ? { ...cat, name: 'TEES' } : cat
-          );
-          setCategories(renamedCategories);
+          const ORDER = ['men', 'travel', 'polos', 'hoodies', 'shirts', 'oversized-tees', 'co-ords', 'joggers', 'shorts', 'sale'];
+          const NAME_MAP = {
+            'men': 'Men',
+            'travel': 'Travel',
+            'polos': 'Polos',
+            'hoodies': 'Hoodies',
+            'shirts': 'Shirts',
+            'oversized-tees': 'Tees',
+            'co-ords': 'Co-ords',
+            'joggers': 'Joggers',
+            'shorts': 'Shorts',
+            'sale': 'Sale'
+          };
+
+          const rawList = res.data.filter(cat => cat.id !== 'women' && cat.id !== 'new-arrivals');
+          
+          // Map to Title Case and sort according to exact reference image order
+          const formatted = rawList.map(cat => ({
+            ...cat,
+            name: NAME_MAP[cat.id] || cat.name
+          })).sort((a, b) => {
+            const idxA = ORDER.indexOf(a.id);
+            const idxB = ORDER.indexOf(b.id);
+            return (idxA !== -1 ? idxA : 999) - (idxB !== -1 ? idxB : 999);
+          });
+
+          setCategories(formatted);
         }
       } catch (e) {
         console.error(e);
@@ -54,6 +100,7 @@ const Navbar = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setActiveMegaCategory(null);
+    setSelectedCatId(prev => getActiveFromRoute(prev || 'men'));
   }, [location.pathname, location.search]);
 
   return (
@@ -107,40 +154,62 @@ const Navbar = () => {
                 </div>
 
                 {/* Brand Logo: LEO KING */}
-                <Link to="/" className="flex items-center shrink-0 pr-4 sm:pr-8 lg:pr-12 hover:opacity-90 transition-opacity">
+                <Link to="/" className="flex items-center shrink-0 pr-4 sm:pr-8 lg:pr-10 hover:opacity-90 transition-opacity">
                   <BrandLogo variant="light" subtitle="KING" size="sm" />
                 </Link>
               </div>
 
-              {/* Desktop Navigation Links (Men's Fashion Only) */}
-              <nav className="hidden lg:flex items-center space-x-5 xl:space-x-7 h-full flex-1 justify-start">
-                {categories.map((cat) => (
-                  <div
-                    key={cat.id}
-                    className="h-full flex items-center"
-                    onMouseEnter={() => {
-                      if (cat.groups) setActiveMegaCategory(cat);
-                      else setActiveMegaCategory(null);
-                    }}
-                  >
-                    <Link
-                      to={`/shop?category=${cat.slug}`}
-                      className={`text-[13px] uppercase font-bold tracking-wide transition-colors py-7 border-b-2 flex items-center gap-1.5 ${
-                        cat.isSale
-                          ? 'text-[#D9232D] border-transparent hover:border-[#D9232D]'
-                          : 'text-[#212121] hover:text-[#282C3F] border-transparent hover:border-[#282C3F]'
-                      }`}
+              {/* Desktop Navigation Links (Title Case, Clean Sans, No Chevrons, Exact Highlighting) */}
+              <nav
+                className="hidden lg:flex items-center space-x-6 xl:space-x-8 h-full flex-1 justify-start ml-2"
+                onMouseLeave={() => setHoveredCatId(null)}
+              >
+                {categories.map((cat) => {
+                  const currentHighlightId = hoveredCatId || (activeMegaCategory ? activeMegaCategory.id : selectedCatId);
+                  const isHighlighted = currentHighlightId === cat.id;
+
+                  return (
+                    <div
+                      key={cat.id}
+                      className="h-full flex items-center"
+                      onMouseEnter={() => {
+                        setHoveredCatId(cat.id);
+                        if (cat.groups) setActiveMegaCategory(cat);
+                        else setActiveMegaCategory(null);
+                      }}
                     >
-                      <span>{cat.name}</span>
-                      {cat.isNew && (
-                        <span className="bg-[#4285F4] text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">
-                          New
-                        </span>
-                      )}
-                      {cat.groups && <ChevronDown className="w-3 h-3 text-gray-400" />}
-                    </Link>
-                  </div>
-                ))}
+                      <Link
+                        to={`/shop?category=${cat.slug}`}
+                        onClick={() => {
+                          setSelectedCatId(cat.id);
+                          if (cat.groups) {
+                            setActiveMegaCategory(prev => prev?.id === cat.id ? null : cat);
+                          } else {
+                            setActiveMegaCategory(null);
+                          }
+                        }}
+                        className={`h-full flex items-center text-[14px] transition-all duration-150 border-b-[2.5px] -mb-[1px] select-none ${
+                          isHighlighted
+                            ? 'text-[#111827] font-bold border-[#eb4343]'
+                            : 'text-[#9ca3af] font-medium border-transparent hover:text-[#111827]'
+                        }`}
+                      >
+                        <span>{cat.name}</span>
+                        {cat.isNew && (
+                          <span
+                            className={`ml-1.5 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider transition-opacity ${
+                              isHighlighted
+                                ? 'bg-[#4285F4] text-white opacity-100'
+                                : 'bg-[#4285F4]/40 text-white/90'
+                            }`}
+                          >
+                            New
+                          </span>
+                        )}
+                      </Link>
+                    </div>
+                  );
+                })}
               </nav>
 
               {/* Right Utility Icons (Search, Wishlist, Account, Cart) */}

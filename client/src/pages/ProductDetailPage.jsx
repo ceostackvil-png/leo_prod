@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import {
   Star,
@@ -25,7 +25,10 @@ import { useWishlist } from '../context/WishlistContext';
 import SizeGuideModal from '../components/SizeGuideModal';
 import ProductCard from '../components/ProductCard';
 import StorefrontContainer from '../components/StorefrontContainer';
+import ProductTrustStrip from '../components/ProductTrustStrip';
 import { api } from '../services/api';
+
+const MANDATORY_SIZES = ['S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
 
 const OFFERS = [
   { code: 'LEO100', desc: 'Flat ₹100 OFF on orders above ₹999' },
@@ -84,6 +87,62 @@ const ProductDetailPage = () => {
     loadProduct();
   }, [id]);
 
+  const currentColor = product?.colors?.[selectedColorIdx] || product?.colors?.[0] || {};
+
+  // Find exact matching variant for the selected color + size combination
+  const currentVariant = useMemo(() => {
+    if (!product?.variants || product.variants.length === 0) return null;
+    const byColorAndSize = product.variants.find(v => 
+      v.color?.toLowerCase() === currentColor.name?.toLowerCase() &&
+      v.size?.toLowerCase() === selectedSize?.toLowerCase()
+    );
+    if (byColorAndSize) return byColorAndSize;
+    const byColor = product.variants.find(v => v.color?.toLowerCase() === currentColor.name?.toLowerCase());
+    return byColor || product.variants[0];
+  }, [product?.variants, currentColor, selectedSize]);
+
+  const displayPrice = currentVariant?.price || product?.price;
+  const displayMrp = currentVariant?.mrp || product?.mrp;
+  const displayDiscount = currentVariant?.discount || product?.discount;
+
+  // Build complete dynamic gallery for the selected color: Front face first, Back face second
+  const gallery = useMemo(() => {
+    if (!product) return ['/images/hero-1.jpg'];
+    const list = [];
+
+    // 1. Prioritize Front View of current selected color
+    if (currentColor?.frontImage) {
+      list.push(currentColor.frontImage);
+    } else if (currentColor?.image) {
+      list.push(currentColor.image);
+    } else if (currentVariant?.image) {
+      list.push(currentVariant.image);
+    }
+
+    // 2. Prioritize Back View of current selected color
+    if (currentColor?.backImage && !list.includes(currentColor.backImage)) {
+      list.push(currentColor.backImage);
+    }
+
+    // 3. Any additional color-specific views
+    if (currentColor?.images && Array.isArray(currentColor.images)) {
+      currentColor.images.forEach(img => {
+        if (!list.includes(img)) list.push(img);
+      });
+    }
+
+    // 4. Fallback if empty
+    if (list.length === 0) {
+      if (product.image) list.push(product.image);
+    }
+
+    const cleaned = list.filter(Boolean);
+    return cleaned.length > 0 ? cleaned : ['/images/hero-1.jpg'];
+  }, [product, currentColor, currentVariant]);
+
+  const currentImage = gallery[selectedImageIdx] || gallery[0] || product?.image;
+  const isWishlisted = isInWishlist(product?.id);
+
   if (loading) {
     return (
       <div className="min-h-[70vh] flex items-center justify-center">
@@ -103,23 +162,17 @@ const ProductDetailPage = () => {
     );
   }
 
-  const currentColor = product.colors?.[selectedColorIdx] || product.colors?.[0] || {};
-  const gallery = [
-    currentColor.image || product.image,
-    currentColor.secondaryImage || product.secondaryImage || product.image,
-    '/images/product-tee-front.jpg',
-    '/images/product-tee-back.jpg'
-  ].filter(Boolean);
-
-  const currentImage = gallery[selectedImageIdx] || gallery[0] || product.image;
-  const isWishlisted = isInWishlist(product.id);
-
   const handleAddToCart = () => {
     if (!selectedSize) {
       alert('Please select a size first.');
       return;
     }
-    addToCart(product, currentColor.name || 'Standard', selectedSize, 1);
+    addToCart(
+      { ...product, price: displayPrice, mrp: displayMrp, discount: displayDiscount, sku: currentVariant?.sku || product.sku },
+      currentColor.name || 'Standard',
+      selectedSize,
+      1
+    );
   };
 
   const handleBuyNow = () => {
@@ -127,7 +180,12 @@ const ProductDetailPage = () => {
       alert('Please select a size first.');
       return;
     }
-    addToCart(product, currentColor.name || 'Standard', selectedSize, 1);
+    addToCart(
+      { ...product, price: displayPrice, mrp: displayMrp, discount: displayDiscount, sku: currentVariant?.sku || product.sku },
+      currentColor.name || 'Standard',
+      selectedSize,
+      1
+    );
     setIsDrawerOpen(false);
     navigate('/checkout');
   };
@@ -184,7 +242,7 @@ const ProductDetailPage = () => {
             <div className="lg:col-span-7 sticky top-24">
 
               <div
-                className="w-full relative aspect-[3/4] sm:aspect-[4/5] rounded bg-[#F7F8FA] select-none overflow-hidden"
+                className="w-full relative aspect-[3/4] sm:aspect-[4/5] rounded bg-[#F7F8FA] select-none overflow-hidden group"
                 onTouchStart={(e) => {
                   window._pdpTouchX = e.touches[0].clientX;
                 }}
@@ -204,15 +262,16 @@ const ProductDetailPage = () => {
               >
                 <img
                   src={currentImage}
-                  alt={product.title}
-                  className="w-full h-full object-cover object-center"
+                  alt={`${product.title} - ${currentColor.name || ''} ${selectedImageIdx === 0 ? 'Front' : 'Back'}`}
+                  className="w-full h-full object-cover object-center transition-all duration-200"
                 />
 
                 {/* Left Arrow */}
                 {gallery.length > 1 && (
                   <button
                     onClick={() => setSelectedImageIdx((prev) => (prev - 1 + gallery.length) % gallery.length)}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded shadow flex items-center justify-center text-gray-700 hover:text-black z-10 hover:bg-gray-50 transition-colors"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/95 rounded-full shadow flex items-center justify-center text-gray-700 hover:text-black z-10 hover:bg-white transition-all"
+                    title="Previous View"
                   >
                     <ChevronLeft className="w-6 h-6" />
                   </button>
@@ -222,10 +281,65 @@ const ProductDetailPage = () => {
                 {gallery.length > 1 && (
                   <button
                     onClick={() => setSelectedImageIdx((prev) => (prev + 1) % gallery.length)}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded shadow flex items-center justify-center text-gray-700 hover:text-black z-10 hover:bg-gray-50 transition-colors"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/95 rounded-full shadow flex items-center justify-center text-gray-700 hover:text-black z-10 hover:bg-white transition-all"
+                    title="Next View"
                   >
                     <ChevronRight className="w-6 h-6" />
                   </button>
+                )}
+
+                {/* Front / Back Interactive Floating Pill */}
+                <div className="absolute top-4 left-4 z-20 flex items-center bg-black/80 backdrop-blur-md p-1 rounded-full shadow-md">
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedImageIdx(0);
+                    }}
+                    className={`px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase transition-all ${
+                      selectedImageIdx === 0
+                        ? 'bg-white text-black shadow-sm'
+                        : 'text-white/80 hover:text-white'
+                    }`}
+                  >
+                    Front View
+                  </button>
+                  {gallery.length > 1 && (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedImageIdx(1);
+                      }}
+                      className={`px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase transition-all ${
+                        selectedImageIdx === 1
+                          ? 'bg-white text-black shadow-sm'
+                          : 'text-white/80 hover:text-white'
+                      }`}
+                    >
+                      Back View
+                    </button>
+                  )}
+                </div>
+
+                {/* Bottom carousel dots indicator */}
+                {gallery.length > 1 && (
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-20 bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded-full">
+                    {gallery.map((_, dotIdx) => (
+                      <button
+                        key={dotIdx}
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedImageIdx(dotIdx);
+                        }}
+                        className={`transition-all rounded-full ${
+                          selectedImageIdx === dotIdx ? 'w-4 h-1.5 bg-white' : 'w-1.5 h-1.5 bg-white/50 hover:bg-white/80'
+                        }`}
+                        title={dotIdx === 0 ? 'Front' : 'Back'}
+                      />
+                    ))}
+                  </div>
                 )}
 
                 {/* Badges */}
@@ -235,6 +349,35 @@ const ProductDetailPage = () => {
                   </span>
                 )}
               </div>
+
+              {/* Front & Back View Interactive Switcher */}
+              {gallery.length > 1 && (
+                <div className="mt-3 flex items-center justify-between gap-2 bg-[#F7F8FA] p-1.5 rounded border border-gray-200/80">
+                  <div className="flex items-center gap-2">
+                    {gallery.map((imgUrl, gIdx) => (
+                      <button
+                        key={gIdx}
+                        type="button"
+                        onClick={() => setSelectedImageIdx(gIdx)}
+                        className={`flex items-center gap-2 px-3 py-1.5 rounded text-xs font-bold transition-all ${
+                          selectedImageIdx === gIdx
+                            ? 'bg-[#282C3F] text-white shadow-sm'
+                            : 'bg-white text-[#535766] hover:bg-gray-50 border border-gray-200'
+                        }`}
+                      >
+                        <div className="w-4 h-5 rounded overflow-hidden shrink-0 border border-black/10 bg-gray-100">
+                          <img src={imgUrl} alt="" className="w-full h-full object-cover" />
+                        </div>
+                        <span>{gIdx === 0 ? 'Front View' : (gIdx === 1 ? 'Back View' : `View ${gIdx + 1}`)}</span>
+                      </button>
+                    ))}
+                  </div>
+
+                  <span className="text-[11px] font-medium text-[#7E818C] pr-2 hidden sm:inline">
+                    {currentColor.name} • {selectedImageIdx === 0 ? 'Front' : 'Back'}
+                  </span>
+                </div>
+              )}
             </div>
 
             {/* RIGHT: Product Buy Box & Information */}
@@ -251,17 +394,17 @@ const ProductDetailPage = () => {
                   <div className="mt-2 space-y-1">
                     <div className="flex items-center gap-2">
                       <span className="text-xl sm:text-[22px] font-bold text-[#282C3F]">
-                        ₹{product.price}
+                        ₹{displayPrice}
                       </span>
-                      {product.discount && (
+                      {displayDiscount && (
                         <span className="text-[15px] font-bold text-[#00B852]">
-                          {product.discount}
+                          {displayDiscount}
                         </span>
                       )}
                     </div>
 
                     <div className="text-[13px] text-[#7E818C]">
-                      <span>MRP: <span className="line-through">₹{product.mrp || '2,999'}</span> Inclusive of all Taxes</span>
+                      <span>MRP: <span className="line-through">₹{displayMrp}</span> Inclusive of all Taxes</span>
                     </div>
 
                     {product.lowestPrice30Days && (
@@ -338,7 +481,7 @@ const ProductDetailPage = () => {
                         title={c.name}
                       >
                         <img
-                          src={c.image || product.image}
+                          src={c.frontImage || c.image || product.image}
                           className="w-full h-full object-cover rounded-[2px]"
                           alt={c.name}
                         />
@@ -353,7 +496,7 @@ const ProductDetailPage = () => {
                 </div>
               )}
 
-              {/* Size Selector */}
+              {/* Product Size Selection Options (S, M, L, XL, XXL, XXXL) */}
               <div className="space-y-3 mt-6">
                 <div className="flex justify-between items-center text-[14px]">
                   <span className="font-bold text-[#282C3F]">
@@ -367,56 +510,56 @@ const ProductDetailPage = () => {
                   </button>
                 </div>
 
-                <div className="flex flex-wrap gap-2.5">
-                  {product.sizes?.map((size) => {
-                    const sizeValue = typeof size === 'string' ? size : size.name;
-                    return (
-                      <button
-                        key={sizeValue}
-                        onClick={() => setSelectedSize(sizeValue)}
-                        className={`w-[52px] h-[52px] flex items-center justify-center text-sm rounded transition-all border ${selectedSize === sizeValue
-                            ? 'border-[#282C3F] text-[#282C3F] font-bold'
-                            : 'bg-white hover:border-[#282C3F] text-[#282C3F] border-gray-300 hover:text-[#282C3F] font-medium'
-                          }`}
-                      >
-                        {sizeValue}
-                      </button>
-                    );
-                  })}
+                <div className="flex items-center gap-[12px] flex-wrap">
+                  {MANDATORY_SIZES.map((size) => (
+                    <button
+                      key={size}
+                      type="button"
+                      onClick={() => setSelectedSize(size)}
+                      className={`w-[60px] h-[38px] flex items-center justify-center text-[14px] rounded-[2px] transition-all select-none ${
+                        selectedSize === size
+                          ? 'border-2 border-[#242f66] text-[#242f66] font-bold bg-white shadow-xs'
+                          : 'border border-[#b8b9bf] text-[#242f66] bg-white hover:border-[#242f66] font-medium'
+                      }`}
+                    >
+                      {size}
+                    </button>
+                  ))}
                 </div>
               </div>
 
-              {/* Action Buttons: Add to Bag & Buy Now */}
-              <div className="flex gap-3 pt-5">
+              {/* Action Buttons: Add to Cart & Buy Now */}
+              <div className="space-y-[14px] pt-4">
+                {/* 1. Add to Cart Button */}
                 <button
+                  type="button"
                   onClick={handleAddToCart}
-                  className="flex-1 bg-white hover:bg-gray-50 text-[#282C3F] py-3.5 rounded border-[1.5px] border-[#282C3F] font-bold text-sm tracking-wide flex items-center justify-center gap-2 transition-all shadow-sm"
+                  className="w-full h-[52px] sm:h-[54px] bg-white hover:bg-[#f7f8fd] text-[#242f66] rounded-[2px] border-[1.5px] border-[#242f66] font-bold text-[15px] sm:text-[16px] tracking-normal flex items-center justify-center transition-colors shadow-xs active:scale-[0.99] select-none"
                 >
-                  <ShoppingBag className="w-4 h-4" /> ADD TO BAG
+                  Add to Cart
                 </button>
 
+                {/* 2. Buy Now Button */}
                 <button
+                  type="button"
                   onClick={handleBuyNow}
-                  className="flex-1 bg-[#00B852] hover:bg-[#009b45] text-white py-3.5 rounded font-bold text-sm tracking-wide flex items-center justify-center gap-2 transition-all shadow-sm"
+                  className="w-full h-[52px] sm:h-[54px] bg-[#242f66] hover:bg-[#1a234f] text-white rounded-[2px] border border-[#242f66] flex flex-col items-center justify-center transition-colors shadow-xs active:scale-[0.99] select-none"
                 >
-                  <Zap className="w-4 h-4 fill-white" /> BUY NOW
+                  <span className="font-bold text-[16px] leading-tight">
+                    Buy Now
+                  </span>
+                  <span className="text-[11.5px] font-medium text-white flex items-center justify-center gap-1 leading-tight mt-[2px]">
+                    <span>Faster Checkout</span>
+                    <svg viewBox="0 0 24 24" className="w-3 h-3 fill-[#ff8a2c] text-[#ff8a2c] inline-block" stroke="currentColor" strokeWidth="0.5">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                    </svg>
+                  </span>
                 </button>
               </div>
 
-              {/* Trust Badges Bar */}
-              <div className="grid grid-cols-3 gap-2 py-4 border-y border-gray-200 mt-5 text-[12px] text-[#535766] font-medium">
-                <div className="flex items-center gap-2">
-                  <RotateCcw className="w-4 h-4 text-[#282C3F] shrink-0" />
-                  <span>7-Day Easy Returns</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Truck className="w-4 h-4 text-[#282C3F] shrink-0" />
-                  <span>Free Shipping</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-[#282C3F] shrink-0" />
-                  <span>COD Available</span>
-                </div>
+              {/* Mandatory 3 Features Box: Cash on Delivery, Free Shipping, Easy Returns */}
+              <div className="pt-2">
+                <ProductTrustStrip />
               </div>
 
               {/* Delivery Pincode Checker */}
@@ -604,16 +747,24 @@ const ProductDetailPage = () => {
 
         <div className="flex items-center gap-2 flex-1">
           <button
+            type="button"
             onClick={handleAddToCart}
-            className="flex-1 bg-[#282C3F] active:bg-[#212121] text-white py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1 transition-transform active:scale-95 shadow-xs"
+            className="flex-1 bg-white active:bg-gray-50 text-[#242f66] border border-[#242f66] py-2.5 rounded-[2px] text-xs font-bold tracking-normal flex items-center justify-center transition-transform active:scale-95 shadow-xs"
           >
-            <ShoppingBag className="w-3.5 h-3.5" /> ADD
+            Add to Cart
           </button>
           <button
+            type="button"
             onClick={handleBuyNow}
-            className="flex-1 bg-[#00B852] active:bg-[#d97706] text-[#212121] py-2.5 rounded-lg text-xs font-extrabold uppercase tracking-wider flex items-center justify-center gap-1 transition-transform active:scale-95 shadow-xs"
+            className="flex-1 bg-[#242f66] active:bg-[#1a234f] text-white py-1.5 rounded-[2px] text-xs font-bold flex flex-col items-center justify-center transition-transform active:scale-95 shadow-xs"
           >
-            <Zap className="w-3.5 h-3.5 fill-[#212121]" /> BUY NOW
+            <span className="leading-tight">Buy Now</span>
+            <span className="text-[9.5px] font-medium text-white flex items-center justify-center gap-0.5 leading-tight">
+              <span>Faster Checkout</span>
+              <svg viewBox="0 0 24 24" className="w-2.5 h-2.5 fill-[#ff8a2c] text-[#ff8a2c]" stroke="currentColor" strokeWidth="0.5">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+              </svg>
+            </span>
           </button>
         </div>
       </div>

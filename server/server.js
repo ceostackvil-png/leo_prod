@@ -946,8 +946,19 @@ function writeDB(data) {
   }
 }
 
+const fullProductsManifest = path.join(__dirname, 'data', 'nobero_full_products.json');
 const downloadedManifest = path.join(__dirname, 'data', 'downloaded_products.json');
-if (fs.existsSync(downloadedManifest)) {
+
+if (fs.existsSync(fullProductsManifest)) {
+  try {
+    const rawFull = JSON.parse(fs.readFileSync(fullProductsManifest, 'utf-8'));
+    if (Array.isArray(rawFull) && rawFull.length > 0) {
+      initialData.products = rawFull;
+    }
+  } catch (e) {
+    console.error('Error loading full products:', e);
+  }
+} else if (fs.existsSync(downloadedManifest)) {
   try {
     const rawDownloaded = JSON.parse(fs.readFileSync(downloadedManifest, 'utf-8'));
     if (Array.isArray(rawDownloaded) && rawDownloaded.length > 0) {
@@ -958,12 +969,20 @@ if (fs.existsSync(downloadedManifest)) {
   }
 }
 
-// Force overwrite to strictly purge all women's products and ensure fresh authentic high-res images
-writeDB(initialData);
+// Preserve existing DB or initialize if missing
+if (!fs.existsSync(DB_FILE)) {
+  writeDB(initialData);
+} else {
+  const currentDB = readDB();
+  if (!currentDB.products || currentDB.products.length < initialData.products.length) {
+    writeDB({ ...currentDB, products: initialData.products });
+  }
+}
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.get('/api/categories', (req, res) => {

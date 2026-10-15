@@ -2,34 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, Plus } from 'lucide-react';
 
-const getImageForCategory = (name, categoryId) => {
-  const n = name.toLowerCase();
-  
-  // Women's category images
-  if (categoryId === 'women') {
-    if (n.includes('hoodie') || n.includes('sweatshirt')) return '/images/women/women_hoodie.jpg';
-    if (n.includes('jogger') || n.includes('activewear') || n.includes('pant') || n.includes('cargo') || n.includes('short') || n.includes('coord')) return '/images/women/women_joggers.jpg';
-    return '/images/women/women_tee.jpg';
-  }
-
-  // Men's category images
-  if (n.includes('solid heavyweight')) return '/images/MEN/port_1.avif';
-  if (n.includes('acid wash')) return '/images/nobero/col_oversized_exact.jpg';
-  if (n.includes('graphic tees') || n.includes('back print')) return '/images/MEN/Website_Shop_men_220_x_304_11.avif';
-  if (n.includes('polo')) return '/images/nobero/col_polo_exact.png';
-  if (n.includes('oversized') || n.includes('hd')) return '/images/nobero/col_oversized_exact.jpg';
-  if (n.includes('full sleeve')) return '/images/nobero/col_fullsleeve_exact.jpg';
-  if (n.includes('hoodie') || n.includes('jacket') || n.includes('sweatshirt')) return '/images/nobero/hero_banner_shacket_des.jpg';
-  if (n.includes('jogger') || n.includes('activewear')) return '/images/nobero/col_joggers_exact.jpg';
-  if (n.includes('pant') || n.includes('cargo')) return '/images/nobero/col_cargos_exact.jpg';
-  if (n.includes('coord') || n.includes('co-ord')) return '/images/nobero/col_coords_exact.jpg';
-  if (n.includes('short')) return '/images/nobero/col_shorts_exact.png';
-  if (n.includes('t-shirt') || n.includes('tees')) return '/images/nobero/col_oversized_exact.jpg';
-  if (n.includes('waffle knit')) return '/images/9.avif';
-  if (n.includes('curated looks')) return '/images/Looks_jpg.avif';
-  return '/images/nobero/col_cargos_exact.jpg';
-};
-
 const MEN_EXACT_GRID = [
   { name: 'Polos', image: '/images/MEN/7p_69c2c6cf-78a7-441f-b34a-ab147745806d.avif', slug: 'polos' },
   { name: 'Premium HD T-Shirt', image: '/images/MEN/port_1.avif', slug: 't-shirts' },
@@ -45,107 +17,89 @@ const MEN_EXACT_GRID = [
   { name: 'Activewear', image: '/images/MEN/Men_active_1199e7ea-e988-4c37-99fe-60fbe6f37c99.avif', slug: 'joggers' }
 ];
 
+const QUICK_LINKS = [
+  { title: 'See the Latest', subtitle: 'Explore fash-leisure must-haves', link: '/new-arrivals' },
+  { title: 'Shop Top Selling Styles', subtitle: 'The current fan favorites right now', link: '/shop?filter=bestsellers' },
+  { title: 'Sale', subtitle: 'Up to 60% off', link: '/sale' },
+  { title: 'Clearance sale', subtitle: '', link: '/sale' }
+];
+
 const MegaMenu = ({ category, onClose }) => {
   if (!category || !category.groups) return null;
 
-  // Flatten all items from groups to create the visual grid for non-men categories
-  const allItems = category.groups.flatMap(g => g.items);
-
-  if (category.id === 'men') {
-    return (
-      <div
-        onMouseLeave={onClose}
-        className="absolute top-full left-0 w-full bg-white border-b border-[#E5E7EB] shadow-dropdown py-8 px-8 z-50 animate-slide-down"
-      >
-        <div className="max-w-[1200px] mx-auto">
-          <div className="grid grid-cols-6 gap-x-6 gap-y-10">
-            {MEN_EXACT_GRID.map((item, idx) => (
-              <Link
-                key={idx}
-                to={`/shop?category=${item.slug}`}
-                onClick={onClose}
-                className="group flex flex-col items-center text-center select-none"
-              >
-                <div className="w-full aspect-[3/4] rounded-lg overflow-hidden bg-[#F7F8FA] relative transition-transform duration-300">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute bottom-2 right-2 w-5 h-5 bg-white/50 backdrop-blur-[2px] rounded-full flex items-center justify-center border border-white/80 shadow-sm transition-colors group-hover:bg-white">
-                    <Plus className="w-3 h-3 text-white mix-blend-difference" strokeWidth={2} />
-                  </div>
-                </div>
-                <span className="text-[13px] font-bold text-[#212121] mt-3 group-hover:text-[#526BCA] transition-colors leading-tight line-clamp-2 px-1">
-                  {item.name}
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
-  }
+  // For men, use exact 12-item grid from Nobero; otherwise map from groups
+  const gridItems = category.id === 'men'
+    ? MEN_EXACT_GRID
+    : (category.groups.flatMap(g => g.items).slice(0, 12).map(item => ({
+        ...item,
+        image: item.image || '/images/MEN/port_1.avif'
+      })));
 
   return (
     <div
       onMouseLeave={onClose}
-      className="absolute top-full left-0 w-full bg-white border-b border-[#E5E7EB] shadow-dropdown py-8 px-8 z-50 animate-slide-down"
+      className="absolute top-full left-0 w-full bg-white border-b border-[#E5E7EB] shadow-[0_12px_28px_rgba(0,0,0,0.08)] py-5 px-6 lg:px-10 z-50 animate-slide-down"
     >
-      <div className="max-w-[1440px] mx-auto flex gap-12 items-start">
+      <div className="max-w-[1360px] mx-auto flex items-start justify-between gap-8 lg:gap-14">
         
-        {/* Left Side: Visual Category Grid (75% width) */}
-        <div className="flex-1 grid grid-cols-6 gap-x-4 gap-y-8">
-          {allItems.slice(0, 12).map((item, idx) => (
+        {/* Left Side: Minimal Visual Category Grid (6 columns x 2 rows) */}
+        <div className="grid grid-cols-6 gap-x-3.5 sm:gap-x-4 gap-y-3 sm:gap-y-3.5 shrink-0">
+          {gridItems.map((item, idx) => (
             <Link
               key={idx}
               to={`/shop?category=${item.slug}`}
               onClick={onClose}
               className="group flex flex-col items-center text-center select-none"
             >
-              {/* Image Container with precise styling */}
-              <div className="w-full aspect-[3/4] rounded-lg overflow-hidden bg-[#F7F8FA] relative transition-transform duration-300">
+              {/* Minimal Card Image Container (Exact Nobero 3:4 aspect ratio) */}
+              <div className="w-[84px] sm:w-[92px] md:w-[96px] aspect-[3/4] rounded-[10px] overflow-hidden bg-[#F7F8FA] relative transition-transform duration-300">
                 <img
-                  src={getImageForCategory(item.name, category.id)}
+                  src={item.image}
                   alt={item.name}
+                  loading="eager"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute bottom-2 right-2 w-5 h-5 bg-white/80 backdrop-blur rounded-full flex items-center justify-center shadow-sm">
-                  <Plus className="w-3 h-3 text-[#282C3F]" strokeWidth={2.5} />
+                {/* Circular Plus Badge in bottom-right */}
+                <div className="absolute bottom-1.5 right-1.5 w-[18px] h-[18px] bg-black/25 backdrop-blur-[1px] rounded-full flex items-center justify-center border border-white/70 shadow-xs transition-colors group-hover:bg-white group-hover:border-white">
+                  <Plus className="w-2.5 h-2.5 text-white stroke-[2.5] group-hover:text-black transition-colors" />
                 </div>
               </div>
-              <span className="text-[13px] font-bold text-[#212121] mt-3 group-hover:text-[#526BCA] transition-colors leading-tight line-clamp-2 px-1">
+
+              {/* Minimal Title Label */}
+              <span className="text-[11px] sm:text-[11.5px] font-bold text-[#111827] mt-1.5 group-hover:text-[#526BCA] transition-colors leading-tight text-center line-clamp-2 max-w-[96px] px-0.5">
                 {item.name}
               </span>
             </Link>
           ))}
         </div>
 
-        {/* Right Side: Quick Links List (25% width) */}
-        <div className="w-[300px] shrink-0 flex flex-col border-l border-gray-100 pl-8">
-          {[
-            { title: 'See the Latest', subtitle: 'Explore fash-leisure must-haves', link: '/new-arrivals' },
-            { title: 'Shop Top Selling Styles', subtitle: 'The current fan favorites right now', link: '/shop?filter=bestsellers' },
-            { title: 'Sale', subtitle: 'Up to 60% off', link: '/sale' },
-            { title: 'Clearance sale', subtitle: '', link: '/sale' }
-          ].map((linkItem, idx) => (
+        {/* Right Side: Quick Links List */}
+        <div className="w-[260px] lg:w-[280px] shrink-0 flex flex-col pt-1">
+          {QUICK_LINKS.map((linkItem, idx) => (
             <Link
               key={idx}
               to={linkItem.link}
               onClick={onClose}
-              className={`group flex items-center justify-between py-5 ${idx !== 0 ? 'border-t border-gray-100' : ''}`}
+              className={`group flex items-center justify-between py-3.5 ${
+                idx !== 0 ? 'border-t border-[#E5E7EB]' : ''
+              } ${
+                idx === QUICK_LINKS.length - 1 ? 'border-b border-[#E5E7EB]' : ''
+              } hover:bg-gray-50/60 px-1 transition-colors`}
             >
               <div>
-                <h4 className="text-[14px] font-bold text-[#212121] group-hover:text-[#526BCA] transition-colors">
+                <h4 className="text-[13px] font-bold text-[#111827] group-hover:text-[#526BCA] transition-colors leading-snug">
                   {linkItem.title}
                 </h4>
                 {linkItem.subtitle && (
-                  <p className="text-[12px] text-[#7E818C] mt-0.5">
+                  <p className="text-[11px] text-[#6B7280] mt-0.5 leading-tight">
                     {linkItem.subtitle}
                   </p>
                 )}
               </div>
-              <ChevronRight className="w-4 h-4 text-[#212121] group-hover:text-[#526BCA] transition-colors" />
+              <ChevronRight
+                className="w-4 h-4 text-[#111827] group-hover:text-[#526BCA] group-hover:translate-x-0.5 transition-all shrink-0 ml-3"
+                strokeWidth={1.8}
+              />
             </Link>
           ))}
         </div>

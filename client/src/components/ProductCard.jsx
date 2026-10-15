@@ -102,8 +102,7 @@ const ProductCard = ({ product }) => {
             <button onClick={() => setShowQuickSizes(false)} className="text-gray-400 hover:text-black">✕</button>
           </div>
           <div className="flex items-center gap-1">
-            {product.sizes?.map((size) => {
-              const sizeName = typeof size === 'string' ? size : size.name;
+            {['S', 'M', 'L', 'XL', 'XXL', 'XXXL'].map((sizeName) => {
               return (
                 <button
                   key={sizeName}
@@ -138,7 +137,7 @@ const ProductCard = ({ product }) => {
         {/* Color Swatch Dots */}
         {product.colors && product.colors.length > 1 && (
           <div className="flex items-center gap-1 mb-1">
-            {product.colors.map((c, idx) => (
+            {product.colors.slice(0, 5).map((c, idx) => (
               <button
                 key={c.name}
                 onClick={() => setActiveColorIdx(idx)}
@@ -148,10 +147,15 @@ const ProductCard = ({ product }) => {
                     ? 'ring-1.5 ring-black ring-offset-1 scale-110'
                     : 'border-gray-300 hover:scale-105'
                 }`}
-                style={{ backgroundColor: c.hex }}
+                style={{ backgroundColor: c.code || c.hex || '#111827' }}
                 title={c.name}
               />
             ))}
+            {product.colors.length > 5 && (
+              <span className="text-[10px] text-gray-500 font-medium pl-0.5">
+                +{product.colors.length - 5}
+              </span>
+            )}
           </div>
         )}
 
