@@ -1,7 +1,7 @@
 import fs from 'fs';
 
 async function testPairing() {
-  const res = await fetch('https://nobero.com/products/classic-polo-t-shirt.json');
+  const res = await fetch('https://leo.com/products/classic-polo-t-shirt.json');
   const d = await res.json();
   const p = d.product;
   const colors = p.options.find(o => o.name.toLowerCase().includes('color')).values;
@@ -11,11 +11,11 @@ async function testPairing() {
   const colorPairs = colors.map(c => {
     const v = p.variants.find(v => v.option1 === c);
     const frontImg = p.images.find(i => i.id === v?.image_id);
-    
+
     // Look for matching back image
     const cSlug = c.toLowerCase().replace(/[^a-z0-9]/g, '');
     const cWords = c.toLowerCase().split(/\s+/);
-    
+
     // Check all images
     let backImg = p.images.find(i => {
       if (!frontImg || i.id === frontImg.id) return false;

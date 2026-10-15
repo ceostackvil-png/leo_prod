@@ -54,7 +54,7 @@ const initialData = {
       promo: {
         title: "Heavyweight 240 GSM Collection",
         subtitle: "Combed French Terry Cotton",
-        image: "/images/nobero/col_oversized_exact.jpg",
+        image: "/images/leo/col_oversized_exact.jpg",
         link: "/shop?category=oversized-tees"
       }
     },
@@ -76,7 +76,7 @@ const initialData = {
       promo: {
         title: "Latest Men Drops",
         subtitle: "Fresh Colorways Released",
-        image: "/images/nobero/hero_banner_joggers_des.jpg",
+        image: "/images/leo/hero_banner_joggers_des.jpg",
         link: "/shop?filter=new"
       }
     },
@@ -136,7 +136,7 @@ const initialData = {
       promo: {
         title: "24-Hour Transit Comfort",
         subtitle: "4-Way Stretch Flex",
-        image: "/images/nobero/col_travel_exact.jpg",
+        image: "/images/leo/col_travel_exact.jpg",
         link: "/shop?category=travel"
       }
     },
@@ -151,8 +151,8 @@ const initialData = {
       ctaText: "SHOP NOW",
       ctaLink: "/travel",
       badge: "NEW ARRIVAL",
-      desktopImage: "/images/nobero/hero_banner_joggers_des.jpg",
-      mobileImage: "/images/nobero/hero_banner_joggers_mob.jpg",
+      desktopImage: "/images/leo/hero_banner_joggers_des.jpg",
+      mobileImage: "/images/leo/hero_banner_joggers_mob.jpg",
       active: true,
       order: 1
     },
@@ -163,8 +163,8 @@ const initialData = {
       ctaText: "EXPLORE COLLECTION",
       ctaLink: "/co-ords",
       badge: "BESTSELLER",
-      desktopImage: "/images/nobero/hero_banner_coords_des.jpg",
-      mobileImage: "/images/nobero/hero_banner_coords_mob.jpg",
+      desktopImage: "/images/leo/hero_banner_coords_des.jpg",
+      mobileImage: "/images/leo/hero_banner_coords_mob.jpg",
       active: true,
       order: 2
     },
@@ -175,8 +175,8 @@ const initialData = {
       ctaText: "SHOP CHINOS",
       ctaLink: "/cargos",
       badge: "TRENDING",
-      desktopImage: "/images/nobero/hero_banner_chinos_des.jpg",
-      mobileImage: "/images/nobero/hero_banner_chinos_mob.jpg",
+      desktopImage: "/images/leo/hero_banner_chinos_des.jpg",
+      mobileImage: "/images/leo/hero_banner_chinos_mob.jpg",
       active: true,
       order: 3
     },
@@ -187,8 +187,8 @@ const initialData = {
       ctaText: "SHOP WINTERWEAR",
       ctaLink: "/hoodies",
       badge: "SEASONAL",
-      desktopImage: "/images/nobero/hero_banner_shacket_des.jpg",
-      mobileImage: "/images/nobero/hero_banner_shacket_mob.jpg",
+      desktopImage: "/images/leo/hero_banner_shacket_des.jpg",
+      mobileImage: "/images/leo/hero_banner_shacket_mob.jpg",
       active: true,
       order: 4
     }
@@ -199,61 +199,61 @@ const initialData = {
     {
       id: "col-1",
       name: "Travel Essentials",
-      image: "/images/nobero/col_travel_exact.jpg",
+      image: "/images/leo/col_travel_exact.jpg",
       link: "/travel"
     },
     {
       id: "col-2",
       name: "Joggers",
-      image: "/images/nobero/col_joggers_exact.jpg",
+      image: "/images/leo/col_joggers_exact.jpg",
       link: "/joggers"
     },
     {
       id: "col-3",
       name: "Cargo Pants",
-      image: "/images/nobero/col_cargos_exact.jpg",
+      image: "/images/leo/col_cargos_exact.jpg",
       link: "/joggers"
     },
     {
       id: "col-4",
       name: "Co-Ord Sets",
-      image: "/images/nobero/col_coords_exact.jpg",
+      image: "/images/leo/col_coords_exact.jpg",
       link: "/co-ords"
     },
     {
       id: "col-5",
       name: "Oversized Tees",
-      image: "/images/nobero/col_oversized_exact.jpg",
+      image: "/images/leo/col_oversized_exact.jpg",
       link: "/oversized-tees"
     },
     {
       id: "col-6",
       name: "Polos",
-      image: "/images/nobero/col_polo_exact.png",
+      image: "/images/leo/col_polo_exact.png",
       link: "/polos"
     },
     {
       id: "col-7",
       name: "Men Shirts",
-      image: "/images/nobero/col_shirts_exact.jpg",
+      image: "/images/leo/col_shirts_exact.jpg",
       link: "/shirts"
     },
     {
       id: "col-8",
       name: "Shorts",
-      image: "/images/nobero/col_shorts_exact.png",
+      image: "/images/leo/col_shorts_exact.png",
       link: "/shorts"
     },
     {
       id: "col-9",
       name: "Full Sleeve Tees",
-      image: "/images/nobero/col_fullsleeve_exact.jpg",
+      image: "/images/leo/col_fullsleeve_exact.jpg",
       link: "/t-shirts"
     },
     {
       id: "col-10",
       name: "Hoodies & Jackets",
-      image: "/images/nobero/hero_banner_shacket_des.jpg",
+      image: "/images/leo/hero_banner_shacket_des.jpg",
       link: "/hoodies"
     }
   ],
@@ -263,7 +263,7 @@ const initialData = {
     {
       id: "look-1",
       title: "Urban Motion Look",
-      image: "/images/nobero/hero_banner_joggers_des.jpg",
+      image: "/images/leo/hero_banner_joggers_des.jpg",
       itemsIncluded: ["Call Of The Ocean Oversized Tee", "Air-Flex 6-Pocket Utility Cargo Jogger"],
       productIds: ["leo-1", "leo-41"],
       originalPrice: 3998,
@@ -274,7 +274,7 @@ const initialData = {
     {
       id: "look-2",
       title: "Transit Ready Look",
-      image: "/images/nobero/mood_travel.jpg",
+      image: "/images/leo/mood_travel.jpg",
       itemsIncluded: ["LEO Classic Travel Polo", "Wanderer Travel Cargo Jogger"],
       productIds: ["leo-17", "leo-43"],
       originalPrice: 5198,
@@ -285,7 +285,7 @@ const initialData = {
     {
       id: "look-3",
       title: "Waffle Resort Set Look",
-      image: "/images/nobero/col_coords_exact.jpg",
+      image: "/images/leo/col_coords_exact.jpg",
       itemsIncluded: ["Oversized Waffle Co-ord Tee", "Waffle Drawcord Tailored Shorts"],
       productIds: ["leo-25", "leo-33"],
       originalPrice: 3199,
@@ -296,7 +296,7 @@ const initialData = {
     {
       id: "look-4",
       title: "Heavyweight Layer Look",
-      image: "/images/nobero/hero_banner_shacket_des.jpg",
+      image: "/images/leo/hero_banner_shacket_des.jpg",
       itemsIncluded: ["Heavyweight French Terry Shacket", "Classic Straight Fit Jogger"],
       productIds: ["leo-37", "leo-44"],
       originalPrice: 2998,
@@ -563,14 +563,14 @@ const initialData = {
       care: "Machine wash cold inside-out.",
       sku: "LEO-CRD-004",
       inventory: 38,
-      image: "/images/nobero/col_oversized_exact.jpg",
-      secondaryImage: "/images/nobero/col_oversized_exact.jpg",
+      image: "/images/leo/col_oversized_exact.jpg",
+      secondaryImage: "/images/leo/col_oversized_exact.jpg",
       colors: [
         {
           name: "Natural Sand",
           hex: "#d8c4b6",
-          image: "/images/nobero/col_oversized_exact.jpg",
-          secondaryImage: "/images/nobero/col_oversized_exact.jpg"
+          image: "/images/leo/col_oversized_exact.jpg",
+          secondaryImage: "/images/leo/col_oversized_exact.jpg"
         }
       ],
       sizes: [
@@ -605,14 +605,14 @@ const initialData = {
       care: "Wash inside out in cold water.",
       sku: "LEO-TSH-005",
       inventory: 50,
-      image: "/images/nobero/col_oversized_exact.jpg",
-      secondaryImage: "/images/nobero/col_oversized_exact.jpg",
+      image: "/images/leo/col_oversized_exact.jpg",
+      secondaryImage: "/images/leo/col_oversized_exact.jpg",
       colors: [
         {
           name: "Vintage Ash Grey",
           hex: "#4a4a4a",
-          image: "/images/nobero/col_oversized_exact.jpg",
-          secondaryImage: "/images/nobero/col_oversized_exact.jpg"
+          image: "/images/leo/col_oversized_exact.jpg",
+          secondaryImage: "/images/leo/col_oversized_exact.jpg"
         }
       ],
       sizes: [
@@ -647,14 +647,14 @@ const initialData = {
       care: "Machine wash cold.",
       sku: "LEO-POL-007",
       inventory: 55,
-      image: "/images/nobero/col_oversized_exact.jpg",
-      secondaryImage: "/images/nobero/col_oversized_exact.jpg",
+      image: "/images/leo/col_oversized_exact.jpg",
+      secondaryImage: "/images/leo/col_oversized_exact.jpg",
       colors: [
         {
           name: "Racing Navy",
           hex: "#0c2340",
-          image: "/images/nobero/col_oversized_exact.jpg",
-          secondaryImage: "/images/nobero/col_oversized_exact.jpg"
+          image: "/images/leo/col_oversized_exact.jpg",
+          secondaryImage: "/images/leo/col_oversized_exact.jpg"
         }
       ],
       sizes: [
@@ -688,14 +688,14 @@ const initialData = {
       care: "Machine wash cold.",
       sku: "LEO-SHT-008",
       inventory: 40,
-      image: "/images/nobero/col_oversized_exact.jpg",
-      secondaryImage: "/images/nobero/col_oversized_exact.jpg",
+      image: "/images/leo/col_oversized_exact.jpg",
+      secondaryImage: "/images/leo/col_oversized_exact.jpg",
       colors: [
         {
           name: "Black & Olive Pack",
           hex: "#1b1b1b",
-          image: "/images/nobero/col_oversized_exact.jpg",
-          secondaryImage: "/images/nobero/col_oversized_exact.jpg"
+          image: "/images/leo/col_oversized_exact.jpg",
+          secondaryImage: "/images/leo/col_oversized_exact.jpg"
         }
       ],
       sizes: [
@@ -729,14 +729,14 @@ const initialData = {
       care: "Machine wash cold.",
       sku: "LEO-TSH-009",
       inventory: 60,
-      image: "/images/nobero/col_oversized_exact.jpg",
-      secondaryImage: "/images/nobero/col_oversized_exact.jpg",
+      image: "/images/leo/col_oversized_exact.jpg",
+      secondaryImage: "/images/leo/col_oversized_exact.jpg",
       colors: [
         {
           name: "Pure White",
           hex: "#ffffff",
-          image: "/images/nobero/col_oversized_exact.jpg",
-          secondaryImage: "/images/nobero/col_oversized_exact.jpg"
+          image: "/images/leo/col_oversized_exact.jpg",
+          secondaryImage: "/images/leo/col_oversized_exact.jpg"
         }
       ],
       sizes: [
@@ -835,7 +835,7 @@ const initialData = {
       author: "LEO Editorial",
       readTime: "4 min read",
       date: "October 04, 2026",
-      coverImage: "/images/nobero/col_shorts_exact.png",
+      coverImage: "/images/leo/col_shorts_exact.png",
       excerpt: "From tailored zip cargo shorts to relaxed waffle resort fits, discover the essential summer silhouettes.",
       content: `The modern wardrobe requires shorts that can transition seamlessly from relaxed weekend lounges to outdoor travel.`
     },
@@ -847,7 +847,7 @@ const initialData = {
       author: "LEO Style Studio",
       readTime: "5 min read",
       date: "October 02, 2026",
-      coverImage: "/images/nobero/mood_street.jpg",
+      coverImage: "/images/leo/mood_street.jpg",
       excerpt: "Why 240 GSM heavyweight cotton drape defines modern streetwear proportions and how to pair boxy tops with tapered bottoms.",
       content: `The oversized revolution is about structural geometry. When fabric has the right 240 GSM weight, the shoulders drape naturally.`
     },
@@ -859,7 +859,7 @@ const initialData = {
       author: "LEO Textile Lab",
       readTime: "4 min read",
       date: "September 28, 2026",
-      coverImage: "/images/nobero/col_polo_exact.png",
+      coverImage: "/images/leo/col_polo_exact.png",
       excerpt: "Understand micro-honeycomb pique knit, anti-curl collars, and how to style polos for smart casual occasions.",
       content: `The polo t-shirt remains the gold standard for smart casual comfort.`
     }
@@ -879,7 +879,7 @@ const initialData = {
           size: "L",
           price: 799,
           quantity: 1,
-          image: "/images/nobero/col_oversized_exact.jpg"
+          image: "/images/leo/col_oversized_exact.jpg"
         },
         {
           id: "leo-102",
@@ -888,7 +888,7 @@ const initialData = {
           size: "32",
           price: 1199,
           quantity: 1,
-          image: "/images/nobero/col_oversized_exact.jpg"
+          image: "/images/leo/col_oversized_exact.jpg"
         }
       ],
       shippingAddress: {
@@ -946,7 +946,7 @@ function writeDB(data) {
   }
 }
 
-const fullProductsManifest = path.join(__dirname, 'data', 'nobero_full_products.json');
+const fullProductsManifest = path.join(__dirname, 'data', 'leo_full_products.json');
 const downloadedManifest = path.join(__dirname, 'data', 'downloaded_products.json');
 
 if (fs.existsSync(fullProductsManifest)) {

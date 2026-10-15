@@ -1,7 +1,7 @@
 import fs from 'fs';
 
 async function mapColorImages() {
-  const res = await fetch('https://nobero.com/products/classic-polo-t-shirt.json');
+  const res = await fetch('https://leo.com/products/classic-polo-t-shirt.json');
   const d = await res.json();
   const p = d.product;
   const colors = p.options.find(o => o.name.toLowerCase().includes('color')).values;

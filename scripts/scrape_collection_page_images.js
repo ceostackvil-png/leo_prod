@@ -1,12 +1,12 @@
 import fs from 'fs';
 
 async function testPageImages() {
-  const url = 'https://nobero.com/collections/classic-polo';
+  const url = 'https://leo.com/collections/classic-polo';
   const res = await fetch(url, {
     headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' }
   });
   const html = await res.text();
-  
+
   // Find all img tags src and data-src and srcset
   const srcRegex = /<img[^>]+(?:src|data-src)=["']([^"']+)["']/gi;
   const matches = [];

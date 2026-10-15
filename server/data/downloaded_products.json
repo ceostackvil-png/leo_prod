@@ -18,11 +18,11 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-1",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-1_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-1_img_2.jpg",
+    "image": "/images/leo/item_leo-1_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-1_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-1_img_1.jpg",
-      "/images/nobero/item_leo-1_img_2.jpg"
+      "/images/leo/item_leo-1_img_1.jpg",
+      "/images/leo/item_leo-1_img_2.jpg"
     ],
     "sizes": [
       "S",
@@ -35,7 +35,7 @@
       {
         "name": "Powder Blue",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-1_img_1.jpg"
+        "image": "/images/leo/item_leo-1_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -65,13 +65,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-2",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-2_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-2_img_2.jpg",
+    "image": "/images/leo/item_leo-2_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-2_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-2_img_1.jpg",
-      "/images/nobero/item_leo-2_img_2.jpg",
-      "/images/nobero/item_leo-2_img_3.jpg",
-      "/images/nobero/item_leo-2_img_4.jpg"
+      "/images/leo/item_leo-2_img_1.jpg",
+      "/images/leo/item_leo-2_img_2.jpg",
+      "/images/leo/item_leo-2_img_3.jpg",
+      "/images/leo/item_leo-2_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -84,82 +84,82 @@
       {
         "name": "Olive Green",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-2_img_1.jpg"
+        "image": "/images/leo/item_leo-2_img_1.jpg"
       },
       {
         "name": "Black",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-2_img_1.jpg"
+        "image": "/images/leo/item_leo-2_img_1.jpg"
       },
       {
         "name": "Blush",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-2_img_1.jpg"
+        "image": "/images/leo/item_leo-2_img_1.jpg"
       },
       {
         "name": "Powder Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-2_img_1.jpg"
+        "image": "/images/leo/item_leo-2_img_1.jpg"
       },
       {
         "name": "Aloe Green",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-2_img_1.jpg"
+        "image": "/images/leo/item_leo-2_img_1.jpg"
       },
       {
         "name": "Wine Red",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-2_img_1.jpg"
+        "image": "/images/leo/item_leo-2_img_1.jpg"
       },
       {
         "name": "Marine",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-2_img_1.jpg"
+        "image": "/images/leo/item_leo-2_img_1.jpg"
       },
       {
         "name": "Sand",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-2_img_1.jpg"
+        "image": "/images/leo/item_leo-2_img_1.jpg"
       },
       {
         "name": "Mustard Yellow",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-2_img_1.jpg"
+        "image": "/images/leo/item_leo-2_img_1.jpg"
       },
       {
         "name": "Future Dusk",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-2_img_1.jpg"
+        "image": "/images/leo/item_leo-2_img_1.jpg"
       },
       {
         "name": "White",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-2_img_1.jpg"
+        "image": "/images/leo/item_leo-2_img_1.jpg"
       },
       {
         "name": "Rust Orange",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-2_img_1.jpg"
+        "image": "/images/leo/item_leo-2_img_1.jpg"
       },
       {
         "name": "Grape Nectar",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-2_img_1.jpg"
+        "image": "/images/leo/item_leo-2_img_1.jpg"
       },
       {
         "name": "Taupe Gray",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-2_img_1.jpg"
+        "image": "/images/leo/item_leo-2_img_1.jpg"
       },
       {
         "name": "Chocolate Fondant",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-2_img_1.jpg"
+        "image": "/images/leo/item_leo-2_img_1.jpg"
       },
       {
         "name": "Rainforest",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-2_img_1.jpg"
+        "image": "/images/leo/item_leo-2_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -189,13 +189,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-3",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-3_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-3_img_2.jpg",
+    "image": "/images/leo/item_leo-3_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-3_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-3_img_1.jpg",
-      "/images/nobero/item_leo-3_img_2.jpg",
-      "/images/nobero/item_leo-3_img_3.jpg",
-      "/images/nobero/item_leo-3_img_4.jpg"
+      "/images/leo/item_leo-3_img_1.jpg",
+      "/images/leo/item_leo-3_img_2.jpg",
+      "/images/leo/item_leo-3_img_3.jpg",
+      "/images/leo/item_leo-3_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -208,27 +208,27 @@
       {
         "name": "Black",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-3_img_1.jpg"
+        "image": "/images/leo/item_leo-3_img_1.jpg"
       },
       {
         "name": "Marine",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-3_img_1.jpg"
+        "image": "/images/leo/item_leo-3_img_1.jpg"
       },
       {
         "name": "Sand",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-3_img_1.jpg"
+        "image": "/images/leo/item_leo-3_img_1.jpg"
       },
       {
         "name": "Rust Orange",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-3_img_1.jpg"
+        "image": "/images/leo/item_leo-3_img_1.jpg"
       },
       {
         "name": "Olive Green",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-3_img_1.jpg"
+        "image": "/images/leo/item_leo-3_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -258,13 +258,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-4",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-4_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-4_img_2.jpg",
+    "image": "/images/leo/item_leo-4_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-4_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-4_img_1.jpg",
-      "/images/nobero/item_leo-4_img_2.jpg",
-      "/images/nobero/item_leo-4_img_3.jpg",
-      "/images/nobero/item_leo-4_img_4.jpg"
+      "/images/leo/item_leo-4_img_1.jpg",
+      "/images/leo/item_leo-4_img_2.jpg",
+      "/images/leo/item_leo-4_img_3.jpg",
+      "/images/leo/item_leo-4_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -277,117 +277,117 @@
       {
         "name": "Campsite Checklist/ Voyage",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Freedom/ Where the Sun Beckons",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Greece Abstract/ The Coffee Club",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Imperfectly Perfect/ Scenic Route",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Stay Wild/ Wild Trails",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Believe/ Where the Sun Beckons",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Campsite Checklist/ Paris",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Freedom/ Voyage",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Greece Abstract/ Stay Wild",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Scenic Route/ Wild Trails",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Bahamas/ Universe Balance",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Big Ben/ No Signal-Disconnected",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Call Of The Ocean/ Colorado",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Metamorphosis/ Unfold",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Bahamas/ Big Ben",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Call Of The Ocean/ Unfold",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Colorado/ Metamorphosis",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "No Signal-Disconnected/ Universe Balance",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Bahamas/ No Signal-Disconnected",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Big Ben/ Universe Balance",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Call Of The Ocean/ Metamorphosis",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Colorado/ Unfold",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       },
       {
         "name": "Believe/ Paris",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-4_img_1.jpg"
+        "image": "/images/leo/item_leo-4_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -417,10 +417,10 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-5",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-5_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-5_img_1.jpg",
+    "image": "/images/leo/item_leo-5_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-5_img_1.jpg",
     "images": [
-      "/images/nobero/item_leo-5_img_1.jpg"
+      "/images/leo/item_leo-5_img_1.jpg"
     ],
     "sizes": [
       "S",
@@ -433,7 +433,7 @@
       {
         "name": "Grey Melange",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-5_img_1.jpg"
+        "image": "/images/leo/item_leo-5_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -463,13 +463,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-6",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-6_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-6_img_2.jpg",
+    "image": "/images/leo/item_leo-6_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-6_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-6_img_1.jpg",
-      "/images/nobero/item_leo-6_img_2.jpg",
-      "/images/nobero/item_leo-6_img_3.jpg",
-      "/images/nobero/item_leo-6_img_4.jpg"
+      "/images/leo/item_leo-6_img_1.jpg",
+      "/images/leo/item_leo-6_img_2.jpg",
+      "/images/leo/item_leo-6_img_3.jpg",
+      "/images/leo/item_leo-6_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -482,7 +482,7 @@
       {
         "name": "Black",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-6_img_1.jpg"
+        "image": "/images/leo/item_leo-6_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -512,13 +512,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-7",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-7_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-7_img_2.jpg",
+    "image": "/images/leo/item_leo-7_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-7_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-7_img_1.jpg",
-      "/images/nobero/item_leo-7_img_2.jpg",
-      "/images/nobero/item_leo-7_img_3.jpg",
-      "/images/nobero/item_leo-7_img_4.jpg"
+      "/images/leo/item_leo-7_img_1.jpg",
+      "/images/leo/item_leo-7_img_2.jpg",
+      "/images/leo/item_leo-7_img_3.jpg",
+      "/images/leo/item_leo-7_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -531,7 +531,7 @@
       {
         "name": "Wine Red",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-7_img_1.jpg"
+        "image": "/images/leo/item_leo-7_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -561,13 +561,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-8",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-8_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-8_img_2.jpg",
+    "image": "/images/leo/item_leo-8_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-8_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-8_img_1.jpg",
-      "/images/nobero/item_leo-8_img_2.jpg",
-      "/images/nobero/item_leo-8_img_3.jpg",
-      "/images/nobero/item_leo-8_img_4.jpg"
+      "/images/leo/item_leo-8_img_1.jpg",
+      "/images/leo/item_leo-8_img_2.jpg",
+      "/images/leo/item_leo-8_img_3.jpg",
+      "/images/leo/item_leo-8_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -580,117 +580,117 @@
       {
         "name": "Greece Abstract/ The Coffee Club",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Imperfectly Perfect/ Scenic Route",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Stay Wild/ Wild Trails",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Believe/ Where the Sun Beckons",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Campsite Checklist/ Paris",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Freedom/ Voyage",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Greece Abstract/ Stay Wild",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Scenic Route/ Wild Trails",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Bahamas/ Universe Balance",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Big Ben/ No Signal-Disconnected",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Call Of The Ocean/ Colorado",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Metamorphosis/ Unfold",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Bahamas/ Big Ben",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Call Of The Ocean/ Unfold",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Colorado/ Metamorphosis",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "No Signal-Disconnected/ Universe Balance",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Bahamas/ No Signal-Disconnected",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Big Ben/ Universe Balance",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Call Of The Ocean/ Metamorphosis",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Colorado/ Unfold",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Freedom/ Where the Sun Beckons",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Campsite Checklist/ Voyage",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       },
       {
         "name": "Believe/ Paris",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-8_img_1.jpg"
+        "image": "/images/leo/item_leo-8_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -720,13 +720,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-9",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-9_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-9_img_2.jpg",
+    "image": "/images/leo/item_leo-9_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-9_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-9_img_1.jpg",
-      "/images/nobero/item_leo-9_img_2.jpg",
-      "/images/nobero/item_leo-9_img_3.jpg",
-      "/images/nobero/item_leo-9_img_4.jpg"
+      "/images/leo/item_leo-9_img_1.jpg",
+      "/images/leo/item_leo-9_img_2.jpg",
+      "/images/leo/item_leo-9_img_3.jpg",
+      "/images/leo/item_leo-9_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -739,22 +739,22 @@
       {
         "name": "Olive Green",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-9_img_1.jpg"
+        "image": "/images/leo/item_leo-9_img_1.jpg"
       },
       {
         "name": "Rust Orange",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-9_img_1.jpg"
+        "image": "/images/leo/item_leo-9_img_1.jpg"
       },
       {
         "name": "Powder Blue",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-9_img_1.jpg"
+        "image": "/images/leo/item_leo-9_img_1.jpg"
       },
       {
         "name": "Grey Melange",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-9_img_1.jpg"
+        "image": "/images/leo/item_leo-9_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -784,13 +784,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-10",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-10_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-10_img_2.jpg",
+    "image": "/images/leo/item_leo-10_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-10_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-10_img_1.jpg",
-      "/images/nobero/item_leo-10_img_2.jpg",
-      "/images/nobero/item_leo-10_img_3.jpg",
-      "/images/nobero/item_leo-10_img_4.jpg"
+      "/images/leo/item_leo-10_img_1.jpg",
+      "/images/leo/item_leo-10_img_2.jpg",
+      "/images/leo/item_leo-10_img_3.jpg",
+      "/images/leo/item_leo-10_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -803,7 +803,7 @@
       {
         "name": "Marine",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-10_img_1.jpg"
+        "image": "/images/leo/item_leo-10_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -833,13 +833,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-11",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-11_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-11_img_2.jpg",
+    "image": "/images/leo/item_leo-11_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-11_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-11_img_1.jpg",
-      "/images/nobero/item_leo-11_img_2.jpg",
-      "/images/nobero/item_leo-11_img_3.jpg",
-      "/images/nobero/item_leo-11_img_4.jpg"
+      "/images/leo/item_leo-11_img_1.jpg",
+      "/images/leo/item_leo-11_img_2.jpg",
+      "/images/leo/item_leo-11_img_3.jpg",
+      "/images/leo/item_leo-11_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -852,7 +852,7 @@
       {
         "name": "Black",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-11_img_1.jpg"
+        "image": "/images/leo/item_leo-11_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -882,13 +882,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-12",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-12_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-12_img_2.jpg",
+    "image": "/images/leo/item_leo-12_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-12_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-12_img_1.jpg",
-      "/images/nobero/item_leo-12_img_2.jpg",
-      "/images/nobero/item_leo-12_img_3.jpg",
-      "/images/nobero/item_leo-12_img_4.jpg"
+      "/images/leo/item_leo-12_img_1.jpg",
+      "/images/leo/item_leo-12_img_2.jpg",
+      "/images/leo/item_leo-12_img_3.jpg",
+      "/images/leo/item_leo-12_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -901,17 +901,17 @@
       {
         "name": "White",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-12_img_1.jpg"
+        "image": "/images/leo/item_leo-12_img_1.jpg"
       },
       {
         "name": "Sand",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-12_img_1.jpg"
+        "image": "/images/leo/item_leo-12_img_1.jpg"
       },
       {
         "name": "Taupe Gray",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-12_img_1.jpg"
+        "image": "/images/leo/item_leo-12_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -941,13 +941,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-13",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-13_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-13_img_2.jpg",
+    "image": "/images/leo/item_leo-13_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-13_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-13_img_1.jpg",
-      "/images/nobero/item_leo-13_img_2.jpg",
-      "/images/nobero/item_leo-13_img_3.jpg",
-      "/images/nobero/item_leo-13_img_4.jpg"
+      "/images/leo/item_leo-13_img_1.jpg",
+      "/images/leo/item_leo-13_img_2.jpg",
+      "/images/leo/item_leo-13_img_3.jpg",
+      "/images/leo/item_leo-13_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -960,22 +960,22 @@
       {
         "name": "Black",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-13_img_1.jpg"
+        "image": "/images/leo/item_leo-13_img_1.jpg"
       },
       {
         "name": "Powder Blue",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-13_img_1.jpg"
+        "image": "/images/leo/item_leo-13_img_1.jpg"
       },
       {
         "name": "Wine Red",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-13_img_1.jpg"
+        "image": "/images/leo/item_leo-13_img_1.jpg"
       },
       {
         "name": "Rainforest",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-13_img_1.jpg"
+        "image": "/images/leo/item_leo-13_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -1005,13 +1005,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-14",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-14_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-14_img_2.jpg",
+    "image": "/images/leo/item_leo-14_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-14_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-14_img_1.jpg",
-      "/images/nobero/item_leo-14_img_2.jpg",
-      "/images/nobero/item_leo-14_img_3.jpg",
-      "/images/nobero/item_leo-14_img_4.jpg"
+      "/images/leo/item_leo-14_img_1.jpg",
+      "/images/leo/item_leo-14_img_2.jpg",
+      "/images/leo/item_leo-14_img_3.jpg",
+      "/images/leo/item_leo-14_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -1024,17 +1024,17 @@
       {
         "name": "Powder Blue",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-14_img_1.jpg"
+        "image": "/images/leo/item_leo-14_img_1.jpg"
       },
       {
         "name": "Blush",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-14_img_1.jpg"
+        "image": "/images/leo/item_leo-14_img_1.jpg"
       },
       {
         "name": "Mustard Yellow",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-14_img_1.jpg"
+        "image": "/images/leo/item_leo-14_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -1064,12 +1064,12 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-15",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-15_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-15_img_2.jpg",
+    "image": "/images/leo/item_leo-15_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-15_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-15_img_1.jpg",
-      "/images/nobero/item_leo-15_img_2.jpg",
-      "/images/nobero/item_leo-15_img_3.jpg"
+      "/images/leo/item_leo-15_img_1.jpg",
+      "/images/leo/item_leo-15_img_2.jpg",
+      "/images/leo/item_leo-15_img_3.jpg"
     ],
     "sizes": [
       "S",
@@ -1082,7 +1082,7 @@
       {
         "name": "Sand",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-15_img_1.jpg"
+        "image": "/images/leo/item_leo-15_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -1112,12 +1112,12 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-16",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-16_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-16_img_2.jpg",
+    "image": "/images/leo/item_leo-16_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-16_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-16_img_1.jpg",
-      "/images/nobero/item_leo-16_img_2.jpg",
-      "/images/nobero/item_leo-16_img_3.jpg"
+      "/images/leo/item_leo-16_img_1.jpg",
+      "/images/leo/item_leo-16_img_2.jpg",
+      "/images/leo/item_leo-16_img_3.jpg"
     ],
     "sizes": [
       "S",
@@ -1130,7 +1130,7 @@
       {
         "name": "Olive Green",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-16_img_1.jpg"
+        "image": "/images/leo/item_leo-16_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -1160,13 +1160,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-17",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-17_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-17_img_2.jpg",
+    "image": "/images/leo/item_leo-17_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-17_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-17_img_1.jpg",
-      "/images/nobero/item_leo-17_img_2.jpg",
-      "/images/nobero/item_leo-17_img_3.jpg",
-      "/images/nobero/item_leo-17_img_4.jpg"
+      "/images/leo/item_leo-17_img_1.jpg",
+      "/images/leo/item_leo-17_img_2.jpg",
+      "/images/leo/item_leo-17_img_3.jpg",
+      "/images/leo/item_leo-17_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -1179,107 +1179,107 @@
       {
         "name": "Navy Blue",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Petunia",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Burgundy",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Black",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Cobalt Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Deep Ocean",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Amber Yellow",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Aqua Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Mauve Mist",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Pecan",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Espresso",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Dusty Rose",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Highland Green",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Canary",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Rainforest",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Coral",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Powder Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Latte",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "White",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Poppy Red",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       },
       {
         "name": "Salmon",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-17_img_1.jpg"
+        "image": "/images/leo/item_leo-17_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -1309,13 +1309,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-18",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-18_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-18_img_2.jpg",
+    "image": "/images/leo/item_leo-18_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-18_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-18_img_1.jpg",
-      "/images/nobero/item_leo-18_img_2.jpg",
-      "/images/nobero/item_leo-18_img_3.jpg",
-      "/images/nobero/item_leo-18_img_4.jpg"
+      "/images/leo/item_leo-18_img_1.jpg",
+      "/images/leo/item_leo-18_img_2.jpg",
+      "/images/leo/item_leo-18_img_3.jpg",
+      "/images/leo/item_leo-18_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -1328,107 +1328,107 @@
       {
         "name": "Black",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Navy Blue",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Petunia",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Burgundy",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Cobalt Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Deep Ocean",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Amber Yellow",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Aqua Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Pecan",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Espresso",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Dusty Rose",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Highland Green",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Canary",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Rainforest",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Coral",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Powder Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Latte",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "White",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Mauve Mist",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Poppy Red",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       },
       {
         "name": "Salmon",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-18_img_1.jpg"
+        "image": "/images/leo/item_leo-18_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -1458,13 +1458,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-19",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-19_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-19_img_2.jpg",
+    "image": "/images/leo/item_leo-19_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-19_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-19_img_1.jpg",
-      "/images/nobero/item_leo-19_img_2.jpg",
-      "/images/nobero/item_leo-19_img_3.jpg",
-      "/images/nobero/item_leo-19_img_4.jpg"
+      "/images/leo/item_leo-19_img_1.jpg",
+      "/images/leo/item_leo-19_img_2.jpg",
+      "/images/leo/item_leo-19_img_3.jpg",
+      "/images/leo/item_leo-19_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -1477,107 +1477,107 @@
       {
         "name": "Pecan",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Petunia",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Burgundy",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Black",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Cobalt Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Deep Ocean",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Amber Yellow",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Aqua Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Espresso",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Navy Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Dusty Rose",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Highland Green",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Canary",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Rainforest",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Coral",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Powder Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Latte",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "White",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Mauve Mist",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Poppy Red",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       },
       {
         "name": "Salmon",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-19_img_1.jpg"
+        "image": "/images/leo/item_leo-19_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -1607,13 +1607,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-20",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-20_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-20_img_2.jpg",
+    "image": "/images/leo/item_leo-20_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-20_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-20_img_1.jpg",
-      "/images/nobero/item_leo-20_img_2.jpg",
-      "/images/nobero/item_leo-20_img_3.jpg",
-      "/images/nobero/item_leo-20_img_4.jpg"
+      "/images/leo/item_leo-20_img_1.jpg",
+      "/images/leo/item_leo-20_img_2.jpg",
+      "/images/leo/item_leo-20_img_3.jpg",
+      "/images/leo/item_leo-20_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -1626,107 +1626,107 @@
       {
         "name": "Powder Blue",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Petunia",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Burgundy",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Black",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Cobalt Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Deep Ocean",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Amber Yellow",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Aqua Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Pecan",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Espresso",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Navy Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Dusty Rose",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Highland Green",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Canary",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Rainforest",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Coral",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Latte",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "White",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Mauve Mist",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Poppy Red",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       },
       {
         "name": "Salmon",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-20_img_1.jpg"
+        "image": "/images/leo/item_leo-20_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -1756,13 +1756,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-21",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-21_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-21_img_2.jpg",
+    "image": "/images/leo/item_leo-21_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-21_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-21_img_1.jpg",
-      "/images/nobero/item_leo-21_img_2.jpg",
-      "/images/nobero/item_leo-21_img_3.jpg",
-      "/images/nobero/item_leo-21_img_4.jpg"
+      "/images/leo/item_leo-21_img_1.jpg",
+      "/images/leo/item_leo-21_img_2.jpg",
+      "/images/leo/item_leo-21_img_3.jpg",
+      "/images/leo/item_leo-21_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -1775,107 +1775,107 @@
       {
         "name": "Burgundy",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Petunia",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Black",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Cobalt Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Deep Ocean",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Amber Yellow",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Aqua Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Pecan",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Espresso",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Navy Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Dusty Rose",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Highland Green",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Canary",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Rainforest",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Coral",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Powder Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Latte",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "White",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Mauve Mist",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Poppy Red",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       },
       {
         "name": "Salmon",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-21_img_1.jpg"
+        "image": "/images/leo/item_leo-21_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -1905,13 +1905,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-22",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-22_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-22_img_2.jpg",
+    "image": "/images/leo/item_leo-22_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-22_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-22_img_1.jpg",
-      "/images/nobero/item_leo-22_img_2.jpg",
-      "/images/nobero/item_leo-22_img_3.jpg",
-      "/images/nobero/item_leo-22_img_4.jpg"
+      "/images/leo/item_leo-22_img_1.jpg",
+      "/images/leo/item_leo-22_img_2.jpg",
+      "/images/leo/item_leo-22_img_3.jpg",
+      "/images/leo/item_leo-22_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -1924,107 +1924,107 @@
       {
         "name": "Canary",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Petunia",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Burgundy",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Black",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Cobalt Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Deep Ocean",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Amber Yellow",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Aqua Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Pecan",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Espresso",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Navy Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Dusty Rose",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Highland Green",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Rainforest",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Coral",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Powder Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Latte",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "White",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Mauve Mist",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Poppy Red",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       },
       {
         "name": "Salmon",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-22_img_1.jpg"
+        "image": "/images/leo/item_leo-22_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -2054,13 +2054,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-23",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-23_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-23_img_2.jpg",
+    "image": "/images/leo/item_leo-23_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-23_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-23_img_1.jpg",
-      "/images/nobero/item_leo-23_img_2.jpg",
-      "/images/nobero/item_leo-23_img_3.jpg",
-      "/images/nobero/item_leo-23_img_4.jpg"
+      "/images/leo/item_leo-23_img_1.jpg",
+      "/images/leo/item_leo-23_img_2.jpg",
+      "/images/leo/item_leo-23_img_3.jpg",
+      "/images/leo/item_leo-23_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -2073,27 +2073,27 @@
       {
         "name": "Olive Green",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-23_img_1.jpg"
+        "image": "/images/leo/item_leo-23_img_1.jpg"
       },
       {
         "name": "Black",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-23_img_1.jpg"
+        "image": "/images/leo/item_leo-23_img_1.jpg"
       },
       {
         "name": "Nutshell",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-23_img_1.jpg"
+        "image": "/images/leo/item_leo-23_img_1.jpg"
       },
       {
         "name": "Powder Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-23_img_1.jpg"
+        "image": "/images/leo/item_leo-23_img_1.jpg"
       },
       {
         "name": "Navy Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-23_img_1.jpg"
+        "image": "/images/leo/item_leo-23_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -2123,13 +2123,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-24",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-24_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-24_img_2.jpg",
+    "image": "/images/leo/item_leo-24_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-24_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-24_img_1.jpg",
-      "/images/nobero/item_leo-24_img_2.jpg",
-      "/images/nobero/item_leo-24_img_3.jpg",
-      "/images/nobero/item_leo-24_img_4.jpg"
+      "/images/leo/item_leo-24_img_1.jpg",
+      "/images/leo/item_leo-24_img_2.jpg",
+      "/images/leo/item_leo-24_img_3.jpg",
+      "/images/leo/item_leo-24_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -2142,27 +2142,27 @@
       {
         "name": "Nutshell",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-24_img_1.jpg"
+        "image": "/images/leo/item_leo-24_img_1.jpg"
       },
       {
         "name": "Black",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-24_img_1.jpg"
+        "image": "/images/leo/item_leo-24_img_1.jpg"
       },
       {
         "name": "Powder Blue",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-24_img_1.jpg"
+        "image": "/images/leo/item_leo-24_img_1.jpg"
       },
       {
         "name": "Stone",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-24_img_1.jpg"
+        "image": "/images/leo/item_leo-24_img_1.jpg"
       },
       {
         "name": "Olive Green",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-24_img_1.jpg"
+        "image": "/images/leo/item_leo-24_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -2192,13 +2192,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-25",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-25_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-25_img_2.jpg",
+    "image": "/images/leo/item_leo-25_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-25_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-25_img_1.jpg",
-      "/images/nobero/item_leo-25_img_2.jpg",
-      "/images/nobero/item_leo-25_img_3.jpg",
-      "/images/nobero/item_leo-25_img_4.jpg"
+      "/images/leo/item_leo-25_img_1.jpg",
+      "/images/leo/item_leo-25_img_2.jpg",
+      "/images/leo/item_leo-25_img_3.jpg",
+      "/images/leo/item_leo-25_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -2211,12 +2211,12 @@
       {
         "name": "Navy Blue",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-25_img_1.jpg"
+        "image": "/images/leo/item_leo-25_img_1.jpg"
       },
       {
         "name": "Black",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-25_img_1.jpg"
+        "image": "/images/leo/item_leo-25_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -2246,13 +2246,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-26",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-26_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-26_img_2.jpg",
+    "image": "/images/leo/item_leo-26_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-26_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-26_img_1.jpg",
-      "/images/nobero/item_leo-26_img_2.jpg",
-      "/images/nobero/item_leo-26_img_3.jpg",
-      "/images/nobero/item_leo-26_img_4.jpg"
+      "/images/leo/item_leo-26_img_1.jpg",
+      "/images/leo/item_leo-26_img_2.jpg",
+      "/images/leo/item_leo-26_img_3.jpg",
+      "/images/leo/item_leo-26_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -2265,37 +2265,37 @@
       {
         "name": "Black",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-26_img_1.jpg"
+        "image": "/images/leo/item_leo-26_img_1.jpg"
       },
       {
         "name": "Navy Blue",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-26_img_1.jpg"
+        "image": "/images/leo/item_leo-26_img_1.jpg"
       },
       {
         "name": "Olive Green",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-26_img_1.jpg"
+        "image": "/images/leo/item_leo-26_img_1.jpg"
       },
       {
         "name": "Powder Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-26_img_1.jpg"
+        "image": "/images/leo/item_leo-26_img_1.jpg"
       },
       {
         "name": "Sand",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-26_img_1.jpg"
+        "image": "/images/leo/item_leo-26_img_1.jpg"
       },
       {
         "name": "Orchid",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-26_img_1.jpg"
+        "image": "/images/leo/item_leo-26_img_1.jpg"
       },
       {
         "name": "Mauve",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-26_img_1.jpg"
+        "image": "/images/leo/item_leo-26_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -2325,13 +2325,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-27",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-27_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-27_img_2.jpg",
+    "image": "/images/leo/item_leo-27_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-27_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-27_img_1.jpg",
-      "/images/nobero/item_leo-27_img_2.jpg",
-      "/images/nobero/item_leo-27_img_3.jpg",
-      "/images/nobero/item_leo-27_img_4.jpg"
+      "/images/leo/item_leo-27_img_1.jpg",
+      "/images/leo/item_leo-27_img_2.jpg",
+      "/images/leo/item_leo-27_img_3.jpg",
+      "/images/leo/item_leo-27_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -2344,37 +2344,37 @@
       {
         "name": "Navy Blue",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-27_img_1.jpg"
+        "image": "/images/leo/item_leo-27_img_1.jpg"
       },
       {
         "name": "Black",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-27_img_1.jpg"
+        "image": "/images/leo/item_leo-27_img_1.jpg"
       },
       {
         "name": "Olive Green",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-27_img_1.jpg"
+        "image": "/images/leo/item_leo-27_img_1.jpg"
       },
       {
         "name": "Powder Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-27_img_1.jpg"
+        "image": "/images/leo/item_leo-27_img_1.jpg"
       },
       {
         "name": "Sand",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-27_img_1.jpg"
+        "image": "/images/leo/item_leo-27_img_1.jpg"
       },
       {
         "name": "Orchid",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-27_img_1.jpg"
+        "image": "/images/leo/item_leo-27_img_1.jpg"
       },
       {
         "name": "Mauve",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-27_img_1.jpg"
+        "image": "/images/leo/item_leo-27_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -2404,13 +2404,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-28",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-28_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-28_img_2.jpg",
+    "image": "/images/leo/item_leo-28_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-28_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-28_img_1.jpg",
-      "/images/nobero/item_leo-28_img_2.jpg",
-      "/images/nobero/item_leo-28_img_3.jpg",
-      "/images/nobero/item_leo-28_img_4.jpg"
+      "/images/leo/item_leo-28_img_1.jpg",
+      "/images/leo/item_leo-28_img_2.jpg",
+      "/images/leo/item_leo-28_img_3.jpg",
+      "/images/leo/item_leo-28_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -2423,12 +2423,12 @@
       {
         "name": "Olive Green",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-28_img_1.jpg"
+        "image": "/images/leo/item_leo-28_img_1.jpg"
       },
       {
         "name": "Nutshell",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-28_img_1.jpg"
+        "image": "/images/leo/item_leo-28_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -2458,13 +2458,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-29",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-29_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-29_img_2.jpg",
+    "image": "/images/leo/item_leo-29_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-29_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-29_img_1.jpg",
-      "/images/nobero/item_leo-29_img_2.jpg",
-      "/images/nobero/item_leo-29_img_3.jpg",
-      "/images/nobero/item_leo-29_img_4.jpg"
+      "/images/leo/item_leo-29_img_1.jpg",
+      "/images/leo/item_leo-29_img_2.jpg",
+      "/images/leo/item_leo-29_img_3.jpg",
+      "/images/leo/item_leo-29_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -2477,12 +2477,12 @@
       {
         "name": "Periwinkle",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-29_img_1.jpg"
+        "image": "/images/leo/item_leo-29_img_1.jpg"
       },
       {
         "name": "Black",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-29_img_1.jpg"
+        "image": "/images/leo/item_leo-29_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -2512,13 +2512,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-30",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-30_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-30_img_2.jpg",
+    "image": "/images/leo/item_leo-30_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-30_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-30_img_1.jpg",
-      "/images/nobero/item_leo-30_img_2.jpg",
-      "/images/nobero/item_leo-30_img_3.jpg",
-      "/images/nobero/item_leo-30_img_4.jpg"
+      "/images/leo/item_leo-30_img_1.jpg",
+      "/images/leo/item_leo-30_img_2.jpg",
+      "/images/leo/item_leo-30_img_3.jpg",
+      "/images/leo/item_leo-30_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -2531,12 +2531,12 @@
       {
         "name": "Nutshell",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-30_img_1.jpg"
+        "image": "/images/leo/item_leo-30_img_1.jpg"
       },
       {
         "name": "Olive Green",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-30_img_1.jpg"
+        "image": "/images/leo/item_leo-30_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -2566,13 +2566,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-31",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-31_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-31_img_2.jpg",
+    "image": "/images/leo/item_leo-31_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-31_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-31_img_1.jpg",
-      "/images/nobero/item_leo-31_img_2.jpg",
-      "/images/nobero/item_leo-31_img_3.jpg",
-      "/images/nobero/item_leo-31_img_4.jpg"
+      "/images/leo/item_leo-31_img_1.jpg",
+      "/images/leo/item_leo-31_img_2.jpg",
+      "/images/leo/item_leo-31_img_3.jpg",
+      "/images/leo/item_leo-31_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -2585,37 +2585,37 @@
       {
         "name": "Sand",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-31_img_1.jpg"
+        "image": "/images/leo/item_leo-31_img_1.jpg"
       },
       {
         "name": "Black",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-31_img_1.jpg"
+        "image": "/images/leo/item_leo-31_img_1.jpg"
       },
       {
         "name": "Navy Blue",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-31_img_1.jpg"
+        "image": "/images/leo/item_leo-31_img_1.jpg"
       },
       {
         "name": "Olive Green",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-31_img_1.jpg"
+        "image": "/images/leo/item_leo-31_img_1.jpg"
       },
       {
         "name": "Powder Blue",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-31_img_1.jpg"
+        "image": "/images/leo/item_leo-31_img_1.jpg"
       },
       {
         "name": "Orchid",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-31_img_1.jpg"
+        "image": "/images/leo/item_leo-31_img_1.jpg"
       },
       {
         "name": "Mauve",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-31_img_1.jpg"
+        "image": "/images/leo/item_leo-31_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -2645,13 +2645,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-32",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-32_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-32_img_2.jpg",
+    "image": "/images/leo/item_leo-32_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-32_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-32_img_1.jpg",
-      "/images/nobero/item_leo-32_img_2.jpg",
-      "/images/nobero/item_leo-32_img_3.jpg",
-      "/images/nobero/item_leo-32_img_4.jpg"
+      "/images/leo/item_leo-32_img_1.jpg",
+      "/images/leo/item_leo-32_img_2.jpg",
+      "/images/leo/item_leo-32_img_3.jpg",
+      "/images/leo/item_leo-32_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -2664,7 +2664,7 @@
       {
         "name": "Powder Blue",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-32_img_1.jpg"
+        "image": "/images/leo/item_leo-32_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -2694,13 +2694,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-33",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-33_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-33_img_2.jpg",
+    "image": "/images/leo/item_leo-33_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-33_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-33_img_1.jpg",
-      "/images/nobero/item_leo-33_img_2.jpg",
-      "/images/nobero/item_leo-33_img_3.jpg",
-      "/images/nobero/item_leo-33_img_4.jpg"
+      "/images/leo/item_leo-33_img_1.jpg",
+      "/images/leo/item_leo-33_img_2.jpg",
+      "/images/leo/item_leo-33_img_3.jpg",
+      "/images/leo/item_leo-33_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -2713,22 +2713,22 @@
       {
         "name": "Black",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-33_img_1.jpg"
+        "image": "/images/leo/item_leo-33_img_1.jpg"
       },
       {
         "name": "Navy Blue",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-33_img_1.jpg"
+        "image": "/images/leo/item_leo-33_img_1.jpg"
       },
       {
         "name": "Olive Green",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-33_img_1.jpg"
+        "image": "/images/leo/item_leo-33_img_1.jpg"
       },
       {
         "name": "Eiffel Tower",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-33_img_1.jpg"
+        "image": "/images/leo/item_leo-33_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -2758,13 +2758,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-34",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-34_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-34_img_2.jpg",
+    "image": "/images/leo/item_leo-34_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-34_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-34_img_1.jpg",
-      "/images/nobero/item_leo-34_img_2.jpg",
-      "/images/nobero/item_leo-34_img_3.jpg",
-      "/images/nobero/item_leo-34_img_4.jpg"
+      "/images/leo/item_leo-34_img_1.jpg",
+      "/images/leo/item_leo-34_img_2.jpg",
+      "/images/leo/item_leo-34_img_3.jpg",
+      "/images/leo/item_leo-34_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -2777,22 +2777,22 @@
       {
         "name": "Navy Blue",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-34_img_1.jpg"
+        "image": "/images/leo/item_leo-34_img_1.jpg"
       },
       {
         "name": "Black",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-34_img_1.jpg"
+        "image": "/images/leo/item_leo-34_img_1.jpg"
       },
       {
         "name": "Olive Green",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-34_img_1.jpg"
+        "image": "/images/leo/item_leo-34_img_1.jpg"
       },
       {
         "name": "Eiffel Tower",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-34_img_1.jpg"
+        "image": "/images/leo/item_leo-34_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -2822,13 +2822,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-35",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-35_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-35_img_2.jpg",
+    "image": "/images/leo/item_leo-35_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-35_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-35_img_1.jpg",
-      "/images/nobero/item_leo-35_img_2.jpg",
-      "/images/nobero/item_leo-35_img_3.jpg",
-      "/images/nobero/item_leo-35_img_4.jpg"
+      "/images/leo/item_leo-35_img_1.jpg",
+      "/images/leo/item_leo-35_img_2.jpg",
+      "/images/leo/item_leo-35_img_3.jpg",
+      "/images/leo/item_leo-35_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -2841,22 +2841,22 @@
       {
         "name": "Eiffel Tower",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-35_img_1.jpg"
+        "image": "/images/leo/item_leo-35_img_1.jpg"
       },
       {
         "name": "Olive Green",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-35_img_1.jpg"
+        "image": "/images/leo/item_leo-35_img_1.jpg"
       },
       {
         "name": "Navy Blue",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-35_img_1.jpg"
+        "image": "/images/leo/item_leo-35_img_1.jpg"
       },
       {
         "name": "Black",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-35_img_1.jpg"
+        "image": "/images/leo/item_leo-35_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -2886,13 +2886,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-36",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-36_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-36_img_2.jpg",
+    "image": "/images/leo/item_leo-36_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-36_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-36_img_1.jpg",
-      "/images/nobero/item_leo-36_img_2.jpg",
-      "/images/nobero/item_leo-36_img_3.jpg",
-      "/images/nobero/item_leo-36_img_4.jpg"
+      "/images/leo/item_leo-36_img_1.jpg",
+      "/images/leo/item_leo-36_img_2.jpg",
+      "/images/leo/item_leo-36_img_3.jpg",
+      "/images/leo/item_leo-36_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -2905,22 +2905,22 @@
       {
         "name": "Olive Green",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-36_img_1.jpg"
+        "image": "/images/leo/item_leo-36_img_1.jpg"
       },
       {
         "name": "Navy Blue",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-36_img_1.jpg"
+        "image": "/images/leo/item_leo-36_img_1.jpg"
       },
       {
         "name": "Black",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-36_img_1.jpg"
+        "image": "/images/leo/item_leo-36_img_1.jpg"
       },
       {
         "name": "Eiffel Tower",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-36_img_1.jpg"
+        "image": "/images/leo/item_leo-36_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -2950,13 +2950,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-37",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-37_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-37_img_2.jpg",
+    "image": "/images/leo/item_leo-37_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-37_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-37_img_1.jpg",
-      "/images/nobero/item_leo-37_img_2.jpg",
-      "/images/nobero/item_leo-37_img_3.jpg",
-      "/images/nobero/item_leo-37_img_4.jpg"
+      "/images/leo/item_leo-37_img_1.jpg",
+      "/images/leo/item_leo-37_img_2.jpg",
+      "/images/leo/item_leo-37_img_3.jpg",
+      "/images/leo/item_leo-37_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -2969,22 +2969,22 @@
       {
         "name": "Sage green",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-37_img_1.jpg"
+        "image": "/images/leo/item_leo-37_img_1.jpg"
       },
       {
         "name": "Artic Wolf",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-37_img_1.jpg"
+        "image": "/images/leo/item_leo-37_img_1.jpg"
       },
       {
         "name": "Navy Blue",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-37_img_1.jpg"
+        "image": "/images/leo/item_leo-37_img_1.jpg"
       },
       {
         "name": "Black",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-37_img_1.jpg"
+        "image": "/images/leo/item_leo-37_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -3014,13 +3014,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-38",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-38_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-38_img_2.jpg",
+    "image": "/images/leo/item_leo-38_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-38_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-38_img_1.jpg",
-      "/images/nobero/item_leo-38_img_2.jpg",
-      "/images/nobero/item_leo-38_img_3.jpg",
-      "/images/nobero/item_leo-38_img_4.jpg"
+      "/images/leo/item_leo-38_img_1.jpg",
+      "/images/leo/item_leo-38_img_2.jpg",
+      "/images/leo/item_leo-38_img_3.jpg",
+      "/images/leo/item_leo-38_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -3033,22 +3033,22 @@
       {
         "name": "Artic Wolf",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-38_img_1.jpg"
+        "image": "/images/leo/item_leo-38_img_1.jpg"
       },
       {
         "name": "Navy Blue",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-38_img_1.jpg"
+        "image": "/images/leo/item_leo-38_img_1.jpg"
       },
       {
         "name": "Black",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-38_img_1.jpg"
+        "image": "/images/leo/item_leo-38_img_1.jpg"
       },
       {
         "name": "Sage green",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-38_img_1.jpg"
+        "image": "/images/leo/item_leo-38_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -3078,13 +3078,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-39",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-39_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-39_img_2.jpg",
+    "image": "/images/leo/item_leo-39_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-39_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-39_img_1.jpg",
-      "/images/nobero/item_leo-39_img_2.jpg",
-      "/images/nobero/item_leo-39_img_3.jpg",
-      "/images/nobero/item_leo-39_img_4.jpg"
+      "/images/leo/item_leo-39_img_1.jpg",
+      "/images/leo/item_leo-39_img_2.jpg",
+      "/images/leo/item_leo-39_img_3.jpg",
+      "/images/leo/item_leo-39_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -3097,22 +3097,22 @@
       {
         "name": "Navy Blue",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-39_img_1.jpg"
+        "image": "/images/leo/item_leo-39_img_1.jpg"
       },
       {
         "name": "Black",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-39_img_1.jpg"
+        "image": "/images/leo/item_leo-39_img_1.jpg"
       },
       {
         "name": "Artic Wolf",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-39_img_1.jpg"
+        "image": "/images/leo/item_leo-39_img_1.jpg"
       },
       {
         "name": "Sage green",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-39_img_1.jpg"
+        "image": "/images/leo/item_leo-39_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",
@@ -3142,13 +3142,13 @@
     "care": "Machine wash cold inside-out, tumble dry low, do not iron on print.",
     "sku": "LEO-LEO-40",
     "inventory": 85,
-    "image": "/images/nobero/item_leo-40_img_1.jpg",
-    "secondaryImage": "/images/nobero/item_leo-40_img_2.jpg",
+    "image": "/images/leo/item_leo-40_img_1.jpg",
+    "secondaryImage": "/images/leo/item_leo-40_img_2.jpg",
     "images": [
-      "/images/nobero/item_leo-40_img_1.jpg",
-      "/images/nobero/item_leo-40_img_2.jpg",
-      "/images/nobero/item_leo-40_img_3.jpg",
-      "/images/nobero/item_leo-40_img_4.jpg"
+      "/images/leo/item_leo-40_img_1.jpg",
+      "/images/leo/item_leo-40_img_2.jpg",
+      "/images/leo/item_leo-40_img_3.jpg",
+      "/images/leo/item_leo-40_img_4.jpg"
     ],
     "sizes": [
       "S",
@@ -3161,22 +3161,22 @@
       {
         "name": "Black",
         "code": "#1E293B",
-        "image": "/images/nobero/item_leo-40_img_1.jpg"
+        "image": "/images/leo/item_leo-40_img_1.jpg"
       },
       {
         "name": "Navy Blue",
         "code": "#0F172A",
-        "image": "/images/nobero/item_leo-40_img_1.jpg"
+        "image": "/images/leo/item_leo-40_img_1.jpg"
       },
       {
         "name": "Artic Wolf",
         "code": "#64748B",
-        "image": "/images/nobero/item_leo-40_img_1.jpg"
+        "image": "/images/leo/item_leo-40_img_1.jpg"
       },
       {
         "name": "Sage green",
         "code": "#CBD5E1",
-        "image": "/images/nobero/item_leo-40_img_1.jpg"
+        "image": "/images/leo/item_leo-40_img_1.jpg"
       }
     ],
     "description": "Designed for everyday luxury and effortless style. Features ultra-soft combed cotton with reinforced stitching for long-lasting shape retention.",

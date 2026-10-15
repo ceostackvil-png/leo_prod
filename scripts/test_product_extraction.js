@@ -51,7 +51,7 @@ function stripHtml(html) {
 }
 
 async function inspectProduct(handle) {
-  const res = await fetch(`https://nobero.com/products/${handle}.json`, {
+  const res = await fetch(`https://leo.com/products/${handle}.json`, {
     headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' }
   });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);

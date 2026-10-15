@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 const DB_PATH = 'C:\\Users\\ASUS\\Downloads\\LEO\\leo_prod\\server\\data\\db.json';
-const OUTPUT_PATH = 'C:\\Users\\ASUS\\Downloads\\LEO\\leo_prod\\server\\data\\nobero_full_products.json';
+const OUTPUT_PATH = 'C:\\Users\\ASUS\\Downloads\\LEO\\leo_prod\\server\\data\\leo_full_products.json';
 const MEN1_BASE = 'C:\\Users\\ASUS\\Downloads\\LEO\\leo_prod\\server\\public\\men(1)';
 
 const COLLECTIONS = [
@@ -116,7 +116,7 @@ async function fetchCollectionProducts(col) {
   let page = 1;
   while (true) {
     try {
-      const res = await fetch(`https://nobero.com/collections/${col.handle}/products.json?limit=250&page=${page}`, { headers });
+      const res = await fetch(`https://leo.com/collections/${col.handle}/products.json?limit=250&page=${page}`, { headers });
       if (!res.ok) break;
       const data = await res.json();
       if (!data.products || data.products.length === 0) break;

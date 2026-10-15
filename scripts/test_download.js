@@ -9,7 +9,7 @@ async function testDownload() {
   const destDir = path.join(TARGET_BASE, 'POLOS');
   if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
 
-  const res = await fetch('https://nobero.com/collections/classic-polo/products.json?limit=1');
+  const res = await fetch('https://leo.com/collections/classic-polo/products.json?limit=1');
   const data = await res.json();
   const product = data.products[0];
   const images = product.images.slice(0, 3);

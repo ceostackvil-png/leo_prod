@@ -6,8 +6,8 @@
     "ctaText": "SHOP NOW",
     "ctaLink": "/men",
     "badge": "NEW ARRIVAL",
-    "desktopImage": "/images/nobero/hero_banner_1.jpg",
-    "mobileImage": "/images/nobero/hero_banner_1.jpg",
+    "desktopImage": "/images/leo/hero_banner_1.jpg",
+    "mobileImage": "/images/leo/hero_banner_1.jpg",
     "active": true,
     "order": 1
   },
@@ -18,8 +18,8 @@
     "ctaText": "SHOP NOW",
     "ctaLink": "/men",
     "badge": "BESTSELLER",
-    "desktopImage": "/images/nobero/hero_banner_2.jpg",
-    "mobileImage": "/images/nobero/hero_banner_2.jpg",
+    "desktopImage": "/images/leo/hero_banner_2.jpg",
+    "mobileImage": "/images/leo/hero_banner_2.jpg",
     "active": true,
     "order": 2
   },
@@ -30,8 +30,8 @@
     "ctaText": "SHOP NOW",
     "ctaLink": "/men",
     "badge": "BESTSELLER",
-    "desktopImage": "/images/nobero/hero_banner_3.jpg",
-    "mobileImage": "/images/nobero/hero_banner_3.jpg",
+    "desktopImage": "/images/leo/hero_banner_3.jpg",
+    "mobileImage": "/images/leo/hero_banner_3.jpg",
     "active": true,
     "order": 3
   }
