@@ -27,8 +27,7 @@ const HomePage = () => {
         ]);
 
         if (banRes.success) {
-          // Filter out the AI-generated banner on the client side
-          setBanners(banRes.data.filter(b => b.desktopImage !== '/images/nobero/hero_banner_joggers_des.jpg'));
+          setBanners(banRes.data);
         }
         if (prodRes.success) setProducts(prodRes.data);
         if (lookRes.success) setLooks(lookRes.data);

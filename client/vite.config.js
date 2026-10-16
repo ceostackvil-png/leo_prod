@@ -2,7 +2,20 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    {
+      name: 'rewrite-leo-images',
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          if (req.url && req.url.startsWith('/images/leo/')) {
+            req.url = req.url.replace('/images/leo/', '/images/nobero/');
+          }
+          next();
+        });
+      },
+    },
+  ],
   server: {
     port: 3000,
     proxy: {

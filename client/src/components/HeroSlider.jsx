@@ -71,13 +71,24 @@ const HeroSlider = ({ banners = [] }) => {
                 isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
               }`}
             >
-              <picture className="w-full h-full block">
-                <source media="(max-width: 640px)" srcSet={banner.mobileImage || banner.desktopImage} />
+              <picture className="w-full h-full block bg-gray-100">
+                <source
+                  media="(max-width: 640px)"
+                  srcSet={banner.mobileImage || banner.desktopImage}
+                />
                 <img
                   src={banner.desktopImage}
                   alt={banner.title}
                   className="w-full h-full object-cover object-center"
                   loading={idx === 0 ? 'eager' : 'lazy'}
+                  onError={(e) => {
+                    const currentSrc = e.currentTarget.src;
+                    if (currentSrc.includes('/images/leo/')) {
+                      e.currentTarget.src = currentSrc.replace('/images/leo/', '/images/nobero/');
+                    } else if (currentSrc.includes('/images/nobero/')) {
+                      e.currentTarget.src = '/images/leo_campaign_banner.jpg';
+                    }
+                  }}
                 />
               </picture>
             </Link>
