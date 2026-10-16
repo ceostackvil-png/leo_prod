@@ -17,6 +17,49 @@ const MEN_EXACT_GRID = [
   { name: 'Activewear', image: '/images/MEN/Men_active_1199e7ea-e988-4c37-99fe-60fbe6f37c99.avif', slug: 'joggers' }
 ];
 
+const TRAVEL_EXACT_GRID = [
+  { name: 'Travel Hoodie', image: '/images/MEN/Website_Shop_men_220_x_304_9.avif', slug: 'travel' },
+  { name: 'Travel Jogger', image: '/images/MEN/6_29719fa5-f748-482e-8039-fda30c64d1db.webp', slug: 'travel' },
+  { name: 'Travel Polo', image: '/images/MEN/7p_69c2c6cf-78a7-441f-b34a-ab147745806d.avif', slug: 'travel' },
+  { name: 'Travel Chinos', image: '/images/MEN/Cargo_Pants_Icon_Home_Page_copy.avif', slug: 'travel' },
+  { name: 'Travel Shorts', image: '/images/MEN/8.webp', slug: 'travel' },
+  { name: 'Travel Cargo', image: '/images/leo_product_cargo_jogger_1791469213908.jpg', slug: 'travel' }
+];
+
+const COORDS_EXACT_GRID = [
+  { name: 'Shorts Co-Ord Sets', image: '/images/MEN/9.avif', slug: 'co-ords' },
+  { name: 'Pants Co-Ord Sets', image: '/images/product-coord.jpg', slug: 'co-ords' },
+  { name: 'Waffle Knit Sets', image: '/images/leo_product_waffle_coord_1791469273954.jpg', slug: 'co-ords' },
+  { name: 'Curated Looks', image: '/images/MEN/Looks_jpg.avif', slug: 'co-ords' },
+  { name: 'Terry Resort Sets', image: '/images/nobero/col_coords_exact.jpg', slug: 'co-ords' },
+  { name: 'Travel Airport Sets', image: '/images/mood-relax.jpg', slug: 'co-ords' }
+];
+
+const TEES_EXACT_GRID = [
+  { name: 'Solid Heavyweight (240 GSM)', image: '/images/MEN/port_1.avif', slug: 'oversized-tees' },
+  { name: 'Acid Wash & Mineral Vintage', image: '/images/MEN/Website_Shop_men_220_x_304_11.avif', slug: 'oversized-tees' },
+  { name: 'Back Print Graphic Tees', image: '/images/leo_product_oversized_tee_back_1791469191387.jpg', slug: 'oversized-tees' },
+  { name: 'Classic Crew Neck', image: '/images/leo_product_oversized_tee_1791469164099.jpg', slug: 't-shirts' },
+  { name: 'Full Sleeve Tees', image: '/images/MEN/Full_sleeve_polo.avif', slug: 't-shirts' },
+  { name: 'Oversized Drop Shoulder', image: '/images/nobero/col_oversized_exact.jpg', slug: 'oversized-tees' }
+];
+
+const ITEM_NAME_IMAGE_FALLBACK = {
+  'Travel Hoodie': '/images/MEN/Website_Shop_men_220_x_304_9.avif',
+  'Travel Jogger': '/images/MEN/6_29719fa5-f748-482e-8039-fda30c64d1db.webp',
+  'Travel Polo': '/images/MEN/7p_69c2c6cf-78a7-441f-b34a-ab147745806d.avif',
+  'Travel Chinos': '/images/MEN/Cargo_Pants_Icon_Home_Page_copy.avif',
+  'Travel Shorts': '/images/MEN/8.webp',
+  'Travel Cargo': '/images/leo_product_cargo_jogger_1791469213908.jpg',
+  'Shorts Co-Ord Sets': '/images/MEN/9.avif',
+  'Pants Co-Ord Sets': '/images/product-coord.jpg',
+  'Waffle Knit Sets': '/images/leo_product_waffle_coord_1791469273954.jpg',
+  'Curated Looks': '/images/MEN/Looks_jpg.avif',
+  'Solid Heavyweight (240 GSM)': '/images/MEN/port_1.avif',
+  'Acid Wash & Mineral Vintage': '/images/MEN/Website_Shop_men_220_x_304_11.avif',
+  'Back Print Graphic Tees': '/images/leo_product_oversized_tee_back_1791469191387.jpg',
+};
+
 const QUICK_LINKS = [
   { title: 'See the Latest', subtitle: 'Explore fash-leisure must-haves', link: '/new-arrivals' },
   { title: 'Shop Top Selling Styles', subtitle: 'The current fan favorites right now', link: '/shop?filter=bestsellers' },
@@ -27,13 +70,28 @@ const QUICK_LINKS = [
 const MegaMenu = ({ category, onClose }) => {
   if (!category || !category.groups) return null;
 
-  // For men, use exact 12-item grid from Nobero; otherwise map from groups
-  const gridItems = category.id === 'men'
-    ? MEN_EXACT_GRID
-    : (category.groups.flatMap(g => g.items).slice(0, 12).map(item => ({
+  const catId = (category.id || category.slug || '').toLowerCase();
+
+  // Select appropriate curated grid based on category
+  let gridItems = [];
+  if (catId === 'men') {
+    gridItems = MEN_EXACT_GRID;
+  } else if (catId === 'travel') {
+    gridItems = TRAVEL_EXACT_GRID;
+  } else if (catId === 'co-ords' || catId === 'coords') {
+    gridItems = COORDS_EXACT_GRID;
+  } else if (catId === 'oversized-tees' || catId === 'tees' || catId === 't-shirts') {
+    gridItems = TEES_EXACT_GRID;
+  } else {
+    // Dynamic mapping from category.groups with item-specific image fallback
+    gridItems = category.groups.flatMap(g => g.items).slice(0, 12).map((item, index) => {
+      const fallbackImage = ITEM_NAME_IMAGE_FALLBACK[item.name] || MEN_EXACT_GRID[index % MEN_EXACT_GRID.length].image;
+      return {
         ...item,
-        image: item.image || '/images/MEN/port_1.avif'
-      })));
+        image: item.image || fallbackImage
+      };
+    });
+  }
 
   return (
     <div
@@ -42,7 +100,7 @@ const MegaMenu = ({ category, onClose }) => {
     >
       <div className="max-w-[1360px] mx-auto flex items-start justify-between gap-8 lg:gap-14">
         
-        {/* Left Side: Minimal Visual Category Grid (6 columns x 2 rows) */}
+        {/* Left Side: Minimal Visual Category Grid (6 columns) */}
         <div className="grid grid-cols-6 gap-x-3.5 sm:gap-x-4 gap-y-3 sm:gap-y-3.5 shrink-0">
           {gridItems.map((item, idx) => (
             <Link

@@ -88,9 +88,12 @@ const initialData = {
         {
           title: "OVERSIZED FITS",
           items: [
-            { name: "Solid Heavyweight (240 GSM)", slug: "oversized-tees" },
-            { name: "Acid Wash & Mineral Vintage", slug: "oversized-tees" },
-            { name: "Back Print Graphic Tees", slug: "oversized-tees" }
+            { name: "Solid Heavyweight (240 GSM)", slug: "oversized-tees", image: "/images/MEN/port_1.avif" },
+            { name: "Acid Wash & Mineral Vintage", slug: "oversized-tees", image: "/images/MEN/Website_Shop_men_220_x_304_11.avif" },
+            { name: "Back Print Graphic Tees", slug: "oversized-tees", image: "/images/leo_product_oversized_tee_back_1791469191387.jpg" },
+            { name: "Classic Crew Neck", slug: "t-shirts", image: "/images/leo_product_oversized_tee_1791469164099.jpg" },
+            { name: "Full Sleeve Tees", slug: "t-shirts", image: "/images/MEN/Full_sleeve_polo.avif" },
+            { name: "Oversized Drop Shoulder", slug: "oversized-tees", image: "/images/nobero/col_oversized_exact.jpg" }
           ]
         }
       ]
@@ -108,10 +111,12 @@ const initialData = {
         {
           title: "CO-ORD STYLES",
           items: [
-            { name: "Shorts Co-Ord Sets", slug: "co-ords" },
-            { name: "Pants Co-Ord Sets", slug: "co-ords" },
-            { name: "Waffle Knit Sets", slug: "co-ords" },
-            { name: "Curated Looks", slug: "curated-looks" }
+            { name: "Shorts Co-Ord Sets", slug: "co-ords", image: "/images/MEN/9.avif" },
+            { name: "Pants Co-Ord Sets", slug: "co-ords", image: "/images/product-coord.jpg" },
+            { name: "Waffle Knit Sets", slug: "co-ords", image: "/images/leo_product_waffle_coord_1791469273954.jpg" },
+            { name: "Curated Looks", slug: "curated-looks", image: "/images/MEN/Looks_jpg.avif" },
+            { name: "Terry Resort Sets", slug: "co-ords", image: "/images/nobero/col_coords_exact.jpg" },
+            { name: "Travel Airport Sets", slug: "co-ords", image: "/images/mood-relax.jpg" }
           ]
         }
       ]
@@ -124,12 +129,12 @@ const initialData = {
         {
           title: "TRAVEL ESSENTIALS",
           items: [
-            { name: "Travel Hoodie", slug: "travel" },
-            { name: "Travel Jogger", slug: "travel" },
-            { name: "Travel Polo", slug: "travel" },
-            { name: "Travel Chinos", slug: "travel" },
-            { name: "Travel Shorts", slug: "travel" },
-            { name: "Travel Cargo", slug: "travel" }
+            { name: "Travel Hoodie", slug: "travel", image: "/images/MEN/Website_Shop_men_220_x_304_9.avif" },
+            { name: "Travel Jogger", slug: "travel", image: "/images/MEN/6_29719fa5-f748-482e-8039-fda30c64d1db.webp" },
+            { name: "Travel Polo", slug: "travel", image: "/images/MEN/7p_69c2c6cf-78a7-441f-b34a-ab147745806d.avif" },
+            { name: "Travel Chinos", slug: "travel", image: "/images/MEN/Cargo_Pants_Icon_Home_Page_copy.avif" },
+            { name: "Travel Shorts", slug: "travel", image: "/images/MEN/8.webp" },
+            { name: "Travel Cargo", slug: "travel", image: "/images/leo_product_cargo_jogger_1791469213908.jpg" }
           ]
         }
       ],
