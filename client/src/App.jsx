@@ -48,7 +48,7 @@ function App() {
               <Navbar />
               
               {/* Main Content Area */}
-              <main className="flex-1">
+              <main className="flex-1 pb-14 lg:pb-0">
                 <Routes>
                   {/* Homepage */}
                   <Route path="/" element={<HomePage />} />

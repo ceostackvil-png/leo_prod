@@ -112,9 +112,9 @@ const initialData = {
           title: "CO-ORD STYLES",
           items: [
             { name: "Shorts Co-Ord Sets", slug: "co-ords", image: "/images/MEN/9.avif" },
-            { name: "Pants Co-Ord Sets", slug: "co-ords", image: "/images/product-coord.jpg" },
+            { name: "Pants Co-Ord Sets", slug: "co-ords", image: "/images/product-coord-pants.jpg" },
             { name: "Waffle Knit Sets", slug: "co-ords", image: "/images/leo_product_waffle_coord_1791469273954.jpg" },
-            { name: "Curated Looks", slug: "curated-looks", image: "/images/MEN/Looks_jpg.avif" },
+            { name: "Curated Looks", slug: "curated-looks", image: "/images/col_curated_look.jpg" },
             { name: "Terry Resort Sets", slug: "co-ords", image: "/images/nobero/col_coords_exact.jpg" },
             { name: "Travel Airport Sets", slug: "co-ords", image: "/images/mood-relax.jpg" }
           ]

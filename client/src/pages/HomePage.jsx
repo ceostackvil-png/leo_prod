@@ -5,8 +5,9 @@ import MatchTheMood from '../components/MatchTheMood';
 import EverydayBestsellers from '../components/EverydayBestsellers';
 import ShopTheLook from '../components/ShopTheLook';
 import LeoFavourites from '../components/LeoFavourites';
-import ExploreBlogs from '../components/ExploreBlogs';
+import FeaturedShorts from '../components/FeaturedShorts';
 import AppPromotion from '../components/AppPromotion';
+import ExploreBlogs from '../components/ExploreBlogs';
 import { api } from '../services/api';
 
 const HomePage = () => {
@@ -62,8 +63,14 @@ const HomePage = () => {
       {/* 6. LEO Favourite (Handpicked for you) */}
       <LeoFavourites products={products} />
 
-      {/* 7. Explore Men's Fashion Blogs */}
-      <ExploreBlogs blogs={blogs} />
+      {/* 7. Summer Essentials / Shorts Spotlight */}
+      <FeaturedShorts />
+
+      {/* 8. Flight Ready Travel Campaign Banner */}
+      <AppPromotion />
+
+      {/* 9. Editorial Articles (when available) */}
+      {blogs && blogs.length > 0 && <ExploreBlogs blogs={blogs} />}
     </div>
   );
 };
