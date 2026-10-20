@@ -82,11 +82,17 @@ const HeroSlider = ({ banners = [] }) => {
                   className="w-full h-full object-cover object-center"
                   loading={idx === 0 ? 'eager' : 'lazy'}
                   onError={(e) => {
-                    const currentSrc = e.currentTarget.src;
-                    if (currentSrc.includes('/images/leo/')) {
-                      e.currentTarget.src = currentSrc.replace('/images/leo/', '/images/nobero/');
-                    } else if (currentSrc.includes('/images/nobero/')) {
-                      e.currentTarget.src = '/images/leo_campaign_banner.jpg';
+                    const currentSrc = e.currentTarget.src || "";
+                    if (currentSrc.includes("hero_banner_shacket")) {
+                      e.currentTarget.src = "https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg";
+                    } else if (currentSrc.includes("hero_banner_coords")) {
+                      e.currentTarget.src = "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg";
+                    } else if (currentSrc.includes("hero_banner_chinos")) {
+                      e.currentTarget.src = "https://nobero.com/cdn/shop/files/HB_Chinos_des.jpg";
+                    } else if (currentSrc.includes("hero_banner_joggers")) {
+                      e.currentTarget.src = "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg";
+                    } else {
+                      e.currentTarget.src = "https://nobero.com/cdn/shop/files/AW_26_Homepage_Banners_Desktop_jpg.jpg";
                     }
                   }}
                 />

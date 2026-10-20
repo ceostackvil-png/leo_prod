@@ -54,7 +54,7 @@ const initialData = {
       promo: {
         title: "Heavyweight 240 GSM Collection",
         subtitle: "Combed French Terry Cotton",
-        image: "/images/leo/col_oversized_exact.jpg",
+        image: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
         link: "/shop?category=oversized-tees"
       }
     },
@@ -93,7 +93,7 @@ const initialData = {
             { name: "Back Print Graphic Tees", slug: "oversized-tees", image: "/images/leo_product_oversized_tee_back_1791469191387.jpg" },
             { name: "Classic Crew Neck", slug: "t-shirts", image: "/images/leo_product_oversized_tee_1791469164099.jpg" },
             { name: "Full Sleeve Tees", slug: "t-shirts", image: "/images/MEN/Full_sleeve_polo.avif" },
-            { name: "Oversized Drop Shoulder", slug: "oversized-tees", image: "/images/nobero/col_oversized_exact.jpg" }
+            { name: "Oversized Drop Shoulder", slug: "oversized-tees", image: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013" }
           ]
         }
       ]
@@ -115,7 +115,7 @@ const initialData = {
             { name: "Pants Co-Ord Sets", slug: "co-ords", image: "/images/product-coord-pants.jpg" },
             { name: "Waffle Knit Sets", slug: "co-ords", image: "/images/leo_product_waffle_coord_1791469273954.jpg" },
             { name: "Curated Looks", slug: "curated-looks", image: "/images/col_curated_look.jpg" },
-            { name: "Terry Resort Sets", slug: "co-ords", image: "/images/nobero/col_coords_exact.jpg" },
+            { name: "Terry Resort Sets", slug: "co-ords", image: "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg" },
             { name: "Travel Airport Sets", slug: "co-ords", image: "/images/mood-relax.jpg" }
           ]
         }
@@ -141,7 +141,7 @@ const initialData = {
       promo: {
         title: "24-Hour Transit Comfort",
         subtitle: "4-Way Stretch Flex",
-        image: "/images/leo/col_travel_exact.jpg",
+        image: "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg",
         link: "/shop?category=travel"
       }
     },
@@ -156,8 +156,8 @@ const initialData = {
       ctaText: "SHOP NOW",
       ctaLink: "/travel",
       badge: "NEW ARRIVAL",
-      desktopImage: "/images/leo/hero_banner_joggers_des.jpg",
-      mobileImage: "/images/leo/hero_banner_joggers_mob.jpg",
+      desktopImage: "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg",
+      mobileImage: "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_mob.jpg",
       active: true,
       order: 1
     },
@@ -168,8 +168,8 @@ const initialData = {
       ctaText: "EXPLORE COLLECTION",
       ctaLink: "/co-ords",
       badge: "BESTSELLER",
-      desktopImage: "/images/leo/hero_banner_coords_des.jpg",
-      mobileImage: "/images/leo/hero_banner_coords_mob.jpg",
+      desktopImage: "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg",
+      mobileImage: "https://nobero.com/cdn/shop/files/HB_Co-Ords_mob.jpg",
       active: true,
       order: 2
     },
@@ -180,8 +180,8 @@ const initialData = {
       ctaText: "SHOP CHINOS",
       ctaLink: "/cargos",
       badge: "TRENDING",
-      desktopImage: "/images/leo/hero_banner_chinos_des.jpg",
-      mobileImage: "/images/leo/hero_banner_chinos_mob.jpg",
+      desktopImage: "https://nobero.com/cdn/shop/files/HB_Chinos_des.jpg",
+      mobileImage: "https://nobero.com/cdn/shop/files/HB_Chinos_mob.jpg",
       active: true,
       order: 3
     },
@@ -192,8 +192,8 @@ const initialData = {
       ctaText: "SHOP WINTERWEAR",
       ctaLink: "/hoodies",
       badge: "SEASONAL",
-      desktopImage: "/images/leo/hero_banner_shacket_des.jpg",
-      mobileImage: "/images/leo/hero_banner_shacket_mob.jpg",
+      desktopImage: "https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg",
+      mobileImage: "https://nobero.com/cdn/shop/files/HB_Shacket_mob_jpg.jpg",
       active: true,
       order: 4
     }
@@ -204,37 +204,37 @@ const initialData = {
     {
       id: "col-1",
       name: "Travel Essentials",
-      image: "/images/leo/col_travel_exact.jpg",
+      image: "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg",
       link: "/travel"
     },
     {
       id: "col-2",
       name: "Joggers",
-      image: "/images/leo/col_joggers_exact.jpg",
+      image: "https://nobero.com/cdn/shop/collections/6_29719fa5-f748-482e-8039-fda30c64d1db.jpg?v=1757760284",
       link: "/joggers"
     },
     {
       id: "col-3",
       name: "Cargo Pants",
-      image: "/images/leo/col_cargos_exact.jpg",
+      image: "https://nobero.com/cdn/shop/collections/Cargo_Pants_Icon_Home_Page_copy.jpg?v=1790616572",
       link: "/joggers"
     },
     {
       id: "col-4",
       name: "Co-Ord Sets",
-      image: "/images/leo/col_coords_exact.jpg",
+      image: "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg",
       link: "/co-ords"
     },
     {
       id: "col-5",
       name: "Oversized Tees",
-      image: "/images/leo/col_oversized_exact.jpg",
+      image: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
       link: "/oversized-tees"
     },
     {
       id: "col-6",
       name: "Polos",
-      image: "/images/leo/col_polo_exact.png",
+      image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/POLOPDP-5_5c355606-1884-4943-b73a-f1503bc04014.jpg?v=1776764425",
       link: "/polos"
     },
     {
@@ -279,7 +279,7 @@ const initialData = {
     {
       id: "look-2",
       title: "Transit Ready Look",
-      image: "/images/leo/mood_travel.jpg",
+      image: "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg",
       itemsIncluded: ["LEO Classic Travel Polo", "Wanderer Travel Cargo Jogger"],
       productIds: ["leo-17", "leo-43"],
       originalPrice: 5198,
@@ -290,7 +290,7 @@ const initialData = {
     {
       id: "look-3",
       title: "Waffle Resort Set Look",
-      image: "/images/leo/col_coords_exact.jpg",
+      image: "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg",
       itemsIncluded: ["Oversized Waffle Co-ord Tee", "Waffle Drawcord Tailored Shorts"],
       productIds: ["leo-25", "leo-33"],
       originalPrice: 3199,
@@ -568,14 +568,14 @@ const initialData = {
       care: "Machine wash cold inside-out.",
       sku: "LEO-CRD-004",
       inventory: 38,
-      image: "/images/leo/col_oversized_exact.jpg",
-      secondaryImage: "/images/leo/col_oversized_exact.jpg",
+      image: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
+      secondaryImage: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
       colors: [
         {
           name: "Natural Sand",
           hex: "#d8c4b6",
-          image: "/images/leo/col_oversized_exact.jpg",
-          secondaryImage: "/images/leo/col_oversized_exact.jpg"
+          image: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
+          secondaryImage: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013"
         }
       ],
       sizes: [
@@ -610,14 +610,14 @@ const initialData = {
       care: "Wash inside out in cold water.",
       sku: "LEO-TSH-005",
       inventory: 50,
-      image: "/images/leo/col_oversized_exact.jpg",
-      secondaryImage: "/images/leo/col_oversized_exact.jpg",
+      image: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
+      secondaryImage: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
       colors: [
         {
           name: "Vintage Ash Grey",
           hex: "#4a4a4a",
-          image: "/images/leo/col_oversized_exact.jpg",
-          secondaryImage: "/images/leo/col_oversized_exact.jpg"
+          image: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
+          secondaryImage: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013"
         }
       ],
       sizes: [
@@ -652,14 +652,14 @@ const initialData = {
       care: "Machine wash cold.",
       sku: "LEO-POL-007",
       inventory: 55,
-      image: "/images/leo/col_oversized_exact.jpg",
-      secondaryImage: "/images/leo/col_oversized_exact.jpg",
+      image: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
+      secondaryImage: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
       colors: [
         {
           name: "Racing Navy",
           hex: "#0c2340",
-          image: "/images/leo/col_oversized_exact.jpg",
-          secondaryImage: "/images/leo/col_oversized_exact.jpg"
+          image: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
+          secondaryImage: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013"
         }
       ],
       sizes: [
@@ -693,14 +693,14 @@ const initialData = {
       care: "Machine wash cold.",
       sku: "LEO-SHT-008",
       inventory: 40,
-      image: "/images/leo/col_oversized_exact.jpg",
-      secondaryImage: "/images/leo/col_oversized_exact.jpg",
+      image: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
+      secondaryImage: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
       colors: [
         {
           name: "Black & Olive Pack",
           hex: "#1b1b1b",
-          image: "/images/leo/col_oversized_exact.jpg",
-          secondaryImage: "/images/leo/col_oversized_exact.jpg"
+          image: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
+          secondaryImage: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013"
         }
       ],
       sizes: [
@@ -734,14 +734,14 @@ const initialData = {
       care: "Machine wash cold.",
       sku: "LEO-TSH-009",
       inventory: 60,
-      image: "/images/leo/col_oversized_exact.jpg",
-      secondaryImage: "/images/leo/col_oversized_exact.jpg",
+      image: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
+      secondaryImage: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
       colors: [
         {
           name: "Pure White",
           hex: "#ffffff",
-          image: "/images/leo/col_oversized_exact.jpg",
-          secondaryImage: "/images/leo/col_oversized_exact.jpg"
+          image: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
+          secondaryImage: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013"
         }
       ],
       sizes: [
@@ -864,7 +864,7 @@ const initialData = {
       author: "LEO Textile Lab",
       readTime: "4 min read",
       date: "September 28, 2026",
-      coverImage: "/images/leo/col_polo_exact.png",
+      coverImage: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/POLOPDP-5_5c355606-1884-4943-b73a-f1503bc04014.jpg?v=1776764425",
       excerpt: "Understand micro-honeycomb pique knit, anti-curl collars, and how to style polos for smart casual occasions.",
       content: `The polo t-shirt remains the gold standard for smart casual comfort.`
     }
@@ -884,7 +884,7 @@ const initialData = {
           size: "L",
           price: 799,
           quantity: 1,
-          image: "/images/leo/col_oversized_exact.jpg"
+          image: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013"
         },
         {
           id: "leo-102",
@@ -893,7 +893,7 @@ const initialData = {
           size: "32",
           price: 1199,
           quantity: 1,
-          image: "/images/leo/col_oversized_exact.jpg"
+          image: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013"
         }
       ],
       shippingAddress: {
@@ -986,6 +986,39 @@ if (!fs.existsSync(DB_FILE)) {
 
 const app = express();
 app.use(cors());
+
+// Universal Image CDN Fallback Middleware
+app.use((req, res, next) => {
+  const url = req.url;
+  if (/\.(jpg|jpeg|png|webp|avif|gif)(\?.*)?$/i.test(url)) {
+    // 1. Check if it is a product image with hash
+    const prodMatch = url.match(/(?:men\(1\)\/[^/]+\/|images\/(?:leo|nobero)\/)?.*?_\d+_(.+\.(?:jpg|jpeg|png|webp|avif))/i);
+    if (prodMatch && prodMatch[1]) {
+      return res.redirect(302, `https://cdn.shopify.com/s/files/1/0337/9413/0052/files/${prodMatch[1]}`);
+    }
+    // 2. Check hero banners
+    if (url.includes("hero_banner_shacket")) {
+      return res.redirect(302, url.includes("_mob") ? "https://nobero.com/cdn/shop/files/HB_Shacket_mob_jpg.jpg" : "https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg");
+    }
+    if (url.includes("hero_banner_coords")) {
+      return res.redirect(302, url.includes("_mob") ? "https://nobero.com/cdn/shop/files/HB_Co-Ords_mob.jpg" : "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg");
+    }
+    if (url.includes("hero_banner_chinos")) {
+      return res.redirect(302, url.includes("_mob") ? "https://nobero.com/cdn/shop/files/HB_Chinos_mob.jpg" : "https://nobero.com/cdn/shop/files/HB_Chinos_des.jpg");
+    }
+    if (url.includes("hero_banner_joggers")) {
+      return res.redirect(302, url.includes("_mob") ? "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_mob.jpg" : "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg");
+    }
+    if (url.includes("col_coords")) {
+      return res.redirect(302, "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg");
+    }
+    if (url.includes("mood_travel")) {
+      return res.redirect(302, "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg");
+    }
+  }
+  next();
+});
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/images/leo', express.static(path.join(__dirname, '../client/public/images/nobero')));

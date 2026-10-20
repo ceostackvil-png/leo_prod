@@ -5,36 +5,36 @@ import StorefrontContainer from './StorefrontContainer';
 
 const MOODS = [
   {
-    id: 'travel',
-    title: 'Travel Mode',
-    subtitle: 'Wrinkle-Free Flex & Comfort',
-    image: '/images/nobero/mood_travel.jpg',
-    tag: 'TRANSIT ESSENTIALS',
-    link: '/travel'
+    id: "travel",
+    title: "Travel Mode",
+    subtitle: "Wrinkle-Free Flex & Comfort",
+    image: "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg",
+    tag: "TRANSIT ESSENTIALS",
+    link: "/travel"
   },
   {
-    id: 'street',
-    title: 'Street Edge',
-    subtitle: '240 GSM Heavy Drop Silhouettes',
-    image: '/images/nobero/mood_street.jpg',
-    tag: 'OVERSIZED STREETWEAR',
-    link: '/oversized-tees'
+    id: "street",
+    title: "Street Edge",
+    subtitle: "240 GSM Heavy Drop Silhouettes",
+    image: "https://nobero.com/cdn/shop/files/AW_26_Homepage_Banners_Desktop_jpg.jpg",
+    tag: "OVERSIZED STREETWEAR",
+    link: "/oversized-tees"
   },
   {
-    id: 'relax',
-    title: 'Weekend Chill',
-    subtitle: 'Textured Waffle Matching Sets',
-    image: '/images/nobero/mood_weekend.jpg',
-    tag: 'EASY LIVING',
-    link: '/co-ords'
+    id: "relax",
+    title: "Weekend Chill",
+    subtitle: "Textured Waffle Matching Sets",
+    image: "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg",
+    tag: "EASY LIVING",
+    link: "/co-ords"
   },
   {
-    id: 'cozy',
-    title: 'Cozy Layers',
-    subtitle: '380 GSM Heavy Fleece Warmth',
-    image: '/images/nobero/mood_cozy.jpg',
-    tag: 'FRENCH TERRY',
-    link: '/hoodies'
+    id: "cozy",
+    title: "Cozy Layers",
+    subtitle: "380 GSM Heavy Fleece Warmth",
+    image: "https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg",
+    tag: "FRENCH TERRY",
+    link: "/hoodies"
   }
 ];
 

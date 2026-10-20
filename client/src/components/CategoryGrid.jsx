@@ -5,46 +5,46 @@ import StorefrontContainer from './StorefrontContainer';
 
 const CATEGORIES_DATA = [
   {
-    name: 'Oversized T-Shirts',
-    subtitle: '240 GSM Heavyweight Fits',
-    image: '/images/nobero/col_oversized_exact.jpg',
-    link: '/oversized-tees',
-    badge: 'Trending'
+    name: "Oversized T-Shirts",
+    subtitle: "240 GSM Heavyweight Fits",
+    image: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
+    link: "/oversized-tees",
+    badge: "Trending"
   },
   {
-    name: 'Air-Flex Cargo Joggers',
-    subtitle: '4-Way Stretch Flex Pants',
-    image: '/images/nobero/col_cargos_exact.jpg',
-    link: '/joggers',
-    badge: 'Bestseller'
+    name: "Air-Flex Cargo Joggers",
+    subtitle: "4-Way Stretch Flex Pants",
+    image: "https://nobero.com/cdn/shop/collections/Cargo_Pants_Icon_Home_Page_copy.jpg?v=1790616572",
+    link: "/joggers",
+    badge: "Bestseller"
   },
   {
-    name: 'French Terry Hoodies',
-    subtitle: '380 GSM Heavy Fleece',
-    image: '/images/nobero/hero_banner_shacket_des.jpg',
-    link: '/hoodies',
-    badge: 'Winter Drop'
+    name: "French Terry Hoodies",
+    subtitle: "380 GSM Heavy Fleece",
+    image: "https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg",
+    link: "/hoodies",
+    badge: "Winter Drop"
   },
   {
-    name: 'Matching Co-Ord Sets',
-    subtitle: 'Waffle & French Terry Pairings',
-    image: '/images/nobero/col_coords_exact.jpg',
-    link: '/co-ords',
-    badge: 'Popular'
+    name: "Matching Co-Ord Sets",
+    subtitle: "Waffle & French Terry Pairings",
+    image: "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg",
+    link: "/co-ords",
+    badge: "Popular"
   },
   {
-    name: 'Travel Essentials',
-    subtitle: 'Wrinkle-Free Active Staples',
-    image: '/images/nobero/col_travel_exact.jpg',
-    link: '/travel',
-    badge: 'Essential'
+    name: "Travel Essentials",
+    subtitle: "Wrinkle-Free Active Staples",
+    image: "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg",
+    link: "/travel",
+    badge: "Essential"
   },
   {
-    name: 'Classic Men Polos',
-    subtitle: 'Pique Knit Breathable Fits',
-    image: '/images/nobero/col_polo_exact.png',
-    link: '/polos',
-    badge: 'New Drops'
+    name: "Classic Men Polos",
+    subtitle: "Pique Knit Breathable Fits",
+    image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/POLOPDP-5_5c355606-1884-4943-b73a-f1503bc04014.jpg?v=1776764425",
+    link: "/polos",
+    badge: "New Drops"
   }
 ];
 

@@ -57,6 +57,15 @@ const ProductCard = ({ product }) => {
             alt={product.title}
             loading="lazy"
             className="w-full h-full object-cover object-center transition-transform duration-500 ease-out"
+            onError={(e) => {
+              const src = e.currentTarget.src || "";
+              const match = src.match(/.*?_\d+_(.+\.(?:jpg|jpeg|png|webp|avif))/i);
+              if (match && match[1]) {
+                e.currentTarget.src = `https://cdn.shopify.com/s/files/1/0337/9413/0052/files/${match[1]}`;
+              } else {
+                e.currentTarget.src = "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/POLOPDP-5_5c355606-1884-4943-b73a-f1503bc04014.jpg";
+              }
+            }}
           />
         </Link>
 

@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import StorefrontContainer from './StorefrontContainer';
 
 const MEN_COLLECTIONS = [
-  { name: "Travel Essentials", image: "/images/shop_collections/Travel_essential.avif", link: "/shop?category=travel" },
-  { name: "Polos", image: "/images/shop_collections/Polo.avif", link: "/shop?category=polos" },
-  { name: "Men Shirts", image: "/images/shop_collections/Linen_Shirts-4.webp", link: "/shop?category=shirts" },
-  { name: "Co-Ord Sets", image: "/images/shop_collections/Co-ord-2.jxl", link: "/shop?category=co-ords" },
-  { name: "Premium HD Tees", image: "/images/shop_collections/Premium_tee-2_jpg.webp", link: "/shop?category=premium-hd-tees" },
-  { name: "T-Shirts", image: "/images/shop_collections/6_3947fc67-5783-4d32-9311-506c676a9ce8.avif", link: "/shop?category=t-shirts" },
-  { name: "Joggers", image: "/images/shop_collections/Joggersssss.webp", link: "/shop?category=joggers" },
-  { name: "Pants", image: "/images/shop_collections/Cargo_Pants_f4f28077-9d53-45e8-92d8-ceebffdbb6f6.webp", link: "/shop?category=pants" },
-  { name: "Shorts", image: "/images/shop_collections/Shorts_Home_Icon_aa3f709b-ca13-4da0-8902-38e06cb81454.webp", link: "/shop?category=shorts" },
-  { name: "Oversized Tees", image: "/images/shop_collections/Ov._Tee_13b98095-2712-4d73-ad6b-ed64bf134ab9.webp", link: "/shop?category=oversized-tees" }
+  { name: "Travel Essentials", image: "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg", link: "/shop?category=travel" },
+  { name: "Polos", image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/POLOPDP-5_5c355606-1884-4943-b73a-f1503bc04014.jpg?v=1776764425", link: "/shop?category=polos" },
+  { name: "Men Shirts", image: "https://nobero.com/cdn/shop/collections/Full_sleeve_polo.jpg?v=1783596387", link: "/shop?category=shirts" },
+  { name: "Co-Ord Sets", image: "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg", link: "/shop?category=co-ords" },
+  { name: "Premium HD Tees", image: "https://nobero.com/cdn/shop/collections/Website_Shop_men_220_x_304_11.png?v=1775748481", link: "/shop?category=premium-hd-tees" },
+  { name: "T-Shirts", image: "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013", link: "/shop?category=t-shirts" },
+  { name: "Joggers", image: "https://nobero.com/cdn/shop/collections/6_29719fa5-f748-482e-8039-fda30c64d1db.jpg?v=1757760284", link: "/shop?category=joggers" },
+  { name: "Pants", image: "https://nobero.com/cdn/shop/collections/Cargo_Pants_Icon_Home_Page_copy.jpg?v=1790616572", link: "/shop?category=pants" },
+  { name: "Shorts", image: "https://nobero.com/cdn/shop/collections/7p_69c2c6cf-78a7-441f-b34a-ab147745806d.jpg?v=1790616859", link: "/shop?category=shorts" },
+  { name: "Oversized Tees", image: "https://nobero.com/cdn/shop/collections/Website_Shop_men_220_x_304_9.png?v=1771849527", link: "/shop?category=oversized-tees" }
 ];
 
 const ShopByCollection = () => {
