@@ -358,7 +358,7 @@
     {
       "id": "col-4",
       "name": "Co-Ord Sets",
-      "image": "/images/leo/col_coords_exact.jpg",
+      "image": "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg",
       "link": "/co-ords"
     },
     {
@@ -370,25 +370,25 @@
     {
       "id": "col-6",
       "name": "Polos",
-      "image": "/images/leo/col_polo_exact.png",
+      "image": "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/POLOPDP-5_5c355606-1884-4943-b73a-f1503bc04014.jpg?v=1776764425",
       "link": "/polos"
     },
     {
       "id": "col-7",
       "name": "Men Shirts",
-      "image": "/images/leo/col_shirts_exact.jpg",
+      "image": "https://nobero.com/cdn/shop/collections/Full_sleeve_polo.jpg?v=1783596387",
       "link": "/shirts"
     },
     {
       "id": "col-8",
       "name": "Shorts",
-      "image": "/images/leo/col_shorts_exact.png",
+      "image": "https://nobero.com/cdn/shop/collections/7p_69c2c6cf-78a7-441f-b34a-ab147745806d.jpg?v=1790616859",
       "link": "/shorts"
     },
     {
       "id": "col-9",
       "name": "Full Sleeve Tees",
-      "image": "/images/leo/col_fullsleeve_exact.jpg",
+      "image": "https://nobero.com/cdn/shop/collections/Full_sleeve_polo.jpg?v=1783596387",
       "link": "/t-shirts"
     },
     {
@@ -419,7 +419,7 @@
     {
       "id": "look-2",
       "title": "Transit Ready Look",
-      "image": "/images/leo/mood_travel.jpg",
+      "image": "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg",
       "itemsIncluded": [
         "LEO Classic Travel Polo",
         "Wanderer Travel Cargo Jogger"
@@ -436,7 +436,7 @@
     {
       "id": "look-3",
       "title": "Waffle Resort Set Look",
-      "image": "/images/leo/col_coords_exact.jpg",
+      "image": "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg",
       "itemsIncluded": [
         "Oversized Waffle Co-ord Tee",
         "Waffle Drawcord Tailored Shorts"

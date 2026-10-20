@@ -76,7 +76,7 @@ const initialData = {
       promo: {
         title: "Latest Men Drops",
         subtitle: "Fresh Colorways Released",
-        image: "/images/leo/hero_banner_joggers_des.jpg",
+        image: "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg",
         link: "/shop?filter=new"
       }
     },
@@ -240,25 +240,25 @@ const initialData = {
     {
       id: "col-7",
       name: "Men Shirts",
-      image: "/images/leo/col_shirts_exact.jpg",
+      image: "https://nobero.com/cdn/shop/collections/Full_sleeve_polo.jpg?v=1783596387",
       link: "/shirts"
     },
     {
       id: "col-8",
       name: "Shorts",
-      image: "/images/leo/col_shorts_exact.png",
+      image: "https://nobero.com/cdn/shop/collections/7p_69c2c6cf-78a7-441f-b34a-ab147745806d.jpg?v=1790616859",
       link: "/shorts"
     },
     {
       id: "col-9",
       name: "Full Sleeve Tees",
-      image: "/images/leo/col_fullsleeve_exact.jpg",
+      image: "https://nobero.com/cdn/shop/collections/Full_sleeve_polo.jpg?v=1783596387",
       link: "/t-shirts"
     },
     {
       id: "col-10",
       name: "Hoodies & Jackets",
-      image: "/images/leo/hero_banner_shacket_des.jpg",
+      image: "https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg",
       link: "/hoodies"
     }
   ],
@@ -268,7 +268,7 @@ const initialData = {
     {
       id: "look-1",
       title: "Urban Motion Look",
-      image: "/images/leo/hero_banner_joggers_des.jpg",
+      image: "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg",
       itemsIncluded: ["Call Of The Ocean Oversized Tee", "Air-Flex 6-Pocket Utility Cargo Jogger"],
       productIds: ["leo-1", "leo-41"],
       originalPrice: 3998,
@@ -301,7 +301,7 @@ const initialData = {
     {
       id: "look-4",
       title: "Heavyweight Layer Look",
-      image: "/images/leo/hero_banner_shacket_des.jpg",
+      image: "https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg",
       itemsIncluded: ["Heavyweight French Terry Shacket", "Classic Straight Fit Jogger"],
       productIds: ["leo-37", "leo-44"],
       originalPrice: 2998,
@@ -840,7 +840,7 @@ const initialData = {
       author: "LEO Editorial",
       readTime: "4 min read",
       date: "October 04, 2026",
-      coverImage: "/images/leo/col_shorts_exact.png",
+      coverImage: "https://nobero.com/cdn/shop/collections/7p_69c2c6cf-78a7-441f-b34a-ab147745806d.jpg?v=1790616859",
       excerpt: "From tailored zip cargo shorts to relaxed waffle resort fits, discover the essential summer silhouettes.",
       content: `The modern wardrobe requires shorts that can transition seamlessly from relaxed weekend lounges to outdoor travel.`
     },

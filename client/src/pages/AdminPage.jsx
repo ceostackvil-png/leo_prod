@@ -42,9 +42,9 @@ const AdminPage = () => {
     isBestseller: true,
     isFeatured: true,
     inventory: 50,
-    image: '/images/nobero/col_oversized_exact.jpg',
+    image: 'https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg',
     colors: [
-      { name: 'Jet Black', hex: '#121212', image: '/images/nobero/col_oversized_exact.jpg' }
+      { name: 'Jet Black', hex: '#121212', image: 'https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg' }
     ],
     sizes: [
       { name: 'S', stock: 10 },

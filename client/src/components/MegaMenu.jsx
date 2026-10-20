@@ -31,7 +31,7 @@ const COORDS_EXACT_GRID = [
   { name: 'Pants Co-Ord Sets', image: '/images/product-coord-pants.jpg', slug: 'co-ords' },
   { name: 'Waffle Knit Sets', image: '/images/leo_product_waffle_coord_1791469273954.jpg', slug: 'co-ords' },
   { name: 'Curated Looks', image: '/images/col_curated_look.jpg', slug: 'co-ords' },
-  { name: 'Terry Resort Sets', image: '/images/nobero/col_coords_exact.jpg', slug: 'co-ords' },
+  { name: 'Terry Resort Sets', image: 'https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg', slug: 'co-ords' },
   { name: 'Travel Airport Sets', image: '/images/mood-relax.jpg', slug: 'co-ords' }
 ];
 
@@ -41,7 +41,7 @@ const TEES_EXACT_GRID = [
   { name: 'Back Print Graphic Tees', image: '/images/leo_product_oversized_tee_back_1791469191387.jpg', slug: 'oversized-tees' },
   { name: 'Classic Crew Neck', image: '/images/leo_product_oversized_tee_1791469164099.jpg', slug: 't-shirts' },
   { name: 'Full Sleeve Tees', image: '/images/MEN/Full_sleeve_polo.avif', slug: 't-shirts' },
-  { name: 'Oversized Drop Shoulder', image: '/images/nobero/col_oversized_exact.jpg', slug: 'oversized-tees' }
+  { name: 'Oversized Drop Shoulder', image: 'https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg', slug: 'oversized-tees' }
 ];
 
 const ITEM_NAME_IMAGE_FALLBACK = {
