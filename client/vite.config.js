@@ -33,7 +33,7 @@ export default defineConfig({
               res.writeHead(302, { Location: url.includes("_mob") ? "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_mob.jpg" : "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg" });
               return res.end();
             }
-            if (url.includes("col_coords")) {
+            if (url.includes("col_coords_exact")) {
               res.writeHead(302, { Location: "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg" });
               return res.end();
             }

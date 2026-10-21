@@ -1019,7 +1019,7 @@ app.use((req, res, next) => {
     if (url.includes("hero_banner_joggers")) {
       return res.redirect(302, url.includes("_mob") ? "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_mob.jpg" : "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg");
     }
-    if (url.includes("col_coords")) {
+    if (url.includes("col_coords_exact")) {
       return res.redirect(302, "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg");
     }
     if (url.includes("mood_travel")) {

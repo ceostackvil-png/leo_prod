@@ -95,21 +95,6 @@ const ShopByCollection = () => {
                     }
                   }}
                 />
-                
-                {/* Plus circle badge in top right matching screenshot */}
-                <div className="absolute top-2.5 right-2.5 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/30 backdrop-blur-[2px] flex items-center justify-center border border-white/70 text-white shadow-xs pointer-events-none group-hover:bg-white/50 transition-colors">
-                  <svg
-                    className="w-3 h-3 sm:w-3.5 sm:h-3.5 stroke-white"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    strokeWidth="2.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
-                </div>
               </div>
 
               {/* Exact collection name label */}
