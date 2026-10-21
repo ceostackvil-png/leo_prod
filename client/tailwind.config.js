@@ -24,8 +24,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+        sans: ['Arial', 'Helvetica', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['Arial', 'Helvetica', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       aspectRatio: {
         '2/3': '2 / 3',

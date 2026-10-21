@@ -70,7 +70,7 @@ const BrandLogo = ({
             className={`font-bold uppercase ${currentSize.sub} ${
               isLight ? 'text-[#4b5563]' : 'text-gray-300'
             }`}
-            style={{ fontFamily: "'Inter', 'Plus Jakarta Sans', sans-serif" }}
+            style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
           >
             {subtitle}
           </span>
