@@ -25,7 +25,7 @@ const WishlistPage = () => {
 
           <Link
             to="/men"
-            className="text-xs sm:text-sm font-bold text-[#282C3F] hover:underline inline-flex items-center gap-1 transition-colors"
+            className="text-xs sm:text-sm font-bold text-[#242F66] hover:underline inline-flex items-center gap-1 transition-colors"
           >
             Continue Shopping <ArrowRight className="w-4 h-4" />
           </Link>
@@ -34,16 +34,16 @@ const WishlistPage = () => {
         {/* Wishlist Items Grid */}
         {wishlist.length === 0 ? (
           <div className="py-16 text-center bg-[#F7F8FA] rounded-none border border-gray-200 p-8">
-            <div className="w-14 h-14 bg-white rounded-none flex items-center justify-center mx-auto mb-3 text-gray-400 shadow-sm border border-gray-200">
+            <div className="w-14 h-14 bg-white rounded-none flex items-center justify-center mx-auto mb-3 text-gray-400 shadow-xs border border-gray-200">
               <Heart className="w-6 h-6" />
             </div>
-            <h3 className="text-base font-bold text-[#212121]">Your wishlist is empty</h3>
+            <h3 className="text-base font-bold text-[#121212]">Your wishlist is empty</h3>
             <p className="text-xs text-[#666875] mt-1 max-w-sm mx-auto">
               Tap the heart icon on any Men's oversized tee, polo, or cargo jogger to save it here.
             </p>
             <Link
               to="/men"
-              className="mt-5 inline-flex items-center gap-2 bg-[#282C3F] hover:bg-[#212121] text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-none transition-all shadow-sm"
+              className="mt-5 inline-flex items-center gap-2 bg-[#242F66] hover:bg-[#1a234f] text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-none transition-all shadow-xs"
             >
               EXPLORE MEN'S COLLECTION <ArrowRight className="w-4 h-4" />
             </Link>

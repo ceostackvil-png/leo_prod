@@ -401,11 +401,11 @@ const ProductDetailPage = () => {
                   {/* Price Breakdown Card */}
                   <div className="mt-2 space-y-1">
                     <div className="flex items-center gap-2">
-                      <span className="text-xl sm:text-[22px] font-bold text-[#282C3F]">
+                      <span className="text-xl sm:text-[22px] font-bold text-[#121212]">
                         ₹{displayPrice}
                       </span>
                       {displayDiscount && (
-                        <span className="text-[15px] font-bold text-[#00B852]">
+                        <span className="text-[15px] font-bold text-[#008C2D]">
                           {displayDiscount}
                         </span>
                       )}
@@ -416,13 +416,13 @@ const ProductDetailPage = () => {
                     </div>
 
                     {product.lowestPrice30Days && (
-                      <div className="text-[13px] text-[#800080] mt-1.5 font-medium">
+                      <div className="text-[13px] text-[#8941E8] mt-1.5 font-medium">
                         Lowest price in last 30 days
                       </div>
                     )}
 
-                    <div className="text-[13px] text-[#D9232D] font-bold flex items-center gap-1.5 mt-2">
-                      <ShoppingCart className="w-4 h-4" />
+                    <div className="text-[13px] text-[#242F66] font-semibold flex items-center gap-1.5 mt-2">
+                      <ShoppingCart className="w-4 h-4 text-[#242F66]" />
                       {product.recentlyBought || 541} people bought this in last 7 days
                     </div>
                   </div>
@@ -445,21 +445,21 @@ const ProductDetailPage = () => {
                     { price: '₹1,530', original: '₹1799', code: 'B3G15', desc: 'Shop any 3 Get Extra 15% Off' },
                     { price: '₹1,620', original: '₹1799', code: 'B2G10', desc: 'Shop any 2 Get Extra 10% Off' }
                   ].map((offer, idx) => (
-                    <div key={idx} className="min-w-[260px] flex-shrink-0 bg-[#FBF9F2] border border-dashed border-[#D4C3A3] rounded p-3 relative">
+                    <div key={idx} className="min-w-[260px] flex-shrink-0 bg-[#FBF9F2] border border-dashed border-[#D4C3A3] rounded-none p-3 relative">
                       <div className="flex items-start gap-2.5">
                         <Tag className="w-4 h-4 text-[#C19B5E] mt-0.5 shrink-0" />
                         <div className="space-y-1 w-full">
-                          <div className="text-[13px] font-bold text-[#282C3F]">
+                          <div className="text-[13px] font-bold text-[#121212]">
                             Get it for as low as {offer.price} <span className="line-through font-normal text-[#7E818C] text-[11px] ml-1">{offer.original}</span>
                           </div>
                           <div className="text-[11px] text-[#535766]">
                             {offer.desc} Use Code: {offer.code}
                           </div>
                           <div className="flex items-center justify-between pt-1.5 w-full">
-                            <div className="text-[11px] font-bold text-[#282C3F] flex items-center gap-1 cursor-pointer">
+                            <div className="text-[11px] font-bold text-[#242F66] flex items-center gap-1 cursor-pointer">
                               Code: {offer.code} <Copy className="w-3 h-3 text-[#7E818C]" />
                             </div>
-                            <span className="text-[10px] text-[#526BCA] font-medium cursor-pointer">Offer T&C</span>
+                            <span className="text-[10px] text-[#242F66] font-medium cursor-pointer">Offer T&C</span>
                           </div>
                         </div>
                       </div>
@@ -507,12 +507,12 @@ const ProductDetailPage = () => {
               {/* Product Size Selection Options (S, M, L, XL, XXL, XXXL) */}
               <div className="space-y-3 mt-6">
                 <div className="flex justify-between items-center text-[14px]">
-                  <span className="font-bold text-[#282C3F]">
+                  <span className="font-bold text-[#121212]">
                     Select Size
                   </span>
                   <button
                     onClick={() => setIsSizeGuideOpen(true)}
-                    className="text-[#526BCA] font-bold text-[13px] hover:underline"
+                    className="text-[#242F66] font-bold text-[13px] hover:underline cursor-pointer"
                   >
                     Size Guide
                   </button>
@@ -571,8 +571,8 @@ const ProductDetailPage = () => {
               </div>
 
               {/* Delivery Pincode Checker */}
-              <div className="p-4 bg-[#FBF9F2] rounded border border-[#D4C3A3] space-y-3 mt-5">
-                <div className="flex items-center gap-1.5 text-sm font-bold text-[#282C3F]">
+              <div className="p-4 bg-[#FBF9F2] rounded-none border border-[#D4C3A3] space-y-3 mt-5">
+                <div className="flex items-center gap-1.5 text-sm font-bold text-[#121212]">
                   <Truck className="w-4 h-4 text-[#C19B5E]" /> Estimated Delivery
                 </div>
 
@@ -583,19 +583,19 @@ const ProductDetailPage = () => {
                     placeholder="Enter 6-digit Pincode"
                     value={pincode}
                     onChange={(e) => setPincode(e.target.value.replace(/\D/g, ''))}
-                    className="flex-1 px-3 py-2.5 bg-white border border-[#D4C3A3] rounded text-sm font-medium focus:outline-none focus:border-[#C19B5E]"
+                    className="flex-1 px-3 py-2.5 bg-white border border-[#D4C3A3] rounded-none text-sm font-medium focus:outline-none focus:border-[#242F66]"
                   />
                   <button
                     type="submit"
                     disabled={isCheckingPincode || pincode.length !== 6}
-                    className="bg-[#282C3F] text-white text-sm font-bold px-5 py-2.5 rounded hover:bg-[#212121] disabled:opacity-50 transition-colors"
+                    className="bg-[#242F66] text-white text-sm font-bold px-5 py-2.5 rounded-none hover:bg-[#1a234f] disabled:opacity-50 transition-colors uppercase tracking-wider"
                   >
                     {isCheckingPincode ? 'Checking...' : 'Check'}
                   </button>
                 </form>
 
                 {pincodeResult && (
-                  <div className="text-sm text-[#00B852] font-medium pt-1">
+                  <div className="text-sm text-[#008C2D] font-medium pt-1">
                     <p>Estimated Delivery: {pincodeResult.estimatedDate}</p>
                   </div>
                 )}

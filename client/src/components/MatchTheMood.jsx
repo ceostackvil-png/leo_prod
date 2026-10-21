@@ -21,7 +21,7 @@ const MOODS = [
     id: "basics",
     tag: "EVERYDAY",
     title: "BASICS",
-    image: "/images/nobero/col_oversized_exact.jpg",
+    image: "/images/collections/col_oversized_tees.jpg",
     link: "/oversized-tees"
   },
   {

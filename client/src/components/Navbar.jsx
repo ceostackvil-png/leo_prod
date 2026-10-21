@@ -117,7 +117,7 @@ const Navbar = () => {
     <>
       <header className="sticky top-0 z-40 w-full bg-white">
         {/* 1. Top Announcement Bar (Continuous Right to Left Infinite Marquee) */}
-        <div className="h-8 bg-[#282C3F] text-white text-[12px] sm:text-[13px] font-normal flex items-center overflow-hidden select-none relative">
+        <div className="h-8 bg-[#1A1E31] text-white text-[12px] sm:text-[13px] font-normal flex items-center overflow-hidden select-none relative">
           <div className="flex animate-marquee whitespace-nowrap">
             <div className="flex items-center gap-8 sm:gap-16 px-4 sm:px-8 shrink-0">
               <span className="font-medium tracking-wide">100% Refund Guarantee if you don't ❤️ the product. Shop with Confidence.</span>
@@ -200,8 +200,8 @@ const Navbar = () => {
                         }}
                         className={`h-full flex items-center text-[14px] transition-all duration-150 border-b-[2.5px] -mb-[1px] select-none ${
                           isHighlighted
-                            ? 'text-[#111827] font-bold border-[#eb4343]'
-                            : 'text-[#9ca3af] font-medium border-transparent hover:text-[#111827]'
+                            ? 'text-[#1A1E31] font-bold border-[#242F66]'
+                            : 'text-[#4B5563] font-medium border-transparent hover:text-[#1A1E31]'
                         }`}
                       >
                         <span>{cat.name}</span>
@@ -229,7 +229,7 @@ const Navbar = () => {
                   <button
                     type="button"
                     onClick={() => setIsSearchOpen(true)}
-                    className="w-[215px] xl:w-[250px] 2xl:w-[270px] h-[38px] xl:h-[40px] px-3.5 flex items-center justify-between bg-white border border-[#E8E9EA] hover:border-[#CBD5E1] rounded-[6px] text-left transition-all duration-150 group cursor-pointer shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
+                    className="w-[215px] xl:w-[250px] 2xl:w-[270px] h-[38px] xl:h-[40px] px-3.5 flex items-center justify-between bg-white border border-[#E8E9EA] hover:border-[#CBD5E1] rounded-none text-left transition-all duration-150 group cursor-pointer shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
                     aria-label="Search products"
                   >
                     <span className="text-[13px] text-[#9698A0] font-normal truncate select-none">

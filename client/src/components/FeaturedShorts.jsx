@@ -65,7 +65,7 @@ const FeaturedShorts = () => {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-6 sm:mb-8 gap-2">
           <div>
-            <span className="text-[11px] font-bold uppercase tracking-widest text-[#D9232D] block mb-1">
+            <span className="text-[11px] font-bold uppercase tracking-widest text-[#242F66] block mb-1">
               SUMMER ESSENTIALS
             </span>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-tight text-[#212121]">
@@ -98,7 +98,7 @@ const FeaturedShorts = () => {
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500 rounded-none"
                 />
-                <span className="absolute top-3 left-3 bg-[#D9232D] text-white text-[10px] font-bold px-2 py-0.5 rounded-none shadow-xs">
+                <span className="absolute top-3 left-3 bg-[#008C2D] text-white text-[10px] font-bold px-2 py-0.5 rounded-none shadow-xs">
                   {item.discount}
                 </span>
               </Link>
@@ -135,26 +135,26 @@ const FeaturedShorts = () => {
                   </Link>
 
                   <div className="mt-1 flex items-baseline gap-2">
-                    <span className="text-base sm:text-lg font-extrabold text-[#212121]">
+                    <span className="text-base sm:text-lg font-bold text-[#121212]">
                       ₹{item.price}
                     </span>
-                    <span className="text-xs text-gray-400 line-through">
+                    <span className="text-xs text-[#666875] line-through">
                       ₹{item.originalPrice}
                     </span>
-                    <span className="text-xs font-bold text-[#00B852]">
+                    <span className="text-xs font-bold text-[#008C2D]">
                       {item.discount}
                     </span>
                   </div>
 
-                  <p className="text-[11px] text-[#00B852] font-semibold mt-0.5">
-                    Lowest price in 30 days: ₹{item.lowestPrice}
+                  <p className="text-[11px] text-[#8941E8] font-medium mt-0.5">
+                    Lowest price in last 30 days: ₹{item.lowestPrice}
                   </p>
                 </div>
 
                 {/* Add to Cart CTA with Sharp Edges */}
                 <button
                   onClick={() => handleAddToCart(item)}
-                  className="w-full bg-[#282C3F] hover:bg-[#1a224a] active:scale-[0.99] text-white text-xs font-bold py-2.5 rounded-none transition-all flex items-center justify-center gap-2 shadow-xs uppercase tracking-wider"
+                  className="w-full bg-[#242F66] hover:bg-[#1a234f] active:scale-[0.99] text-white text-xs font-bold py-2.5 rounded-none transition-all flex items-center justify-center gap-2 shadow-xs uppercase tracking-wider"
                 >
                   {addedIds[item.id] ? (
                     <>

@@ -53,88 +53,92 @@ const HeroSlider = ({ banners = [] }) => {
   };
 
   return (
-    <div
-      className="relative w-full overflow-hidden group select-none bg-gray-100"
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-    >
-      {/* Banner Slider Container (Exact 1800:1438 aspect ratio for mobile and 7680:2888 for desktop so zero content/text is cropped) */}
-      <div className="relative w-full aspect-[1800/1438] sm:aspect-[16/7] lg:aspect-[7680/2888] max-h-[600px]">
-        {banners.map((banner, idx) => {
-          const isActive = idx === currentIndex;
-          return (
-            <Link
-              key={banner.id}
-              to={banner.ctaLink || '/shop'}
-              className={`absolute inset-0 transition-opacity duration-500 ease-in-out block ${
-                isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-              }`}
-            >
-              <picture className="w-full h-full block bg-gray-100">
-                <source
-                  media="(max-width: 640px)"
-                  srcSet={banner.mobileImage || banner.desktopImage}
-                />
-                <img
-                  src={banner.desktopImage}
-                  alt={banner.title}
-                  className="w-full h-full object-cover object-center"
-                  loading={idx === 0 ? 'eager' : 'lazy'}
-                  onError={(e) => {
-                    const currentSrc = e.currentTarget.src || "";
-                    if (currentSrc.includes("hero_banner_shacket")) {
-                      e.currentTarget.src = "https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg";
-                    } else if (currentSrc.includes("hero_banner_coords")) {
-                      e.currentTarget.src = "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg";
-                    } else if (currentSrc.includes("hero_banner_chinos")) {
-                      e.currentTarget.src = "https://nobero.com/cdn/shop/files/HB_Chinos_des.jpg";
-                    } else if (currentSrc.includes("hero_banner_joggers")) {
-                      e.currentTarget.src = "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg";
-                    } else {
-                      e.currentTarget.src = "https://nobero.com/cdn/shop/files/AW_26_Homepage_Banners_Desktop_jpg.jpg";
-                    }
-                  }}
-                />
-              </picture>
-            </Link>
-          );
-        })}
-      </div>
+    <section className="bg-white pt-2 sm:pt-4 pb-4 sm:pb-6">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div
+          className="relative w-full overflow-hidden group select-none bg-gray-50 rounded-none shadow-none"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {/* Banner Slider Container (Exact 1800:1438 aspect ratio for mobile and 7680:2888 for desktop so zero content/text is cropped) */}
+          <div className="relative w-full aspect-[1800/1438] sm:aspect-[16/7] lg:aspect-[7680/2888] max-h-[600px] overflow-hidden">
+            {banners.map((banner, idx) => {
+              const isActive = idx === currentIndex;
+              return (
+                <Link
+                  key={banner.id}
+                  to={banner.ctaLink || '/shop'}
+                  className={`absolute inset-0 transition-opacity duration-500 ease-in-out block ${
+                    isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                  }`}
+                >
+                  <picture className="w-full h-full block bg-gray-100">
+                    <source
+                      media="(max-width: 640px)"
+                      srcSet={banner.mobileImage || banner.desktopImage}
+                    />
+                    <img
+                      src={banner.desktopImage}
+                      alt={banner.title}
+                      className="w-full h-full object-cover object-center"
+                      loading={idx === 0 ? 'eager' : 'lazy'}
+                      onError={(e) => {
+                        const currentSrc = e.currentTarget.src || "";
+                        if (currentSrc.includes("hero_banner_shacket")) {
+                          e.currentTarget.src = "https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg";
+                        } else if (currentSrc.includes("hero_banner_coords")) {
+                          e.currentTarget.src = "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg";
+                        } else if (currentSrc.includes("hero_banner_chinos")) {
+                          e.currentTarget.src = "https://nobero.com/cdn/shop/files/HB_Chinos_des.jpg";
+                        } else if (currentSrc.includes("hero_banner_joggers")) {
+                          e.currentTarget.src = "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg";
+                        } else {
+                          e.currentTarget.src = "https://nobero.com/cdn/shop/files/AW_26_Homepage_Banners_Desktop_jpg.jpg";
+                        }
+                      }}
+                    />
+                  </picture>
+                </Link>
+              );
+            })}
+          </div>
 
-      {/* Desktop Navigation Arrows */}
-      <button
-        onClick={handlePrev}
-        className="hidden sm:flex absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-[#212121] items-center justify-center shadow-md transition-all opacity-0 group-hover:opacity-100"
-        aria-label="Previous Slide"
-      >
-        <ChevronLeft className="w-5 h-5" />
-      </button>
-
-      <button
-        onClick={handleNext}
-        className="hidden sm:flex absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-[#212121] items-center justify-center shadow-md transition-all opacity-0 group-hover:opacity-100"
-        aria-label="Next Slide"
-      >
-        <ChevronRight className="w-5 h-5" />
-      </button>
-
-      {/* Slide Indicators / Dots */}
-      <div className="absolute bottom-2.5 sm:bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5">
-        {banners.map((_, idx) => (
+          {/* Desktop Navigation Arrows */}
           <button
-            key={idx}
-            onClick={() => setCurrentIndex(idx)}
-            className={`transition-all duration-300 rounded-full ${
-              idx === currentIndex
-                ? 'w-5 sm:w-6 h-1.5 bg-[#282C3F]'
-                : 'w-1.5 h-1.5 bg-gray-300/80 hover:bg-gray-400'
-            }`}
-            aria-label={`Go to slide ${idx + 1}`}
-          />
-        ))}
+            onClick={handlePrev}
+            className="hidden sm:flex absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/85 hover:bg-white text-[#242F66] items-center justify-center shadow-md transition-all opacity-0 group-hover:opacity-100"
+            aria-label="Previous Slide"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          <button
+            onClick={handleNext}
+            className="hidden sm:flex absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/85 hover:bg-white text-[#242F66] items-center justify-center shadow-md transition-all opacity-0 group-hover:opacity-100"
+            aria-label="Next Slide"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Diamond Pagination Indicators Below Banner on White Background matching Nobero exact styling */}
+        <div className="flex items-center justify-center gap-2.5 mt-3 sm:mt-4">
+          {banners.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentIndex(idx)}
+              className={`transition-all duration-200 cursor-pointer ${
+                idx === currentIndex
+                  ? 'w-2.5 h-2.5 bg-[#242F66] border border-[#242F66] rotate-45'
+                  : 'w-2 h-2 border border-[#888c9b] bg-transparent hover:border-[#1A1E31] rotate-45'
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

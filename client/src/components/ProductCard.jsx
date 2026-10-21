@@ -91,12 +91,13 @@ const ProductCard = ({ product }) => {
           />
         </button>
 
-        {/* Rating Badge on Image with Sharp Edges */}
+        {/* Rating Badge on Image matching Nobero exact styling */}
         {product.rating && (
-          <div className="absolute bottom-2 left-2 z-10 bg-white/95 px-1.5 py-0.5 rounded-none text-[10px] font-bold text-[#212121] flex items-center gap-1 shadow-xs border border-gray-100">
-            <span>{product.rating}</span>
+          <div className="absolute bottom-1.5 left-1.5 z-10 bg-white/80 backdrop-blur-[2px] px-1.5 py-0.5 rounded-none text-[11px] font-semibold text-[#242F66] flex items-center gap-1 border border-white/60">
             <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
-            <span className="text-[#666875] font-normal">({product.reviewCount || 100})</span>
+            <span>{product.rating.toFixed(1)}</span>
+            <span className="text-[#666875] font-normal">|</span>
+            <span className="text-[#666875] font-normal">{product.reviewCount || 1}</span>
           </div>
         )}
 
@@ -171,32 +172,36 @@ const ProductCard = ({ product }) => {
         {/* Product Title */}
         <Link
           to={`/product/${product.slug || product.id}`}
-          className="text-[13px] sm:text-[14px] font-semibold text-[#212121] hover:text-[#282C3F] truncate transition-colors"
+          className="text-[13px] sm:text-[14px] font-normal text-[#121212] hover:text-[#242F66] truncate transition-colors block mt-1"
         >
           {product.title}
         </Link>
 
         {/* Price Breakdown */}
-        <div className="flex items-baseline gap-1.5 mt-0.5">
-          <span className="text-sm sm:text-base font-bold text-[#212121]">
-            ₹{product.price}
+        <div className="flex items-center gap-1.5 mt-0.5">
+          <span className="text-sm sm:text-base font-bold text-[#121212]">
+            ₹{product.price?.toLocaleString('en-IN') || product.price}
           </span>
-          {product.mrp && (
+          {product.mrp && Number(product.mrp) > Number(product.price) && (
             <span className="text-xs text-[#666875] line-through">
-              ₹{product.mrp}
+              ₹{product.mrp?.toLocaleString('en-IN') || product.mrp}
             </span>
           )}
           {product.discount && (
-            <span className="text-xs font-semibold text-[#00B852]">
+            <span className="text-[11px] sm:text-xs font-bold text-[#008C2D]">
               {product.discount}
             </span>
           )}
         </div>
 
-        {/* Lowest price note */}
-        {product.lowestPrice30Days && (
-          <p className="text-[10px] text-[#00B852] font-medium">
-            Lowest price in 30 days: ₹{product.lowestPrice30Days}
+        {/* Lowest price note matching Nobero exact purple pill */}
+        {product.lowestPrice30Days ? (
+          <p className="text-[11px] text-[#8941E8] font-medium leading-tight mt-0.5">
+            Lowest price in last 30 days
+          </p>
+        ) : (
+          <p className="text-[11px] text-[#8941E8] font-medium leading-tight mt-0.5">
+            Lowest price in last 30 days
           </p>
         )}
 

@@ -28,11 +28,23 @@ const CATEGORY_META = {
     seo: "Stay ahead of the trend with LEO's latest drops for men. Premium construction, modern aesthetics, and durable comfort.",
     banner: "/images/hero-1.jpg"
   },
+  'textured-shackets': {
+    title: "Jackets & Shackets",
+    subtitle: "Structured overshirts, bomber fleece silhouettes, and cozy layering staples.",
+    seo: "Shop LEO Men's Textured Shackets and Jackets. Engineered from heavy fleece, loopknit cotton, and breathable weaves for all-season styling.",
+    banner: "/images/shackets_promo_bg.jpg"
+  },
+  'shackets': {
+    title: "Jackets & Shackets",
+    subtitle: "Structured overshirts, bomber fleece silhouettes, and cozy layering staples.",
+    seo: "Shop LEO Men's Textured Shackets and Jackets. Engineered from heavy fleece, loopknit cotton, and breathable weaves for all-season styling.",
+    banner: "/images/shackets_promo_bg.jpg"
+  },
   'oversized-tees': {
-    title: "Trending T Shirt",
-    subtitle: "Your everyday essentials",
+    title: "Oversized T-Shirts",
+    subtitle: "240 GSM Heavyweight Fits",
     seo: "Shop our bestselling Men's Oversized T-Shirts. Built with high-grade 240 GSM bio-washed cotton that holds its structure wash after wash.",
-    banner: "/images/mood-street.jpg"
+    banner: "/images/oversized-tees_promo_bg.jpg"
   },
   't-shirts': {
     title: "Men's T-Shirts & Basics",
@@ -40,53 +52,89 @@ const CATEGORY_META = {
     seo: "Upgrade your basics with LEO's men's t-shirts. Ultra-soft combed cotton, reinforced rib collars, and zero shrinkage.",
     banner: "/images/hero-1.jpg"
   },
+  'premium-hd-tees': {
+    title: "HD Tees",
+    subtitle: "High-density combed cotton with ultra-crisp graphic prints.",
+    seo: "Shop LEO HD Tees for men. Heavyweight 240 GSM bio-washed cotton with high-definition detailing.",
+    banner: "/images/oversized-tees_promo_bg.jpg"
+  },
   'polos': {
     title: "Polo Tshirt for Men",
     subtitle: "Breathable pique knit polos with structured collars that stay sharp all day.",
     seo: "Explore our collection of versatile Men's Polos designed for effortless smart-casual transitions and wrinkle-resistant travel.",
-    banner: "/images/hero-2.jpg"
+    banner: "/images/polo_promo_bg.jpg"
+  },
+  'classic-polo': {
+    title: "Polo Tshirt for Men",
+    subtitle: "Breathable pique knit polos with structured collars that stay sharp all day.",
+    seo: "Explore our collection of versatile Men's Polos designed for effortless smart-casual transitions and wrinkle-resistant travel.",
+    banner: "/images/polo_promo_bg.jpg"
   },
   'shirts': {
     title: "Men's Shirts",
     subtitle: "Made for breezy plans",
     seo: "Discover LEO casual shirts for men. Breathable weaves, effortless layering, and contemporary cuts.",
-    banner: "/images/hero-2.jpg"
+    banner: "/images/shirts_promo_bg.jpg"
+  },
+  'shirts-for-men': {
+    title: "Men's Shirts",
+    subtitle: "Made for breezy plans",
+    seo: "Discover LEO casual shirts for men. Breathable weaves, effortless layering, and contemporary cuts.",
+    banner: "/images/shirts_promo_bg.jpg"
   },
   'hoodies': {
     title: "Jackets and Hoodies for Men",
     subtitle: "Made for changing weather",
     seo: "Keep warm in style with LEO's heavyweight French Terry hoodies for men. Pre-shrunk, fleece-lined, and built for cozy longevity.",
-    banner: "/images/mood-cozy.jpg"
-  },
-  'joggers': {
-    title: "Joggers for Men",
-    subtitle: "Your everyday essentials",
-    seo: "Shop LEO Men's Cargo Joggers. Engineered with deep utility pockets, gusseted crotches, and tapered ankle cuffs.",
-    banner: "/images/mood-travel.jpg"
-  },
-  'shorts': {
-    title: "Shorts for Men",
-    subtitle: "Made for outdoor plans",
-    seo: "LEO Men's shorts offer relaxed weekend ease and gym-ready mobility with heavyweight French Terry construction.",
-    banner: "/images/mood-relax.jpg"
+    banner: "/images/hoodies_promo_bg.jpg"
   },
   'jackets': {
     title: "Men's Jackets & Outerwear",
     subtitle: "Clean bomber jackets, transit utility windbreakers, and heavy overshirts.",
     seo: "Shop premium outerwear for men at LEO. Functional weather resistance combined with refined streetwear aesthetics.",
-    banner: "/images/hero-1.jpg"
+    banner: "/images/shackets_promo_bg.jpg"
+  },
+  'joggers': {
+    title: "Joggers for Men",
+    subtitle: "Your everyday essentials",
+    seo: "Shop LEO Men's Cargo Joggers. Engineered with deep utility pockets, gusseted crotches, and tapered ankle cuffs.",
+    banner: "/images/joggers_promo_bg.jpg"
+  },
+  'cargo-pants': {
+    title: "Cargo Pants",
+    subtitle: "Functional utility pockets meets ergonomic stretch comfort.",
+    seo: "Shop LEO Cargo Pants for men with deep utility pockets and 4-way flexibility.",
+    banner: "/images/joggers_promo_bg.jpg"
+  },
+  'shorts': {
+    title: "Shorts for Men",
+    subtitle: "Made for outdoor plans",
+    seo: "LEO Men's shorts offer relaxed weekend ease and gym-ready mobility with heavyweight French Terry construction.",
+    banner: "/images/shorts_promo_bg.webp"
   },
   'co-ords': {
     title: "Men's Matching Co-Ord Sets",
     subtitle: "Effortless top-and-bottom pairings in waffle knit, terry fleece, and textured cotton.",
     seo: "Eliminate styling guesswork with LEO's curated Men's Co-Ord Sets. Perfectly matched shades and complementary weights.",
-    banner: "/images/mood-relax.jpg"
+    banner: "/images/coords_promo_bg.jpg"
+  },
+  'best-selling-co-ord-sets': {
+    title: "Men's Matching Co-Ord Sets",
+    subtitle: "Effortless top-and-bottom pairings in waffle knit, terry fleece, and textured cotton.",
+    seo: "Eliminate styling guesswork with LEO's curated Men's Co-Ord Sets.",
+    banner: "/images/coords_promo_bg.jpg"
   },
   'travel': {
     title: "Men's Travel Essentials",
     subtitle: "Wrinkle-resistant, quick-drying, and 4-way stretch apparel tailored for modern transit.",
     seo: "Pack smarter with LEO Travel Essentials for men. Lightweight packing, deep zip security pockets, and supreme breathable comfort.",
-    banner: "/images/hero-2.jpg"
+    banner: "/images/joggers_promo_bg.jpg"
+  },
+  'travel-essentials': {
+    title: "Men's Travel Essentials",
+    subtitle: "Wrinkle-resistant, quick-drying, and 4-way stretch apparel tailored for modern transit.",
+    seo: "Pack smarter with LEO Travel Essentials for men. Lightweight packing, deep zip security pockets, and supreme breathable comfort.",
+    banner: "/images/joggers_promo_bg.jpg"
   },
   'sale': {
     title: "Men's Special Sale & Clearance",
@@ -224,104 +272,73 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
 
   return (
     <div className="min-h-screen bg-white pb-16 lg:pb-0">
-      {/* --- CUSTOM PROMO BANNERS (Pre-baked Images) --- */}
-      {(['polos', 'hoodies', 'joggers', 'shorts', 'shirts', 'oversized-tees'].includes(activeCategorySlug)) && (
-        <div className="w-full bg-[#E5E6E6]">
-          <img 
-            src={`/images/${activeCategorySlug}_promo_bg.${['shorts', 'polos'].includes(activeCategorySlug) ? 'webp' : 'jxl'}`} 
-            alt={`${activeCategorySlug} Promo Background`} 
-            className="w-full h-auto block" 
-          />
-        </div>
-      )}
-
-      {/* Generic Category Header Banner (Hidden for custom banners) */}
-      {!['polos', 'hoodies', 'joggers', 'shorts', 'shirts', 'oversized-tees'].includes(activeCategorySlug) && (
-        <div className="relative bg-[#282C3F] text-white py-8 sm:py-12 overflow-hidden">
-          <div className="absolute inset-0 opacity-20 mix-blend-overlay">
-            <img src={meta.banner} alt="" className="w-full h-full object-cover" />
-          </div>
-
-          <StorefrontContainer className="relative z-10">
-            <div className="text-[11px] sm:text-xs text-gray-300 font-semibold uppercase tracking-wider mb-2 flex items-center gap-1.5">
-              <Link to="/" className="hover:text-white">Home</Link>
-              <span>/</span>
-              <Link to="/men" className="hover:text-white">Men's Apparel</Link>
-              <span>/</span>
-              <span className="text-white font-bold">
-                {isSearchPage ? `Search: "${searchQuery}"` : meta.title.split('-')[0].trim()}
-              </span>
-            </div>
-
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-white font-display">
-              {isSearchPage ? `Search Results for "${searchQuery}"` : meta.title}
-            </h1>
-            <p className="text-xs sm:text-sm text-gray-300 mt-1 max-w-2xl font-medium">
-              {meta.subtitle}
-            </p>
-          </StorefrontContainer>
-        </div>
-      )}
-      
-      {/* Isolated Breadcrumbs just for Custom Banners */}
-      {(['polos', 'hoodies', 'joggers', 'shorts', 'shirts', 'oversized-tees'].includes(activeCategorySlug)) && (
-        <StorefrontContainer className="pt-6 pb-2">
-          <div className="text-[11px] sm:text-xs text-[#666875] font-medium capitalize tracking-wide flex items-center gap-1.5">
-            <Link to="/" className="hover:text-[#212121]">Home</Link>
-            <span>&gt;</span>
-            {!['polos', 'oversized-tees'].includes(activeCategorySlug) && (
-              <>
-                <Link to="/men" className="hover:text-[#212121]">Men</Link>
-                <span>&gt;</span>
-              </>
-            )}
-            <span className="text-[#212121]">
-              {meta.title.split('-')[0].trim()}
-            </span>
+      {/* 1. Optional Top Campaign Hero Banner (Contained with standard gutters matching Nobero) */}
+      {meta.banner && (
+        <StorefrontContainer className="pt-2 sm:pt-4">
+          <div className="w-full bg-[#f4f4f5] overflow-hidden max-h-[260px] sm:max-h-[320px] rounded-none">
+            <img 
+              src={meta.banner} 
+              alt={meta.title} 
+              className="w-full h-auto object-cover object-center block" 
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
           </div>
         </StorefrontContainer>
       )}
 
-      {/* Main Catalog View */}
-      <div className="pb-10 pt-2 lg:pt-4">
+      {/* 2. Authentic Nobero Breadcrumbs */}
+      <StorefrontContainer className="pt-4 pb-2">
+        <nav className="text-[12px] sm:text-xs text-[#666875] font-normal flex items-center gap-1.5 flex-wrap" role="navigation" aria-label="breadcrumbs">
+          <Link to="/" className="text-[#1A1E31] hover:underline font-normal">Home</Link>
+          <span className="text-[#979797]">&gt;</span>
+          <Link to="/men" className="text-[#1A1E31] hover:underline font-normal">Men</Link>
+          <span className="text-[#979797]">&gt;</span>
+          <span className="text-[#666875] font-normal">
+            {isSearchPage ? `Search: "${searchQuery}"` : meta.title}
+          </span>
+        </nav>
+      </StorefrontContainer>
+
+      {/* 3. Main Catalog View */}
+      <div className="pb-10 pt-1 lg:pt-2">
         <StorefrontContainer>
           
-          {/* Title & Controls Bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 gap-4">
+          {/* Title & Controls Bar matching Nobero */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 gap-3 border-b border-gray-100 mb-5">
             
             {/* Title & Count */}
-            <div className="flex items-baseline gap-3">
-              {(['polos', 'hoodies', 'joggers', 'shorts', 'shirts', 'oversized-tees'].includes(activeCategorySlug)) && (
-                <h2 className="text-[22px] sm:text-[28px] font-bold text-[#212121] tracking-tight">
-                  {meta.title.split('-')[0].trim()}
-                </h2>
-              )}
-              <span className="text-[12px] sm:text-xs text-[#666875] font-medium">
-                {filteredProducts.length} Items
+            <div className="flex items-baseline gap-2.5">
+              <h1 className="text-lg sm:text-xl lg:text-[24px] font-bold text-[#1A1E31] tracking-tight">
+                {isSearchPage ? `Search Results for "${searchQuery}"` : meta.title}
+              </h1>
+              <span className="text-xs text-[#666875] font-normal">
+                ({filteredProducts.length} Items)
               </span>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3 self-end sm:self-auto">
               {/* Mobile Filter trigger */}
               <button
                 onClick={() => setIsMobileFilterOpen(true)}
-                className="lg:hidden inline-flex items-center gap-1.5 bg-white border border-gray-300 text-[#212121] text-xs font-bold px-4 py-2 rounded-none shadow-sm"
+                className="lg:hidden inline-flex items-center gap-1.5 bg-white border border-gray-300 text-[#1A1E31] text-xs font-semibold px-3.5 py-1.5 rounded-none shadow-xs"
               >
                 <SlidersHorizontal className="w-3.5 h-3.5" /> Filter {activeFilterCount > 0 && `(${activeFilterCount})`}
               </button>
 
               {/* Sort Dropdown */}
-              <div className="flex items-center gap-2 bg-white border border-gray-200 rounded-none px-3 py-1.5 hover:border-gray-300 transition-colors">
-                <ArrowUpDown className="w-3.5 h-3.5 text-[#212121]" />
-                <span className="text-xs font-semibold text-[#212121] hidden sm:inline-block">Sort:</span>
+              <div className="flex items-center gap-1.5 bg-white border border-gray-200 rounded-none px-3 py-1.5 hover:border-gray-300 transition-colors">
+                <ArrowUpDown className="w-3 h-3 text-[#1A1E31]" />
+                <span className="text-xs font-normal text-[#666875] hidden sm:inline-block">Sort by:</span>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="bg-transparent text-xs font-semibold text-[#212121] focus:outline-none cursor-pointer pl-1 pr-4 appearance-none"
-                  style={{ backgroundImage: 'url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23212121%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right center', backgroundSize: '8px auto' }}
+                  className="bg-transparent text-xs font-semibold text-[#1A1E31] focus:outline-none cursor-pointer pl-0.5 pr-4 appearance-none"
+                  style={{ backgroundImage: 'url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23212121%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right center', backgroundSize: '7px auto' }}
                 >
                   {SORT_OPTIONS.map((opt) => (
-                    <option key={opt.id} value={opt.id}>{opt.label.replace('Price: ', '')}</option>
+                    <option key={opt.id} value={opt.id}>{opt.label}</option>
                   ))}
                 </select>
               </div>

@@ -603,20 +603,20 @@ const CartDrawer = () => {
                         <span className="font-medium text-gray-900">₹{totalMrp.toLocaleString('en-IN')}</span>
                       </div>
                       {totalSavings > 0 && (
-                        <div className="flex justify-between text-[#16a34a]">
+                        <div className="flex justify-between text-[#008C2D]">
                           <span>Discount on MRP</span>
                           <span className="font-semibold">-₹{totalSavings.toLocaleString('en-IN')}</span>
                         </div>
                       )}
                       {discountAmount > 0 && (
-                        <div className="flex justify-between text-[#16a34a]">
+                        <div className="flex justify-between text-[#008C2D]">
                           <span>Coupon Discount ({appliedCoupon?.code})</span>
                           <span className="font-semibold">-₹{discountAmount.toLocaleString('en-IN')}</span>
                         </div>
                       )}
                       <div className="flex justify-between text-gray-600">
                         <span>Shipping Charges</span>
-                        <span className="text-[#16a34a] font-bold">FREE</span>
+                        <span className="text-[#008C2D] font-bold">FREE</span>
                       </div>
                     </div>
                   )}
@@ -626,24 +626,24 @@ const CartDrawer = () => {
                 <div className="mx-4 bg-white border border-[#e5e7eb] rounded-none py-3 px-1 flex divide-x divide-gray-200">
                   {/* Pillar 1 */}
                   <div className="flex-1 flex flex-col items-center justify-center text-center px-1">
-                    <Banknote className="w-5 h-5 text-[#1e2b58] stroke-[1.8]" />
-                    <span className="text-[9.5px] sm:text-[10px] font-bold text-[#1e2b58] uppercase leading-tight mt-1.5">
+                    <Banknote className="w-5 h-5 text-[#242F66] stroke-[1.8]" />
+                    <span className="text-[9.5px] sm:text-[10px] font-bold text-[#242F66] uppercase leading-tight mt-1.5">
                       CASH ON<br />DELIVERY
                     </span>
                   </div>
 
                   {/* Pillar 2 */}
                   <div className="flex-1 flex flex-col items-center justify-center text-center px-1">
-                    <Truck className="w-5 h-5 text-[#1e2b58] stroke-[1.8]" />
-                    <span className="text-[9.5px] sm:text-[10px] font-bold text-[#1e2b58] uppercase leading-tight mt-1.5">
+                    <Truck className="w-5 h-5 text-[#242F66] stroke-[1.8]" />
+                    <span className="text-[9.5px] sm:text-[10px] font-bold text-[#242F66] uppercase leading-tight mt-1.5">
                       FREE<br />SHIPPING
                     </span>
                   </div>
 
                   {/* Pillar 3 */}
                   <div className="flex-1 flex flex-col items-center justify-center text-center px-1">
-                    <RotateCcw className="w-5 h-5 text-[#1e2b58] stroke-[1.8]" />
-                    <span className="text-[9.5px] sm:text-[10px] font-bold text-[#1e2b58] uppercase leading-tight mt-1.5">
+                    <RotateCcw className="w-5 h-5 text-[#242F66] stroke-[1.8]" />
+                    <span className="text-[9.5px] sm:text-[10px] font-bold text-[#242F66] uppercase leading-tight mt-1.5">
                       EASY<br />RETURNS
                     </span>
                   </div>
@@ -669,7 +669,7 @@ const CartDrawer = () => {
               {/* Right CTA Button */}
               <button
                 onClick={handleProceedBuy}
-                className="flex-1 bg-[#1e2b58] hover:bg-[#162144] text-white font-bold py-3 sm:py-3.5 px-6 rounded-none text-sm tracking-wide transition-all shadow-sm text-center active:scale-[0.99]"
+                className="flex-1 bg-[#242F66] hover:bg-[#1a234f] text-white font-bold py-3 sm:py-3.5 px-6 rounded-none text-sm tracking-wide transition-all shadow-sm text-center active:scale-[0.99]"
               >
                 Proceed to Buy
               </button>

@@ -306,7 +306,7 @@ const SearchDrawer = ({ isOpen, onClose }) => {
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-none"
                         />
                         {product.discount && (
-                          <span className="absolute top-1.5 left-1.5 bg-[#D9232D] text-white text-[9px] font-bold px-1.5 py-0.5 rounded-none">
+                          <span className="absolute top-1.5 left-1.5 bg-[#242F66] text-white text-[9px] font-bold px-1.5 py-0.5 rounded-none">
                             {product.discount}
                           </span>
                         )}
@@ -317,15 +317,15 @@ const SearchDrawer = ({ isOpen, onClose }) => {
                         )}
                       </div>
                       
-                      <h4 className="text-xs font-bold text-[#212121] line-clamp-1 group-hover:text-[#282C3F] transition-colors">
+                      <h4 className="text-xs font-bold text-[#121212] line-clamp-1 group-hover:text-[#242F66] transition-colors">
                         {product.title}
                       </h4>
                       <p className="text-[10px] text-gray-500 truncate">{product.subtitle}</p>
                       
                       <div className="flex items-baseline gap-1.5 mt-1">
-                        <span className="text-xs sm:text-sm font-bold text-[#212121]">₹{product.price}</span>
+                        <span className="text-xs sm:text-sm font-bold text-[#121212]">₹{product.price}</span>
                         {product.mrp && (
-                          <span className="text-[10px] text-gray-400 line-through">₹{product.mrp}</span>
+                          <span className="text-[10px] text-[#666875] line-through">₹{product.mrp}</span>
                         )}
                       </div>
                     </div>
@@ -337,7 +337,7 @@ const SearchDrawer = ({ isOpen, onClose }) => {
               <div className="mt-6 text-center">
                 <button
                   onClick={handleSearchSubmit}
-                  className="bg-[#282C3F] hover:bg-[#212121] text-white text-xs font-bold uppercase tracking-wider px-8 py-2.5 rounded-none transition-colors shadow-sm"
+                  className="bg-[#242F66] hover:bg-[#1a234f] text-white text-xs font-bold uppercase tracking-wider px-8 py-2.5 rounded-none transition-colors shadow-xs"
                 >
                   View All Results for "{query}"
                 </button>

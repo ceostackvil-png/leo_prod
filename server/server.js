@@ -1061,8 +1061,23 @@ app.get('/api/products', (req, res) => {
   let list = [...db.products];
   const { category, sort, filter, search } = req.query;
 
-  if (category && category !== 'all') {
-    list = list.filter(p => p.category === category || p.category.includes(category));
+  if (category && category !== 'all' && category !== 'men') {
+    const catMap = {
+      'textured-shackets': ['hoodies', 'jackets'],
+      'shackets': ['hoodies', 'jackets'],
+      'jackets-shackets': ['hoodies', 'jackets'],
+      'travel-essentials': ['travel', 'joggers', 'pants'],
+      'classic-polo': ['polos'],
+      'shirts-for-men': ['shirts'],
+      'best-selling-co-ord-sets': ['co-ords'],
+      'premium-hd-tees': ['t-shirts', 'oversized-tees'],
+      'cargo-pants': ['joggers', 'pants']
+    };
+    const targetCats = catMap[category] || [category];
+    list = list.filter(p => 
+      targetCats.some(tc => p.category === tc || p.category.includes(tc)) ||
+      (category.includes('shacket') && (p.title.toLowerCase().includes('shacket') || p.title.toLowerCase().includes('jacket')))
+    );
   }
   if (filter === 'bestseller') {
     list = list.filter(p => p.isBestseller);

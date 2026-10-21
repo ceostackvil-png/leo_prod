@@ -247,7 +247,7 @@ const CheckoutPage = () => {
                     value={formData.pincode}
                     onChange={handleInputChange}
                     placeholder="560038"
-                    className="w-full px-3.5 py-2.5 bg-zinc-50 border border-zinc-300 rounded-lg text-xs font-medium focus:outline-none focus:border-black"
+                    className="w-full px-3.5 py-2.5 bg-zinc-50 border border-zinc-300 rounded-none text-xs font-medium focus:outline-none focus:border-black"
                   />
                 </div>
                 <div>
@@ -258,7 +258,7 @@ const CheckoutPage = () => {
                     value={formData.city}
                     onChange={handleInputChange}
                     placeholder="City"
-                    className="w-full px-3.5 py-2.5 bg-zinc-50 border border-zinc-300 rounded-lg text-xs font-medium focus:outline-none focus:border-black"
+                    className="w-full px-3.5 py-2.5 bg-zinc-50 border border-zinc-300 rounded-none text-xs font-medium focus:outline-none focus:border-black"
                   />
                 </div>
                 <div>
@@ -269,14 +269,14 @@ const CheckoutPage = () => {
                     value={formData.state}
                     onChange={handleInputChange}
                     placeholder="State"
-                    className="w-full px-3.5 py-2.5 bg-zinc-50 border border-zinc-300 rounded-lg text-xs font-medium focus:outline-none focus:border-black"
+                    className="w-full px-3.5 py-2.5 bg-zinc-50 border border-zinc-300 rounded-none text-xs font-medium focus:outline-none focus:border-black"
                   />
                 </div>
               </div>
             </div>
 
             {/* Step 2: Payment Method */}
-            <div className="bg-white rounded-2xl p-6 border border-zinc-200 shadow-sm space-y-4">
+            <div className="bg-white rounded-none p-6 border border-zinc-200 shadow-xs space-y-4">
               <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-900 pb-3 border-b border-zinc-100">
                 2. Select Payment Mode
               </h3>
@@ -287,9 +287,9 @@ const CheckoutPage = () => {
                   return (
                     <label
                       key={method.id}
-                      className={`flex items-start gap-3.5 p-4 rounded-xl border-2 cursor-pointer transition-all ${
+                      className={`flex items-start gap-3.5 p-4 rounded-none border-2 cursor-pointer transition-all ${
                         paymentMethod === method.id
-                          ? 'border-black bg-zinc-50/80 shadow-sm'
+                          ? 'border-[#242F66] bg-zinc-50/80 shadow-xs'
                           : 'border-zinc-200 hover:border-zinc-300'
                       }`}
                     >
@@ -299,11 +299,11 @@ const CheckoutPage = () => {
                         value={method.id}
                         checked={paymentMethod === method.id}
                         onChange={() => setPaymentMethod(method.id)}
-                        className="mt-1 accent-black"
+                        className="mt-1 accent-[#242F66]"
                       />
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
-                          <Icon className="w-4 h-4 text-zinc-900" />
+                          <Icon className="w-4 h-4 text-[#242F66]" />
                           <span className="text-xs sm:text-sm font-bold text-zinc-900">{method.name}</span>
                         </div>
                         <p className="text-[11px] text-zinc-500 mt-0.5">{method.desc}</p>
@@ -317,7 +317,7 @@ const CheckoutPage = () => {
           </div>
 
           {/* RIGHT: Order Summary */}
-          <div className="lg:col-span-5 bg-white rounded-2xl p-6 border border-zinc-200 shadow-sm space-y-4 sticky top-24">
+          <div className="lg:col-span-5 bg-white rounded-none p-6 border border-zinc-200 shadow-xs space-y-4 sticky top-24">
             <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-900 pb-3 border-b border-zinc-100">
               Order Summary ({items.length} Items)
             </h3>
@@ -326,7 +326,7 @@ const CheckoutPage = () => {
             <div className="space-y-3 max-h-64 overflow-y-auto pr-1">
               {items.map((item) => (
                 <div key={item.id} className="flex gap-3 text-xs">
-                  <img src={item.image} alt="" className="w-14 h-18 object-cover rounded bg-zinc-100 shrink-0" />
+                  <img src={item.image} alt="" className="w-14 h-18 object-cover rounded-none bg-zinc-100 shrink-0" />
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold text-zinc-900 truncate">{item.title}</p>
                     <p className="text-[11px] text-zinc-500">Size: {item.size} • {item.color} • Qty: {item.quantity}</p>
@@ -338,7 +338,7 @@ const CheckoutPage = () => {
 
             {/* Coupon Callout if applied */}
             {appliedCoupon && (
-              <div className="bg-emerald-50 border border-emerald-200 p-2.5 rounded-lg text-xs text-emerald-800 flex items-center justify-between">
+              <div className="bg-emerald-50 border border-emerald-200 p-2.5 rounded-none text-xs text-emerald-800 flex items-center justify-between">
                 <span className="flex items-center gap-1.5 font-medium">
                   <Tag className="w-3.5 h-3.5 text-emerald-600" /> Coupon <strong>{appliedCoupon.code}</strong> Applied
                 </span>
@@ -361,12 +361,12 @@ const CheckoutPage = () => {
               <div className="flex justify-between">
                 <span>Express Shipping</span>
                 {shippingFee === 0 ? (
-                  <span className="text-emerald-600 font-bold uppercase text-[10px]">FREE</span>
+                  <span className="text-[#008C2D] font-bold uppercase text-[10px]">FREE</span>
                 ) : (
                   <span className="font-semibold text-zinc-900">₹{shippingFee}</span>
                 )}
               </div>
-              <div className="flex justify-between text-base font-black text-zinc-900 pt-3 border-t border-zinc-200">
+              <div className="flex justify-between text-base font-bold text-zinc-900 pt-3 border-t border-zinc-200">
                 <span>Total Amount</span>
                 <span>₹{finalTotal}</span>
               </div>
@@ -376,7 +376,7 @@ const CheckoutPage = () => {
             <button
               type="submit"
               disabled={isProcessing}
-              className="w-full bg-zinc-900 hover:bg-black text-white py-4 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all disabled:opacity-50"
+              className="w-full bg-[#242F66] hover:bg-[#1a234f] text-white py-3.5 rounded-none font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-xs transition-all disabled:opacity-50"
             >
               {isProcessing ? 'CONFIRMING ORDER...' : `PAY & COMPLETE ORDER • ₹${finalTotal}`}
             </button>

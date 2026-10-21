@@ -88,7 +88,7 @@ const TrackOrderPage = () => {
                 placeholder="e.g. LEO-98421"
                 value={orderId}
                 onChange={(e) => setOrderId(e.target.value.toUpperCase())}
-                className="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-md text-xs font-bold uppercase focus:outline-none focus:border-[#282C3F]"
+                className="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-none text-xs font-bold uppercase focus:outline-none focus:border-[#242F66]"
               />
             </div>
 
@@ -101,7 +101,7 @@ const TrackOrderPage = () => {
                 placeholder="Mobile or email"
                 value={phoneOrEmail}
                 onChange={(e) => setPhoneOrEmail(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-md text-xs font-medium focus:outline-none focus:border-[#282C3F]"
+                className="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-none text-xs font-medium focus:outline-none focus:border-[#242F66]"
               />
             </div>
 
@@ -109,7 +109,7 @@ const TrackOrderPage = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-[#282C3F] hover:bg-[#212121] text-white py-2.5 rounded-md text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors"
+                className="w-full bg-[#242F66] hover:bg-[#1a234f] text-white py-2.5 rounded-none text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors shadow-xs"
               >
                 {loading ? 'Searching...' : 'Track'}
               </button>
@@ -117,7 +117,7 @@ const TrackOrderPage = () => {
           </form>
 
           {error && (
-            <div className="mt-4 p-3 bg-rose-50 border border-rose-200 text-rose-700 text-xs rounded-md flex items-center gap-2">
+            <div className="mt-4 p-3 bg-rose-50 border border-rose-200 text-rose-700 text-xs rounded-none flex items-center gap-2">
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{error}</span>
             </div>
