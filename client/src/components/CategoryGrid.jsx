@@ -76,22 +76,22 @@ const CategoryGrid = () => {
             <Link
               key={idx}
               to={cat.link}
-              className="group relative flex flex-col rounded-xl overflow-hidden bg-gray-100 shadow-sm hover:shadow transition-all duration-300"
+              className="group relative flex flex-col rounded-none overflow-hidden bg-gray-100 shadow-sm hover:shadow transition-all duration-300"
             >
               {/* Image Container with 3:4 Aspect Ratio */}
-              <div className="relative aspect-[3/4] overflow-hidden bg-gray-200">
+              <div className="relative aspect-[3/4] overflow-hidden bg-gray-200 rounded-none">
                 <img
                   src={cat.image}
                   alt={cat.name}
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out rounded-none"
                 />
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
                 {/* Badge */}
                 {cat.badge && (
-                  <span className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm text-[#212121] text-[9px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
+                  <span className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm text-[#212121] text-[9px] font-bold px-2 py-0.5 rounded-none uppercase tracking-wider">
                     {cat.badge}
                   </span>
                 )}

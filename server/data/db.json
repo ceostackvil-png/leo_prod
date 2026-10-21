@@ -339,63 +339,73 @@
   "collections": [
     {
       "id": "col-1",
-      "name": "Travel Essentials",
-      "image": "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg",
+      "name": "Travel",
+      "image": "/images/collections/col_travel.jpg",
+      "fallback": "https://nobero.com/cdn/shop/files/Travel_essential.jpg?v=1757745353",
       "link": "/travel"
     },
     {
       "id": "col-2",
-      "name": "Joggers",
-      "image": "https://nobero.com/cdn/shop/collections/6_29719fa5-f748-482e-8039-fda30c64d1db.jpg?v=1757760284",
-      "link": "/joggers"
+      "name": "Polos",
+      "image": "/images/collections/col_polos.jpg",
+      "fallback": "https://nobero.com/cdn/shop/files/Polo.jpg?v=1757745353",
+      "link": "/polos"
     },
     {
       "id": "col-3",
-      "name": "Cargo Pants",
-      "image": "https://nobero.com/cdn/shop/collections/Cargo_Pants_Icon_Home_Page_copy.jpg?v=1790616572",
-      "link": "/joggers"
+      "name": "Shirts",
+      "image": "/images/collections/col_shirts.jpg",
+      "fallback": "https://nobero.com/cdn/shop/files/Linen_Shirts-4.jpg?v=1778157293",
+      "link": "/shirts"
     },
     {
       "id": "col-4",
-      "name": "Co-Ord Sets",
-      "image": "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg",
+      "name": "Co-ords",
+      "image": "/images/collections/col_coords.jpg",
+      "fallback": "https://nobero.com/cdn/shop/files/Co-ord-2.jpg?v=1786527383",
       "link": "/co-ords"
     },
     {
       "id": "col-5",
-      "name": "Oversized Tees",
-      "image": "https://nobero.com/cdn/shop/collections/port_1.jpg?v=1745516013",
-      "link": "/oversized-tees"
+      "name": "HD Tees",
+      "image": "/images/collections/col_hd_tees.jpg",
+      "fallback": "https://nobero.com/cdn/shop/files/Premium_tee-2_jpg.jpg?v=1772443532",
+      "link": "/shop?category=premium-hd-tees"
     },
     {
       "id": "col-6",
-      "name": "Polos",
-      "image": "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/POLOPDP-5_5c355606-1884-4943-b73a-f1503bc04014.jpg?v=1776764425",
-      "link": "/polos"
-    },
-    {
-      "id": "col-7",
-      "name": "Men Shirts",
-      "image": "https://nobero.com/cdn/shop/collections/Full_sleeve_polo.jpg?v=1783596387",
-      "link": "/shirts"
-    },
-    {
-      "id": "col-8",
-      "name": "Shorts",
-      "image": "https://nobero.com/cdn/shop/collections/7p_69c2c6cf-78a7-441f-b34a-ab147745806d.jpg?v=1790616859",
-      "link": "/shorts"
-    },
-    {
-      "id": "col-9",
-      "name": "Full Sleeve Tees",
-      "image": "https://nobero.com/cdn/shop/collections/Full_sleeve_polo.jpg?v=1783596387",
+      "name": "T-Shirts",
+      "image": "/images/collections/col_t_shirts.jpg",
+      "fallback": "https://nobero.com/cdn/shop/files/6_3947fc67-5783-4d32-9311-506c676a9ce8.jpg?v=1757745344",
       "link": "/t-shirts"
     },
     {
+      "id": "col-7",
+      "name": "Joggers",
+      "image": "/images/collections/col_joggers.jpg",
+      "fallback": "https://nobero.com/cdn/shop/files/Joggersssss.jpg?v=1762501540",
+      "link": "/joggers"
+    },
+    {
+      "id": "col-8",
+      "name": "Cargo Pants",
+      "image": "/images/collections/col_cargo_pants.jpg",
+      "fallback": "https://nobero.com/cdn/shop/files/Cargo_Pants_f4f28077-9d53-45e8-92d8-ceebffdbb6f6.jpg?v=1762501471",
+      "link": "/joggers?sub=cargo"
+    },
+    {
+      "id": "col-9",
+      "name": "Shorts",
+      "image": "/images/collections/col_shorts.png",
+      "fallback": "https://nobero.com/cdn/shop/files/Shorts_Home_Icon_aa3f709b-ca13-4da0-8902-38e06cb81454.png?v=1763279542",
+      "link": "/shorts"
+    },
+    {
       "id": "col-10",
-      "name": "Hoodies & Jackets",
-      "image": "https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg",
-      "link": "/hoodies"
+      "name": "Oversized Tees",
+      "image": "/images/collections/col_oversized_tees.jpg",
+      "fallback": "https://nobero.com/cdn/shop/files/Ov._Tee_13b98095-2712-4d73-ad6b-ed64bf134ab9.jpg?v=1778586377",
+      "link": "/oversized-tees"
     }
   ],
   "looks": [

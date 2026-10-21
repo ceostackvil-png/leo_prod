@@ -38,16 +38,16 @@ const EditorialSection = ({ blogs = [] }) => {
             <Link
               key={blog.id}
               to={`/blogs/${blog.slug}`}
-              className="group flex flex-col bg-white rounded-xl overflow-hidden border border-zinc-200 shadow-subtle hover:shadow-md transition-all duration-300"
+              className="group flex flex-col bg-white rounded-none overflow-hidden border border-zinc-200 shadow-subtle hover:shadow-md transition-all duration-300"
             >
               {/* Cover Image */}
-              <div className="aspect-[16/10] overflow-hidden bg-zinc-100 relative">
+              <div className="aspect-[16/10] overflow-hidden bg-zinc-100 relative rounded-none">
                 <img
                   src={blog.coverImage}
                   alt={blog.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out rounded-none"
                 />
-                <span className="absolute top-3 left-3 bg-zinc-900/90 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">
+                <span className="absolute top-3 left-3 bg-zinc-900/90 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-none uppercase tracking-wider">
                   {blog.category}
                 </span>
               </div>

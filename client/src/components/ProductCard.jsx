@@ -42,15 +42,15 @@ const ProductCard = ({ product }) => {
 
   return (
     <div
-      className="group relative flex flex-col bg-white select-none"
+      className="group relative flex flex-col bg-white select-none product-card sharp-card"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
         setIsHovered(false);
         setShowQuickSizes(false);
       }}
     >
-      {/* Product Image Container (Exact Nobero 2:3 / 3:4 Aspect Ratio) */}
-      <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-[#F7F8FA] border border-gray-100 mb-2">
+      {/* Product Image Container (Exact Nobero 2:3 / 3:4 Aspect Ratio with Signature Sharp Edges) */}
+      <div className="relative aspect-[3/4] rounded-none overflow-hidden bg-[#F7F8FA] border border-gray-100 mb-2">
         <Link to={`/product/${product.slug || product.id}`} className="block w-full h-full">
           <img
             src={displayImage}
@@ -69,9 +69,9 @@ const ProductCard = ({ product }) => {
           />
         </Link>
 
-        {/* Bestseller Badge */}
+        {/* Bestseller Badge with Sharp Edges */}
         {product.isBestseller && (
-          <span className="absolute top-2 left-2 bg-[#282C3F] text-white text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm">
+          <span className="absolute top-2 left-2 bg-[#282C3F] text-white text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-none shadow-xs">
             BESTSELLER
           </span>
         )}
@@ -79,10 +79,10 @@ const ProductCard = ({ product }) => {
         {/* Wishlist Heart Button */}
         <button
           onClick={handleWishlistClick}
-          className={`absolute top-2 right-2 z-10 w-7 h-7 rounded-full flex items-center justify-center transition-all ${
+          className={`absolute top-2 right-2 z-10 w-7 h-7 rounded-none flex items-center justify-center transition-all ${
             isWishlisted
-              ? 'bg-white text-rose-600 shadow'
-              : 'bg-white/80 hover:bg-white text-[#212121] hover:text-rose-600 shadow-sm'
+              ? 'bg-white text-rose-600 shadow-sm'
+              : 'bg-white/90 hover:bg-white text-[#212121] hover:text-rose-600 shadow-xs'
           }`}
           aria-label="Wishlist"
         >
@@ -91,9 +91,9 @@ const ProductCard = ({ product }) => {
           />
         </button>
 
-        {/* Rating Badge on Image */}
+        {/* Rating Badge on Image with Sharp Edges */}
         {product.rating && (
-          <div className="absolute bottom-2 left-2 z-10 bg-white/95 px-1.5 py-0.5 rounded text-[10px] font-bold text-[#212121] flex items-center gap-1 shadow-sm">
+          <div className="absolute bottom-2 left-2 z-10 bg-white/95 px-1.5 py-0.5 rounded-none text-[10px] font-bold text-[#212121] flex items-center gap-1 shadow-xs border border-gray-100">
             <span>{product.rating}</span>
             <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
             <span className="text-[#666875] font-normal">({product.reviewCount || 100})</span>
@@ -116,7 +116,7 @@ const ProductCard = ({ product }) => {
                 <button
                   key={sizeName}
                   onClick={(e) => handleQuickAdd(e, sizeName)}
-                  className={`flex-1 py-1 text-[10px] font-bold rounded border transition-all ${
+                  className={`flex-1 py-1 text-[10px] font-bold rounded-none border transition-all ${
                     addedSize === sizeName
                       ? 'bg-emerald-600 text-white border-emerald-600'
                       : 'bg-white hover:bg-[#282C3F] hover:text-white border-gray-300 text-[#212121]'
@@ -129,11 +129,11 @@ const ProductCard = ({ product }) => {
           </div>
         </div>
 
-        {/* Quick Add Hover Trigger */}
+        {/* Quick Add Hover Trigger with Sharp Edges */}
         {!showQuickSizes && (
           <button
             onClick={() => setShowQuickSizes(true)}
-            className="absolute inset-x-0 bottom-0 z-10 bg-[#282C3F]/90 hover:bg-[#282C3F] text-white py-2 text-[11px] font-bold uppercase tracking-wider hidden lg:flex items-center justify-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute inset-x-0 bottom-0 z-10 bg-[#282C3F]/90 hover:bg-[#282C3F] text-white py-2 text-[11px] font-bold uppercase tracking-wider hidden lg:flex items-center justify-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity rounded-none"
           >
             <ShoppingBag className="w-3.5 h-3.5" /> Quick Add
           </button>

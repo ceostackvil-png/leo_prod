@@ -83,7 +83,7 @@ export const EasyReturnsIcon = ({ className = "w-[28px] h-[36px] text-[#242f66] 
 const ProductTrustStrip = ({ className = "" }) => {
   return (
     <div
-      className={`w-full bg-[#f7f8fd] min-h-[86px] h-[86px] sm:h-[87px] rounded-[2px] flex items-center justify-between select-none ${className}`}
+      className={`w-full bg-[#f7f8fd] min-h-[86px] h-[86px] sm:h-[87px] rounded-none flex items-center justify-between select-none ${className}`}
       role="region"
       aria-label="Product Guarantee Features"
     >

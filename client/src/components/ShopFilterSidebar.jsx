@@ -212,7 +212,7 @@ const ShopFilterSidebar = ({
                     <div className="flex items-center gap-3">
                       {/* Checkbox */}
                       <div
-                        className={`w-[18px] h-[18px] rounded-[3px] border flex items-center justify-center shrink-0 transition-colors ${
+                        className={`w-[18px] h-[18px] rounded-none border flex items-center justify-center shrink-0 transition-colors ${
                           isSelected
                             ? 'bg-[#181B2D] border-[#181B2D] text-white'
                             : 'bg-white border-[#CCCCCC] group-hover:border-[#888888]'
@@ -291,7 +291,7 @@ const ShopFilterSidebar = ({
                     <div className="flex items-center gap-3">
                       {/* Checkbox */}
                       <div
-                        className={`w-[18px] h-[18px] rounded-[3px] border flex items-center justify-center shrink-0 transition-colors ${
+                        className={`w-[18px] h-[18px] rounded-none border flex items-center justify-center shrink-0 transition-colors ${
                           isSelected
                             ? 'bg-[#181B2D] border-[#181B2D] text-white'
                             : 'bg-white border-[#CCCCCC] group-hover:border-[#888888]'
@@ -384,7 +384,7 @@ const ShopFilterSidebar = ({
           <button
             type="button"
             onClick={onApplyMobile}
-            className="w-full bg-[#181B2D] hover:bg-black text-white text-sm font-semibold py-3 rounded-md shadow-sm transition-colors uppercase tracking-wider"
+            className="w-full bg-[#181B2D] hover:bg-black text-white text-sm font-semibold py-3 rounded-none shadow-sm transition-colors uppercase tracking-wider"
           >
             Apply Filters
           </button>

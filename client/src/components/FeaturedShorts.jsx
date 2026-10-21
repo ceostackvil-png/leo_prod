@@ -83,22 +83,22 @@ const FeaturedShorts = () => {
           </Link>
         </div>
 
-        {/* 2-Card Featured Showcase (Full-width on mobile, 2-column on desktop) */}
+        {/* 2-Card Featured Showcase (Full-width on mobile, 2-column on desktop with Sharp Edges) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {FEATURED_SHORTS.map((item) => (
             <div
               key={item.id}
-              className="bg-[#F7F8FA] rounded-2xl overflow-hidden border border-gray-200/80 hover:shadow-md transition-all group flex flex-col justify-between"
+              className="bg-[#F7F8FA] rounded-none overflow-hidden border border-gray-200/80 hover:shadow-md transition-all group flex flex-col justify-between product-card sharp-card"
             >
               {/* Product Image */}
-              <Link to={item.link} className="block relative aspect-[4/3] sm:aspect-[16/10] overflow-hidden bg-gray-100">
+              <Link to={item.link} className="block relative aspect-[4/3] sm:aspect-[16/10] overflow-hidden bg-gray-100 rounded-none">
                 <img
                   src={item.image}
                   alt={item.name}
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500 rounded-none"
                 />
-                <span className="absolute top-3 left-3 bg-[#D9232D] text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">
+                <span className="absolute top-3 left-3 bg-[#D9232D] text-white text-[10px] font-bold px-2 py-0.5 rounded-none shadow-xs">
                   {item.discount}
                 </span>
               </Link>
@@ -112,7 +112,7 @@ const FeaturedShorts = () => {
                       {item.colors.map((c, i) => (
                         <span
                           key={i}
-                          className="w-3 h-3 rounded-full border border-white shadow-xs inline-block"
+                          className="w-3 h-3 rounded-none border border-white shadow-xs inline-block"
                           style={{ backgroundColor: c }}
                         />
                       ))}
@@ -121,7 +121,7 @@ const FeaturedShorts = () => {
                       </span>
                     </div>
 
-                    <div className="inline-flex items-center gap-1 text-[11px] font-bold text-gray-700 bg-white px-2 py-0.5 rounded-full border border-gray-200 shadow-2xs">
+                    <div className="inline-flex items-center gap-1 text-[11px] font-bold text-gray-700 bg-white px-2 py-0.5 rounded-none border border-gray-200 shadow-2xs">
                       <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
                       <span>{item.rating}</span>
                       <span className="text-gray-400 text-[10px]">({item.reviews})</span>
@@ -151,10 +151,10 @@ const FeaturedShorts = () => {
                   </p>
                 </div>
 
-                {/* Add to Cart CTA */}
+                {/* Add to Cart CTA with Sharp Edges */}
                 <button
                   onClick={() => handleAddToCart(item)}
-                  className="w-full bg-[#282C3F] hover:bg-[#1a224a] active:scale-[0.99] text-white text-xs font-bold py-2.5 rounded-lg transition-all flex items-center justify-center gap-2 shadow-sm uppercase tracking-wider"
+                  className="w-full bg-[#282C3F] hover:bg-[#1a224a] active:scale-[0.99] text-white text-xs font-bold py-2.5 rounded-none transition-all flex items-center justify-center gap-2 shadow-xs uppercase tracking-wider"
                 >
                   {addedIds[item.id] ? (
                     <>

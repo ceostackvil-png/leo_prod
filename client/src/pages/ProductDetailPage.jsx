@@ -242,7 +242,7 @@ const ProductDetailPage = () => {
             <div className="lg:col-span-7 sticky top-24">
 
               <div
-                className="w-full relative aspect-[3/4] sm:aspect-[4/5] rounded bg-[#F7F8FA] select-none overflow-hidden group"
+                className="w-full relative aspect-[3/4] sm:aspect-[4/5] rounded-none bg-[#F7F8FA] select-none overflow-hidden group"
                 onTouchStart={(e) => {
                   window._pdpTouchX = e.touches[0].clientX;
                 }}
@@ -358,23 +358,23 @@ const ProductDetailPage = () => {
                 )}
               </div>
 
-              {/* Front & Back View Interactive Switcher */}
+              {/* Front & Back View Interactive Switcher with Sharp Edges */}
               {gallery.length > 1 && (
-                <div className="mt-3 flex items-center justify-between gap-2 bg-[#F7F8FA] p-1.5 rounded border border-gray-200/80">
+                <div className="mt-3 flex items-center justify-between gap-2 bg-[#F7F8FA] p-1.5 rounded-none border border-gray-200/80">
                   <div className="flex items-center gap-2">
                     {gallery.map((imgUrl, gIdx) => (
                       <button
                         key={gIdx}
                         type="button"
                         onClick={() => setSelectedImageIdx(gIdx)}
-                        className={`flex items-center gap-2 px-3 py-1.5 rounded text-xs font-bold transition-all ${
+                        className={`flex items-center gap-2 px-3 py-1.5 rounded-none text-xs font-bold transition-all ${
                           selectedImageIdx === gIdx
-                            ? 'bg-[#282C3F] text-white shadow-sm'
+                            ? 'bg-[#282C3F] text-white shadow-xs'
                             : 'bg-white text-[#535766] hover:bg-gray-50 border border-gray-200'
                         }`}
                       >
-                        <div className="w-4 h-5 rounded overflow-hidden shrink-0 border border-black/10 bg-gray-100">
-                          <img src={imgUrl} alt="" className="w-full h-full object-cover" />
+                        <div className="w-4 h-5 rounded-none overflow-hidden shrink-0 border border-black/10 bg-gray-100">
+                          <img src={imgUrl} alt="" className="w-full h-full object-cover rounded-none" />
                         </div>
                         <span>{gIdx === 0 ? 'Front View' : (gIdx === 1 ? 'Back View' : `View ${gIdx + 1}`)}</span>
                       </button>
@@ -468,7 +468,7 @@ const ProductDetailPage = () => {
                 </div>
               </div>
 
-              {/* Color Swatches */}
+              {/* Color Swatches with Sharp Edges */}
               {product.colors && product.colors.length > 0 && (
                 <div className="space-y-3 mt-6">
                   <span className="text-[14px] font-bold text-[#282C3F] block">
@@ -482,7 +482,7 @@ const ProductDetailPage = () => {
                           setSelectedColorIdx(idx);
                           setSelectedImageIdx(0);
                         }}
-                        className={`w-[52px] h-[68px] rounded overflow-hidden relative transition-all ${idx === selectedColorIdx
+                        className={`w-[52px] h-[68px] rounded-none overflow-hidden relative transition-all ${idx === selectedColorIdx
                             ? 'border-[1.5px] border-[#282C3F] p-[1.5px]'
                             : 'border-[1.5px] border-transparent hover:border-gray-200'
                           }`}
@@ -490,11 +490,11 @@ const ProductDetailPage = () => {
                       >
                         <img
                           src={c.frontImage || c.image || product.image}
-                          className="w-full h-full object-cover rounded-[2px]"
+                          className="w-full h-full object-cover rounded-none"
                           alt={c.name}
                         />
                         {idx === selectedColorIdx && (
-                          <div className="absolute bottom-1 right-1 bg-white rounded-full p-[2px] shadow-sm">
+                          <div className="absolute bottom-1 right-1 bg-white rounded-none p-[2px] shadow-xs">
                             <Check className="w-2.5 h-2.5 text-[#00B852]" strokeWidth={3} />
                           </div>
                         )}
@@ -524,7 +524,7 @@ const ProductDetailPage = () => {
                       key={size}
                       type="button"
                       onClick={() => setSelectedSize(size)}
-                      className={`w-[60px] h-[38px] flex items-center justify-center text-[14px] rounded-[2px] transition-all select-none ${
+                      className={`w-[60px] h-[38px] flex items-center justify-center text-[14px] rounded-none transition-all select-none ${
                         selectedSize === size
                           ? 'border-2 border-[#242f66] text-[#242f66] font-bold bg-white shadow-xs'
                           : 'border border-[#b8b9bf] text-[#242f66] bg-white hover:border-[#242f66] font-medium'
@@ -536,13 +536,13 @@ const ProductDetailPage = () => {
                 </div>
               </div>
 
-              {/* Action Buttons: Add to Cart & Buy Now */}
+              {/* Action Buttons: Add to Cart & Buy Now with Sharp Edges */}
               <div className="space-y-[14px] pt-4">
                 {/* 1. Add to Cart Button */}
                 <button
                   type="button"
                   onClick={handleAddToCart}
-                  className="w-full h-[52px] sm:h-[54px] bg-white hover:bg-[#f7f8fd] text-[#242f66] rounded-[2px] border-[1.5px] border-[#242f66] font-bold text-[15px] sm:text-[16px] tracking-normal flex items-center justify-center transition-colors shadow-xs active:scale-[0.99] select-none"
+                  className="w-full h-[52px] sm:h-[54px] bg-white hover:bg-[#f7f8fd] text-[#242f66] rounded-none border-[1.5px] border-[#242f66] font-bold text-[15px] sm:text-[16px] tracking-normal flex items-center justify-center transition-colors shadow-xs active:scale-[0.99] select-none uppercase tracking-wider"
                 >
                   Add to Cart
                 </button>
@@ -551,7 +551,7 @@ const ProductDetailPage = () => {
                 <button
                   type="button"
                   onClick={handleBuyNow}
-                  className="w-full h-[52px] sm:h-[54px] bg-[#242f66] hover:bg-[#1a234f] text-white rounded-[2px] border border-[#242f66] flex flex-col items-center justify-center transition-colors shadow-xs active:scale-[0.99] select-none"
+                  className="w-full h-[52px] sm:h-[54px] bg-[#242f66] hover:bg-[#1a234f] text-white rounded-none border border-[#242f66] flex flex-col items-center justify-center transition-colors shadow-xs active:scale-[0.99] select-none uppercase tracking-wider"
                 >
                   <span className="font-bold text-[16px] leading-tight">
                     Buy Now

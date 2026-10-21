@@ -81,3 +81,28 @@
     gap: 24px;
   }
 }
+
+/* ==========================================================================
+   Signature Nobero Architectural Sharp Edges (0px Border-Radius)
+   Enforces crisp 90-degree corners on all product cards, containers, images,
+   badges, action buttons, and look/editorial cards.
+   ========================================================================== */
+.product-card,
+.product-card-container,
+.product-image-container,
+.product-card img,
+.look-card,
+.look-card img,
+.editorial-card,
+.editorial-card img,
+.sharp-card,
+.sharp-card img,
+.sharp-edge {
+  border-radius: 0 !important;
+}
+
+[data-sharp="true"],
+[data-product-card="true"] {
+  border-radius: 0 !important;
+}
+

@@ -146,7 +146,7 @@ const SearchDrawer = ({ isOpen, onClose }) => {
           <div className="flex items-center justify-between gap-3 pb-4 border-b border-gray-200">
             <form
               onSubmit={handleSearchSubmit}
-              className="flex-1 flex items-center justify-between bg-white rounded-[6px] px-3.5 h-[42px] sm:h-[46px] border border-[#E8E9EA] focus-within:border-[#181B2D] transition-all shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
+              className="flex-1 flex items-center justify-between bg-white rounded-none px-3.5 h-[42px] sm:h-[46px] border border-[#E8E9EA] focus-within:border-[#181B2D] transition-all shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
             >
               <input
                 ref={inputRef}
@@ -246,7 +246,7 @@ const SearchDrawer = ({ isOpen, onClose }) => {
                       key={idx}
                       to={`/shop?category=${cat.slug}`}
                       onClick={onClose}
-                      className="p-3 bg-gray-50 hover:bg-gray-100 rounded-xl border border-gray-200 text-xs font-bold text-[#212121] flex items-center justify-between transition-colors group"
+                      className="p-3 bg-gray-50 hover:bg-gray-100 rounded-none border border-gray-200 text-xs font-bold text-[#212121] flex items-center justify-between transition-colors group"
                     >
                       <span>{cat.label}</span>
                       <ArrowRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-black group-hover:translate-x-0.5 transition-transform" />
@@ -297,21 +297,21 @@ const SearchDrawer = ({ isOpen, onClose }) => {
                     <div
                       key={product.id}
                       onClick={() => handleSelectProduct(product)}
-                      className="group cursor-pointer block text-left bg-white border border-gray-100 rounded-xl p-2 hover:shadow-md transition-all"
+                      className="group cursor-pointer block text-left bg-white border border-gray-100 rounded-none p-2 hover:shadow-md transition-all"
                     >
-                      <div className="aspect-[3/4] rounded-lg overflow-hidden bg-gray-100 relative mb-2">
+                      <div className="aspect-[3/4] rounded-none overflow-hidden bg-gray-100 relative mb-2">
                         <img
                           src={image}
                           alt={product.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-none"
                         />
                         {product.discount && (
-                          <span className="absolute top-1.5 left-1.5 bg-[#D9232D] text-white text-[9px] font-bold px-1.5 py-0.5 rounded">
+                          <span className="absolute top-1.5 left-1.5 bg-[#D9232D] text-white text-[9px] font-bold px-1.5 py-0.5 rounded-none">
                             {product.discount}
                           </span>
                         )}
                         {product.rating && (
-                          <span className="absolute bottom-1.5 left-1.5 bg-white/95 text-[9px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5 shadow-sm">
+                          <span className="absolute bottom-1.5 left-1.5 bg-white/95 text-[9px] font-bold px-1.5 py-0.5 rounded-none flex items-center gap-0.5 shadow-xs">
                             {product.rating} <Star className="w-2.5 h-2.5 fill-amber-400 text-amber-400" />
                           </span>
                         )}
@@ -337,7 +337,7 @@ const SearchDrawer = ({ isOpen, onClose }) => {
               <div className="mt-6 text-center">
                 <button
                   onClick={handleSearchSubmit}
-                  className="bg-[#282C3F] hover:bg-[#212121] text-white text-xs font-bold uppercase tracking-wider px-8 py-2.5 rounded-lg transition-colors shadow-sm"
+                  className="bg-[#282C3F] hover:bg-[#212121] text-white text-xs font-bold uppercase tracking-wider px-8 py-2.5 rounded-none transition-colors shadow-sm"
                 >
                   View All Results for "{query}"
                 </button>

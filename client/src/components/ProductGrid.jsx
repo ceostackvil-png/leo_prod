@@ -64,10 +64,10 @@ const ProductGrid = ({
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`text-xs font-bold px-3.5 py-1.5 rounded-full whitespace-nowrap transition-all ${
+                    className={`text-xs font-bold px-3.5 py-1.5 rounded-none whitespace-nowrap transition-all border ${
                       activeTab === tab.id
-                        ? 'bg-[#282C3F] text-white shadow-sm'
-                        : 'bg-gray-100 text-[#666875] hover:text-[#212121] hover:bg-gray-200'
+                        ? 'bg-[#282C3F] border-[#282C3F] text-white shadow-sm'
+                        : 'bg-gray-100 border-gray-200 text-[#666875] hover:text-[#212121] hover:bg-gray-200'
                     }`}
                   >
                     {tab.label}
@@ -90,7 +90,7 @@ const ProductGrid = ({
           <div className="mt-8 sm:mt-10 text-center">
             <Link
               to={viewAllLink}
-              className="inline-flex items-center gap-2 bg-[#282C3F] hover:bg-[#212121] text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-8 py-3 rounded-md transition-all shadow-sm hover:shadow"
+              className="inline-flex items-center gap-2 bg-[#282C3F] hover:bg-[#212121] text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-8 py-3 rounded-none transition-all shadow-sm hover:shadow"
             >
               SHOP ALL PRODUCTS <ArrowRight className="w-4 h-4" />
             </Link>

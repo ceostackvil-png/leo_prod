@@ -194,13 +194,13 @@ const CartDrawer = () => {
           <div className="flex-1 overflow-y-auto divide-y-0 space-y-3 pb-6">
 
             {/* 3. PIN Code Box (Exact Nobero Card) */}
-            <div className="mx-4 mt-3 bg-white border border-[#e5e7eb] rounded-sm p-3.5 shadow-none">
+            <div className="mx-4 mt-3 bg-white border border-[#e5e7eb] rounded-none p-3.5 shadow-none">
               <div
                 className="flex items-center justify-between cursor-pointer"
                 onClick={() => setIsPinExpanded(!isPinExpanded)}
               >
                 <div className="flex items-center gap-2.5">
-                  <div className="w-6 h-6 rounded-full bg-[#1e2b58]/10 flex items-center justify-center text-[#1e2b58]">
+                  <div className="w-6 h-6 rounded-none bg-[#1e2b58]/10 flex items-center justify-center text-[#1e2b58]">
                     <MapPin className="w-3.5 h-3.5 fill-[#1e2b58] text-[#1e2b58]" />
                   </div>
                   <span className="text-[13px] sm:text-[13.5px] text-[#111827]">
@@ -225,18 +225,18 @@ const CartDrawer = () => {
                       placeholder="Enter 6-digit Pincode"
                       value={pincode}
                       onChange={(e) => setPincode(e.target.value.replace(/\D/g, ''))}
-                      className="flex-1 border border-gray-300 rounded-sm px-3 py-1.5 text-xs text-[#111827] focus:outline-none focus:border-[#1e2b58]"
+                      className="flex-1 border border-gray-300 rounded-none px-3 py-1.5 text-xs text-[#111827] focus:outline-none focus:border-[#1e2b58]"
                     />
                     <button
                       type="submit"
                       disabled={isCheckingPin || pincode.length !== 6}
-                      className="bg-[#1e2b58] text-white text-xs font-bold px-4 py-1.5 rounded-sm hover:bg-[#162144] disabled:opacity-50 transition-colors"
+                      className="bg-[#1e2b58] text-white text-xs font-bold px-4 py-1.5 rounded-none hover:bg-[#162144] disabled:opacity-50 transition-colors"
                     >
                       {isCheckingPin ? 'Checking...' : 'Check'}
                     </button>
                   </form>
                   {pincodeStatus && (
-                    <div className="mt-2.5 p-2 bg-emerald-50 border border-emerald-200 rounded text-[11px] text-emerald-800 flex items-start gap-1.5">
+                    <div className="mt-2.5 p-2 bg-emerald-50 border border-emerald-200 rounded-none text-[11px] text-emerald-800 flex items-start gap-1.5">
                       <Check className="w-3.5 h-3.5 text-emerald-600 mt-0.5 shrink-0" />
                       <span>{pincodeStatus.message}</span>
                     </div>
@@ -248,8 +248,8 @@ const CartDrawer = () => {
             {/* 4. Cart Items List */}
             <div className="px-4 space-y-3">
               {items.length === 0 ? (
-                <div className="py-14 text-center bg-white border border-[#e5e7eb] rounded-sm p-6">
-                  <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-3 text-gray-400">
+                <div className="py-14 text-center bg-white border border-[#e5e7eb] rounded-none p-6">
+                  <div className="w-16 h-16 bg-gray-50 rounded-none flex items-center justify-center mx-auto mb-3 text-gray-400 border border-gray-200">
                     <ShoppingBag className="w-8 h-8" />
                   </div>
                   <h3 className="text-base font-bold text-[#111827]">Your cart is empty</h3>
@@ -261,7 +261,7 @@ const CartDrawer = () => {
                       setIsDrawerOpen(false);
                       navigate('/shop');
                     }}
-                    className="mt-5 inline-flex items-center gap-2 bg-[#1e2b58] text-white text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-sm hover:bg-[#152044] transition-all"
+                    className="mt-5 inline-flex items-center gap-2 bg-[#1e2b58] text-white text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-none hover:bg-[#152044] transition-all"
                   >
                     EXPLORE BESTSELLERS <ArrowRight className="w-3.5 h-3.5" />
                   </button>
@@ -274,14 +274,14 @@ const CartDrawer = () => {
                   return (
                     <div
                       key={item.id}
-                      className="bg-white border border-[#e5e7eb] rounded-sm p-3 flex gap-3.5 shadow-none transition-shadow relative"
+                      className="bg-white border border-[#e5e7eb] rounded-none p-3 flex gap-3.5 shadow-none transition-shadow relative"
                     >
-                      {/* Product Image: Exact 3:4 Aspect Ratio Portrait (~105px wide x ~135px high) */}
-                      <div className="relative shrink-0 w-[100px] sm:w-[105px] h-[130px] sm:h-[135px] rounded-sm overflow-hidden bg-gray-50 border border-gray-100">
+                      {/* Product Image: Exact 3:4 Aspect Ratio Portrait with Sharp Edges */}
+                      <div className="relative shrink-0 w-[100px] sm:w-[105px] h-[130px] sm:h-[135px] rounded-none overflow-hidden bg-gray-50 border border-gray-100">
                         <img
                           src={item.image}
                           alt={item.title}
-                          className="w-full h-full object-cover object-center"
+                          className="w-full h-full object-cover object-center rounded-none"
                           onError={(e) => {
                             e.target.src = '/images/stay_fluid_violet_tee.jpg';
                           }}
@@ -325,10 +325,10 @@ const CartDrawer = () => {
                             <span className="text-[#111827] font-medium">{item.size || 'L'}</span>
                           </div>
 
-                          {/* Urgency Stock Alert Badge: Exact Nobero "6 item left" in soft pink */}
+                          {/* Urgency Stock Alert Badge */}
                           {(item.stockLeft || item.size === 'M') && (
                             <div className="mt-1.5">
-                              <span className="inline-block bg-[#fff1f2] text-[#e11d48] text-[11px] font-semibold px-2 py-0.5 rounded-sm">
+                              <span className="inline-block bg-[#fff1f2] text-[#e11d48] text-[11px] font-semibold px-2 py-0.5 rounded-none">
                                 {item.stockLeft || 6} item left
                               </span>
                             </div>
@@ -338,7 +338,7 @@ const CartDrawer = () => {
                         {/* Stepper & Trash Can Row */}
                         <div className="flex items-center justify-between mt-2.5 pt-1">
                           {/* Stepper Pill Box */}
-                          <div className="flex items-center border border-gray-200 rounded-sm bg-white overflow-hidden shadow-none">
+                          <div className="flex items-center border border-gray-200 rounded-none bg-white overflow-hidden shadow-none">
                             <button
                               onClick={() => updateQuantity(item.id, -1)}
                               className="px-2.5 py-0.5 text-gray-500 hover:text-black font-semibold text-xs transition-colors"
@@ -378,7 +378,7 @@ const CartDrawer = () => {
             {items.length > 0 && (
               <>
                 {/* 5. 7-Days Free Return & Exchange Available Strip */}
-                <div className="mx-4 bg-[#fdf2f8] border border-[#fce7f3] rounded-sm py-2 px-3 flex items-center justify-center gap-2 text-xs text-[#831843]">
+                <div className="mx-4 bg-[#fdf2f8] border border-[#fce7f3] rounded-none py-2 px-3 flex items-center justify-center gap-2 text-xs text-[#831843]">
                   <div className="w-4 h-4 text-[#f43f5e] shrink-0">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
@@ -392,7 +392,7 @@ const CartDrawer = () => {
                 </div>
 
                 {/* 6. Coupons Box (Exact Nobero Mint Green Box) */}
-                <div className="mx-4 bg-[#f0fbf4] border border-[#bbf7d0] rounded-sm p-3.5 space-y-2">
+                <div className="mx-4 bg-[#f0fbf4] border border-[#bbf7d0] rounded-none p-3.5 space-y-2">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       {/* Green Flower/Rosette Badge Icon */}
@@ -416,7 +416,7 @@ const CartDrawer = () => {
                           applyCoupon('B2G10');
                         }
                       }}
-                      className={`text-xs font-bold px-3.5 py-1 rounded-sm border transition-colors ${
+                      className={`text-xs font-bold px-3.5 py-1 rounded-none border transition-colors ${
                         isB2G10Applied
                           ? 'bg-[#1e2b58] text-white border-[#1e2b58]'
                           : 'border-[#1e2b58] text-[#1e2b58] hover:bg-[#1e2b58] hover:text-white'
@@ -456,7 +456,7 @@ const CartDrawer = () => {
                             placeholder="Enter coupon code"
                             value={customCoupon}
                             onChange={(e) => setCustomCoupon(e.target.value.toUpperCase())}
-                            className="flex-1 bg-white border border-gray-300 rounded-sm px-2.5 py-1.5 text-xs uppercase font-bold focus:outline-none focus:border-[#1e2b58]"
+                            className="flex-1 bg-white border border-gray-300 rounded-none px-2.5 py-1.5 text-xs uppercase font-bold focus:outline-none focus:border-[#1e2b58]"
                           />
                           <button
                             onClick={() => {
@@ -465,7 +465,7 @@ const CartDrawer = () => {
                                 setCustomCoupon('');
                               }
                             }}
-                            className="bg-[#1e2b58] text-white text-xs font-bold px-3.5 py-1.5 rounded-sm hover:bg-[#162144]"
+                            className="bg-[#1e2b58] text-white text-xs font-bold px-3.5 py-1.5 rounded-none hover:bg-[#162144]"
                           >
                             Apply
                           </button>
@@ -477,8 +477,8 @@ const CartDrawer = () => {
                             const isThisApplied = appliedCoupon?.code === cpn.code;
                             return (
                               <div
-                                key={cppn.code}
-                                className="bg-white border border-[#dcfce7] rounded-sm p-2.5 flex items-center justify-between"
+                                key={cpn.code}
+                                className="bg-white border border-[#dcfce7] rounded-none p-2.5 flex items-center justify-between"
                               >
                                 <div>
                                   <div className="flex items-center gap-1.5">
@@ -496,7 +496,7 @@ const CartDrawer = () => {
                                       applyCoupon(cpn.code);
                                     }
                                   }}
-                                  className={`text-xs font-bold px-2.5 py-1 rounded-sm border transition-colors ${
+                                  className={`text-xs font-bold px-2.5 py-1 rounded-none border transition-colors ${
                                     isThisApplied
                                       ? 'bg-emerald-600 text-white border-emerald-600'
                                       : 'border-[#1e2b58] text-[#1e2b58] hover:bg-[#1e2b58] hover:text-white'
@@ -523,7 +523,7 @@ const CartDrawer = () => {
                   {/* Payment Badges Strip: GPay, Paytm, PhonePe, VISA, RuPay, LazyPay, Mastercard, Amazon Pay, Amex */}
                   <div className="flex flex-wrap items-center justify-center gap-1.5 pt-0.5">
                     {/* GPay */}
-                    <div className="border border-gray-200 rounded-sm px-2 py-1 bg-white flex items-center justify-center h-6 text-[10px] font-bold shadow-sm">
+                    <div className="border border-gray-200 rounded-none px-2 py-1 bg-white flex items-center justify-center h-6 text-[10px] font-bold shadow-sm">
                       <span className="text-[#4285F4]">G</span>
                       <span className="text-[#EA4335]">P</span>
                       <span className="text-[#FBBC05]">a</span>
@@ -531,50 +531,50 @@ const CartDrawer = () => {
                     </div>
 
                     {/* Paytm */}
-                    <div className="border border-gray-200 rounded-sm px-2 py-1 bg-white flex items-center justify-center h-6 text-[10px] font-extrabold text-[#002e6e] shadow-sm tracking-tighter">
+                    <div className="border border-gray-200 rounded-none px-2 py-1 bg-white flex items-center justify-center h-6 text-[10px] font-extrabold text-[#002e6e] shadow-sm tracking-tighter">
                       pay<span className="text-[#00b9f5]">tm</span>
                     </div>
 
                     {/* PhonePe */}
-                    <div className="border border-gray-200 rounded-sm px-2 py-1 bg-white flex items-center justify-center h-6 text-[10px] font-bold text-[#5f259f] shadow-sm gap-1">
+                    <div className="border border-gray-200 rounded-none px-2 py-1 bg-white flex items-center justify-center h-6 text-[10px] font-bold text-[#5f259f] shadow-sm gap-1">
                       <span className="w-3.5 h-3.5 rounded-full bg-[#5f259f] text-white flex items-center justify-center text-[8px] font-black">पे</span>
                     </div>
 
                     {/* VISA */}
-                    <div className="border border-gray-200 rounded-sm px-2 py-1 bg-white flex items-center justify-center h-6 text-[10px] font-black italic text-[#1a1f71] shadow-sm">
+                    <div className="border border-gray-200 rounded-none px-2 py-1 bg-white flex items-center justify-center h-6 text-[10px] font-black italic text-[#1a1f71] shadow-sm">
                       VISA
                     </div>
 
                     {/* RuPay */}
-                    <div className="border border-gray-200 rounded-sm px-2 py-1 bg-white flex items-center justify-center h-6 text-[9.5px] font-black text-[#097939] shadow-sm">
+                    <div className="border border-gray-200 rounded-none px-2 py-1 bg-white flex items-center justify-center h-6 text-[9.5px] font-black text-[#097939] shadow-sm">
                       RuPay<span className="text-[#f15a24]">❯</span>
                     </div>
 
                     {/* LazyPay */}
-                    <div className="border border-gray-200 rounded-sm px-2 py-1 bg-white flex items-center justify-center h-6 text-[9px] font-bold text-[#ff3366] shadow-sm">
+                    <div className="border border-gray-200 rounded-none px-2 py-1 bg-white flex items-center justify-center h-6 text-[9px] font-bold text-[#ff3366] shadow-sm">
                       LazyPay
                     </div>
 
                     {/* Mastercard */}
-                    <div className="border border-gray-200 rounded-sm px-2 py-1 bg-white flex items-center justify-center h-6 shadow-sm">
+                    <div className="border border-gray-200 rounded-none px-2 py-1 bg-white flex items-center justify-center h-6 shadow-sm">
                       <div className="w-3 h-3 rounded-full bg-[#eb001b] -mr-1" />
                       <div className="w-3 h-3 rounded-full bg-[#f79e1b] opacity-90" />
                     </div>
 
                     {/* Amazon Pay */}
-                    <div className="border border-gray-200 rounded-sm px-2 py-1 bg-white flex items-center justify-center h-6 text-[10px] font-bold text-[#131921] shadow-sm">
+                    <div className="border border-gray-200 rounded-none px-2 py-1 bg-white flex items-center justify-center h-6 text-[10px] font-bold text-[#131921] shadow-sm">
                       pay<span className="text-[#ff9900] text-xs">⌣</span>
                     </div>
 
                     {/* Amex */}
-                    <div className="border border-gray-200 rounded-sm px-2 py-1 bg-[#006fcf] text-white flex items-center justify-center h-6 text-[8.5px] font-black shadow-sm tracking-tight">
+                    <div className="border border-gray-200 rounded-none px-2 py-1 bg-[#006fcf] text-white flex items-center justify-center h-6 text-[8.5px] font-black shadow-sm tracking-tight">
                       AMEX
                     </div>
                   </div>
                 </div>
 
                 {/* 8. Order Summary Accordion (Exact Nobero Card) */}
-                <div className="mx-4 bg-white border border-[#e5e7eb] rounded-sm p-3.5 shadow-none">
+                <div className="mx-4 bg-white border border-[#e5e7eb] rounded-none p-3.5 shadow-none">
                   <div
                     className="flex items-center justify-between cursor-pointer"
                     onClick={() => setIsSummaryExpanded(!isSummaryExpanded)}
@@ -623,7 +623,7 @@ const CartDrawer = () => {
                 </div>
 
                 {/* 9. 3-Pillar Trust Strip (CASH ON DELIVERY | FREE SHIPPING | EASY RETURNS) */}
-                <div className="mx-4 bg-white border border-[#e5e7eb] rounded-sm py-3 px-1 flex divide-x divide-gray-200">
+                <div className="mx-4 bg-white border border-[#e5e7eb] rounded-none py-3 px-1 flex divide-x divide-gray-200">
                   {/* Pillar 1 */}
                   <div className="flex-1 flex flex-col items-center justify-center text-center px-1">
                     <Banknote className="w-5 h-5 text-[#1e2b58] stroke-[1.8]" />
@@ -669,7 +669,7 @@ const CartDrawer = () => {
               {/* Right CTA Button */}
               <button
                 onClick={handleProceedBuy}
-                className="flex-1 bg-[#1e2b58] hover:bg-[#162144] text-white font-bold py-3 sm:py-3.5 px-6 rounded-sm text-sm tracking-wide transition-all shadow-sm text-center active:scale-[0.99]"
+                className="flex-1 bg-[#1e2b58] hover:bg-[#162144] text-white font-bold py-3 sm:py-3.5 px-6 rounded-none text-sm tracking-wide transition-all shadow-sm text-center active:scale-[0.99]"
               >
                 Proceed to Buy
               </button>

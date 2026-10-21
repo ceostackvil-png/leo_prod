@@ -28,7 +28,7 @@ const CustomerReviewsWall = ({ reviews = [] }) => {
           {reviews.slice(0, 4).map((rev) => (
             <div
               key={rev.id}
-              className="flex flex-col justify-between p-5 rounded-xl bg-zinc-50 border border-zinc-200/80 shadow-subtle hover:shadow-md transition-shadow relative"
+              className="flex flex-col justify-between p-5 rounded-none bg-zinc-50 border border-zinc-200/80 shadow-subtle hover:shadow-md transition-shadow relative"
             >
               <div>
                 {/* Rating stars */}
@@ -62,7 +62,7 @@ const CustomerReviewsWall = ({ reviews = [] }) => {
                   <p className="text-[10px] text-zinc-400">{rev.location}</p>
                 </div>
 
-                <div className="text-[10px] text-zinc-400 font-medium bg-white px-2 py-1 rounded border border-zinc-200">
+                <div className="text-[10px] text-zinc-400 font-medium bg-white px-2 py-1 rounded-none border border-zinc-200">
                   {rev.productTitle?.split(' ')[0]} {rev.productTitle?.split(' ')[1]}
                 </div>
               </div>

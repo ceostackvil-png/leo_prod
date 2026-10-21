@@ -28,22 +28,22 @@ const ShopTheLook = ({ looks = [], products = [] }) => {
           </h2>
         </div>
 
-        {/* Looks Horizontal Scroll / Grid */}
+        {/* Looks Horizontal Scroll / Grid with Signature Sharp Edges */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {looks.slice(0, 4).map((look) => (
             <div
               key={look.id}
-              className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm flex flex-col justify-between group"
+              className="bg-white rounded-none overflow-hidden border border-gray-200 shadow-xs flex flex-col justify-between group look-card sharp-card"
             >
               {/* Image Container with 4:5 Aspect Ratio */}
-              <div className="relative aspect-[4/5] overflow-hidden bg-gray-100">
+              <div className="relative aspect-[4/5] overflow-hidden bg-gray-100 rounded-none">
                 <img
                   src={look.image}
                   alt={look.title}
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500 rounded-none"
                 />
-                <span className="absolute top-2.5 left-2.5 bg-[#D9232D] text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">
+                <span className="absolute top-2.5 left-2.5 bg-[#D9232D] text-white text-[10px] font-bold px-2 py-0.5 rounded-none shadow-xs">
                   {look.discount}
                 </span>
               </div>
@@ -85,7 +85,7 @@ const ShopTheLook = ({ looks = [], products = [] }) => {
 
                   <button
                     onClick={() => handleAddLook(look)}
-                    className="bg-[#282C3F] hover:bg-[#1a224a] text-white text-[11px] font-bold px-3 py-2 rounded-md transition-colors flex items-center gap-1 shrink-0"
+                    className="bg-[#282C3F] hover:bg-[#1a224a] text-white text-[11px] font-bold px-3 py-2 rounded-none transition-colors flex items-center gap-1 shrink-0 uppercase tracking-wider"
                   >
                     {addedId === look.id ? (
                       <>

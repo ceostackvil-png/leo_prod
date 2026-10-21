@@ -8,13 +8,13 @@ const AppPromotion = () => {
       <StorefrontContainer>
         <Link
           to="/travel"
-          className="block rounded-xl sm:rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all group"
+          className="block rounded-none overflow-hidden shadow-xs hover:shadow-md transition-all group"
         >
           <img
             src="/images/leo_campaign_banner.jpg"
             alt="LEO - Uncompromised Comfort Travel Wear"
             loading="lazy"
-            className="w-full h-auto object-cover group-hover:scale-101 transition-transform duration-500 rounded-xl sm:rounded-2xl"
+            className="w-full h-auto object-cover group-hover:scale-101 transition-transform duration-500 rounded-none"
           />
         </Link>
       </StorefrontContainer>

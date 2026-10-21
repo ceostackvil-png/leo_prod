@@ -21,7 +21,7 @@ const ExploreBlogs = ({ blogs = [] }) => {
             <Link
               key={blog.id}
               to={`/blogs/${blog.slug}`}
-              className="group flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-all"
+              className="group flex flex-col bg-white rounded-none overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-all"
             >
               {/* Cover Image */}
               <div className="aspect-[16/10] overflow-hidden bg-gray-100">
