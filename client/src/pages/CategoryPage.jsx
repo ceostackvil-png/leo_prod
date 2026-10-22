@@ -22,6 +22,12 @@ const CATEGORY_META = {
     seo: "Explore LEO's complete catalog of premium Men's fashion. Crafted from high-density bio-washed combed cotton and 4-way stretch fabrics for supreme daily comfort.",
     banner: "/images/hero-1.jpg"
   },
+  'women': {
+    title: "Women's Collection",
+    subtitle: "Comfort-first co-ord sets, drop shoulder basics, and casual essentials.",
+    seo: "Explore LEO's casual essentials and co-ord sets for women.",
+    banner: "/images/hero-1.jpg"
+  },
   'new-arrivals': {
     title: "New Arrivals - Fresh Men's Drops",
     subtitle: "The newest styles, upgraded colorways, and seasonal silhouettes just added to the LEO catalog.",
@@ -123,6 +129,12 @@ const CATEGORY_META = {
     subtitle: "Effortless top-and-bottom pairings in waffle knit, terry fleece, and textured cotton.",
     seo: "Eliminate styling guesswork with LEO's curated Men's Co-Ord Sets.",
     banner: "/images/coords_promo_bg.jpg"
+  },
+  'curated-looks': {
+    title: "Curated Looks & Paired Combos",
+    subtitle: "Effortlessly coordinated top & bottom pairs styled for modern daily wear.",
+    seo: "Shop complete curated men's looks and stylish combos at LEO.",
+    banner: "/images/hero-1.jpg"
   },
   'travel': {
     title: "Men's Travel Essentials",

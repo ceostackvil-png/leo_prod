@@ -410,72 +410,264 @@
   ],
   "looks": [
     {
-      "id": "look-1",
-      "title": "Urban Motion Look",
-      "image": "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg",
+      "id": "everyday-hoodie-look",
+      "slug": "everyday-hoodie-look",
+      "title": "Everyday Hoodie Look",
+      "discount": "18% OFF",
+      "discountAmount": "₹601 OFF",
+      "originalPrice": 3299,
+      "bundlePrice": 2698,
+      "lowestPrice": 2648,
+      "rating": 5,
+      "reviewCount": 1,
+      "expertBadge": "Expert Style Pick",
+      "image": "https://nobero.com/cdn/shop/files/1_243d8cf8-17ad-400a-b8aa-6337e6d862d1.jpg?v=1765453680",
+      "gallery": [
+        "https://nobero.com/cdn/shop/files/1_243d8cf8-17ad-400a-b8aa-6337e6d862d1.jpg?v=1765453680"
+      ],
       "itemsIncluded": [
-        "Call Of The Ocean Oversized Tee",
-        "Air-Flex 6-Pocket Utility Cargo Jogger"
+        "Believe In Yourself Classic Hoodie",
+        "Classic Straight Fit Joggers"
       ],
-      "productIds": [
-        "leo-1",
-        "leo-41"
-      ],
-      "originalPrice": 3998,
-      "bundlePrice": 1799,
-      "discount": "55% OFF",
-      "lowestPrice": 1749
+      "topProduct": {
+        "name": "Believe In Yourself Classic Hoodie",
+        "shortLabel": "Classic Hoodie",
+        "color": "Jet Black",
+        "image": "https://nobero.com/cdn/shop/files/HB_Hoodies_des_jpg.jpg",
+        "price": 1699,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "productSlug": "classic-hoodie"
+      },
+      "bottomProduct": {
+        "name": "Classic Straight Fit Joggers",
+        "shortLabel": "Straight Fit Joggers",
+        "color": "Natural Beige",
+        "image": "https://nobero.com/cdn/shop/files/SFCoreWeb-0006.webp?v=1772521556",
+        "price": 999,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "productSlug": "classic-straight-fit-joggers"
+      },
+      "description": "A street-ready urban pairing combining the heavyweight fleece Believe In Yourself hoodie with tailored off-white relaxed joggers.",
+      "fabricCare": "100% Combed Heavyweight Fleece Cotton. Machine wash cold, dry flat.",
+      "offers": [
+        {
+          "code": "BUY2",
+          "title": "Get it for as low as ₹2,293",
+          "condition": "Applicable on prepaid orders"
+        },
+        {
+          "code": "BUY3",
+          "title": "Get it for as low as ₹2,428",
+          "condition": "Flat 10% extra discount"
+        }
+      ]
     },
     {
-      "id": "look-2",
-      "title": "Transit Ready Look",
-      "image": "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg",
+      "id": "misty-calm-look",
+      "slug": "misty-calm-look",
+      "title": "Misty Calm Look",
+      "discount": "46% OFF",
+      "discountAmount": "₹3,201 OFF",
+      "originalPrice": 6999,
+      "bundlePrice": 3798,
+      "lowestPrice": 3748,
+      "rating": 5,
+      "reviewCount": 4,
+      "expertBadge": "Styled by Experts",
+      "image": "https://nobero.com/cdn/shop/files/1_2ff0be4c-41f6-489c-be5e-fb65bede2283.jpg?v=1764147074",
+      "gallery": [
+        "https://nobero.com/cdn/shop/files/1_2ff0be4c-41f6-489c-be5e-fb65bede2283.jpg?v=1764147074"
+      ],
       "itemsIncluded": [
-        "LEO Classic Travel Polo",
-        "Wanderer Travel Cargo Jogger"
+        "Sage Green Oversized Heavyweight Hoodie",
+        "Cream Straight Fit Joggers"
       ],
-      "productIds": [
-        "leo-17",
-        "leo-43"
-      ],
-      "originalPrice": 5198,
-      "bundlePrice": 2399,
-      "discount": "54% OFF",
-      "lowestPrice": 2299
+      "topProduct": {
+        "name": "Sage Green Oversized Heavyweight Hoodie",
+        "shortLabel": "Oversized Hoodie",
+        "color": "Sage Green",
+        "image": "https://nobero.com/cdn/shop/files/Ov._Tee_13b98095-2712-4d73-ad6b-ed64bf134ab9.jpg",
+        "price": 2199,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "productSlug": "sage-oversized-hoodie"
+      },
+      "bottomProduct": {
+        "name": "Cream Straight Fit Joggers",
+        "shortLabel": "Straight Fit Joggers",
+        "color": "Cream",
+        "image": "https://nobero.com/cdn/shop/files/SFCoreWeb-0006.webp?v=1772521556",
+        "price": 1599,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "productSlug": "cream-straight-joggers"
+      },
+      "description": "Calming sage green tones matched with minimalist cream joggers. Crafted from premium 360 GSM combed cotton fleece.",
+      "fabricCare": "360 GSM Bio-Washed Combed Cotton. Machine wash inside out.",
+      "offers": [
+        {
+          "code": "BUY2",
+          "title": "Get it for as low as ₹3,228",
+          "condition": "Applicable on prepaid orders"
+        },
+        {
+          "code": "BUY3",
+          "title": "Get it for as low as ₹3,418",
+          "condition": "Flat 10% extra discount"
+        }
+      ]
     },
     {
-      "id": "look-3",
-      "title": "Waffle Resort Set Look",
-      "image": "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg",
+      "id": "soft-lounge-look",
+      "slug": "soft-lounge-look",
+      "title": "Soft Lounge Look",
+      "discount": "39% OFF",
+      "discountAmount": "₹1,401 OFF",
+      "originalPrice": 3599,
+      "bundlePrice": 2198,
+      "lowestPrice": 2148,
+      "rating": 4.9,
+      "reviewCount": 18,
+      "expertBadge": "Expert Style Pick",
+      "image": "https://nobero.com/cdn/shop/files/1_bd04d973-44ee-40ac-b9bb-62a47fe89567.jpg?v=1764915986",
+      "gallery": [
+        "https://nobero.com/cdn/shop/files/1_bd04d973-44ee-40ac-b9bb-62a47fe89567.jpg?v=1764915986"
+      ],
       "itemsIncluded": [
-        "Oversized Waffle Co-ord Tee",
-        "Waffle Drawcord Tailored Shorts"
+        "Black Heavyweight Oversized Sweatshirt",
+        "Heather Grey Zip-Pocket Joggers"
       ],
-      "productIds": [
-        "leo-25",
-        "leo-33"
-      ],
-      "originalPrice": 3199,
-      "bundlePrice": 1499,
-      "discount": "53% OFF",
-      "lowestPrice": 1449
+      "topProduct": {
+        "name": "Black Heavyweight Oversized Sweatshirt",
+        "shortLabel": "Oversized Sweatshirt",
+        "color": "Pitch Black",
+        "image": "https://nobero.com/cdn/shop/files/Premium_tee-2_jpg.jpg",
+        "price": 1199,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "productSlug": "black-oversized-sweatshirt"
+      },
+      "bottomProduct": {
+        "name": "Heather Grey Zip-Pocket Joggers",
+        "shortLabel": "Zip-Pocket Joggers",
+        "color": "Heather Grey",
+        "image": "https://nobero.com/cdn/shop/files/Joggersssss.jpg",
+        "price": 999,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "productSlug": "grey-zip-joggers"
+      },
+      "description": "Maximum ease and premium lounge aesthetics. Designed with dropped shoulders and functional zip security pockets.",
+      "fabricCare": "240 GSM Combed French Terry Cotton. Machine wash cold, dry in shade.",
+      "offers": [
+        {
+          "code": "BUY2",
+          "title": "Get it for as low as ₹1,868",
+          "condition": "Applicable on prepaid orders"
+        },
+        {
+          "code": "BUY3",
+          "title": "Get it for as low as ₹1,978",
+          "condition": "Flat 10% extra discount"
+        }
+      ]
     },
     {
-      "id": "look-4",
-      "title": "Heavyweight Layer Look",
-      "image": "https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg",
+      "id": "airport-comfort-look",
+      "slug": "airport-comfort-look",
+      "title": "Airport Comfort Look",
+      "discount": "",
+      "discountAmount": "",
+      "originalPrice": null,
+      "bundlePrice": 2898,
+      "lowestPrice": 2848,
+      "rating": 4.9,
+      "reviewCount": 24,
+      "expertBadge": "Expert Style Pick",
+      "image": "https://nobero.com/cdn/shop/files/1_49de201e-29fc-4107-9e99-a2fb712b2b88.jpg?v=1771570551",
+      "gallery": [
+        "https://nobero.com/cdn/shop/files/1_49de201e-29fc-4107-9e99-a2fb712b2b88.jpg?v=1771570551"
+      ],
       "itemsIncluded": [
-        "Heavyweight French Terry Shacket",
-        "Classic Straight Fit Jogger"
+        "Stay Wild Graphic Transit Hoodie",
+        "Cream Straight Fit Joggers"
       ],
-      "productIds": [
-        "leo-37",
-        "leo-44"
-      ],
-      "originalPrice": 2998,
-      "bundlePrice": 1399,
-      "discount": "53% OFF",
-      "lowestPrice": 1349
+      "topProduct": {
+        "name": "Stay Wild Graphic Transit Hoodie",
+        "shortLabel": "Classic Hoodie",
+        "color": "Black",
+        "image": "https://nobero.com/cdn/shop/files/HB_Hoodies_des_jpg.jpg",
+        "price": 1799,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "productSlug": "stay-wild-hoodie"
+      },
+      "bottomProduct": {
+        "name": "Cream Straight Fit Joggers",
+        "shortLabel": "Straight Fit Joggers",
+        "color": "Cream",
+        "image": "https://nobero.com/cdn/shop/files/SFCoreWeb-0006.webp?v=1772521556",
+        "price": 1099,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "productSlug": "cream-straight-joggers"
+      },
+      "description": "Designed specifically for jet-set comfort. Features a soft-brushed interior hoodie and tailored off-white travel joggers.",
+      "fabricCare": "95% Cotton 5% Spandex. Machine wash cold.",
+      "offers": [
+        {
+          "code": "BUY2",
+          "title": "Get it for as low as ₹2,463",
+          "condition": "Applicable on prepaid orders"
+        },
+        {
+          "code": "BUY3",
+          "title": "Get it for as low as ₹2,608",
+          "condition": "Flat 10% extra discount"
+        }
+      ]
     }
   ],
   "products": [

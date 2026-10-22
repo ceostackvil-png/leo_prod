@@ -21,8 +21,22 @@ import BrandLogo from './BrandLogo';
 
 const SEARCH_KEYWORDS = ['“T-shirts”', '“Polos”', '“Joggers”', '“Hoodies”', '“Co-ords”'];
 
+// Exact Header Categories in order
+const INITIAL_CATEGORIES = [
+  { id: 'men', name: 'Men', slug: 'men', path: '/men' },
+  { id: 'travel', name: 'Travel', slug: 'travel', path: '/travel' },
+  { id: 'polos', name: 'Polos', slug: 'polos', path: '/polos' },
+  { id: 'hoodies', name: 'Hoodies', slug: 'hoodies', path: '/hoodies' },
+  { id: 'shirts', name: 'Shirts', slug: 'shirts', path: '/shirts' },
+  { id: 'oversized-tees', name: 'Tees', slug: 'oversized-tees', path: '/oversized-tees' },
+  { id: 'co-ords', name: 'Co-ords', slug: 'co-ords', path: '/co-ords' },
+  { id: 'joggers', name: 'Joggers', slug: 'joggers', path: '/joggers' },
+  { id: 'shorts', name: 'Shorts', slug: 'shorts', path: '/shorts' },
+  { id: 'jackets', name: 'Jackets', slug: 'jackets', path: '/jackets' }
+];
+
 const Navbar = () => {
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState(INITIAL_CATEGORIES);
   const [activeMegaCategory, setActiveMegaCategory] = useState(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,65 +50,62 @@ const Navbar = () => {
   const location = useLocation();
 
   // Determine active category from route
-  const getActiveFromRoute = (fallback = 'men') => {
+  const getActiveFromRoute = () => {
     const searchParams = new URLSearchParams(location.search);
     const catQuery = searchParams.get('category');
     if (catQuery) {
-      if (catQuery === 't-shirts') return 'oversized-tees';
+      if (catQuery === 't-shirts' || catQuery === 'tees' || catQuery === 'oversized-tees' || catQuery === 'premium-hd-tees') {
+        return 'oversized-tees';
+      }
+      if (catQuery === 'textured-shackets' || catQuery === 'shackets' || catQuery === 'jackets') {
+        return 'jackets';
+      }
+      if (catQuery === 'co-ords' || catQuery === 'coords') return 'co-ords';
       return catQuery;
     }
     const path = location.pathname.replace(/^\/+/, '').toLowerCase();
-    if (!path || path === 'men') return 'men';
-    if (path === 'tees' || path === 't-shirts' || path === 'oversized-tees') return 'oversized-tees';
+    // ON HOMEPAGE: Return null! None should be selected by default!
+    if (!path) return null;
+    if (path === 'men') return 'men';
+    if (path === 'travel') return 'travel';
     if (path === 'polos') return 'polos';
+    if (path === 'hoodies') return 'hoodies';
     if (path === 'shirts') return 'shirts';
-    if (path === 'hoodies' || path === 'jackets') return 'hoodies';
+    if (path === 'tees' || path === 't-shirts' || path === 'oversized-tees') return 'oversized-tees';
+    if (path === 'co-ords' || path === 'coords') return 'co-ords';
     if (path === 'joggers') return 'joggers';
     if (path === 'shorts') return 'shorts';
-    if (path === 'co-ords') return 'co-ords';
-    if (path === 'travel') return 'travel';
-    if (path === 'sale') return 'sale';
-    return fallback;
+    if (path === 'jackets') return 'jackets';
+    return null;
   };
 
-  const [selectedCatId, setSelectedCatId] = useState(() => getActiveFromRoute('men'));
+  const [selectedCatId, setSelectedCatId] = useState(() => getActiveFromRoute());
   const [hoveredCatId, setHoveredCatId] = useState(null);
 
   useEffect(() => {
     const loadCategories = async () => {
       try {
         const res = await api.getCategories();
-        if (res.success) {
-          const ORDER = ['men', 'travel', 'polos', 'hoodies', 'shirts', 'oversized-tees', 'co-ords', 'joggers', 'shorts', 'sale'];
-          const NAME_MAP = {
-            'men': 'Men',
-            'travel': 'Travel',
-            'polos': 'Polos',
-            'hoodies': 'Hoodies',
-            'shirts': 'Shirts',
-            'oversized-tees': 'Tees',
-            'co-ords': 'Co-ords',
-            'joggers': 'Joggers',
-            'shorts': 'Shorts',
-            'sale': 'Sale'
-          };
-
-          const rawList = res.data.filter(cat => cat.id !== 'women' && cat.id !== 'new-arrivals');
-          
-          // Map to Title Case and sort according to exact reference image order
-          const formatted = rawList.map(cat => ({
-            ...cat,
-            name: NAME_MAP[cat.id] || cat.name
-          })).sort((a, b) => {
-            const idxA = ORDER.indexOf(a.id);
-            const idxB = ORDER.indexOf(b.id);
-            return (idxA !== -1 ? idxA : 999) - (idxB !== -1 ? idxB : 999);
-          });
-
-          setCategories(formatted);
+        if (res.success && Array.isArray(res.data)) {
+          setCategories(prev => prev.map(cat => {
+            const apiCat = res.data.find(c =>
+              c.id === cat.id ||
+              c.slug === cat.slug ||
+              (cat.id === 'oversized-tees' && (c.id === 'oversized-tees' || c.id === 't-shirts')) ||
+              (cat.id === 'jackets' && c.id === 'hoodies')
+            );
+            if (apiCat) {
+              return {
+                ...cat,
+                groups: apiCat.groups || cat.groups,
+                promo: apiCat.promo || cat.promo
+              };
+            }
+            return cat;
+          }));
         }
       } catch (e) {
-        console.error(e);
+        console.error('Error loading category mega menus:', e);
       }
     };
     loadCategories();
@@ -110,14 +121,14 @@ const Navbar = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setActiveMegaCategory(null);
-    setSelectedCatId(prev => getActiveFromRoute(prev || 'men'));
+    setSelectedCatId(getActiveFromRoute());
   }, [location.pathname, location.search]);
 
   return (
     <>
       <header className="sticky top-0 z-40 w-full bg-white">
         {/* 1. Top Announcement Bar (Continuous Right to Left Infinite Marquee) */}
-        <div className="h-8 bg-[#1A1E31] text-white text-[12px] sm:text-[13px] font-normal flex items-center overflow-hidden select-none relative">
+        <div className="h-8 bg-[#242F66] text-white text-[12px] sm:text-[13px] font-normal flex items-center overflow-hidden select-none relative">
           <div className="flex animate-marquee whitespace-nowrap">
             <div className="flex items-center gap-8 sm:gap-16 px-4 sm:px-8 shrink-0">
               <span className="font-medium tracking-wide">100% Refund Guarantee if you don't ❤️ the product. Shop with Confidence.</span>
@@ -138,50 +149,66 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* 2. Main Navigation Bar (Exact Nobero Proportions: 80px desktop, 56px mobile) */}
+        {/* 2. Main Navigation Bar (Clean Nobero Layout: Logo Far Left -> Categories -> Search & Icons Right) */}
         <div className="border-b border-[#E5E7EB] bg-white">
           <div className="w-[94%] sm:w-[92%] lg:w-[90%] xl:w-[89%] 2xl:w-[88.5%] mx-auto max-w-[1780px]">
-            <div className="flex items-center justify-between h-[56px] lg:h-[80px]">
+            <div className="flex items-center justify-between h-[60px] lg:h-[70px]">
               
-              {/* Left Section: Mobile Menu + Logo */}
-              <div className="flex items-center gap-3">
+              {/* Left Section: Mobile Menu + Brand Logo on the far left */}
+              <div className="flex items-center">
                 {/* Mobile Hamburger & Search */}
-                <div className="flex items-center gap-1.5 lg:hidden">
+                <div className="flex items-center gap-1.5 lg:hidden mr-2">
                   <button
                     onClick={() => setIsMobileMenuOpen(true)}
-                    className="p-1.5 text-[#282C3F] focus:outline-none"
+                    className="p-1.5 text-[#121212] focus:outline-none"
                     aria-label="Open menu"
                   >
                     <Menu className="w-5 h-5" />
                   </button>
                   <button
                     onClick={() => setIsSearchOpen(true)}
-                    className="p-1.5 text-[#282C3F] focus:outline-none"
+                    className="p-1.5 text-[#121212] focus:outline-none"
                     aria-label="Search"
                   >
                     <Search className="w-4 h-4" />
                   </button>
                 </div>
 
-                {/* Brand Logo: LEO KING */}
-                <Link to="/" className="flex items-center shrink-0 pr-4 sm:pr-8 lg:pr-10 hover:opacity-90 transition-opacity">
+                {/* Brand Logo: Far left */}
+                <Link
+                  to="/"
+                  onClick={() => setSelectedCatId(null)}
+                  className="flex items-center shrink-0 pr-4 sm:pr-6 lg:pr-8 xl:pr-10 hover:opacity-90 transition-opacity"
+                >
                   <BrandLogo variant="light" subtitle="KING" size="sm" />
                 </Link>
               </div>
 
-              {/* Desktop Navigation Links (Title Case, Clean Sans, No Chevrons, Exact Highlighting) */}
+              {/* Desktop Navigation Sections (Immediately follow the logo) */}
               <nav
-                className="hidden lg:flex items-center space-x-6 xl:space-x-8 h-full flex-1 justify-start ml-2"
+                className="hidden lg:flex items-center space-x-4 lg:space-x-5 xl:space-x-6 2xl:space-x-7 h-full flex-1 justify-start"
                 onMouseLeave={() => setHoveredCatId(null)}
               >
                 {categories.map((cat) => {
-                  const currentHighlightId = hoveredCatId || (activeMegaCategory ? activeMegaCategory.id : selectedCatId);
-                  const isHighlighted = currentHighlightId === cat.id;
+                  const activeId = hoveredCatId || selectedCatId;
+                  const hasActiveSection = Boolean(activeId);
+                  const isActive = hasActiveSection && activeId === cat.id;
+
+                  // Text color class:
+                  // 1. Default state: All items bold black!
+                  // 2. Active section: Bold black with subtle red underline
+                  // 3. Inactive sections: Light grey
+                  let textClass = 'text-[#121212] font-bold';
+                  if (hasActiveSection) {
+                    textClass = isActive
+                      ? 'text-black font-bold'
+                      : 'text-[#A8ACB7] hover:text-[#121212] font-bold';
+                  }
 
                   return (
                     <div
                       key={cat.id}
-                      className="h-full flex items-center"
+                      className="h-full flex items-center relative"
                       onMouseEnter={() => {
                         setHoveredCatId(cat.id);
                         if (cat.groups) setActiveMegaCategory(cat);
@@ -189,7 +216,7 @@ const Navbar = () => {
                       }}
                     >
                       <Link
-                        to={`/shop?category=${cat.slug}`}
+                        to={cat.path || `/shop?category=${cat.slug}`}
                         onClick={() => {
                           setSelectedCatId(cat.id);
                           if (cat.groups) {
@@ -198,23 +225,18 @@ const Navbar = () => {
                             setActiveMegaCategory(null);
                           }
                         }}
-                        className={`h-full flex items-center text-[14px] transition-all duration-150 border-b-[2.5px] -mb-[1px] select-none ${
-                          isHighlighted
-                            ? 'text-[#1A1E31] font-bold border-[#242F66]'
-                            : 'text-[#4B5563] font-medium border-transparent hover:text-[#1A1E31]'
-                        }`}
+                        className="relative py-1 text-[13.5px] xl:text-[14px] select-none inline-flex items-center group/nav"
                       >
-                        <span>{cat.name}</span>
-                        {cat.isNew && (
+                        <span className={`transition-colors duration-150 ${textClass}`}>
+                          {cat.name}
+                        </span>
+
+                        {/* Subtle Red Active Indicator (Underline) directly underneath active text */}
+                        {isActive && (
                           <span
-                            className={`ml-1.5 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider transition-opacity ${
-                              isHighlighted
-                                ? 'bg-[#4285F4] text-white opacity-100'
-                                : 'bg-[#4285F4]/40 text-white/90'
-                            }`}
-                          >
-                            New
-                          </span>
+                            className="absolute -bottom-1.5 left-0 right-0 h-[2.5px] bg-[#E03131] transition-all"
+                            aria-hidden="true"
+                          />
                         )}
                       </Link>
                     </div>
@@ -222,53 +244,43 @@ const Navbar = () => {
                 })}
               </nav>
 
-              {/* Right Utility Icons (Search Bar, Wishlist, Account, Cart) */}
-              <div className="flex items-center space-x-2 sm:space-x-3.5 shrink-0 pl-2">
+              {/* Right Utility Icons (Search Bar, Account, Wishlist, Cart, Partner Badge) */}
+              <div className="flex items-center space-x-2.5 sm:space-x-3.5 xl:space-x-4 shrink-0 pl-3">
                 {/* Search Bar matching Nobero reference */}
-                <div className="hidden lg:flex items-center mr-1">
+                <div className="hidden lg:flex items-center">
                   <button
                     type="button"
                     onClick={() => setIsSearchOpen(true)}
-                    className="w-[215px] xl:w-[250px] 2xl:w-[270px] h-[38px] xl:h-[40px] px-3.5 flex items-center justify-between bg-white border border-[#E8E9EA] hover:border-[#CBD5E1] rounded-none text-left transition-all duration-150 group cursor-pointer shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
+                    className="w-[185px] xl:w-[215px] 2xl:w-[235px] h-[36px] xl:h-[38px] px-3.5 flex items-center justify-between bg-white border border-[#E5E7EB] hover:border-[#CBD5E1] rounded-none text-left transition-colors duration-150 group cursor-pointer shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
                     aria-label="Search products"
                   >
-                    <span className="text-[13px] text-[#9698A0] font-normal truncate select-none">
+                    <span className="text-[12.5px] xl:text-[13px] text-[#8E909B] font-normal truncate select-none">
                       Try searching {SEARCH_KEYWORDS[keywordIndex]}
                     </span>
-                    <Search className="w-[18px] h-[18px] text-[#181B2D] shrink-0 stroke-[1.8] group-hover:scale-105 transition-transform ml-2" />
+                    <Search className="w-4 h-4 text-[#121212] shrink-0 stroke-[1.8] group-hover:scale-105 transition-transform ml-2" />
                   </button>
                 </div>
 
-                {/* Wishlist Icon */}
-                <Link
-                  to="/wishlist"
-                  className="relative p-2 text-[#282C3F] hover:text-black transition-colors"
-                  aria-label="Wishlist"
-                >
-                  <Heart className="w-5 h-5" />
-                  {wishlistCount > 0 && (
-                    <span className="absolute top-1 right-1 bg-[#D9232D] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
-                      {wishlistCount}
-                    </span>
-                  )}
-                </Link>
-
-                {/* User Account / Profile (Matching Nobero Account Behavior) */}
+                {/* User Account / Profile (Matching Nobero with 'New' Pill Badge) */}
                 <div className="relative group">
                   <button
                     onClick={() => {
                       if (!user) setIsAuthModalOpen(true);
                       else navigate('/account');
                     }}
-                    className="p-2 text-[#282C3F] hover:text-black transition-colors flex items-center gap-1"
+                    className="relative p-1.5 text-[#121212] hover:text-black transition-colors flex items-center justify-center cursor-pointer"
                     aria-label="Account"
                   >
-                    <User className="w-5 h-5" />
+                    {/* 'New' pill badge above user icon matching Nobero reference */}
+                    <span className="absolute -top-1.5 -right-1 bg-[#1A1E31] text-white text-[7.5px] font-bold px-1.5 py-[0.5px] rounded-full uppercase tracking-tight leading-none pointer-events-none shadow-sm">
+                      New
+                    </span>
+                    <User className="w-[21px] h-[21px] text-[#121212] stroke-[1.8]" />
                   </button>
 
                   {/* Account Dropdown Menu */}
-                  <div className="absolute right-0 top-full pt-1.5 hidden group-hover:block z-50">
-                    <div className="w-56 bg-white border border-gray-200 shadow-xl rounded-xl py-2 text-xs font-semibold text-[#212121]">
+                  <div className="absolute right-0 top-full pt-2 hidden group-hover:block z-50">
+                    <div className="w-56 bg-white border border-gray-200 shadow-xl rounded-none py-2 text-xs font-semibold text-[#212121]">
                       {user ? (
                         <>
                           <div className="px-4 py-2.5 border-b border-gray-100 bg-gray-50/80">
@@ -304,7 +316,7 @@ const Navbar = () => {
                           <p className="text-[11px] text-gray-600 font-medium">Log in to view your orders & saved wishlist</p>
                           <button
                             onClick={() => setIsAuthModalOpen(true)}
-                            className="w-full bg-[#282C3F] hover:bg-[#212121] text-white py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
+                            className="w-full bg-[#282C3F] hover:bg-[#212121] text-white py-2 rounded-none text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
                           >
                             Log In / Sign Up
                           </button>
@@ -322,19 +334,44 @@ const Navbar = () => {
                   </div>
                 </div>
 
+                {/* Wishlist Icon */}
+                <Link
+                  to="/wishlist"
+                  className="relative p-1.5 text-[#121212] hover:text-black transition-colors flex items-center justify-center"
+                  aria-label="Wishlist"
+                >
+                  <Heart className="w-[21px] h-[21px] text-[#121212] stroke-[1.8]" />
+                  {wishlistCount > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-[#D9232D] text-white text-[9.5px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                      {wishlistCount}
+                    </span>
+                  )}
+                </Link>
+
                 {/* Cart Bag Icon */}
                 <button
                   onClick={() => setIsDrawerOpen(true)}
-                  className="relative p-2 text-[#282C3F] hover:text-black transition-colors"
+                  className="relative p-1.5 text-[#121212] hover:text-black transition-colors flex items-center justify-center cursor-pointer"
                   aria-label="Cart"
                 >
-                  <ShoppingBag className="w-5 h-5" />
+                  <ShoppingBag className="w-[21px] h-[21px] text-[#121212] stroke-[1.8]" />
                   {totalItemCount > 0 && (
-                    <span className="absolute top-1 right-1 bg-[#282C3F] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                    <span className="absolute -top-1 -right-1 bg-[#1A1E31] text-white text-[9.5px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
                       {totalItemCount}
                     </span>
                   )}
                 </button>
+
+                {/* Far Right Trust / Partner Quality Badge (matching Nobero header) */}
+                <div
+                  className="hidden 2xl:flex items-center justify-center border border-[#D8C28A] bg-[#FFFBF0] w-[34px] h-[34px] p-0.5 shadow-sm select-none"
+                  title="LEO Premium Assurance"
+                >
+                  <div className="w-full h-full flex flex-col items-center justify-center text-center leading-none">
+                    <span className="text-[7.5px] font-black text-[#8B6E32] tracking-wider uppercase">LEO</span>
+                    <span className="text-[5.5px] font-bold text-[#A6894C] tracking-tighter">PRIME</span>
+                  </div>
+                </div>
               </div>
 
             </div>
@@ -398,11 +435,9 @@ const Navbar = () => {
                     <div key={cat.id} className="border-b border-gray-100 py-1">
                       <div className="flex items-center justify-between">
                         <Link
-                          to={`/shop?category=${cat.slug}`}
+                          to={cat.path || `/shop?category=${cat.slug}`}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className={`text-xs font-bold uppercase tracking-wider py-2 ${
-                            cat.isSale ? 'text-[#D9232D]' : 'text-[#212121]'
-                          }`}
+                          className="text-xs font-semibold py-2 text-[#121212]"
                         >
                           {cat.name}
                         </Link>

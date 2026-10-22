@@ -36,6 +36,10 @@ export const api = {
     const res = await fetch(`${API_BASE}/looks`);
     return res.json();
   },
+  getLookById: async (idOrSlug) => {
+    const res = await fetch(`${API_BASE}/looks/${idOrSlug}`);
+    return res.json();
+  },
 
   // Products
   getProducts: async (params = {}) => {

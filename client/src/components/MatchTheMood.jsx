@@ -4,76 +4,63 @@ import StorefrontContainer from './StorefrontContainer';
 
 const MOODS = [
   {
-    id: "hoodies",
-    tag: "WINTER",
+    id: "hoodies-jackets",
     title: "HOODIES & JACKETS",
-    image: "https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg",
+    tag: "WINTER",
+    image: "/images/mood/mood_hoodies_jackets.png",
     link: "/hoodies"
   },
   {
     id: "sweatshirts",
-    tag: "TRENDY",
     title: "SWEATSHIRTS",
-    image: "https://nobero.com/cdn/shop/files/AW_26_Homepage_Banners_Desktop_jpg.jpg",
+    tag: "TRENDY",
+    image: "/images/mood/mood_sweatshirts.png",
     link: "/hoodies"
   },
   {
     id: "basics",
-    tag: "EVERYDAY",
     title: "BASICS",
-    image: "/images/collections/col_oversized_tees.jpg",
+    tag: "EVERYDAY",
+    image: "/images/mood/mood_basics.png",
     link: "/oversized-tees"
   },
   {
     id: "joggers",
-    tag: "BEST SELLING",
     title: "JOGGERS",
-    image: "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg",
+    tag: "BEST SELLING",
+    image: "/images/mood/mood_joggers.png",
     link: "/joggers"
   }
 ];
 
 const MatchTheMood = () => {
   return (
-    <section className="py-8 sm:py-14 bg-white border-b border-gray-100">
+    <section className="py-6 sm:py-10 bg-white">
       <StorefrontContainer>
-        {/* Section Heading */}
-        <div className="text-center max-w-xl mx-auto mb-6 sm:mb-10">
-          <span className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest text-[#666875] mb-1">
-            EVERYDAY BESTSELLERS
-          </span>
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-tight text-[#212121]">
-            Curated Categories
+        {/* Section Heading matching Nobero exact styling: Match The Mood / Everyday Bestsellers centered */}
+        <div className="text-center mb-5 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl lg:text-[26px] font-bold text-[#1A1E31] font-sans tracking-tight">
+            Match The Mood
           </h2>
-          <p className="text-xs sm:text-sm text-[#666875] mt-1 font-medium">
-            Explore seasonal heavyweight fits engineered for everyday movement.
+          <p className="text-xs sm:text-sm text-[#666875] mt-1 font-normal">
+            Everyday Bestsellers
           </p>
         </div>
 
-        {/* 4 Mood Cards Grid - Signature Nobero Sharp 90-Degree Edges */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+        {/* 4 Mood Cards Grid with exact 360:479 aspect ratio and sharp edges */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 md:gap-5 lg:gap-6">
           {MOODS.map((mood) => (
             <Link
               key={mood.id}
               to={mood.link}
-              className="group relative rounded-none overflow-hidden aspect-[3/4] bg-gray-100 border border-gray-200/80 shadow-xs hover:shadow-md transition-all duration-300 block select-none editorial-card sharp-card"
+              className="group relative rounded-none overflow-hidden aspect-[360/479] bg-gray-100 border border-gray-200/90 shadow-xs hover:shadow-md transition-all duration-300 block select-none sharp-card"
             >
               <img
                 src={mood.image}
-                alt={mood.title}
+                alt={`${mood.tag} ${mood.title}`}
                 loading="lazy"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out rounded-none"
+                className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out rounded-none"
               />
-
-              {/* Gradient Overlay & Clean Editorial Typography (Exact Nobero) */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-4 sm:p-5 text-white">
-                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/90 mb-0.5">
-                  {mood.tag}
-                </span>
-                <h3 className="text-sm sm:text-lg font-black uppercase text-white leading-tight tracking-tight">
-                  {mood.title}
-                </h3>
-              </div>
             </Link>
           ))}
         </div>

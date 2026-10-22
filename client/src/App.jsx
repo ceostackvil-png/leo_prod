@@ -14,6 +14,7 @@ import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
 import CategoryPage from './pages/CategoryPage';
 import ProductDetailPage from './pages/ProductDetailPage';
+import LookDetailPage from './pages/LookDetailPage';
 import CartPage from './pages/CartPage';
 import WishlistPage from './pages/WishlistPage';
 import CheckoutPage from './pages/CheckoutPage';
@@ -65,6 +66,7 @@ function App() {
                   <Route path="/shorts" element={<CategoryPage forcedCategory="shorts" />} />
                   <Route path="/jackets" element={<CategoryPage forcedCategory="jackets" />} />
                   <Route path="/co-ords" element={<CategoryPage forcedCategory="co-ords" />} />
+                  <Route path="/curated-looks" element={<CategoryPage forcedCategory="curated-looks" />} />
                   <Route path="/travel" element={<CategoryPage forcedCategory="travel" />} />
                   <Route path="/sale" element={<CategoryPage forcedCategory="sale" />} />
 
@@ -76,6 +78,11 @@ function App() {
 
                   {/* Product Detail Page */}
                   <Route path="/product/:id" element={<ProductDetailPage />} />
+
+                  {/* Curated Look Detail Page (Shop the Full Look) */}
+                  <Route path="/look/:id" element={<LookDetailPage />} />
+                  <Route path="/looks/:id" element={<LookDetailPage />} />
+                  <Route path="/curated-looks/:id" element={<LookDetailPage />} />
 
                   {/* Shopping & Customer Flow */}
                   <Route path="/cart" element={<CartPage />} />

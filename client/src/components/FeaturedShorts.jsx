@@ -34,6 +34,36 @@ const FEATURED_SHORTS = [
     colors: ['#556B2F', '#1F2937', '#6B7280', '#C2B280'],
     moreColorsCount: 4,
     link: '/shop?category=shorts'
+  },
+  {
+    id: 'shorts-navy',
+    name: 'Zip Pocket Transit Shorts',
+    colorName: 'Classic Navy',
+    image: 'https://cdn.shopify.com/s/files/1/0337/9413/0052/files/ZipShortsPackFeb3_0e8998a8-532c-4250-8ed5-bbdd484053f6.jpg',
+    price: 899,
+    originalPrice: 1799,
+    discount: '50% OFF',
+    lowestPrice: 849,
+    rating: 4.8,
+    reviews: 290,
+    colors: ['#1B263B', '#415A77', '#778DA9'],
+    moreColorsCount: 3,
+    link: '/shop?category=shorts'
+  },
+  {
+    id: 'shorts-sky',
+    name: 'Relaxed Waffle Resort Shorts',
+    colorName: 'Sky Blue',
+    image: 'https://cdn.shopify.com/s/files/1/0337/9413/0052/files/ZipShortsPackFeb2_38194181-feaf-4c8e-9f59-7d4e080a7f68.jpg',
+    price: 899,
+    originalPrice: 1799,
+    discount: '50% OFF',
+    lowestPrice: 849,
+    rating: 4.9,
+    reviews: 320,
+    colors: ['#A0C4E2', '#D2C6B6', '#333333'],
+    moreColorsCount: 3,
+    link: '/shop?category=shorts'
   }
 ];
 
@@ -60,38 +90,38 @@ const FeaturedShorts = () => {
   };
 
   return (
-    <section className="py-8 sm:py-14 bg-white border-b border-gray-100">
+    <section className="py-8 sm:py-12 bg-[#F8F9FA] border-b border-gray-100">
       <StorefrontContainer>
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-6 sm:mb-8 gap-2">
           <div>
             <span className="text-[11px] font-bold uppercase tracking-widest text-[#242F66] block mb-1">
-              SUMMER ESSENTIALS
+              SEASON'S FAVORITES
             </span>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-tight text-[#212121]">
+            <h2 className="text-xl sm:text-2xl lg:text-[26px] font-bold uppercase tracking-tight text-[#1A1E31]">
               Shorts
             </h2>
-            <p className="text-xs sm:text-sm text-[#666875] mt-1 font-medium">
+            <p className="text-xs sm:text-sm text-[#666875] mt-1 font-normal">
               Engineered stretch comfort designed for versatile all-day movement.
             </p>
           </div>
           <Link
             to="/shop?category=shorts"
-            className="text-xs font-bold text-[#282C3F] hover:text-black inline-flex items-center gap-1 uppercase tracking-wider"
+            className="text-xs font-bold text-[#1A1E31] hover:text-black inline-flex items-center gap-1 uppercase tracking-wider"
           >
             VIEW ALL SHORTS <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
-        {/* 2-Card Featured Showcase (Full-width on mobile, 2-column on desktop with Sharp Edges) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        {/* 4-Card Featured Grid (2 cols mobile, 4 cols desktop) */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5 lg:gap-6">
           {FEATURED_SHORTS.map((item) => (
             <div
               key={item.id}
               className="bg-[#F7F8FA] rounded-none overflow-hidden border border-gray-200/80 hover:shadow-md transition-all group flex flex-col justify-between product-card sharp-card"
             >
               {/* Product Image */}
-              <Link to={item.link} className="block relative aspect-[4/3] sm:aspect-[16/10] overflow-hidden bg-gray-100 rounded-none">
+              <Link to={item.link} className="block relative aspect-square sm:aspect-[4/5] overflow-hidden bg-gray-100 rounded-none">
                 <img
                   src={item.image}
                   alt={item.name}

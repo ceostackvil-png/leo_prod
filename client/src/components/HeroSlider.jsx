@@ -53,7 +53,7 @@ const HeroSlider = ({ banners = [] }) => {
   };
 
   return (
-    <section className="bg-white pt-2 sm:pt-4 pb-4 sm:pb-6">
+    <section className="bg-white pt-7 sm:pt-9 lg:pt-11 pb-4 sm:pb-6">
       <div className="w-[94%] sm:w-[92%] lg:w-[90%] xl:w-[89%] 2xl:w-[88.5%] mx-auto max-w-[1780px]">
         <div
           className="relative w-full overflow-hidden group select-none bg-gray-50 rounded-none shadow-none"

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import HeroSlider from '../components/HeroSlider';
-import ShopByCollection from '../components/ShopByCollection';
 import MatchTheMood from '../components/MatchTheMood';
-import EverydayBestsellers from '../components/EverydayBestsellers';
+import ShopByCollection from '../components/ShopByCollection';
 import ShopTheLook from '../components/ShopTheLook';
-import LeoFavourites from '../components/LeoFavourites';
-import FeaturedShorts from '../components/FeaturedShorts';
 import AppPromotion from '../components/AppPromotion';
+import LeoFavourites from '../components/LeoFavourites';
+import CampaignBanner from '../components/CampaignBanner';
+import EverydayBestsellers from '../components/EverydayBestsellers';
+import FeaturedShorts from '../components/FeaturedShorts';
+import CustomerReviewsWall from '../components/CustomerReviewsWall';
 import ExploreBlogs from '../components/ExploreBlogs';
 import { api } from '../services/api';
 
@@ -15,24 +17,25 @@ const HomePage = () => {
   const [products, setProducts] = useState([]);
   const [looks, setLooks] = useState([]);
   const [blogs, setBlogs] = useState([]);
+  const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [banRes, prodRes, lookRes, blogRes] = await Promise.all([
+        const [banRes, prodRes, lookRes, blogRes, revRes] = await Promise.all([
           api.getBanners(),
           api.getProducts(),
           api.getLooks(),
-          api.getBlogs()
+          api.getBlogs(),
+          api.getReviews({ status: 'approved' })
         ]);
 
-        if (banRes.success) {
-          setBanners(banRes.data);
-        }
+        if (banRes.success) setBanners(banRes.data);
         if (prodRes.success) setProducts(prodRes.data);
         if (lookRes.success) setLooks(lookRes.data);
         if (blogRes.success) setBlogs(blogRes.data);
+        if (revRes.success) setReviews(revRes.data);
       } catch (err) {
         console.error('Error fetching homepage data:', err);
       } finally {
@@ -48,28 +51,34 @@ const HomePage = () => {
       {/* 1. Main Hero Merchandising Carousel */}
       <HeroSlider banners={banners} />
 
-      {/* 2. Shop by Collection (10 Men's Collections) */}
-      <ShopByCollection />
-
-      {/* 3. Match The Mood (Curated Edits: Travel, Street, Lounge, Cozy) */}
+      {/* 2. Match The Mood (Curated Categories: Hoodies & Jackets, Sweatshirts, Basics, Joggers) */}
       <MatchTheMood />
 
-      {/* 4. Everyday Bestsellers (Tabbed Category Bestsellers) */}
-      <EverydayBestsellers products={products} />
+      {/* 3. Shop by Collection (10 Men's Category Cards in 2 rows of 5) */}
+      <ShopByCollection />
 
-      {/* 5. Shop the Full Look (Curated Men's Outfit Sets with Tags) */}
+      {/* 4. Shop the Full Look (Curated Men's Outfit Sets with Tags & Carousel Dots) */}
       <ShopTheLook looks={looks} products={products} />
 
-      {/* 6. LEO Favourite (Handpicked for you) */}
-      <LeoFavourites products={products} />
-
-      {/* 7. Summer Essentials / Shorts Spotlight */}
-      <FeaturedShorts />
-
-      {/* 8. Flight Ready Travel Campaign Banner */}
+      {/* 5. Promotional Download Banner ("OUR APP IS HERE") */}
       <AppPromotion />
 
-      {/* 9. Editorial Articles (when available) */}
+      {/* 6. Signature Co-Ord Sets Carousel (LEO Favourite) */}
+      <LeoFavourites products={products} />
+
+      {/* 7. Action Lifestyle Transit Campaign Banner with 4-Feature Badges Bar */}
+      <CampaignBanner />
+
+      {/* 8. Everyday Bestsellers (Tabbed Category Grid with 8 products) */}
+      <EverydayBestsellers products={products} />
+
+      {/* 9. Season's Favorites / Featured Shorts 4-Column Showcase */}
+      <FeaturedShorts />
+
+      {/* 10. Customer Reviews Wall (Loved By 100,000+ Fashion Enthusiasts) */}
+      <CustomerReviewsWall reviews={reviews} />
+
+      {/* 11. Editorial Articles / Explore Blogs */}
       {blogs && blogs.length > 0 && <ExploreBlogs blogs={blogs} />}
     </div>
   );

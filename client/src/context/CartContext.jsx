@@ -114,17 +114,60 @@ export const CartProvider = ({ children }) => {
     setIsDrawerOpen(true);
   };
 
-  const addLookToCart = (look, productsList) => {
-    // Add all products in the look
-    look.productIds.forEach(pId => {
-      const prod = productsList.find(p => p.id === pId);
-      if (prod) {
-        const defaultColor = prod.colors?.[0]?.name || 'Standard';
-        const defaultSize = prod.sizes?.[0]?.name || 'L';
-        addToCart(prod, defaultColor, defaultSize, 1);
-      }
-    });
-    setIsDrawerOpen(true);
+  const addLookToCart = (look, productsList = [], customOptions = {}) => {
+    // If look has topProduct and bottomProduct
+    if (look.topProduct && look.bottomProduct) {
+      const topSize = customOptions.topSize || 'M';
+      const bottomSize = customOptions.bottomSize || 'M';
+
+      setItems(prev => {
+        const next = [...prev];
+        // Add top item
+        next.push({
+          id: `${look.id}-top-${topSize}-${Date.now()}`,
+          productId: look.topProduct.productSlug || `${look.id}-top`,
+          title: look.topProduct.name,
+          slug: look.topProduct.productSlug || look.slug,
+          price: look.topProduct.price || Math.round(look.bundlePrice * 0.55),
+          mrp: Math.round((look.originalPrice || 3299) * 0.55),
+          discount: look.discount,
+          color: look.topProduct.color,
+          size: topSize,
+          image: look.topProduct.image || look.image,
+          quantity: 1,
+        });
+        // Add bottom item
+        next.push({
+          id: `${look.id}-bottom-${bottomSize}-${Date.now() + 1}`,
+          productId: look.bottomProduct.productSlug || `${look.id}-bottom`,
+          title: look.bottomProduct.name,
+          slug: look.bottomProduct.productSlug || look.slug,
+          price: look.bottomProduct.price || Math.round(look.bundlePrice * 0.45),
+          mrp: Math.round((look.originalPrice || 3299) * 0.45),
+          discount: look.discount,
+          color: look.bottomProduct.color,
+          size: bottomSize,
+          image: look.bottomProduct.image || look.image,
+          quantity: 1,
+        });
+        return next;
+      });
+      setIsDrawerOpen(true);
+      return;
+    }
+
+    // Fallback if look has productIds
+    if (look.productIds && Array.isArray(look.productIds)) {
+      look.productIds.forEach(pId => {
+        const prod = productsList.find(p => p.id === pId);
+        if (prod) {
+          const defaultColor = prod.colors?.[0]?.name || 'Standard';
+          const defaultSize = prod.sizes?.[0]?.name || 'L';
+          addToCart(prod, defaultColor, defaultSize, 1);
+        }
+      });
+      setIsDrawerOpen(true);
+    }
   };
 
   const updateQuantity = (id, delta) => {

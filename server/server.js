@@ -276,48 +276,254 @@ const initialData = {
   // 4 Curated Men's Outfits for "Shop the Full Look" (100% Men Only)
   looks: [
     {
-      id: "look-1",
-      title: "Urban Motion Look",
-      image: "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg",
-      itemsIncluded: ["Call Of The Ocean Oversized Tee", "Air-Flex 6-Pocket Utility Cargo Jogger"],
-      productIds: ["leo-1", "leo-41"],
+      id: "everyday-hoodie-look",
+      slug: "everyday-hoodie-look",
+      title: "Everyday Hoodie Look",
+      discount: "18% OFF",
+      discountAmount: "₹601 OFF",
+      originalPrice: 3299,
+      bundlePrice: 2698,
+      lowestPrice: 2648,
+      rating: 5.0,
+      reviewCount: 1,
+      image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/1_243d8cf8-17ad-400a-b8aa-6337e6d862d1.jpg?v=1765453680",
+      gallery: [
+        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/1_243d8cf8-17ad-400a-b8aa-6337e6d862d1.jpg?v=1765453680",
+        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/2_af638b1d-e328-489d-b8b8-f004eded4ad2.jpg?v=1765453680",
+        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/3_e9f3cb11-8475-40ce-8e25-d72e80f95303.jpg?v=1765453680",
+        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/4_c475c229-144d-400d-b6f9-297229bc3489.jpg?v=1765453679",
+        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/5_88155fd8-db2a-487a-8ac8-bb212ec69bff.jpg?v=1765453681"
+      ],
+      itemsIncluded: ["Believe In Yourself Classic Hoodie", "Classic Straight Fit Joggers"],
+      topProduct: {
+        name: "Believe In Yourself Classic Hoodie",
+        shortLabel: "Classic Hoodie",
+        color: "Black",
+        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/believe_in_yourself_83856a14-fcf8-49fe-b285-348391d538f6.jpg?v=1771836265",
+        price: 1499,
+        sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
+        productSlug: "believe-in-yourself-classic-hoodie"
+      },
+      bottomProduct: {
+        name: "Classic Straight Fit Joggers",
+        shortLabel: "Straight Fit Joggers",
+        color: "Natural",
+        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/SFCoreWeb-0006.webp?v=1772521556",
+        price: 1199,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        productSlug: "classic-straight-fit-joggers"
+      },
+      description: "A lightweight hoodie paired with straight joggers for smooth daily movement. The relaxed fit allows comfort through commutes, casual plans, or slow evenings. Subtle print adds character without overpowering the look. Soft fabric keeps the outfit breathable and versatile. A minimal leo uniform designed for effortless living.",
+      fabricCare: "100% Super Combed Cotton. Machine wash inside out in cold water. Do not bleach. Tumble dry low.",
+      offers: [
+        { code: "BUY2", title: "Get it for as low as ₹2,294", condition: "Applicable on prepaid orders" },
+        { code: "BUY3", title: "Get it for as low as ₹2,428", condition: "Flat 10% extra discount" }
+      ]
+    },
+    {
+      id: "forest-trail-look",
+      slug: "forest-trail-look",
+      title: "Forest Trail Look",
+      discount: "50% OFF",
+      discountAmount: "₹2,000 OFF",
       originalPrice: 3998,
-      bundlePrice: 1799,
-      discount: "55% OFF",
-      lowestPrice: 1749
+      bundlePrice: 1998,
+      lowestPrice: 1948,
+      rating: 4.9,
+      reviewCount: 48,
+      image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/1_ad043cc4-8c1d-4d80-8e47-741104dd47ae.jpg?v=1762842103",
+      gallery: [
+        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/1_ad043cc4-8c1d-4d80-8e47-741104dd47ae.jpg?v=1762842103"
+      ],
+      itemsIncluded: ["Heavyweight French Terry Sweatshirt", "Classic Straight Fit Joggers"],
+      topProduct: {
+        name: "Pine Green Heavyweight Sweatshirt",
+        shortLabel: "Knit Sweatshirt",
+        color: "Forest Green",
+        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/AW_26_Homepage_Banners_Desktop_jpg.jpg",
+        price: 1099,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        productSlug: "pine-green-sweatshirt"
+      },
+      bottomProduct: {
+        name: "Classic Straight Fit Joggers",
+        shortLabel: "Straight Joggers",
+        color: "Off-White",
+        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/SFCoreWeb-0006.webp?v=1772521556",
+        price: 899,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        productSlug: "classic-straight-fit-joggers"
+      },
+      description: "Designed for brisk morning commutes and relaxed weekend exploring. Premium heavyweight French Terry cotton delivers optimal insulation with zero bulk.",
+      fabricCare: "100% Cotton French Terry 280 GSM. Machine wash cold, gentle cycle.",
+      offers: [
+        { code: "BUY2", title: "Get it for as low as ₹1,698", condition: "Applicable on prepaid orders" },
+        { code: "BUY3", title: "Get it for as low as ₹1,798", condition: "Flat 10% extra discount" }
+      ]
     },
     {
-      id: "look-2",
-      title: "Transit Ready Look",
-      image: "https://nobero.com/cdn/shop/files/HB_Fashion_Joggers_des.jpg",
-      itemsIncluded: ["LEO Classic Travel Polo", "Wanderer Travel Cargo Jogger"],
-      productIds: ["leo-17", "leo-43"],
-      originalPrice: 5198,
-      bundlePrice: 2399,
-      discount: "54% OFF",
-      lowestPrice: 2299
+      id: "earth-retreat-look",
+      slug: "earth-retreat-look",
+      title: "Earth Retreat Look",
+      discount: "45% OFF",
+      discountAmount: "₹1,801 OFF",
+      originalPrice: 3999,
+      bundlePrice: 2198,
+      lowestPrice: 2148,
+      rating: 4.8,
+      reviewCount: 32,
+      image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/1_538cc2a5-f4e5-45b8-8b8f-ce1666528f0b.jpg?v=1762842286",
+      gallery: [
+        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/1_538cc2a5-f4e5-45b8-8b8f-ce1666528f0b.jpg?v=1762842286"
+      ],
+      itemsIncluded: ["Cocoa Heavyweight Crewneck Sweatshirt", "Air-Flex Utility Cargo Joggers"],
+      topProduct: {
+        name: "Cocoa Heavyweight Crewneck Sweatshirt",
+        shortLabel: "Cozy Sweatshirt",
+        color: "Cocoa Brown",
+        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/Ov._Tee_13b98095-2712-4d73-ad6b-ed64bf134ab9.jpg",
+        price: 1199,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        productSlug: "cocoa-sweatshirt"
+      },
+      bottomProduct: {
+        name: "Air-Flex Utility Cargo Joggers",
+        shortLabel: "Cargo Joggers",
+        color: "Military Olive",
+        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/Cargo_Pants_f4f28077-9d53-45e8-92d8-ceebffdbb6f6.jpg",
+        price: 999,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        productSlug: "air-flex-cargo-jogger"
+      },
+      description: "Earthy warmth meets utilitarian mobility. Structured drop shoulder sweater coupled with multi-pocket stretch cargo joggers built for effortless travel.",
+      fabricCare: "240 GSM Bio-Washed Combed Cotton. Machine wash inside out.",
+      offers: [
+        { code: "BUY2", title: "Get it for as low as ₹1,868", condition: "Applicable on prepaid orders" },
+        { code: "BUY3", title: "Get it for as low as ₹1,978", condition: "Flat 10% extra discount" }
+      ]
     },
     {
-      id: "look-3",
-      title: "Waffle Resort Set Look",
-      image: "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg",
-      itemsIncluded: ["Oversized Waffle Co-ord Tee", "Waffle Drawcord Tailored Shorts"],
-      productIds: ["leo-25", "leo-33"],
-      originalPrice: 3199,
-      bundlePrice: 1499,
-      discount: "53% OFF",
-      lowestPrice: 1449
+      id: "boarding-comfort-look",
+      slug: "boarding-comfort-look",
+      title: "Boarding Comfort Look",
+      discount: "42% OFF",
+      discountAmount: "₹1,551 OFF",
+      originalPrice: 3699,
+      bundlePrice: 2148,
+      lowestPrice: 2098,
+      rating: 4.9,
+      reviewCount: 64,
+      image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/5_2319973c-2872-4fca-b24c-7ef0d2cbc7e0.jpg?v=1773214964",
+      gallery: [
+        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/5_2319973c-2872-4fca-b24c-7ef0d2cbc7e0.jpg?v=1773214964"
+      ],
+      itemsIncluded: ["Air-Flex Transit Crewneck", "All-Day Stretch Chino Pants"],
+      topProduct: {
+        name: "Air-Flex Transit Crewneck",
+        shortLabel: "Air-Flex Crewneck",
+        color: "Teal Blue",
+        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/1_38.jpg",
+        price: 1149,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        productSlug: "transit-crewneck"
+      },
+      bottomProduct: {
+        name: "All-Day Stretch Chino Pants",
+        shortLabel: "Stretch Chinos",
+        color: "Beige Khaki",
+        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/HB_Chinos_des.jpg",
+        price: 999,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        productSlug: "stretch-chino-pants"
+      },
+      description: "Engineered specifically for long flights and airport transfers. Breathable cotton loopknit top paired with tailored flexible chinos that resist wrinkles.",
+      fabricCare: "95% Cotton 5% Spandex. Machine wash cold, dry in shade.",
+      offers: [
+        { code: "BUY2", title: "Get it for as low as ₹1,825", condition: "Applicable on prepaid orders" },
+        { code: "BUY3", title: "Get it for as low as ₹1,933", condition: "Flat 10% extra discount" }
+      ]
     },
     {
-      id: "look-4",
-      title: "Heavyweight Layer Look",
-      image: "https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg",
-      itemsIncluded: ["Heavyweight French Terry Shacket", "Classic Straight Fit Jogger"],
-      productIds: ["leo-37", "leo-44"],
-      originalPrice: 2998,
-      bundlePrice: 1399,
-      discount: "53% OFF",
-      lowestPrice: 1349
+      id: "neutral-break-look",
+      slug: "neutral-break-look",
+      title: "Neutral Break Look",
+      discount: "43% OFF",
+      discountAmount: "₹1,601 OFF",
+      originalPrice: 3699,
+      bundlePrice: 2098,
+      lowestPrice: 2048,
+      rating: 4.8,
+      reviewCount: 29,
+      image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/1_088fd92e-7996-4da8-a32d-c3139e32f16c.jpg?v=1768218094",
+      gallery: [
+        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/1_088fd92e-7996-4da8-a32d-c3139e32f16c.jpg?v=1768218094"
+      ],
+      itemsIncluded: ["Midnight Graphic Heavyweight Hoodie", "Classic Straight Fit Joggers"],
+      topProduct: {
+        name: "Midnight Graphic Heavyweight Hoodie",
+        shortLabel: "Graphic Hoodie",
+        color: "Navy Blue",
+        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/HB_Shacket_des_jpg.jpg",
+        price: 1199,
+        sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
+        productSlug: "midnight-graphic-hoodie"
+      },
+      bottomProduct: {
+        name: "Classic Straight Fit Joggers",
+        shortLabel: "Straight Joggers",
+        color: "Natural",
+        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/SFCoreWeb-0006.webp?v=1772521556",
+        price: 899,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        productSlug: "classic-straight-fit-joggers"
+      },
+      description: "Rich dark top silhouette balanced against neutral off-white trousers. The definitive travel layer combo for transitioning between seasons.",
+      fabricCare: "100% Super Combed Cotton. Machine wash inside out.",
+      offers: [
+        { code: "BUY2", title: "Get it for as low as ₹1,783", condition: "Applicable on prepaid orders" },
+        { code: "BUY3", title: "Get it for as low as ₹1,888", condition: "Flat 10% extra discount" }
+      ]
+    },
+    {
+      id: "urban-motion-look",
+      slug: "urban-motion-look",
+      title: "Urban Motion Look",
+      discount: "33% OFF",
+      discountAmount: "₹1,201 OFF",
+      originalPrice: 3599,
+      bundlePrice: 2398,
+      lowestPrice: 2348,
+      rating: 4.8,
+      reviewCount: 346,
+      image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/Instagrampost-7_1.jpg?v=1783345563",
+      gallery: [
+        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/Instagrampost-7_1.jpg?v=1783345563"
+      ],
+      itemsIncluded: ["Wanderer Structured Drop-Shoulder Tee", "Everyday Transit Stretch Trousers"],
+      topProduct: {
+        name: "Wanderer Structured Drop-Shoulder Tee",
+        shortLabel: "Drop-Shoulder Tee",
+        color: "Wine Red",
+        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/Instagrampost-7_1.jpg?v=1783345563",
+        price: 1199,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        productSlug: "wanderer-structured-tee"
+      },
+      bottomProduct: {
+        name: "Everyday Transit Stretch Trousers",
+        shortLabel: "Transit Trousers",
+        color: "Navy Blue",
+        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/Cargo_Pants_f4f28077-9d53-45e8-92d8-ceebffdbb6f6.jpg",
+        price: 1199,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        productSlug: "everyday-transit-trousers"
+      },
+      description: "Clean, modern streetwear proportioning. Heavy 240 GSM knit wine tee coordinated with tailored navy flex pants for seamless all-day movement.",
+      fabricCare: "100% Combed Cotton 240 GSM. Machine wash cold, dry in shade.",
+      offers: [
+        { code: "BUY2", title: "Get it for as low as ₹2,038", condition: "Applicable on prepaid orders" },
+        { code: "BUY3", title: "Get it for as low as ₹2,158", condition: "Flat 10% extra discount" }
+      ]
     }
   ],
 
@@ -1054,6 +1260,17 @@ app.get('/api/banners', (req, res) => {
 app.get('/api/looks', (req, res) => {
   const db = readDB();
   res.json({ success: true, data: db.looks || [] });
+});
+
+app.get('/api/looks/:id', (req, res) => {
+  const db = readDB();
+  const idOrSlug = req.params.id;
+  const look = (db.looks || []).find(l => l.id === idOrSlug || l.slug === idOrSlug);
+  if (look) {
+    res.json({ success: true, data: look });
+  } else {
+    res.status(404).json({ success: false, message: 'Look not found' });
+  }
 });
 
 app.get('/api/products', (req, res) => {

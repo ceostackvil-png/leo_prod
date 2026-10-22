@@ -1,18 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import StorefrontContainer from './StorefrontContainer';
 
 const ExploreBlogs = ({ blogs = [] }) => {
   if (!blogs.length) return null;
 
   return (
-    <section className="py-8 lg:py-12 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+    <section className="py-8 sm:py-12 bg-white">
+      <StorefrontContainer>
         {/* Section Header */}
         <div className="text-center mb-6 lg:mb-8">
-          <h2 className="text-[#212121] text-xl lg:text-2xl font-bold font-display">
+          <span className="text-[#242F66] text-[11px] sm:text-xs font-bold uppercase tracking-widest block mb-1">
+            FROM THE JOURNAL
+          </span>
+          <h2 className="text-[#1A1E31] text-xl sm:text-2xl lg:text-[26px] font-bold font-sans">
             Explore Blogs
           </h2>
+          <p className="text-xs sm:text-sm text-[#666875] mt-1 font-normal">
+            Fabric insights, streetwear sizing guides, and timeless styling notes.
+          </p>
         </div>
 
         {/* Blog Cards Grid */}
@@ -55,7 +61,7 @@ const ExploreBlogs = ({ blogs = [] }) => {
           ))}
         </div>
 
-      </div>
+      </StorefrontContainer>
     </section>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import StorefrontContainer from './StorefrontContainer';
 
-const MEN_COLLECTIONS = [
+const COLLECTIONS = [
   {
     name: "Travel",
     image: "/images/collections/col_travel.jpg",
@@ -62,6 +62,18 @@ const MEN_COLLECTIONS = [
     image: "/images/collections/col_oversized_tees.jpg",
     fallback: "https://nobero.com/cdn/shop/files/Ov._Tee_13b98095-2712-4d73-ad6b-ed64bf134ab9.jpg?v=1778586377",
     link: "/oversized-tees"
+  },
+  {
+    name: "Women Tees",
+    image: "/images/collections/col_women_tees.jpg",
+    fallback: "https://nobero.com/cdn/shop/files/Women_tee_jpg.jpg?v=1772211935",
+    link: "/shop?category=t-shirts"
+  },
+  {
+    name: "Women Joggers",
+    image: "/images/collections/col_women_joggers.jpg",
+    fallback: "https://nobero.com/cdn/shop/files/Women_jog_jpg.jpg?v=1772211883",
+    link: "/joggers"
   }
 ];
 
@@ -70,25 +82,27 @@ const ShopByCollection = () => {
     <section className="py-6 sm:py-10 bg-white">
       <StorefrontContainer>
         {/* Section Heading matching Nobero exact styling */}
-        <h2 className="text-center text-[#1A1E31] font-semibold text-xl lg:text-2xl mb-5 sm:mb-8 tracking-tight font-sans">
-          Shop by Collection
-        </h2>
+        <div className="text-center mb-5 sm:mb-8">
+          <h2 className="text-[#1A1E31] text-xl sm:text-2xl lg:text-[26px] font-bold font-sans tracking-tight">
+            Shop by Collection
+          </h2>
+        </div>
 
-        {/* Collections Grid (Exact 10 Men's Collections in 2 balanced rows of 5) */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-3.5 sm:gap-4 md:gap-5 lg:gap-6 max-w-6xl mx-auto">
-          {MEN_COLLECTIONS.map((col, idx) => (
+        {/* Collections Grid (Exact 12 Collections in 2 rows of 6 matching reference) */}
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-4 lg:gap-5 w-full">
+          {COLLECTIONS.map((col, idx) => (
             <Link
               key={idx}
               to={col.link}
               className="group flex flex-col items-center text-center select-none cursor-pointer"
             >
-              {/* Image Container with rounded corners & top-right '+' circle icon matching reference */}
-              <div className="w-full aspect-square rounded-2xl overflow-hidden bg-[#eef0f3] relative transition-transform duration-300 group-hover:scale-[1.02] active:scale-95 shadow-xs">
+              {/* Image Container with rounded corners matching exact 1:1 aspect ratio */}
+              <div className="w-full aspect-square rounded-2xl overflow-hidden bg-[#ECEEF0] relative transition-transform duration-300 group-hover:scale-[1.03] active:scale-95 shadow-2xs border border-gray-100">
                 <img
                   src={col.image}
                   alt={col.name}
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-2xl"
                   onError={(e) => {
                     if (col.fallback && e.currentTarget.src !== col.fallback) {
                       e.currentTarget.src = col.fallback;
@@ -98,7 +112,7 @@ const ShopByCollection = () => {
               </div>
 
               {/* Exact collection name label */}
-              <span className="text-[13px] sm:text-[14px] lg:text-[15px] font-medium text-[#1A1E31] mt-2 sm:mt-2.5 group-hover:text-black transition-colors leading-tight">
+              <span className="text-[13px] sm:text-[14px] font-medium text-[#1A1E31] mt-2 group-hover:text-black transition-colors leading-tight">
                 {col.name}
               </span>
             </Link>
