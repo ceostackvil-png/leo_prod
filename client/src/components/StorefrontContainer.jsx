@@ -8,8 +8,8 @@ import React from 'react';
 export const StorefrontContainer = ({ children, className = '', noPadding = false }) => {
   return (
     <div
-      className={`w-full max-w-[1440px] mx-auto ${
-        noPadding ? '' : 'px-4 sm:px-6 lg:px-8'
+      className={`w-[94%] sm:w-[92%] lg:w-[90%] xl:w-[89%] 2xl:w-[88.5%] mx-auto max-w-[1780px] ${
+        noPadding ? '' : 'px-1 sm:px-2'
       } ${className}`}
     >
       {children}

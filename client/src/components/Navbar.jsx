@@ -140,7 +140,7 @@ const Navbar = () => {
 
         {/* 2. Main Navigation Bar (Exact Nobero Proportions: 80px desktop, 56px mobile) */}
         <div className="border-b border-[#E5E7EB] bg-white">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="w-[94%] sm:w-[92%] lg:w-[90%] xl:w-[89%] 2xl:w-[88.5%] mx-auto max-w-[1780px]">
             <div className="flex items-center justify-between h-[56px] lg:h-[80px]">
               
               {/* Left Section: Mobile Menu + Logo */}

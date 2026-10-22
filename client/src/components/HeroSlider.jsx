@@ -54,15 +54,15 @@ const HeroSlider = ({ banners = [] }) => {
 
   return (
     <section className="bg-white pt-2 sm:pt-4 pb-4 sm:pb-6">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="w-[94%] sm:w-[92%] lg:w-[90%] xl:w-[89%] 2xl:w-[88.5%] mx-auto max-w-[1780px]">
         <div
           className="relative w-full overflow-hidden group select-none bg-gray-50 rounded-none shadow-none"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          {/* Banner Slider Container (Exact 1800:1438 aspect ratio for mobile and 7680:2888 for desktop so zero content/text is cropped) */}
-          <div className="relative w-full aspect-[1800/1438] sm:aspect-[16/7] lg:aspect-[7680/2888] max-h-[600px] overflow-hidden">
+          {/* Banner Slider Container with exact Nobero aspect ratio (2.68:1 desktop, 1.25:1 mobile) */}
+          <div className="relative w-full aspect-[1800/1438] sm:aspect-[2.2/1] lg:aspect-[2.68/1] overflow-hidden">
             {banners.map((banner, idx) => {
               const isActive = idx === currentIndex;
               return (
