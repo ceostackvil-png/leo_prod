@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useSearchParams, useParams, Link, useLocation } from 'react-router-dom';
-import { SlidersHorizontal, X, RotateCcw, ChevronDown, ChevronUp, Check, ArrowUpDown } from 'lucide-react';
+import { SlidersHorizontal, X, RotateCcw, ChevronDown, ChevronUp, Check, ArrowUpDown, Copy, Sparkles } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import StorefrontContainer from '../components/StorefrontContainer';
 import AppPromotion from '../components/AppPromotion';
@@ -8,8 +8,8 @@ import ShopFilterSidebar, { PRICE_RANGES, COLOR_CONFIG, productMatchesColors } f
 import { api } from '../services/api';
 
 const SORT_OPTIONS = [
-  { id: 'bestselling', label: 'Best Selling' },
   { id: 'featured', label: 'Featured' },
+  { id: 'bestselling', label: 'Best Selling' },
   { id: 'newest', label: 'New Arrivals' },
   { id: 'price-low', label: 'Price: Low to High' },
   { id: 'price-high', label: 'Price: High to Low' }
@@ -36,15 +36,37 @@ const CATEGORY_META = {
   },
   'textured-shackets': {
     title: "Jackets & Shackets",
-    subtitle: "Structured overshirts, bomber fleece silhouettes, and cozy layering staples.",
-    seo: "Shop LEO Men's Textured Shackets and Jackets. Engineered from heavy fleece, loopknit cotton, and breathable weaves for all-season styling.",
-    banner: "/images/shackets_promo_bg.jpg"
+    breadcrumbTitle: "Jackets & Shackets",
+    subtitle: "Made for changing weather",
+    seo: "Shop LEO Men's Textured Shackets and Structured Overshirts. Built with heavyweight fabrics and contemporary cuts for effortless styling.",
+    banner: "/images/banners/shackets_banner_desktop.jpg",
+    desktopBanner: "/images/banners/shackets_banner_desktop.jpg",
+    mobileBanner: "/images/banners/shackets_banner_mobile.jpg",
+    aspectRatioDesktop: "4/1",
+    aspectRatioMobile: "16/9",
+    isDirectBreadcrumb: true,
+    couponPosition: "left",
+    coupons: [
+      { code: "B2G10", label: "Buy 2 Get 10% OFF", discount: "10% OFF" },
+      { code: "B3G15", label: "Buy 3 Get 15% OFF", discount: "15% OFF" }
+    ]
   },
   'shackets': {
     title: "Jackets & Shackets",
-    subtitle: "Structured overshirts, bomber fleece silhouettes, and cozy layering staples.",
-    seo: "Shop LEO Men's Textured Shackets and Jackets. Engineered from heavy fleece, loopknit cotton, and breathable weaves for all-season styling.",
-    banner: "/images/shackets_promo_bg.jpg"
+    breadcrumbTitle: "Jackets & Shackets",
+    subtitle: "Made for changing weather",
+    seo: "Shop LEO Men's Textured Shackets and Structured Overshirts. Built with heavyweight fabrics and contemporary cuts for effortless styling.",
+    banner: "/images/banners/shackets_banner_desktop.jpg",
+    desktopBanner: "/images/banners/shackets_banner_desktop.jpg",
+    mobileBanner: "/images/banners/shackets_banner_mobile.jpg",
+    aspectRatioDesktop: "4/1",
+    aspectRatioMobile: "16/9",
+    isDirectBreadcrumb: true,
+    couponPosition: "left",
+    coupons: [
+      { code: "B2G10", label: "Buy 2 Get 10% OFF", discount: "10% OFF" },
+      { code: "B3G15", label: "Buy 3 Get 15% OFF", discount: "15% OFF" }
+    ]
   },
   'oversized-tees': {
     title: "Oversized T-Shirts",
@@ -65,52 +87,202 @@ const CATEGORY_META = {
     banner: "/images/oversized-tees_promo_bg.jpg"
   },
   'polos': {
-    title: "Polo Tshirt for Men",
-    subtitle: "Breathable pique knit polos with structured collars that stay sharp all day.",
-    seo: "Explore our collection of versatile Men's Polos designed for effortless smart-casual transitions and wrinkle-resistant travel.",
-    banner: "/images/polo_promo_bg.jpg"
+    title: "Polo T Shirts",
+    breadcrumbTitle: "Polo T Shirts",
+    subtitle: "Smart comfort, clean fits, all day ease. Ready for every plan.",
+    seo: "Explore our collection of versatile Men's Polo T Shirts designed for effortless smart-casual transitions and all-day ease.",
+    banner: "/images/banners/polo_banner_desktop.jpg",
+    desktopBanner: "/images/banners/polo_banner_desktop.jpg",
+    mobileBanner: "/images/banners/polo_banner_mobile.jpg",
+    aspectRatioDesktop: "4/1",
+    aspectRatioMobile: "16/9",
+    isDirectBreadcrumb: true,
+    coupons: [
+      { code: "B2G10", label: "Buy 2 Get 10% OFF", discount: "10% OFF" },
+      { code: "B3G15", label: "Buy 3 Get 15% OFF", discount: "15% OFF" }
+    ]
   },
   'classic-polo': {
-    title: "Polo Tshirt for Men",
-    subtitle: "Breathable pique knit polos with structured collars that stay sharp all day.",
-    seo: "Explore our collection of versatile Men's Polos designed for effortless smart-casual transitions and wrinkle-resistant travel.",
-    banner: "/images/polo_promo_bg.jpg"
+    title: "Polo T Shirts",
+    breadcrumbTitle: "Polo T Shirts",
+    subtitle: "Smart comfort, clean fits, all day ease. Ready for every plan.",
+    seo: "Explore our collection of versatile Men's Polo T Shirts designed for effortless smart-casual transitions and all-day ease.",
+    banner: "/images/banners/polo_banner_desktop.jpg",
+    desktopBanner: "/images/banners/polo_banner_desktop.jpg",
+    mobileBanner: "/images/banners/polo_banner_mobile.jpg",
+    aspectRatioDesktop: "4/1",
+    aspectRatioMobile: "16/9",
+    isDirectBreadcrumb: true,
+    coupons: [
+      { code: "B2G10", label: "Buy 2 Get 10% OFF", discount: "10% OFF" },
+      { code: "B3G15", label: "Buy 3 Get 15% OFF", discount: "15% OFF" }
+    ]
+  },
+  'polo-t-shirts': {
+    title: "Polo T Shirts",
+    breadcrumbTitle: "Polo T Shirts",
+    subtitle: "Smart comfort, clean fits, all day ease. Ready for every plan.",
+    seo: "Explore our collection of versatile Men's Polo T Shirts designed for effortless smart-casual transitions and all-day ease.",
+    banner: "/images/banners/polo_banner_desktop.jpg",
+    desktopBanner: "/images/banners/polo_banner_desktop.jpg",
+    mobileBanner: "/images/banners/polo_banner_mobile.jpg",
+    aspectRatioDesktop: "4/1",
+    aspectRatioMobile: "16/9",
+    isDirectBreadcrumb: true,
+    coupons: [
+      { code: "B2G10", label: "Buy 2 Get 10% OFF", discount: "10% OFF" },
+      { code: "B3G15", label: "Buy 3 Get 15% OFF", discount: "15% OFF" }
+    ]
   },
   'shirts': {
     title: "Men's Shirts",
+    breadcrumbTitle: "Men's Shirts",
     subtitle: "Made for breezy plans",
-    seo: "Discover LEO casual shirts for men. Breathable weaves, effortless layering, and contemporary cuts.",
-    banner: "/images/shirts_promo_bg.jpg"
+    seo: "Discover LEO casual shirts and getaway linen shirts for men. Breathable weaves, effortless layering, and contemporary cuts.",
+    banner: "/images/banners/shirts_banner_desktop.jpg",
+    desktopBanner: "/images/banners/shirts_banner_desktop.jpg",
+    mobileBanner: "/images/banners/shirts_banner_mobile.jpg",
+    aspectRatioDesktop: "4/1",
+    aspectRatioMobile: "16/9",
+    isDirectBreadcrumb: true,
+    couponPosition: "bottom-right",
+    coupons: [
+      { code: "B2G10", label: "Buy 2 Get 10% OFF", discount: "10% OFF" },
+      { code: "B3G15", label: "Buy 3 Get 15% OFF", discount: "15% OFF" }
+    ]
   },
   'shirts-for-men': {
     title: "Men's Shirts",
+    breadcrumbTitle: "Men's Shirts",
     subtitle: "Made for breezy plans",
-    seo: "Discover LEO casual shirts for men. Breathable weaves, effortless layering, and contemporary cuts.",
-    banner: "/images/shirts_promo_bg.jpg"
+    seo: "Discover LEO casual shirts and getaway linen shirts for men. Breathable weaves, effortless layering, and contemporary cuts.",
+    banner: "/images/banners/shirts_banner_desktop.jpg",
+    desktopBanner: "/images/banners/shirts_banner_desktop.jpg",
+    mobileBanner: "/images/banners/shirts_banner_mobile.jpg",
+    aspectRatioDesktop: "4/1",
+    aspectRatioMobile: "16/9",
+    isDirectBreadcrumb: true,
+    couponPosition: "bottom-right",
+    coupons: [
+      { code: "B2G10", label: "Buy 2 Get 10% OFF", discount: "10% OFF" },
+      { code: "B3G15", label: "Buy 3 Get 15% OFF", discount: "15% OFF" }
+    ]
   },
   'hoodies': {
-    title: "Jackets and Hoodies for Men",
+    title: "Jackets and Hoodies",
+    breadcrumbTitle: "Jackets and Hoodies",
     subtitle: "Made for changing weather",
-    seo: "Keep warm in style with LEO's heavyweight French Terry hoodies for men. Pre-shrunk, fleece-lined, and built for cozy longevity.",
-    banner: "/images/hoodies_promo_bg.jpg"
+    seo: "Keep warm in style with LEO's heavyweight French Terry hoodies and jackets for men. Pre-shrunk, fleece-lined, and built for cozy longevity.",
+    banner: "/images/banners/hoodies_banner_desktop.jpg",
+    desktopBanner: "/images/banners/hoodies_banner_desktop.jpg",
+    mobileBanner: "/images/banners/hoodies_banner_mobile.jpg",
+    aspectRatioDesktop: "4/1",
+    aspectRatioMobile: "16/9",
+    isDirectBreadcrumb: true,
+    coupons: [
+      { code: "B2G10", label: "Buy 2 Get 10% OFF", discount: "10% OFF" },
+      { code: "B3G15", label: "Buy 3 Get 15% OFF", discount: "15% OFF" }
+    ]
+  },
+  'hoodies-jackets': {
+    title: "Jackets and Hoodies",
+    breadcrumbTitle: "Jackets and Hoodies",
+    subtitle: "Made for changing weather",
+    seo: "Keep warm in style with LEO's heavyweight French Terry hoodies and jackets for men. Pre-shrunk, fleece-lined, and built for cozy longevity.",
+    banner: "/images/banners/hoodies_banner_desktop.jpg",
+    desktopBanner: "/images/banners/hoodies_banner_desktop.jpg",
+    mobileBanner: "/images/banners/hoodies_banner_mobile.jpg",
+    aspectRatioDesktop: "4/1",
+    aspectRatioMobile: "16/9",
+    isDirectBreadcrumb: true,
+    coupons: [
+      { code: "B2G10", label: "Buy 2 Get 10% OFF", discount: "10% OFF" },
+      { code: "B3G15", label: "Buy 3 Get 15% OFF", discount: "15% OFF" }
+    ]
+  },
+  'jackets-and-hoodies': {
+    title: "Jackets and Hoodies",
+    breadcrumbTitle: "Jackets and Hoodies",
+    subtitle: "Made for changing weather",
+    seo: "Keep warm in style with LEO's heavyweight French Terry hoodies and jackets for men. Pre-shrunk, fleece-lined, and built for cozy longevity.",
+    banner: "/images/banners/hoodies_banner_desktop.jpg",
+    desktopBanner: "/images/banners/hoodies_banner_desktop.jpg",
+    mobileBanner: "/images/banners/hoodies_banner_mobile.jpg",
+    aspectRatioDesktop: "4/1",
+    aspectRatioMobile: "16/9",
+    isDirectBreadcrumb: true,
+    coupons: [
+      { code: "B2G10", label: "Buy 2 Get 10% OFF", discount: "10% OFF" },
+      { code: "B3G15", label: "Buy 3 Get 15% OFF", discount: "15% OFF" }
+    ]
   },
   'jackets': {
-    title: "Men's Jackets & Outerwear",
-    subtitle: "Clean bomber jackets, transit utility windbreakers, and heavy overshirts.",
-    seo: "Shop premium outerwear for men at LEO. Functional weather resistance combined with refined streetwear aesthetics.",
-    banner: "/images/shackets_promo_bg.jpg"
+    title: "Jackets & Shackets",
+    breadcrumbTitle: "Jackets & Shackets",
+    subtitle: "Made for changing weather",
+    seo: "Shop LEO Men's Textured Shackets and Structured Overshirts. Built with heavyweight fabrics and contemporary cuts for effortless styling.",
+    banner: "/images/banners/shackets_banner_desktop.jpg",
+    desktopBanner: "/images/banners/shackets_banner_desktop.jpg",
+    mobileBanner: "/images/banners/shackets_banner_mobile.jpg",
+    aspectRatioDesktop: "4/1",
+    aspectRatioMobile: "16/9",
+    isDirectBreadcrumb: true,
+    couponPosition: "left",
+    coupons: [
+      { code: "B2G10", label: "Buy 2 Get 10% OFF", discount: "10% OFF" },
+      { code: "B3G15", label: "Buy 3 Get 15% OFF", discount: "15% OFF" }
+    ]
   },
   'joggers': {
     title: "Joggers for Men",
+    breadcrumbTitle: "Joggers for Men",
     subtitle: "Your everyday essentials",
     seo: "Shop LEO Men's Cargo Joggers. Engineered with deep utility pockets, gusseted crotches, and tapered ankle cuffs.",
-    banner: "/images/joggers_promo_bg.jpg"
+    banner: "/images/banners/joggers_banner_desktop.jpg",
+    desktopBanner: "/images/banners/joggers_banner_desktop.jpg",
+    mobileBanner: "/images/banners/joggers_banner_mobile.jpg",
+    aspectRatioDesktop: "4/1",
+    aspectRatioMobile: "16/9",
+    isDirectBreadcrumb: true,
+    couponPosition: "coords",
+    coupons: [
+      { code: "B2G10", label: "Buy 2 Get 10% OFF", discount: "10% OFF" },
+      { code: "B3G15", label: "Buy 3 Get 15% OFF", discount: "15% OFF" }
+    ]
+  },
+  'fashion-joggers-men': {
+    title: "Joggers for Men",
+    breadcrumbTitle: "Joggers for Men",
+    subtitle: "Your everyday essentials",
+    seo: "Shop LEO Men's Cargo Joggers. Engineered with deep utility pockets, gusseted crotches, and tapered ankle cuffs.",
+    banner: "/images/banners/joggers_banner_desktop.jpg",
+    desktopBanner: "/images/banners/joggers_banner_desktop.jpg",
+    mobileBanner: "/images/banners/joggers_banner_mobile.jpg",
+    aspectRatioDesktop: "4/1",
+    aspectRatioMobile: "16/9",
+    isDirectBreadcrumb: true,
+    couponPosition: "coords",
+    coupons: [
+      { code: "B2G10", label: "Buy 2 Get 10% OFF", discount: "10% OFF" },
+      { code: "B3G15", label: "Buy 3 Get 15% OFF", discount: "15% OFF" }
+    ]
   },
   'cargo-pants': {
-    title: "Cargo Pants",
-    subtitle: "Functional utility pockets meets ergonomic stretch comfort.",
+    title: "Joggers for Men",
+    breadcrumbTitle: "Joggers for Men",
+    subtitle: "Your everyday essentials",
     seo: "Shop LEO Cargo Pants for men with deep utility pockets and 4-way flexibility.",
-    banner: "/images/joggers_promo_bg.jpg"
+    banner: "/images/banners/joggers_banner_desktop.jpg",
+    desktopBanner: "/images/banners/joggers_banner_desktop.jpg",
+    mobileBanner: "/images/banners/joggers_banner_mobile.jpg",
+    aspectRatioDesktop: "4/1",
+    aspectRatioMobile: "16/9",
+    isDirectBreadcrumb: true,
+    couponPosition: "coords",
+    coupons: [
+      { code: "B2G10", label: "Buy 2 Get 10% OFF", discount: "10% OFF" },
+      { code: "B3G15", label: "Buy 3 Get 15% OFF", discount: "15% OFF" }
+    ]
   },
   'shorts': {
     title: "Shorts for Men",
@@ -119,16 +291,38 @@ const CATEGORY_META = {
     banner: "/images/shorts_promo_bg.webp"
   },
   'co-ords': {
-    title: "Men's Matching Co-Ord Sets",
+    title: "Co-ord Set Men",
+    breadcrumbTitle: "Co-ord Set Men",
     subtitle: "Effortless top-and-bottom pairings in waffle knit, terry fleece, and textured cotton.",
     seo: "Eliminate styling guesswork with LEO's curated Men's Co-Ord Sets. Perfectly matched shades and complementary weights.",
-    banner: "/images/coords_promo_bg.jpg"
+    banner: "/images/banners/coords_banner_desktop.jpg",
+    desktopBanner: "/images/banners/coords_banner_desktop.jpg",
+    mobileBanner: "/images/banners/coords_banner_mobile.jpg",
+    aspectRatioDesktop: "4/1",
+    aspectRatioMobile: "16/9",
+    isDirectBreadcrumb: true,
+    couponPosition: "coords",
+    coupons: [
+      { code: "B2G10", label: "Buy 2 Get 10% OFF", discount: "10% OFF" },
+      { code: "B3G15", label: "Buy 3 Get 15% OFF", discount: "15% OFF" }
+    ]
   },
   'best-selling-co-ord-sets': {
-    title: "Men's Matching Co-Ord Sets",
+    title: "Co-ord Set Men",
+    breadcrumbTitle: "Co-ord Set Men",
     subtitle: "Effortless top-and-bottom pairings in waffle knit, terry fleece, and textured cotton.",
     seo: "Eliminate styling guesswork with LEO's curated Men's Co-Ord Sets.",
-    banner: "/images/coords_promo_bg.jpg"
+    banner: "/images/banners/coords_banner_desktop.jpg",
+    desktopBanner: "/images/banners/coords_banner_desktop.jpg",
+    mobileBanner: "/images/banners/coords_banner_mobile.jpg",
+    aspectRatioDesktop: "4/1",
+    aspectRatioMobile: "16/9",
+    isDirectBreadcrumb: true,
+    couponPosition: "coords",
+    coupons: [
+      { code: "B2G10", label: "Buy 2 Get 10% OFF", discount: "10% OFF" },
+      { code: "B3G15", label: "Buy 3 Get 15% OFF", discount: "15% OFF" }
+    ]
   },
   'curated-looks': {
     title: "Curated Looks & Paired Combos",
@@ -175,8 +369,24 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
   const [selectedColors, setSelectedColors] = useState([]);
   const [selectedSizes, setSelectedSizes] = useState([]);
   const [selectedAvailability, setSelectedAvailability] = useState(null);
-  const [sortBy, setSortBy] = useState(searchParams.get('sort') || 'bestselling');
+  const [sortBy, setSortBy] = useState(searchParams.get('sort') || 'featured');
   const [seoExpanded, setSeoExpanded] = useState(false);
+  const [toastMessage, setToastMessage] = useState(null);
+
+  const handleCopyCoupon = (code, desc) => {
+    try {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(code);
+      }
+      localStorage.setItem('leo_applied_coupon', code);
+    } catch (e) {
+      console.log('Clipboard error:', e);
+    }
+    setToastMessage({ code, desc });
+    setTimeout(() => {
+      setToastMessage(null);
+    }, 3500);
+  };
 
   useEffect(() => {
     setSelectedCategory(activeCategorySlug);
@@ -284,49 +494,159 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
 
   return (
     <div className="min-h-screen bg-white pb-16 lg:pb-0">
-      {/* 1. Optional Top Campaign Hero Banner (Contained with standard gutters matching Nobero) */}
+      {/* 1. Authentic Top Campaign Hero Banner with Exact Aspect Ratio (Edge-to-edge full width matching Nobero) */}
       {meta.banner && (
-        <StorefrontContainer className="pt-2 sm:pt-4">
-          <div className="w-full bg-[#f4f4f5] overflow-hidden max-h-[260px] sm:max-h-[320px] rounded-none">
+        <div className="w-full overflow-hidden bg-[#f4f4f5] relative group">
+          <picture className="w-full block">
+            {meta.desktopBanner && (
+              <source media="(min-width: 768px)" srcSet={meta.desktopBanner} />
+            )}
             <img 
-              src={meta.banner} 
+              src={meta.mobileBanner || meta.banner} 
               alt={meta.title} 
-              className="w-full h-auto object-cover object-center block" 
+              className="w-full h-auto object-cover object-center block aspect-[16/9] md:aspect-[4/1]"
+              loading="eager"
+              fetchPriority="high"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
               }}
             />
-          </div>
-        </StorefrontContainer>
+          </picture>
+
+          {/* Interactive hotspots for B2G10 and B3G15 */}
+          {(Boolean(meta.coupons && meta.coupons.length > 0)) && (
+            <>
+              {/* Desktop Hotspots */}
+              <div className="hidden md:block absolute inset-0 pointer-events-none">
+                {/* B2G10 Hotspot */}
+                <button
+                  onClick={() => handleCopyCoupon('B2G10', '10% OFF on 2 items')}
+                  className={`pointer-events-auto absolute ${
+                    meta.couponPosition === 'left'
+                      ? 'left-[12%] top-[51%] w-[11%] h-[43%]'
+                      : meta.couponPosition === 'bottom-right'
+                      ? 'left-[61.2%] top-[74%] w-[16.2%] h-[19%]'
+                      : meta.couponPosition === 'coords'
+                      ? 'left-[64.5%] top-[51%] w-[11%] h-[43%]'
+                      : 'left-[61.5%] top-[51%] w-[13.6%] h-[44%]'
+                  } rounded-xl cursor-pointer hover:ring-2 hover:ring-[#e2f952]/40 hover:bg-white/5 transition-all duration-150`}
+                  aria-label="Copy coupon code B2G10 for 10% OFF"
+                  title="Click to copy coupon code B2G10"
+                />
+
+                {/* B3G15 Hotspot */}
+                <button
+                  onClick={() => handleCopyCoupon('B3G15', '15% OFF on 3 items')}
+                  className={`pointer-events-auto absolute ${
+                    meta.couponPosition === 'left'
+                      ? 'left-[24.2%] top-[51%] w-[11%] h-[43%]'
+                      : meta.couponPosition === 'bottom-right'
+                      ? 'left-[78.4%] top-[74%] w-[16.2%] h-[19%]'
+                      : meta.couponPosition === 'coords'
+                      ? 'left-[77%] top-[51%] w-[11%] h-[43%]'
+                      : 'left-[75.8%] top-[51%] w-[13.6%] h-[44%]'
+                  } rounded-xl cursor-pointer hover:ring-2 hover:ring-[#e2f952]/40 hover:bg-white/5 transition-all duration-150`}
+                  aria-label="Copy coupon code B3G15 for 15% OFF"
+                  title="Click to copy coupon code B3G15"
+                />
+              </div>
+
+              {/* Mobile Touch Hotspots */}
+              <div className="md:hidden absolute inset-0 pointer-events-none">
+                <button
+                  onClick={() => handleCopyCoupon('B2G10', '10% OFF on 2 items')}
+                  className={`pointer-events-auto absolute ${
+                    meta.couponPosition === 'left'
+                      ? 'left-[10%] top-[60%] w-[17%] h-[25%]'
+                      : meta.couponPosition === 'bottom-right'
+                      ? 'left-[60%] top-[72%] w-[18%] h-[22%]'
+                      : 'left-[49%] top-[60%] w-[23%] h-[30%]'
+                  } rounded-lg cursor-pointer active:bg-white/10`}
+                  aria-label="Copy coupon code B2G10 for 10% OFF"
+                />
+                <button
+                  onClick={() => handleCopyCoupon('B3G15', '15% OFF on 3 items')}
+                  className={`pointer-events-auto absolute ${
+                    meta.couponPosition === 'left'
+                      ? 'left-[27%] top-[60%] w-[17%] h-[25%]'
+                      : meta.couponPosition === 'bottom-right'
+                      ? 'left-[78%] top-[72%] w-[18%] h-[22%]'
+                      : 'left-[74%] top-[60%] w-[23%] h-[30%]'
+                  } rounded-lg cursor-pointer active:bg-white/10`}
+                  aria-label="Copy coupon code B3G15 for 15% OFF"
+                />
+              </div>
+            </>
+          )}
+
+          {/* Interactive Shop Now hotspot for Shackets / Shirts */}
+          {meta.hasShopNow && (
+            <div className="hidden md:block absolute inset-0 pointer-events-none">
+              <button
+                onClick={() => {
+                  const target = document.getElementById('catalog-products-section');
+                  if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.scrollTo({ top: 460, behavior: 'smooth' });
+                  }
+                }}
+                className="pointer-events-auto absolute left-[62%] top-[60%] w-[16%] h-[20%] rounded-md cursor-pointer hover:bg-white/5 transition-all"
+                aria-label="Shop Shackets & Jackets Now"
+                title="Shop Now"
+              />
+            </div>
+          )}
+        </div>
       )}
 
-      {/* 2. Authentic Nobero Breadcrumbs */}
-      <StorefrontContainer className="pt-4 pb-2">
-        <nav className="text-[12px] sm:text-xs text-[#666875] font-normal flex items-center gap-1.5 flex-wrap" role="navigation" aria-label="breadcrumbs">
-          <Link to="/" className="text-[#1A1E31] hover:underline font-normal">Home</Link>
-          <span className="text-[#979797]">&gt;</span>
-          <Link to="/men" className="text-[#1A1E31] hover:underline font-normal">Men</Link>
-          <span className="text-[#979797]">&gt;</span>
-          <span className="text-[#666875] font-normal">
-            {isSearchPage ? `Search: "${searchQuery}"` : meta.title}
+      {/* Toast Feedback when coupon code is copied */}
+      {toastMessage && (
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-[#1A1E31] text-white px-4 py-2.5 rounded-full shadow-2xl flex items-center gap-2.5 border border-white/20 transition-all duration-200">
+          <div className="w-5 h-5 rounded-full bg-[#16a34a] text-white flex items-center justify-center shrink-0">
+            <Check className="w-3 h-3 stroke-[3]" />
+          </div>
+          <span className="text-xs sm:text-sm font-medium">
+            Code <span className="font-bold text-[#e2f952]">{toastMessage.code}</span> copied! ({toastMessage.desc})
           </span>
+        </div>
+      )}
+
+      {/* 2. Authentic Nobero Breadcrumbs matching Screenshot */}
+      <StorefrontContainer className="pt-3 pb-2">
+        <nav className="text-[12px] sm:text-[13px] text-[#666875] font-normal flex items-center gap-1.5 flex-wrap" role="navigation" aria-label="breadcrumbs">
+          <Link to="/" className="text-[#1A1E31] hover:underline font-normal">Home</Link>
+          <span className="text-[#666875] text-[11px]">›</span>
+          {meta.isDirectBreadcrumb ? (
+            <span className="text-[#666875] font-normal">
+              {isSearchPage ? `Search: "${searchQuery}"` : (meta.breadcrumbTitle || meta.title)}
+            </span>
+          ) : (
+            <>
+              <Link to="/men" className="text-[#1A1E31] hover:underline font-normal">Men</Link>
+              <span className="text-[#666875] text-[11px]">›</span>
+              <span className="text-[#666875] font-normal">
+                {isSearchPage ? `Search: "${searchQuery}"` : (meta.breadcrumbTitle || meta.title)}
+              </span>
+            </>
+          )}
         </nav>
       </StorefrontContainer>
 
       {/* 3. Main Catalog View */}
-      <div className="pb-10 pt-1 lg:pt-2">
+      <div id="catalog-products-section" className="pb-10 pt-1 lg:pt-2">
         <StorefrontContainer>
           
-          {/* Title & Controls Bar matching Nobero */}
+          {/* Title & Controls Bar matching Nobero Screenshot */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 gap-3 border-b border-gray-100 mb-5">
             
-            {/* Title & Count */}
-            <div className="flex items-baseline gap-2.5">
-              <h1 className="text-lg sm:text-xl lg:text-[24px] font-bold text-[#1A1E31] tracking-tight">
+            {/* Title & Count: "Polo T Shirts   191 items" */}
+            <div className="flex items-baseline gap-3">
+              <h1 className="text-lg sm:text-xl lg:text-[22px] font-bold text-[#1A1E31] tracking-tight">
                 {isSearchPage ? `Search Results for "${searchQuery}"` : meta.title}
               </h1>
-              <span className="text-xs text-[#666875] font-normal">
-                ({filteredProducts.length} Items)
+              <span className="text-xs sm:text-[13px] text-[#666875] font-normal">
+                {filteredProducts.length} items
               </span>
             </div>
 
@@ -339,18 +659,27 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
                 <SlidersHorizontal className="w-3.5 h-3.5" /> Filter {activeFilterCount > 0 && `(${activeFilterCount})`}
               </button>
 
-              {/* Sort Dropdown */}
-              <div className="flex items-center gap-1.5 bg-white border border-gray-200 rounded-none px-3 py-1.5 hover:border-gray-300 transition-colors">
-                <ArrowUpDown className="w-3 h-3 text-[#1A1E31]" />
-                <span className="text-xs font-normal text-[#666875] hidden sm:inline-block">Sort by:</span>
+              {/* Sort Pill matching Nobero screenshot: [ ☰ Sort : Featured ] */}
+              <div className="relative inline-flex items-center">
+                <div className="inline-flex items-center gap-2 bg-white border border-gray-300 hover:border-gray-400 text-[#1A1E31] text-xs sm:text-[13px] font-normal px-3 py-1.5 sm:px-3.5 sm:py-1.5 rounded-[5px] cursor-pointer transition-colors shadow-2xs">
+                  {/* Sort icon matching Nobero */}
+                  <svg className="w-3.5 h-3.5 text-[#1A1E31]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="4" y1="6" x2="20" y2="6" />
+                    <line x1="4" y1="12" x2="14" y2="12" />
+                    <line x1="4" y1="18" x2="8" y2="18" />
+                  </svg>
+                  <span>Sort : <span className="font-normal text-[#1A1E31]">{SORT_OPTIONS.find(o => o.id === sortBy)?.label || 'Featured'}</span></span>
+                </div>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="bg-transparent text-xs font-semibold text-[#1A1E31] focus:outline-none cursor-pointer pl-0.5 pr-4 appearance-none"
-                  style={{ backgroundImage: 'url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23212121%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right center', backgroundSize: '7px auto' }}
+                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                  aria-label="Sort products"
                 >
                   {SORT_OPTIONS.map((opt) => (
-                    <option key={opt.id} value={opt.id}>{opt.label}</option>
+                    <option key={opt.id} value={opt.id}>
+                      Sort : {opt.label}
+                    </option>
                   ))}
                 </select>
               </div>

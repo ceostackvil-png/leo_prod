@@ -71,42 +71,7 @@ const ShopTheLook = ({ looks = [] }) => {
                         className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500 rounded-sm"
                       />
 
-                      {/* Top Right: Expert Style Pick Badge (Exact Nobero Reference) */}
-                      <div className="absolute top-2.5 right-2.5 z-10 bg-[#4A4D57]/80 backdrop-blur-xs text-white text-[9px] sm:text-[10px] font-medium px-2 py-0.5 rounded-[3px] tracking-wide">
-                        {look.expertBadge || "Expert Style Pick"}
-                      </div>
 
-                      {/* Floating Merged Product Thumbnails Overlay (Top + Bottom Items with grey labels) */}
-                      <div className="absolute top-9 sm:top-10 right-2 sm:right-2.5 flex flex-col gap-2 z-10 pointer-events-none">
-                        {look.topProduct && (
-                          <div className="flex flex-col items-center">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-md p-1 shadow-xs border border-gray-100 flex items-center justify-center overflow-hidden">
-                              <img
-                                src={look.topProduct.image}
-                                alt={look.topProduct.name}
-                                className="w-full h-full object-contain"
-                              />
-                            </div>
-                            <span className="bg-[#4A4D57]/90 text-white text-[8px] font-medium px-1.5 py-0.5 rounded-[2px] mt-0.5 text-center truncate max-w-[56px] sm:max-w-[64px]">
-                              {look.topProduct.shortLabel || "Topwear"}
-                            </span>
-                          </div>
-                        )}
-                        {look.bottomProduct && (
-                          <div className="flex flex-col items-center">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-md p-1 shadow-xs border border-gray-100 flex items-center justify-center overflow-hidden">
-                              <img
-                                src={look.bottomProduct.image}
-                                alt={look.bottomProduct.name}
-                                className="w-full h-full object-contain"
-                              />
-                            </div>
-                            <span className="bg-[#4A4D57]/90 text-white text-[8px] font-medium px-1.5 py-0.5 rounded-[2px] mt-0.5 text-center truncate max-w-[56px] sm:max-w-[64px]">
-                              {look.bottomProduct.shortLabel || "Bottomwear"}
-                            </span>
-                          </div>
-                        )}
-                      </div>
 
                       {/* Bottom Left: Rating Pill (e.g. ★ 5.0 | 1) */}
                       {look.rating && (
@@ -151,6 +116,18 @@ const ShopTheLook = ({ looks = [] }) => {
                 </div>
               );
             })}
+          </div>
+
+          {/* Mobile Dot Indicator matching reference */}
+          <div className="flex sm:hidden items-center justify-center gap-1.5 mt-3.5">
+            {looks.slice(0, 4).map((_, i) => (
+              <span
+                key={i}
+                className={`h-1.5 rounded-full transition-all ${
+                  i === 0 ? 'w-4 bg-[#242F66]' : 'w-1.5 bg-gray-300'
+                }`}
+              />
+            ))}
           </div>
         </div>
       </StorefrontContainer>

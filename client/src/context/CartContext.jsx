@@ -235,9 +235,9 @@ export const CartProvider = ({ children }) => {
       if (res && res.success) {
         setAppliedCoupon({
           code: res.code,
-          type: res.data?.type || (upperCode === 'B2G10' || upperCode === 'FIRST15' || upperCode === 'BUY2SAVE' ? 'percent' : 'flat'),
-          value: res.data?.value || (upperCode === 'B2G10' ? 10 : (upperCode === 'FIRST15' ? 15 : (upperCode === 'BUY2SAVE' ? 20 : 100))),
-          discountAmount: res.discountAmount || (upperCode === 'B2G10' ? Math.round(subtotal * 0.10) : 100),
+          type: res.data?.type || (upperCode === 'B2G10' || upperCode === 'B3G15' || upperCode === 'FIRST15' || upperCode === 'BUY2SAVE' ? 'percent' : 'flat'),
+          value: res.data?.value || (upperCode === 'B2G10' ? 10 : (upperCode === 'B3G15' ? 15 : (upperCode === 'FIRST15' ? 15 : (upperCode === 'BUY2SAVE' ? 20 : 100)))),
+          discountAmount: res.discountAmount || (upperCode === 'B2G10' ? Math.round(subtotal * 0.10) : (upperCode === 'B3G15' ? Math.round(subtotal * 0.15) : 100)),
           ...res
         });
         setCouponSuccess(res.message || `Coupon ${upperCode} applied successfully!`);
@@ -252,6 +252,16 @@ export const CartProvider = ({ children }) => {
             description: 'Buy 2 & Get 10% Off'
           });
           setCouponSuccess(`Congrats! 'B2G10' applied! Saved ₹${disc}`);
+        } else if (upperCode === 'B3G15') {
+          const disc = Math.round(subtotal * 0.15);
+          setAppliedCoupon({
+            code: 'B3G15',
+            type: 'percent',
+            value: 15,
+            discountAmount: disc,
+            description: 'Buy 3 & Get 15% Off'
+          });
+          setCouponSuccess(`Congrats! 'B3G15' applied! Saved ₹${disc}`);
         } else if (upperCode === 'LEO100') {
           setAppliedCoupon({
             code: 'LEO100',
@@ -276,6 +286,16 @@ export const CartProvider = ({ children }) => {
           description: 'Buy 2 & Get 10% Off'
         });
         setCouponSuccess(`Congrats! 'B2G10' applied! Saved ₹${disc}`);
+      } else if (upperCode === 'B3G15') {
+        const disc = Math.round(subtotal * 0.15);
+        setAppliedCoupon({
+          code: 'B3G15',
+          type: 'percent',
+          value: 15,
+          discountAmount: disc,
+          description: 'Buy 3 & Get 15% Off'
+        });
+        setCouponSuccess(`Congrats! 'B3G15' applied! Saved ₹${disc}`);
       } else if (upperCode === 'LEO100') {
         setAppliedCoupon({
           code: 'LEO100',

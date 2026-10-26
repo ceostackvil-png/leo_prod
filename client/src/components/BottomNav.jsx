@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Home, Grid, Search, Heart, User } from 'lucide-react';
 import { useWishlist } from '../context/WishlistContext';
 import { useAuth } from '../context/AuthContext';
 
 const BottomNav = ({ onOpenSearch }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { wishlistCount } = useWishlist();
   const { user, setIsAuthModalOpen } = useAuth();
 
@@ -77,7 +78,7 @@ const BottomNav = ({ onOpenSearch }) => {
         <button
           onClick={() => {
             if (!user) setIsAuthModalOpen(true);
-            else window.location.href = '/account';
+            else navigate('/account');
           }}
           className={`flex flex-col items-center justify-center h-full transition-colors ${
             isActive('/account') ? 'text-[#242F66]' : 'text-gray-500 hover:text-gray-900'

@@ -2,6 +2,19 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+const MOBILE_TOP_CATEGORIES = [
+  { name: 'Travel', image: '/images/collections/col_travel.png', link: '/travel' },
+  { name: 'Polos', image: '/images/collections/col_polos.png', link: '/polos' },
+  { name: 'Shirts', image: '/images/collections/col_shirts.png', link: '/shirts' },
+  { name: 'Co-ords', image: '/images/collections/col_coords.png', link: '/co-ords' },
+  { name: 'HD Tees', image: '/images/collections/col_hd_tees.png', link: '/shop?category=premium-hd-tees' },
+  { name: 'T-Shirts', image: '/images/collections/col_t_shirts.png', link: '/t-shirts' },
+  { name: 'Joggers', image: '/images/collections/col_joggers.png', link: '/joggers' },
+  { name: 'Cargo Pants', image: '/images/collections/col_cargo_pants.png', link: '/joggers?sub=cargo' },
+  { name: 'Shorts', image: '/images/collections/col_shorts.png', link: '/shorts' },
+  { name: 'Oversized Tees', image: '/images/collections/col_oversized_tees.png', link: '/oversized-tees' }
+];
+
 const HeroSlider = ({ banners = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -53,16 +66,40 @@ const HeroSlider = ({ banners = [] }) => {
   };
 
   return (
-    <section className="bg-white pt-7 sm:pt-9 lg:pt-11 pb-4 sm:pb-6">
-      <div className="w-[94%] sm:w-[92%] lg:w-[90%] xl:w-[89%] 2xl:w-[88.5%] mx-auto max-w-[1780px]">
+    <section className="bg-white pt-0 sm:pt-9 lg:pt-11 pb-4 sm:pb-6">
+      {/* Mobile Quick Category Navigation Strip (Only on mobile, exactly matching Nobero reference) */}
+      <div className="lg:hidden w-full overflow-x-auto no-scrollbar bg-white border-b border-gray-100 py-2.5 px-3 mb-2">
+        <div className="flex items-center gap-3.5 min-w-max">
+          {MOBILE_TOP_CATEGORIES.map((cat, i) => (
+            <Link
+              key={i}
+              to={cat.link}
+              className="flex flex-col items-center shrink-0 w-[58px] text-center group cursor-pointer"
+            >
+              <div className="w-12 h-12 flex items-center justify-center">
+                <img
+                  src={cat.image}
+                  alt={cat.name}
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform"
+                />
+              </div>
+              <span className="text-[11px] font-medium text-[#1A1E31] mt-1 leading-tight truncate w-full">
+                {cat.name}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      <div className="w-full sm:w-[92%] lg:w-[90%] xl:w-[89%] 2xl:w-[88.5%] mx-auto max-w-[1780px]">
         <div
           className="relative w-full overflow-hidden group select-none bg-gray-50 rounded-none shadow-none"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          {/* Banner Slider Container with exact Nobero aspect ratio (2.68:1 desktop, 1.25:1 mobile) */}
-          <div className="relative w-full aspect-[1800/1438] sm:aspect-[2.2/1] lg:aspect-[2.68/1] overflow-hidden">
+          {/* Banner Slider Container: Exact 1800/1437 on mobile, 2.68:1 on desktop */}
+          <div className="relative w-full aspect-[1800/1437] sm:aspect-[2.2/1] lg:aspect-[2.68/1] overflow-hidden">
             {banners.map((banner, idx) => {
               const isActive = idx === currentIndex;
               return (
@@ -85,7 +122,9 @@ const HeroSlider = ({ banners = [] }) => {
                       loading={idx === 0 ? 'eager' : 'lazy'}
                       onError={(e) => {
                         const currentSrc = e.currentTarget.src || "";
-                        if (currentSrc.includes("hero_banner_shacket")) {
+                        if (currentSrc.includes("hero_banner_hoodies") || currentSrc.includes("HB_Hoodies")) {
+                          e.currentTarget.src = "https://nobero.com/cdn/shop/files/HB_Hoodies_Jackets_des.jpg";
+                        } else if (currentSrc.includes("hero_banner_shacket")) {
                           e.currentTarget.src = "https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg";
                         } else if (currentSrc.includes("hero_banner_coords")) {
                           e.currentTarget.src = "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg";

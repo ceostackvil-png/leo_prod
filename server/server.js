@@ -3,6 +3,7 @@ import cors from 'cors';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -89,7 +90,7 @@ const initialData = {
           title: "OVERSIZED FITS",
           items: [
             { name: "Solid Heavyweight (240 GSM)", slug: "oversized-tees", image: "/images/MEN/port_1.avif" },
-            { name: "Acid Wash & Mineral Vintage", slug: "oversized-tees", image: "/images/MEN/Website_Shop_men_220_x_304_11.avif" },
+            { name: "Acid Wash & Mineral Vintage", slug: "oversized-tees", image: "/images/MEN/Website_Shop_men_220_x_304_11.jpg" },
             { name: "Back Print Graphic Tees", slug: "oversized-tees", image: "/images/leo_product_oversized_tee_back_1791469191387.jpg" },
             { name: "Classic Crew Neck", slug: "t-shirts", image: "/images/leo_product_oversized_tee_1791469164099.jpg" },
             { name: "Full Sleeve Tees", slug: "t-shirts", image: "/images/MEN/Full_sleeve_polo.avif" },
@@ -111,12 +112,8 @@ const initialData = {
         {
           title: "CO-ORD STYLES",
           items: [
-            { name: "Shorts Co-Ord Sets", slug: "co-ords", image: "/images/MEN/9.avif" },
-            { name: "Pants Co-Ord Sets", slug: "co-ords", image: "/images/product-coord-pants.jpg" },
-            { name: "Waffle Knit Sets", slug: "co-ords", image: "/images/leo_product_waffle_coord_1791469273954.jpg" },
-            { name: "Curated Looks", slug: "curated-looks", image: "/images/col_curated_look.jpg" },
-            { name: "Terry Resort Sets", slug: "co-ords", image: "https://nobero.com/cdn/shop/files/HB_Co-Ords_des.jpg" },
-            { name: "Travel Airport Sets", slug: "co-ords", image: "/images/mood-relax.jpg" }
+            { name: "Co-ords", slug: "co-ords", image: "/images/coords_sub_coords.jpg" },
+            { name: "Curated Looks", slug: "curated-looks", image: "/images/coords_sub_curated_looks.jpg" }
           ]
         }
       ]
@@ -129,7 +126,7 @@ const initialData = {
         {
           title: "TRAVEL ESSENTIALS",
           items: [
-            { name: "Travel Hoodie", slug: "travel", image: "/images/MEN/Website_Shop_men_220_x_304_9.avif" },
+            { name: "Travel Hoodie", slug: "travel", image: "/images/MEN/Website_Shop_men_220_x_304_9.jpg" },
             { name: "Travel Jogger", slug: "travel", image: "/images/MEN/6_29719fa5-f748-482e-8039-fda30c64d1db.webp" },
             { name: "Travel Polo", slug: "travel", image: "/images/MEN/7p_69c2c6cf-78a7-441f-b34a-ab147745806d.avif" },
             { name: "Travel Chinos", slug: "travel", image: "/images/MEN/Cargo_Pants_Icon_Home_Page_copy.avif" },
@@ -187,15 +184,27 @@ const initialData = {
     },
     {
       id: "banner-4",
-      title: "SHACKETS & HOODIES",
-      subtitle: "PREMIUM LAYERED APPAREL",
-      ctaText: "SHOP WINTERWEAR",
+      title: "HOODIES & JACKETS",
+      subtitle: "Layers made for everyday.",
+      ctaText: "SHOP NOW",
       ctaLink: "/hoodies",
       badge: "SEASONAL",
+      desktopImage: "https://nobero.com/cdn/shop/files/HB_Hoodies_Jackets_des.jpg",
+      mobileImage: "https://nobero.com/cdn/shop/files/HB_Hoodies_Jackets_mob.jpg",
+      active: true,
+      order: 4
+    },
+    {
+      id: "banner-5",
+      title: "SHACKETS & JACKETS",
+      subtitle: "Made for colder days.",
+      ctaText: "SHOP NOW",
+      ctaLink: "/hoodies",
+      badge: "NEW LAUNCH",
       desktopImage: "https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg",
       mobileImage: "https://nobero.com/cdn/shop/files/HB_Shacket_mob_jpg.jpg",
       active: true,
-      order: 4
+      order: 5
     }
   ],
 
@@ -286,20 +295,20 @@ const initialData = {
       lowestPrice: 2648,
       rating: 5.0,
       reviewCount: 1,
-      image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/1_243d8cf8-17ad-400a-b8aa-6337e6d862d1.jpg?v=1765453680",
+      image: "/images/products/1_243d8cf8-17ad-400a-b8aa-6337e6d862d1.jpg",
       gallery: [
-        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/1_243d8cf8-17ad-400a-b8aa-6337e6d862d1.jpg?v=1765453680",
-        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/2_af638b1d-e328-489d-b8b8-f004eded4ad2.jpg?v=1765453680",
-        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/3_e9f3cb11-8475-40ce-8e25-d72e80f95303.jpg?v=1765453680",
-        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/4_c475c229-144d-400d-b6f9-297229bc3489.jpg?v=1765453679",
-        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/5_88155fd8-db2a-487a-8ac8-bb212ec69bff.jpg?v=1765453681"
+        "/images/products/1_243d8cf8-17ad-400a-b8aa-6337e6d862d1.jpg",
+        "/images/products/2_af638b1d-e328-489d-b8b8-f004eded4ad2.jpg",
+        "/images/products/3_e9f3cb11-8475-40ce-8e25-d72e80f95303.jpg",
+        "/images/products/4_c475c229-144d-400d-b6f9-297229bc3489.jpg",
+        "/images/products/5_88155fd8-db2a-487a-8ac8-bb212ec69bff.jpg"
       ],
       itemsIncluded: ["Believe In Yourself Classic Hoodie", "Classic Straight Fit Joggers"],
       topProduct: {
         name: "Believe In Yourself Classic Hoodie",
         shortLabel: "Classic Hoodie",
         color: "Black",
-        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/believe_in_yourself_83856a14-fcf8-49fe-b285-348391d538f6.jpg?v=1771836265",
+        image: "/images/products/believe_in_yourself_83856a14-fcf8-49fe-b285-348391d538f6.jpg",
         price: 1499,
         sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
         productSlug: "believe-in-yourself-classic-hoodie"
@@ -308,7 +317,7 @@ const initialData = {
         name: "Classic Straight Fit Joggers",
         shortLabel: "Straight Fit Joggers",
         color: "Natural",
-        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/SFCoreWeb-0006.webp?v=1772521556",
+        image: "/images/products/SFCoreWeb-0006.webp",
         price: 1199,
         sizes: ["S", "M", "L", "XL", "XXL"],
         productSlug: "classic-straight-fit-joggers"
@@ -331,16 +340,16 @@ const initialData = {
       lowestPrice: 1948,
       rating: 4.9,
       reviewCount: 48,
-      image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/1_ad043cc4-8c1d-4d80-8e47-741104dd47ae.jpg?v=1762842103",
+      image: "/images/products/1_ad043cc4-8c1d-4d80-8e47-741104dd47ae.jpg",
       gallery: [
-        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/1_ad043cc4-8c1d-4d80-8e47-741104dd47ae.jpg?v=1762842103"
+        "/images/products/1_ad043cc4-8c1d-4d80-8e47-741104dd47ae.jpg"
       ],
       itemsIncluded: ["Heavyweight French Terry Sweatshirt", "Classic Straight Fit Joggers"],
       topProduct: {
         name: "Pine Green Heavyweight Sweatshirt",
         shortLabel: "Knit Sweatshirt",
         color: "Forest Green",
-        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/AW_26_Homepage_Banners_Desktop_jpg.jpg",
+        image: "/images/products/AW_26_Homepage_Banners_Desktop_jpg.jpg",
         price: 1099,
         sizes: ["S", "M", "L", "XL", "XXL"],
         productSlug: "pine-green-sweatshirt"
@@ -349,7 +358,7 @@ const initialData = {
         name: "Classic Straight Fit Joggers",
         shortLabel: "Straight Joggers",
         color: "Off-White",
-        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/SFCoreWeb-0006.webp?v=1772521556",
+        image: "/images/products/SFCoreWeb-0006.webp",
         price: 899,
         sizes: ["S", "M", "L", "XL", "XXL"],
         productSlug: "classic-straight-fit-joggers"
@@ -372,16 +381,16 @@ const initialData = {
       lowestPrice: 2148,
       rating: 4.8,
       reviewCount: 32,
-      image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/1_538cc2a5-f4e5-45b8-8b8f-ce1666528f0b.jpg?v=1762842286",
+      image: "/images/products/1_538cc2a5-f4e5-45b8-8b8f-ce1666528f0b.jpg",
       gallery: [
-        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/1_538cc2a5-f4e5-45b8-8b8f-ce1666528f0b.jpg?v=1762842286"
+        "/images/products/1_538cc2a5-f4e5-45b8-8b8f-ce1666528f0b.jpg"
       ],
       itemsIncluded: ["Cocoa Heavyweight Crewneck Sweatshirt", "Air-Flex Utility Cargo Joggers"],
       topProduct: {
         name: "Cocoa Heavyweight Crewneck Sweatshirt",
         shortLabel: "Cozy Sweatshirt",
         color: "Cocoa Brown",
-        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/Ov._Tee_13b98095-2712-4d73-ad6b-ed64bf134ab9.jpg",
+        image: "/images/products/Ov._Tee_13b98095-2712-4d73-ad6b-ed64bf134ab9.jpg",
         price: 1199,
         sizes: ["S", "M", "L", "XL", "XXL"],
         productSlug: "cocoa-sweatshirt"
@@ -390,7 +399,7 @@ const initialData = {
         name: "Air-Flex Utility Cargo Joggers",
         shortLabel: "Cargo Joggers",
         color: "Military Olive",
-        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/Cargo_Pants_f4f28077-9d53-45e8-92d8-ceebffdbb6f6.jpg",
+        image: "/images/products/Cargo_Pants_f4f28077-9d53-45e8-92d8-ceebffdbb6f6.jpg",
         price: 999,
         sizes: ["S", "M", "L", "XL", "XXL"],
         productSlug: "air-flex-cargo-jogger"
@@ -413,16 +422,16 @@ const initialData = {
       lowestPrice: 2098,
       rating: 4.9,
       reviewCount: 64,
-      image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/5_2319973c-2872-4fca-b24c-7ef0d2cbc7e0.jpg?v=1773214964",
+      image: "/images/products/5_2319973c-2872-4fca-b24c-7ef0d2cbc7e0.jpg",
       gallery: [
-        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/5_2319973c-2872-4fca-b24c-7ef0d2cbc7e0.jpg?v=1773214964"
+        "/images/products/5_2319973c-2872-4fca-b24c-7ef0d2cbc7e0.jpg"
       ],
       itemsIncluded: ["Air-Flex Transit Crewneck", "All-Day Stretch Chino Pants"],
       topProduct: {
         name: "Air-Flex Transit Crewneck",
         shortLabel: "Air-Flex Crewneck",
         color: "Teal Blue",
-        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/1_38.jpg",
+        image: "/images/products/1_38.jpg",
         price: 1149,
         sizes: ["S", "M", "L", "XL", "XXL"],
         productSlug: "transit-crewneck"
@@ -431,7 +440,7 @@ const initialData = {
         name: "All-Day Stretch Chino Pants",
         shortLabel: "Stretch Chinos",
         color: "Beige Khaki",
-        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/HB_Chinos_des.jpg",
+        image: "/images/products/HB_Chinos_des.jpg",
         price: 999,
         sizes: ["S", "M", "L", "XL", "XXL"],
         productSlug: "stretch-chino-pants"
@@ -454,16 +463,16 @@ const initialData = {
       lowestPrice: 2048,
       rating: 4.8,
       reviewCount: 29,
-      image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/1_088fd92e-7996-4da8-a32d-c3139e32f16c.jpg?v=1768218094",
+      image: "/images/products/1_088fd92e-7996-4da8-a32d-c3139e32f16c.jpg",
       gallery: [
-        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/1_088fd92e-7996-4da8-a32d-c3139e32f16c.jpg?v=1768218094"
+        "/images/products/1_088fd92e-7996-4da8-a32d-c3139e32f16c.jpg"
       ],
       itemsIncluded: ["Midnight Graphic Heavyweight Hoodie", "Classic Straight Fit Joggers"],
       topProduct: {
         name: "Midnight Graphic Heavyweight Hoodie",
         shortLabel: "Graphic Hoodie",
         color: "Navy Blue",
-        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/HB_Shacket_des_jpg.jpg",
+        image: "/images/products/HB_Shacket_des_jpg.jpg",
         price: 1199,
         sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
         productSlug: "midnight-graphic-hoodie"
@@ -472,7 +481,7 @@ const initialData = {
         name: "Classic Straight Fit Joggers",
         shortLabel: "Straight Joggers",
         color: "Natural",
-        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/SFCoreWeb-0006.webp?v=1772521556",
+        image: "/images/products/SFCoreWeb-0006.webp",
         price: 899,
         sizes: ["S", "M", "L", "XL", "XXL"],
         productSlug: "classic-straight-fit-joggers"
@@ -495,16 +504,16 @@ const initialData = {
       lowestPrice: 2348,
       rating: 4.8,
       reviewCount: 346,
-      image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/Instagrampost-7_1.jpg?v=1783345563",
+      image: "/images/products/Instagrampost-7_1.jpg",
       gallery: [
-        "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/Instagrampost-7_1.jpg?v=1783345563"
+        "/images/products/Instagrampost-7_1.jpg"
       ],
       itemsIncluded: ["Wanderer Structured Drop-Shoulder Tee", "Everyday Transit Stretch Trousers"],
       topProduct: {
         name: "Wanderer Structured Drop-Shoulder Tee",
         shortLabel: "Drop-Shoulder Tee",
         color: "Wine Red",
-        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/Instagrampost-7_1.jpg?v=1783345563",
+        image: "/images/products/Instagrampost-7_1.jpg",
         price: 1199,
         sizes: ["S", "M", "L", "XL", "XXL"],
         productSlug: "wanderer-structured-tee"
@@ -513,7 +522,7 @@ const initialData = {
         name: "Everyday Transit Stretch Trousers",
         shortLabel: "Transit Trousers",
         color: "Navy Blue",
-        image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/Cargo_Pants_f4f28077-9d53-45e8-92d8-ceebffdbb6f6.jpg",
+        image: "/images/products/Cargo_Pants_f4f28077-9d53-45e8-92d8-ceebffdbb6f6.jpg",
         price: 1199,
         sizes: ["S", "M", "L", "XL", "XXL"],
         productSlug: "everyday-transit-trousers"
@@ -1080,7 +1089,7 @@ const initialData = {
       author: "LEO Textile Lab",
       readTime: "4 min read",
       date: "September 28, 2026",
-      coverImage: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/POLOPDP-5_5c355606-1884-4943-b73a-f1503bc04014.jpg?v=1776764425",
+      coverImage: "/images/products/POLOPDP-5_5c355606-1884-4943-b73a-f1503bc04014.jpg",
       excerpt: "Understand micro-honeycomb pique knit, anti-curl collars, and how to style polos for smart casual occasions.",
       content: `The polo t-shirt remains the gold standard for smart casual comfort.`
     }
@@ -1207,12 +1216,23 @@ app.use(cors());
 app.use((req, res, next) => {
   const url = req.url;
   if (/\.(jpg|jpeg|png|webp|avif|gif)(\?.*)?$/i.test(url)) {
-    // 1. Check if it is a product image with hash
-    const prodMatch = url.match(/(?:men\(1\)\/[^/]+\/|images\/(?:leo|nobero)\/)?.*?_\d+_(.+\.(?:jpg|jpeg|png|webp|avif))/i);
+    const cleanPath = decodeURIComponent(url.split("?")[0].replace(/^\//, ""));
+    const localPublic = path.resolve(__dirname, 'public', cleanPath);
+    const clientPublic = path.resolve(__dirname, '../client/public', cleanPath);
+    if ((fs.existsSync(localPublic) && !fs.statSync(localPublic).isDirectory()) ||
+        (fs.existsSync(clientPublic) && !fs.statSync(clientPublic).isDirectory())) {
+      return next();
+    }
+
+    // 1. Check if it is a product image with hash (must have at least 8 digits timestamp)
+    const prodMatch = url.match(/(?:men\(1\)\/[^/]+\/|images\/(?:leo|nobero)\/)?.*?_\d{8,14}_(.+\.(?:jpg|jpeg|png|webp|avif))/i);
     if (prodMatch && prodMatch[1]) {
       return res.redirect(302, `https://cdn.shopify.com/s/files/1/0337/9413/0052/files/${prodMatch[1]}`);
     }
     // 2. Check hero banners
+    if (url.includes("hero_banner_hoodies")) {
+      return res.redirect(302, url.includes("_mob") ? "https://nobero.com/cdn/shop/files/HB_Hoodies_Jackets_mob.jpg" : "https://nobero.com/cdn/shop/files/HB_Hoodies_Jackets_des.jpg");
+    }
     if (url.includes("hero_banner_shacket")) {
       return res.redirect(302, url.includes("_mob") ? "https://nobero.com/cdn/shop/files/HB_Shacket_mob_jpg.jpg" : "https://nobero.com/cdn/shop/files/HB_Shacket_des_jpg.jpg");
     }
@@ -1239,6 +1259,27 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/images/leo', express.static(path.join(__dirname, '../client/public/images/nobero')));
 app.use('/images/nobero', express.static(path.join(__dirname, '../client/public/images/nobero')));
+app.use('/images/products', express.static(path.join(__dirname, '../client/public/images/products')));
+
+// On-demand product image patcher route
+app.get('/images/products/:filename', (req, res) => {
+  const filename = req.params.filename.split('?')[0];
+  const localPub = path.join(__dirname, '../client/public/images/products', filename);
+  if (fs.existsSync(localPub)) {
+    return res.sendFile(localPub);
+  }
+  const scriptPath = path.join(__dirname, '../scripts/patch_one.py');
+  const shopifyUrl = `https://cdn.shopify.com/s/files/1/0337/9413/0052/files/${filename}`;
+  try {
+    execSync(`python "${scriptPath}" "${shopifyUrl}"`, { stdio: 'inherit' });
+    if (fs.existsSync(localPub)) {
+      return res.sendFile(localPub);
+    }
+  } catch (e) {
+    console.error('Error on-demand patching in server.js:', e);
+  }
+  return res.redirect(302, shopifyUrl);
+});
 
 // Routes
 app.get('/api/categories', (req, res) => {
@@ -1283,8 +1324,11 @@ app.get('/api/products', (req, res) => {
       'textured-shackets': ['hoodies', 'jackets'],
       'shackets': ['hoodies', 'jackets'],
       'jackets-shackets': ['hoodies', 'jackets'],
+      'hoodies-jackets': ['hoodies', 'jackets'],
+      'jackets-and-hoodies': ['hoodies', 'jackets'],
       'travel-essentials': ['travel', 'joggers', 'pants'],
       'classic-polo': ['polos'],
+      'polo-t-shirts': ['polos'],
       'shirts-for-men': ['shirts'],
       'best-selling-co-ord-sets': ['co-ords'],
       'premium-hd-tees': ['t-shirts', 'oversized-tees'],

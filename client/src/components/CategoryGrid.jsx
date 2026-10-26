@@ -42,7 +42,7 @@ const CATEGORIES_DATA = [
   {
     name: "Classic Men Polos",
     subtitle: "Pique Knit Breathable Fits",
-    image: "https://cdn.shopify.com/s/files/1/0337/9413/0052/files/POLOPDP-5_5c355606-1884-4943-b73a-f1503bc04014.jpg?v=1776764425",
+    image: "/images/products/POLOPDP-5_5c355606-1884-4943-b73a-f1503bc04014.jpg",
     link: "/polos",
     badge: "New Drops"
   }

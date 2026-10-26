@@ -175,34 +175,7 @@ const LookDetailPage = () => {
                   <span className="italic font-serif">Expert</span> Style Pick
                 </div>
 
-                {/* Floating Merged Product Thumbnails (Top + Bottom Items overlay) */}
-                <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 flex flex-col gap-2.5 z-10">
-                  {look.topProduct && (
-                    <div className="bg-white/95 backdrop-blur-xs p-1.5 rounded-none shadow-md border border-gray-200 flex flex-col items-center w-20 sm:w-24 transition-transform hover:scale-105">
-                      <img
-                        src={look.topProduct.image}
-                        alt={look.topProduct.name}
-                        className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
-                      />
-                      <span className="text-[10px] font-bold text-[#1A1E31] text-center truncate max-w-full leading-tight mt-1">
-                        {look.topProduct.shortLabel || "Top Item"}
-                      </span>
-                    </div>
-                  )}
 
-                  {look.bottomProduct && (
-                    <div className="bg-white/95 backdrop-blur-xs p-1.5 rounded-none shadow-md border border-gray-200 flex flex-col items-center w-20 sm:w-24 transition-transform hover:scale-105">
-                      <img
-                        src={look.bottomProduct.image}
-                        alt={look.bottomProduct.name}
-                        className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
-                      />
-                      <span className="text-[10px] font-bold text-[#1A1E31] text-center truncate max-w-full leading-tight mt-1">
-                        {look.bottomProduct.shortLabel || "Bottom Item"}
-                      </span>
-                    </div>
-                  )}
-                </div>
 
                 {/* Gallery Navigation Arrows (if multiple photos) */}
                 {galleryImages.length > 1 && (
@@ -562,39 +535,6 @@ const LookDetailPage = () => {
                           className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500"
                         />
                       </Link>
-
-                      {/* Top-Right Expert Style Pick Badge */}
-                      <span className="absolute top-2.5 right-2.5 z-10 bg-[#1A1E31]/80 backdrop-blur-xs text-white text-[9px] font-semibold px-2 py-0.5">
-                        Expert Style Pick
-                      </span>
-
-                      {/* Floating Merged Thumbnails */}
-                      <div className="absolute bottom-2.5 right-2.5 flex flex-col gap-1.5 z-10 pointer-events-none">
-                        {paired.topProduct && (
-                          <div className="bg-white/95 backdrop-blur-[2px] p-1 rounded-sm shadow-md border border-white/80 flex flex-col items-center w-12 sm:w-14">
-                            <img
-                              src={paired.topProduct.image}
-                              alt={paired.topProduct.name}
-                              className="w-9 h-9 sm:w-10 sm:h-10 object-contain"
-                            />
-                            <span className="text-[8px] font-bold text-[#1A1E31] text-center truncate max-w-full leading-tight mt-0.5">
-                              {paired.topProduct.shortLabel || "Top"}
-                            </span>
-                          </div>
-                        )}
-                        {paired.bottomProduct && (
-                          <div className="bg-white/95 backdrop-blur-[2px] p-1 rounded-sm shadow-md border border-white/80 flex flex-col items-center w-12 sm:w-14">
-                            <img
-                              src={paired.bottomProduct.image}
-                              alt={paired.bottomProduct.name}
-                              className="w-9 h-9 sm:w-10 sm:h-10 object-contain"
-                            />
-                            <span className="text-[8px] font-bold text-[#1A1E31] text-center truncate max-w-full leading-tight mt-0.5">
-                              {paired.bottomProduct.shortLabel || "Bottom"}
-                            </span>
-                          </div>
-                        )}
-                      </div>
                     </div>
 
                     {/* Card Content */}

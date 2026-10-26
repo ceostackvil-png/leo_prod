@@ -16,7 +16,7 @@ const Footer = () => {
             {/* Col 1: Brand & App */}
             <div className="col-span-2 lg:col-span-2 space-y-4">
               <Link to="/" className="inline-block hover:opacity-90 transition-opacity">
-                <BrandLogo variant="dark" subtitle="KING" size="md" />
+                <BrandLogo variant="dark" subtitle="THE KING" size="md" />
               </Link>
               <p className="text-xs text-gray-300 max-w-sm leading-relaxed">
                 LEO is India's premium Men's everyday fashion brand built for effortless style and all-day comfort. Specializing in 240 GSM heavyweight tees, air-flex travel joggers, and premium co-ord sets.

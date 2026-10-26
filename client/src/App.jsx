@@ -60,12 +60,33 @@ function App() {
                   <Route path="/t-shirts" element={<CategoryPage forcedCategory="t-shirts" />} />
                   <Route path="/oversized-tees" element={<CategoryPage forcedCategory="oversized-tees" />} />
                   <Route path="/polos" element={<CategoryPage forcedCategory="polos" />} />
+                  <Route path="/polo-t-shirts" element={<CategoryPage forcedCategory="polos" />} />
+                  <Route path="/classic-polo" element={<CategoryPage forcedCategory="polos" />} />
+                  <Route path="/collections/classic-polo" element={<CategoryPage forcedCategory="polos" />} />
+                  <Route path="/collections/polo-t-shirts" element={<CategoryPage forcedCategory="polos" />} />
                   <Route path="/shirts" element={<CategoryPage forcedCategory="shirts" />} />
+                  <Route path="/shirts-for-men" element={<CategoryPage forcedCategory="shirts" />} />
+                  <Route path="/collections/shirts-for-men" element={<CategoryPage forcedCategory="shirts" />} />
+                  <Route path="/textured-shackets" element={<CategoryPage forcedCategory="shirts" />} />
+                  <Route path="/shackets" element={<CategoryPage forcedCategory="shirts" />} />
+                  <Route path="/collections/textured-shackets" element={<CategoryPage forcedCategory="shirts" />} />
                   <Route path="/hoodies" element={<CategoryPage forcedCategory="hoodies" />} />
+                  <Route path="/hoodies-jackets" element={<CategoryPage forcedCategory="hoodies" />} />
+                  <Route path="/jackets-and-hoodies" element={<CategoryPage forcedCategory="hoodies" />} />
+                  <Route path="/collections/hoodies-jackets" element={<CategoryPage forcedCategory="hoodies" />} />
+                  <Route path="/collections/jackets-and-hoodies" element={<CategoryPage forcedCategory="hoodies" />} />
                   <Route path="/joggers" element={<CategoryPage forcedCategory="joggers" />} />
+                  <Route path="/cargo-pants" element={<CategoryPage forcedCategory="joggers" />} />
+                  <Route path="/fashion-joggers-men" element={<CategoryPage forcedCategory="joggers" />} />
+                  <Route path="/collections/fashion-joggers-men" element={<CategoryPage forcedCategory="joggers" />} />
+                  <Route path="/collections/cargo-pants" element={<CategoryPage forcedCategory="joggers" />} />
                   <Route path="/shorts" element={<CategoryPage forcedCategory="shorts" />} />
                   <Route path="/jackets" element={<CategoryPage forcedCategory="jackets" />} />
                   <Route path="/co-ords" element={<CategoryPage forcedCategory="co-ords" />} />
+                  <Route path="/coords" element={<CategoryPage forcedCategory="co-ords" />} />
+                  <Route path="/best-selling-co-ord-sets" element={<CategoryPage forcedCategory="co-ords" />} />
+                  <Route path="/collections/best-selling-co-ord-sets" element={<CategoryPage forcedCategory="co-ords" />} />
+                  <Route path="/collections/co-ords" element={<CategoryPage forcedCategory="co-ords" />} />
                   <Route path="/curated-looks" element={<CategoryPage forcedCategory="curated-looks" />} />
                   <Route path="/travel" element={<CategoryPage forcedCategory="travel" />} />
                   <Route path="/sale" element={<CategoryPage forcedCategory="sale" />} />

@@ -68,12 +68,12 @@ const Navbar = () => {
     if (!path) return null;
     if (path === 'men') return 'men';
     if (path === 'travel') return 'travel';
-    if (path === 'polos') return 'polos';
-    if (path === 'hoodies') return 'hoodies';
-    if (path === 'shirts') return 'shirts';
+    if (path === 'polos' || path === 'classic-polo' || path === 'polo-t-shirts' || path === 'collections/classic-polo' || path === 'collections/polo-t-shirts') return 'polos';
+    if (path === 'hoodies' || path === 'hoodies-jackets' || path === 'jackets-and-hoodies' || path === 'collections/hoodies-jackets' || path === 'collections/jackets-and-hoodies') return 'hoodies';
+    if (path === 'shirts' || path === 'shirts-for-men' || path === 'textured-shackets' || path === 'shackets' || path === 'collections/shirts-for-men' || path === 'collections/textured-shackets') return 'shirts';
     if (path === 'tees' || path === 't-shirts' || path === 'oversized-tees') return 'oversized-tees';
-    if (path === 'co-ords' || path === 'coords') return 'co-ords';
-    if (path === 'joggers') return 'joggers';
+    if (path === 'co-ords' || path === 'coords' || path === 'best-selling-co-ord-sets' || path === 'collections/best-selling-co-ord-sets' || path === 'collections/co-ords') return 'co-ords';
+    if (path === 'joggers' || path === 'fashion-joggers-men' || path === 'collections/fashion-joggers-men' || path === 'cargo-pants' || path === 'collections/cargo-pants') return 'joggers';
     if (path === 'shorts') return 'shorts';
     if (path === 'jackets') return 'jackets';
     return null;
@@ -154,33 +154,37 @@ const Navbar = () => {
           <div className="w-[94%] sm:w-[92%] lg:w-[90%] xl:w-[89%] 2xl:w-[88.5%] mx-auto max-w-[1780px]">
             <div className="flex items-center justify-between h-[60px] lg:h-[70px]">
               
-              {/* Left Section: Mobile Menu + Brand Logo on the far left */}
-              <div className="flex items-center">
-                {/* Mobile Hamburger & Search */}
-                <div className="flex items-center gap-1.5 lg:hidden mr-2">
-                  <button
-                    onClick={() => setIsMobileMenuOpen(true)}
-                    className="p-1.5 text-[#121212] focus:outline-none"
-                    aria-label="Open menu"
-                  >
-                    <Menu className="w-5 h-5" />
-                  </button>
-                  <button
-                    onClick={() => setIsSearchOpen(true)}
-                    className="p-1.5 text-[#121212] focus:outline-none"
-                    aria-label="Search"
-                  >
-                    <Search className="w-4 h-4" />
-                  </button>
-                </div>
+              {/* Left Section on Desktop, Left Hamburger on Mobile */}
+              <div className="flex items-center lg:shrink-0">
+                {/* Mobile Hamburger (Only on mobile) */}
+                <button
+                  onClick={() => setIsMobileMenuOpen(true)}
+                  className="p-1.5 text-[#121212] lg:hidden focus:outline-none"
+                  aria-label="Open menu"
+                >
+                  <Menu className="w-5 h-5" />
+                </button>
 
-                {/* Brand Logo: Far left */}
+                {/* Brand Logo: Centered on mobile, Left-aligned on desktop */}
+                <div className="hidden lg:block">
+                  <Link
+                    to="/"
+                    onClick={() => setSelectedCatId(null)}
+                    className="flex items-center shrink-0 pr-4 sm:pr-6 lg:pr-8 xl:pr-10 hover:opacity-90 transition-opacity"
+                  >
+                    <BrandLogo variant="light" subtitle="THE KING" size="sm" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Mobile Centered Brand Logo (Exactly matching Nobero mobile reference) */}
+              <div className="flex-1 lg:hidden flex justify-center items-center">
                 <Link
                   to="/"
                   onClick={() => setSelectedCatId(null)}
-                  className="flex items-center shrink-0 pr-4 sm:pr-6 lg:pr-8 xl:pr-10 hover:opacity-90 transition-opacity"
+                  className="flex items-center justify-center hover:opacity-90 transition-opacity"
                 >
-                  <BrandLogo variant="light" subtitle="KING" size="sm" />
+                  <BrandLogo variant="light" subtitle="THE KING" size="sm" />
                 </Link>
               </div>
 
@@ -245,8 +249,18 @@ const Navbar = () => {
               </nav>
 
               {/* Right Utility Icons (Search Bar, Account, Wishlist, Cart, Partner Badge) */}
-              <div className="flex items-center space-x-2.5 sm:space-x-3.5 xl:space-x-4 shrink-0 pl-3">
-                {/* Search Bar matching Nobero reference */}
+              <div className="flex items-center space-x-1.5 sm:space-x-3.5 xl:space-x-4 shrink-0">
+                {/* Mobile Search Button (Matching Nobero mobile header) */}
+                <button
+                  type="button"
+                  onClick={() => setIsSearchOpen(true)}
+                  className="p-1.5 text-[#121212] lg:hidden focus:outline-none"
+                  aria-label="Search products"
+                >
+                  <Search className="w-5 h-5 text-[#121212]" />
+                </button>
+
+                {/* Desktop Search Bar matching Nobero reference */}
                 <div className="hidden lg:flex items-center">
                   <button
                     type="button"
@@ -261,8 +275,8 @@ const Navbar = () => {
                   </button>
                 </div>
 
-                {/* User Account / Profile (Matching Nobero with 'New' Pill Badge) */}
-                <div className="relative group">
+                {/* User Account / Profile (Desktop Only - Mobile accesses from BottomNav & Drawer) */}
+                <div className="relative group hidden lg:block">
                   <button
                     onClick={() => {
                       if (!user) setIsAuthModalOpen(true);
@@ -402,7 +416,7 @@ const Navbar = () => {
               {/* Drawer Header */}
               <div className="p-4 border-b border-gray-200 flex items-center justify-between bg-white">
                 <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
-                  <BrandLogo variant="light" subtitle="KING" size="sm" />
+                  <BrandLogo variant="light" subtitle="THE KING" size="sm" />
                 </Link>
                 <button onClick={() => setIsMobileMenuOpen(false)} className="p-1 text-gray-500">
                   <X className="w-5 h-5" />
