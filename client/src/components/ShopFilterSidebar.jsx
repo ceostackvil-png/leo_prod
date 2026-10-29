@@ -67,26 +67,15 @@ const ShopFilterSidebar = ({
   // Accordion open/close state (all open by default as in Nobero)
   const [openSections, setOpenSections] = useState({
     price: true,
-    color: true,
     size: true,
     availability: true,
   });
-
-  // Color "Show" / "- Hide" toggle
-  const [showAllColors, setShowAllColors] = useState(false);
 
   const toggleSection = (sectionKey) => {
     setOpenSections(prev => ({ ...prev, [sectionKey]: !prev[sectionKey] }));
   };
 
   const isPolos = activeCategorySlug === 'polos';
-
-  // Compute dynamic counts based on the active category products
-  const getColorCount = (colorItem) => {
-    if (isPolos) return colorItem.poloCount;
-    const count = products.filter(p => productMatchesColors(p, [colorItem.name])).length;
-    return count;
-  };
 
   const getSizeCount = (sizeName) => {
     if (isPolos) return 191;
@@ -105,8 +94,6 @@ const ShopFilterSidebar = ({
     const outCount = products.filter(p => (p.inventory || 0) === 0).length;
     return outCount;
   };
-
-  const visibleColors = showAllColors ? COLOR_CONFIG : COLOR_CONFIG.slice(0, 5);
 
   return (
     <aside className={`w-full select-none ${className}`}>
@@ -180,86 +167,7 @@ const ShopFilterSidebar = ({
           )}
         </div>
 
-        {/* ===================== 2. COLOR SECTION ===================== */}
-        <div className="py-1">
-          <button
-            type="button"
-            onClick={() => toggleSection('color')}
-            className="w-full flex items-center justify-between py-3.5 cursor-pointer text-left focus:outline-none group"
-            aria-expanded={openSections.color}
-          >
-            <span className="text-[16px] text-[#181B2D] font-normal group-hover:text-black">
-              Color
-            </span>
-            {openSections.color ? (
-              <ChevronUp className="w-4 h-4 text-[#181B2D] stroke-[2.5]" />
-            ) : (
-              <ChevronDown className="w-4 h-4 text-[#181B2D] stroke-[2.5]" />
-            )}
-          </button>
-
-          {openSections.color && (
-            <div className="space-y-3 pb-3 pt-1">
-              {visibleColors.map((color) => {
-                const isSelected = selectedColors.includes(color.name);
-                const count = getColorCount(color);
-                return (
-                  <div
-                    key={color.name}
-                    onClick={() => onToggleColor(color.name)}
-                    className="flex items-center justify-between cursor-pointer group py-0.5"
-                  >
-                    <div className="flex items-center gap-3">
-                      {/* Checkbox */}
-                      <div
-                        className={`w-[18px] h-[18px] rounded-none border flex items-center justify-center shrink-0 transition-colors ${
-                          isSelected
-                            ? 'bg-[#181B2D] border-[#181B2D] text-white'
-                            : 'bg-white border-[#CCCCCC] group-hover:border-[#888888]'
-                        }`}
-                      >
-                        {isSelected && <Check className="w-3.5 h-3.5 stroke-[3]" />}
-                      </div>
-
-                      {/* Solid Circular Color Swatch with border */}
-                      <span
-                        className={`w-[22px] h-[22px] rounded-full shrink-0 shadow-xs ${
-                          color.hex.toLowerCase() === '#ffffff'
-                            ? 'border border-black'
-                            : 'border border-black/90'
-                        }`}
-                        style={{ backgroundColor: color.hex }}
-                      />
-
-                      {/* Color Name */}
-                      <span className="text-[14px] text-[#181B2D] font-normal group-hover:text-black">
-                        {color.name}
-                      </span>
-                    </div>
-
-                    {/* Count */}
-                    <span className="text-[13px] text-[#9698A0] font-normal">
-                      ({count})
-                    </span>
-                  </div>
-                );
-              })}
-
-              {/* Show / - Hide Link */}
-              <div className="pt-1">
-                <button
-                  type="button"
-                  onClick={() => setShowAllColors(prev => !prev)}
-                  className="text-[14px] font-semibold text-[#92780E] underline hover:text-[#7A630A] cursor-pointer focus:outline-none"
-                >
-                  {showAllColors ? '- Hide' : 'Show'}
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* ===================== 3. SIZE SECTION ===================== */}
+        {/* ===================== 2. SIZE SECTION ===================== */}
         <div className="py-1">
           <button
             type="button"

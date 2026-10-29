@@ -1,21 +1,62 @@
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api';
 
 export const api = {
-  // Categories & Mega Menu
+  // Categories & Mega Menu CRUD
   getCategories: async () => {
     const res = await fetch(`${API_BASE}/categories`);
     return res.json();
   },
+  createCategory: async (category) => {
+    const res = await fetch(`${API_BASE}/categories`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(category),
+    });
+    return res.json();
+  },
+  updateCategory: async (id, data) => {
+    const res = await fetch(`${API_BASE}/categories/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    return res.json();
+  },
+  deleteCategory: async (id) => {
+    const res = await fetch(`${API_BASE}/categories/${id}`, { method: 'DELETE' });
+    return res.json();
+  },
 
-  // Collections
+  // Collections CRUD
   getCollections: async () => {
     const res = await fetch(`${API_BASE}/collections`);
     return res.json();
   },
+  createCollection: async (collection) => {
+    const res = await fetch(`${API_BASE}/collections`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(collection),
+    });
+    return res.json();
+  },
+  updateCollection: async (id, data) => {
+    const res = await fetch(`${API_BASE}/collections/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    return res.json();
+  },
+  deleteCollection: async (id) => {
+    const res = await fetch(`${API_BASE}/collections/${id}`, { method: 'DELETE' });
+    return res.json();
+  },
 
-  // Hero Banners
-  getBanners: async () => {
-    const res = await fetch(`${API_BASE}/banners`);
+  // Hero Banners CRUD
+  getBanners: async (params = {}) => {
+    const query = new URLSearchParams(params).toString();
+    const res = await fetch(`${API_BASE}/banners${query ? `?${query}` : ''}`);
     return res.json();
   },
   createBanner: async (banner) => {
@@ -23,6 +64,14 @@ export const api = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(banner),
+    });
+    return res.json();
+  },
+  updateBanner: async (id, data) => {
+    const res = await fetch(`${API_BASE}/banners/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
     });
     return res.json();
   },
@@ -41,7 +90,7 @@ export const api = {
     return res.json();
   },
 
-  // Products
+  // Products CRUD
   getProducts: async (params = {}) => {
     const query = new URLSearchParams();
     Object.entries(params).forEach(([k, v]) => {
@@ -64,12 +113,20 @@ export const api = {
     });
     return res.json();
   },
+  updateProduct: async (id, data) => {
+    const res = await fetch(`${API_BASE}/products/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    return res.json();
+  },
   deleteProduct: async (id) => {
     const res = await fetch(`${API_BASE}/products/${id}`, { method: 'DELETE' });
     return res.json();
   },
 
-  // Coupons
+  // Coupons CRUD & Validation
   getCoupons: async () => {
     const res = await fetch(`${API_BASE}/coupons`);
     return res.json();
@@ -90,15 +147,23 @@ export const api = {
     });
     return res.json();
   },
+  updateCoupon: async (code, data) => {
+    const res = await fetch(`${API_BASE}/coupons/${encodeURIComponent(code)}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    return res.json();
+  },
   deleteCoupon: async (code) => {
-    const res = await fetch(`${API_BASE}/coupons/${code}`, { method: 'DELETE' });
+    const res = await fetch(`${API_BASE}/coupons/${encodeURIComponent(code)}`, { method: 'DELETE' });
     return res.json();
   },
 
-  // Reviews
+  // Reviews CRUD & Moderation
   getReviews: async (params = {}) => {
     const query = new URLSearchParams(params).toString();
-    const res = await fetch(`${API_BASE}/reviews?${query}`);
+    const res = await fetch(`${API_BASE}/reviews${query ? `?${query}` : ''}`);
     return res.json();
   },
   createReview: async (review) => {
@@ -109,16 +174,23 @@ export const api = {
     });
     return res.json();
   },
-  updateReviewStatus: async (id, status) => {
+  updateReviewStatus: async (id, status, brandReply) => {
+    const payload = {};
+    if (status !== undefined) payload.status = status;
+    if (brandReply !== undefined) payload.brandReply = brandReply;
     const res = await fetch(`${API_BASE}/reviews/${id}/status`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ status }),
+      body: JSON.stringify(payload),
     });
     return res.json();
   },
+  deleteReview: async (id) => {
+    const res = await fetch(`${API_BASE}/reviews/${id}`, { method: 'DELETE' });
+    return res.json();
+  },
 
-  // Blogs
+  // Blogs & CMS CRUD
   getBlogs: async () => {
     const res = await fetch(`${API_BASE}/blogs`);
     return res.json();
@@ -127,15 +199,47 @@ export const api = {
     const res = await fetch(`${API_BASE}/blogs/${slug}`);
     return res.json();
   },
+  createBlog: async (blog) => {
+    const res = await fetch(`${API_BASE}/blogs`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(blog),
+    });
+    return res.json();
+  },
+  updateBlog: async (idOrSlug, data) => {
+    const res = await fetch(`${API_BASE}/blogs/${idOrSlug}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    return res.json();
+  },
+  deleteBlog: async (idOrSlug) => {
+    const res = await fetch(`${API_BASE}/blogs/${idOrSlug}`, { method: 'DELETE' });
+    return res.json();
+  },
+  getCms: async () => {
+    const res = await fetch(`${API_BASE}/cms`);
+    return res.json();
+  },
+  updateCms: async (cmsData) => {
+    const res = await fetch(`${API_BASE}/cms`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(cmsData),
+    });
+    return res.json();
+  },
 
-  // Orders & Tracking
+  // Orders & Tracking CRUD
   getOrders: async () => {
     const res = await fetch(`${API_BASE}/orders`);
     return res.json();
   },
   getOrderById: async (id, params = {}) => {
     const query = new URLSearchParams(params).toString();
-    const res = await fetch(`${API_BASE}/orders/${id}?${query}`);
+    const res = await fetch(`${API_BASE}/orders/${id}${query ? `?${query}` : ''}`);
     return res.json();
   },
   createOrder: async (orderData) => {
@@ -143,6 +247,14 @@ export const api = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(orderData),
+    });
+    return res.json();
+  },
+  updateOrder: async (id, data) => {
+    const res = await fetch(`${API_BASE}/orders/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
     });
     return res.json();
   },
@@ -154,14 +266,16 @@ export const api = {
     });
     return res.json();
   },
+  deleteOrder: async (id) => {
+    const res = await fetch(`${API_BASE}/orders/${id}`, { method: 'DELETE' });
+    return res.json();
+  },
 
-  // Analytics
+  // Analytics & Pincode Checker
   getAnalytics: async () => {
     const res = await fetch(`${API_BASE}/analytics`);
     return res.json();
   },
-
-  // Pincode Checker
   checkPincode: async (pincode) => {
     const res = await fetch(`${API_BASE}/pincode/check`, {
       method: 'POST',

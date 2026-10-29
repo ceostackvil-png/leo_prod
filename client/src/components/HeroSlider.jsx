@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const MOBILE_TOP_CATEGORIES = [
-  { name: 'Travel', image: '/images/collections/col_travel.png', link: '/travel' },
-  { name: 'Polos', image: '/images/collections/col_polos.png', link: '/polos' },
-  { name: 'Shirts', image: '/images/collections/col_shirts.png', link: '/shirts' },
-  { name: 'Co-ords', image: '/images/collections/col_coords.png', link: '/co-ords' },
-  { name: 'HD Tees', image: '/images/collections/col_hd_tees.png', link: '/shop?category=premium-hd-tees' },
-  { name: 'T-Shirts', image: '/images/collections/col_t_shirts.png', link: '/t-shirts' },
-  { name: 'Joggers', image: '/images/collections/col_joggers.png', link: '/joggers' },
-  { name: 'Cargo Pants', image: '/images/collections/col_cargo_pants.png', link: '/joggers?sub=cargo' },
-  { name: 'Shorts', image: '/images/collections/col_shorts.png', link: '/shorts' },
-  { name: 'Oversized Tees', image: '/images/collections/col_oversized_tees.png', link: '/oversized-tees' }
+  { name: 'Travel', image: '/images/collections/cat_pill_travel.png', link: '/travel' },
+  { name: 'Polos', image: '/images/collections/cat_pill_polos.png', link: '/polos' },
+  { name: 'Shirts', image: '/images/collections/cat_pill_shirts.png', link: '/shirts' },
+  { name: 'Co-ords', image: '/images/collections/cat_pill_coords.png', link: '/co-ords' },
+  { name: 'HD Tees', image: '/images/collections/cat_pill_hd_tees.png', link: '/shop?category=premium-hd-tees' },
+  { name: 'T-Shirts', image: '/images/collections/cat_pill_t_shirts.png', link: '/t-shirts' },
+  { name: 'Joggers', image: '/images/collections/cat_pill_joggers.png', link: '/joggers' },
+  { name: 'Cargo Pants', image: '/images/collections/cat_pill_cargo_pants.png', link: '/joggers?sub=cargo' },
+  { name: 'Shorts', image: '/images/collections/cat_pill_shorts.png', link: '/shorts' },
+  { name: 'Oversized Tees', image: '/images/collections/cat_pill_oversized_tees.png', link: '/oversized-tees' }
 ];
 
 const HeroSlider = ({ banners = [] }) => {
@@ -68,22 +68,22 @@ const HeroSlider = ({ banners = [] }) => {
   return (
     <section className="bg-white pt-0 sm:pt-9 lg:pt-11 pb-4 sm:pb-6">
       {/* Mobile Quick Category Navigation Strip (Only on mobile, exactly matching Nobero reference) */}
-      <div className="lg:hidden w-full overflow-x-auto no-scrollbar bg-white border-b border-gray-100 py-2.5 px-3 mb-2">
-        <div className="flex items-center gap-3.5 min-w-max">
+      <div className="lg:hidden w-full overflow-x-auto no-scrollbar bg-white border-b border-gray-100 py-3 px-3 mb-2">
+        <div className="flex items-center gap-4 min-w-max">
           {MOBILE_TOP_CATEGORIES.map((cat, i) => (
             <Link
               key={i}
               to={cat.link}
-              className="flex flex-col items-center shrink-0 w-[58px] text-center group cursor-pointer"
+              className="flex flex-col items-center shrink-0 w-[64px] text-center group cursor-pointer"
             >
-              <div className="w-12 h-12 flex items-center justify-center">
+              <div className="h-[54px] w-full flex items-center justify-center bg-transparent border-none">
                 <img
                   src={cat.image}
                   alt={cat.name}
-                  className="w-full h-full object-contain group-hover:scale-105 transition-transform"
+                  className="h-[54px] w-auto max-w-[50px] object-contain group-hover:scale-105 transition-transform"
                 />
               </div>
-              <span className="text-[11px] font-medium text-[#1A1E31] mt-1 leading-tight truncate w-full">
+              <span className="text-[12px] font-medium text-[#2B2627] mt-1.5 leading-tight truncate w-full">
                 {cat.name}
               </span>
             </Link>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { WishlistProvider } from './context/WishlistContext';
 import { AuthProvider } from './context/AuthContext';
@@ -37,20 +37,18 @@ import {
 
 import ScrollToTop from './components/ScrollToTop';
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const isAdmin = location.pathname.startsWith('/admin');
+
   return (
-    <AuthProvider>
-      <CartProvider>
-        <WishlistProvider>
-          <Router>
-            <ScrollToTop />
-            <div className="flex flex-col min-h-screen">
-              {/* Single Global Header */}
-              <Navbar />
-              
-              {/* Main Content Area */}
-              <main className="flex-1 pb-14 lg:pb-0">
-                <Routes>
+    <div className="flex flex-col min-h-screen">
+      {/* Single Global Header (only on consumer storefront) */}
+      {!isAdmin && <Navbar />}
+      
+      {/* Main Content Area */}
+      <main className={`flex-1 ${!isAdmin ? 'pb-14 lg:pb-0' : ''}`}>
+        <Routes>
                   {/* Homepage */}
                   <Route path="/" element={<HomePage />} />
 
@@ -137,15 +135,26 @@ function App() {
                   {/* Admin Management Portal */}
                   <Route path="/admin" element={<AdminPage />} />
                 </Routes>
-              </main>
+      </main>
 
-              {/* Single Global Footer */}
-              <Footer />
+      {/* Single Global Footer (only on consumer storefront) */}
+      {!isAdmin && <Footer />}
 
-              {/* Global Slide-in Drawers & Modals */}
-              <CartDrawer />
-              <AuthModal />
-            </div>
+      {/* Global Slide-in Drawers & Modals (only on consumer storefront) */}
+      {!isAdmin && <CartDrawer />}
+      {!isAdmin && <AuthModal />}
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <CartProvider>
+        <WishlistProvider>
+          <Router>
+            <ScrollToTop />
+            <AppContent />
           </Router>
         </WishlistProvider>
       </CartProvider>

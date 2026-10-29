@@ -95,7 +95,7 @@ const LeoFavourites = () => {
 
                     {/* Top-Left Bestseller Ribbon Badge (for Sand co-ord) */}
                     {item.badge && (
-                      <span className="absolute top-2.5 left-2.5 z-10 bg-[#F7B614] text-[#1A1E31] text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-[2px] tracking-wide uppercase shadow-xs">
+                      <span className="absolute top-2.5 left-2.5 z-10 bg-[#dec562] text-[#0f142b] text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-none tracking-wider uppercase shadow-xs">
                         {item.badge}
                       </span>
                     )}

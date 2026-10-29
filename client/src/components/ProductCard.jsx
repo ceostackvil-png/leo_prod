@@ -69,9 +69,9 @@ const ProductCard = ({ product }) => {
           />
         </Link>
 
-        {/* Bestseller Badge with Sharp Edges */}
+        {/* Bestseller Badge with Sharp Edges - Exact Nobero Styling */}
         {product.isBestseller && (
-          <span className="absolute top-2 left-2 bg-[#282C3F] text-white text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-none shadow-xs">
+          <span className="absolute top-2 left-2 bg-[#dec562] text-[#0f142b] text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-none shadow-xs">
             BESTSELLER
           </span>
         )}

@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
+import { registerEnterpriseRoutes } from './routes.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -1282,6 +1283,7 @@ app.get('/images/products/:filename', (req, res) => {
 });
 
 // Routes
+registerEnterpriseRoutes(app, readDB, writeDB, __dirname);
 app.get('/api/categories', (req, res) => {
   const db = readDB();
   res.json({ success: true, data: db.categories });
@@ -1389,6 +1391,21 @@ app.post('/api/products', (req, res) => {
   db.products.unshift(newProduct);
   writeDB(db);
   res.status(201).json({ success: true, data: newProduct });
+});
+
+app.put('/api/products/:id', (req, res) => {
+  const db = readDB();
+  const idx = db.products.findIndex(p => p.id === req.params.id);
+  if (idx === -1) return res.status(404).json({ success: false, error: 'Product not found' });
+  db.products[idx] = {
+    ...db.products[idx],
+    ...req.body,
+    price: req.body.price !== undefined ? Number(req.body.price) : db.products[idx].price,
+    mrp: req.body.mrp !== undefined ? Number(req.body.mrp) : db.products[idx].mrp,
+    inventory: req.body.inventory !== undefined ? Number(req.body.inventory) : db.products[idx].inventory
+  };
+  writeDB(db);
+  res.json({ success: true, data: db.products[idx] });
 });
 
 app.delete('/api/products/:id', (req, res) => {
@@ -1536,6 +1553,13 @@ app.post('/api/pincode/check', (req, res) => {
 });
 
 const PORT = process.env.PORT || 5001;
+if (!process.env.VERCEL && process.platform === 'win32') {
+  try {
+    const out = execSync(`netstat -ano | findstr :${PORT}`, { encoding: 'utf8' });
+    const pids = new Set(out.split(/\r?\n/).filter(l => l.includes('LISTENING')).map(l => l.trim().split(/\s+/).pop()).filter(p => p && Number(p) !== process.pid && Number(p) > 0));
+    for (const pid of pids) { try { execSync(`taskkill /F /PID ${pid}`, { stdio: 'ignore' }); } catch {} }
+  } catch {}
+}
 if (!process.env.VERCEL) {
   app.listen(PORT, () => {
     console.log(`LEO Backend Server running on http://localhost:${PORT}`);

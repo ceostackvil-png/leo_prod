@@ -62,18 +62,6 @@ const COLLECTIONS = [
     image: "/images/collections/col_oversized_tees.jpg",
     fallback: "https://nobero.com/cdn/shop/files/Ov._Tee_13b98095-2712-4d73-ad6b-ed64bf134ab9.jpg?v=1778586377",
     link: "/oversized-tees"
-  },
-  {
-    name: "Women Tees",
-    image: "/images/collections/col_women_tees.jpg",
-    fallback: "https://nobero.com/cdn/shop/files/Women_tee_jpg.jpg?v=1772211935",
-    link: "/shop?category=t-shirts"
-  },
-  {
-    name: "Women Joggers",
-    image: "/images/collections/col_women_joggers.jpg",
-    fallback: "https://nobero.com/cdn/shop/files/Women_jog_jpg.jpg?v=1772211883",
-    link: "/joggers"
   }
 ];
 
@@ -88,8 +76,8 @@ const ShopByCollection = () => {
           </h2>
         </div>
 
-        {/* Collections Grid (Exact 12 Collections in 2 rows of 6 matching reference) */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-4 lg:gap-5 w-full">
+        {/* Collections Grid (Exact 10 Men's Collections in 2 balanced rows of 5) */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-3.5 sm:gap-4 md:gap-4 lg:gap-5 w-full">
           {COLLECTIONS.map((col, idx) => (
             <Link
               key={idx}

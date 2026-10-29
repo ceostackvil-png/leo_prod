@@ -91,7 +91,11 @@ const CategoryGrid = () => {
 
                 {/* Badge */}
                 {cat.badge && (
-                  <span className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm text-[#212121] text-[9px] font-bold px-2 py-0.5 rounded-none uppercase tracking-wider">
+                  <span className={`absolute top-2 left-2 text-[9px] font-bold px-2 py-0.5 rounded-none uppercase tracking-wider ${
+                    cat.badge.toLowerCase().includes('bestseller')
+                      ? 'bg-[#dec562] text-[#0f142b]'
+                      : 'bg-white/90 backdrop-blur-sm text-[#212121]'
+                  }`}>
                     {cat.badge}
                   </span>
                 )}

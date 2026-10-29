@@ -352,9 +352,14 @@ const ProductDetailPage = () => {
 
                 {/* Badges */}
                 {product.isBestseller && (
-                  <span className="absolute top-4 right-4 bg-white/90 backdrop-blur text-[#282C3F] p-1.5 rounded-full shadow-sm">
-                    <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                  </span>
+                  <>
+                    <span className="absolute top-4 left-4 z-10 bg-[#dec562] text-[#0f142b] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-none shadow-xs">
+                      BESTSELLER
+                    </span>
+                    <span className="absolute top-4 right-4 bg-white/90 backdrop-blur text-[#282C3F] p-1.5 rounded-full shadow-sm">
+                      <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    </span>
+                  </>
                 )}
               </div>
 

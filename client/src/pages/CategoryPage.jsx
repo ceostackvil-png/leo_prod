@@ -22,12 +22,6 @@ const CATEGORY_META = {
     seo: "Explore LEO's complete catalog of premium Men's fashion. Crafted from high-density bio-washed combed cotton and 4-way stretch fabrics for supreme daily comfort.",
     banner: "/images/hero-1.jpg"
   },
-  'women': {
-    title: "Women's Collection",
-    subtitle: "Comfort-first co-ord sets, drop shoulder basics, and casual essentials.",
-    seo: "Explore LEO's casual essentials and co-ord sets for women.",
-    banner: "/images/hero-1.jpg"
-  },
   'new-arrivals': {
     title: "New Arrivals - Fresh Men's Drops",
     subtitle: "The newest styles, upgraded colorways, and seasonal silhouettes just added to the LEO catalog.",
@@ -472,14 +466,12 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
 
   const hasActiveFilters = Boolean(
     selectedPriceId !== null ||
-    selectedColors.length > 0 ||
     selectedSizes.length > 0 ||
     selectedAvailability !== null
   );
 
   const activeFilterCount =
     (selectedPriceId ? 1 : 0) +
-    selectedColors.length +
     selectedSizes.length +
     (selectedAvailability ? 1 : 0);
 
@@ -697,15 +689,6 @@ const CategoryPage = ({ forcedCategory = null, isSearchPage = false }) => {
                   </button>
                 </span>
               )}
-
-              {selectedColors.map(c => (
-                <span key={c} className="inline-flex items-center gap-1.5 bg-gray-100 text-[#212121] text-[12px] font-medium px-3 py-1 rounded-none border border-gray-200">
-                  <span>Color: {c}</span>
-                  <button onClick={() => toggleColor(c)} className="hover:text-black">
-                    <X className="w-3.5 h-3.5 text-gray-500 hover:text-black" />
-                  </button>
-                </span>
-              ))}
 
               {selectedSizes.map(s => (
                 <span key={s} className="inline-flex items-center gap-1.5 bg-gray-100 text-[#212121] text-[12px] font-medium px-3 py-1 rounded-none border border-gray-200">

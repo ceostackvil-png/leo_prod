@@ -431,7 +431,11 @@ const BlogDetailPage = () => {
                     >
                       <Link to={prod.link || "/shorts"} className="block relative aspect-square overflow-hidden bg-[#F0F1F3]">
                         {prod.badge && (
-                          <span className="absolute top-2 left-2 z-10 bg-[#1A1E31] text-white text-[10px] font-bold px-2 py-0.5 tracking-wider uppercase">
+                          <span className={`absolute top-2 left-2 z-10 text-[10px] font-bold px-2 py-0.5 tracking-wider uppercase ${
+                            prod.badge.toLowerCase().includes('bestseller')
+                              ? 'bg-[#dec562] text-[#0f142b]'
+                              : 'bg-[#1A1E31] text-white'
+                          }`}>
                             {prod.badge}
                           </span>
                         )}
