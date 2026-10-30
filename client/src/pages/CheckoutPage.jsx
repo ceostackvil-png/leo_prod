@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import {
   ShieldCheck,
   Truck,
@@ -15,13 +15,14 @@ import { useAuth } from '../context/AuthContext';
 import { api } from '../services/api';
 
 const PAYMENT_METHODS = [
-  { id: 'upi', name: 'UPI / Google Pay / PhonePe / Paytm', desc: 'Instant 0% transaction fee', icon: QrCode },
-  { id: 'card', name: 'Credit / Debit Card (Visa, MasterCard, RuPay)', desc: 'Secure 256-bit SSL encrypted', icon: CreditCard },
+  { id: 'upi', name: 'UPI / Google Pay / PhonePe / Paytm (Easebuzz)', desc: 'Instant 0% transaction fee via Easebuzz Gateway', icon: QrCode },
+  { id: 'card', name: 'Credit / Debit Card (Visa, MasterCard, RuPay)', desc: 'Secure 256-bit SSL encrypted via Easebuzz', icon: CreditCard },
   { id: 'cod', name: 'Cash On Delivery (COD)', desc: 'Pay with cash at your doorstep', icon: Truck }
 ];
 
 const CheckoutPage = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const {
     items,
     subtotal,
@@ -46,6 +47,57 @@ const CheckoutPage = () => {
   const [paymentMethod, setPaymentMethod] = useState('upi');
   const [isProcessing, setIsProcessing] = useState(false);
   const [orderPlaced, setOrderPlaced] = useState(null);
+  const [paymentError, setPaymentError] = useState('');
+
+  // Handle Easebuzz Callback Redirect (?payment_status=success&txnid=...&orderId=...)
+  useEffect(() => {
+    const paymentStatus = searchParams.get('payment_status');
+    const txnid = searchParams.get('txnid');
+    const orderId = searchParams.get('orderId');
+
+    if (paymentStatus === 'success' && (txnid || orderId)) {
+      const verifyEasebuzzOrder = async () => {
+        setIsProcessing(true);
+        try {
+          if (txnid) {
+            const statusRes = await api.getEasebuzzTransactionStatus(txnid);
+            if (statusRes?.order) {
+              setOrderPlaced(statusRes.order);
+              clearCart();
+              return;
+            }
+          }
+          if (orderId) {
+            const ordRes = await api.getOrderById(orderId);
+            if (ordRes?.success && ordRes?.data) {
+              setOrderPlaced(ordRes.data);
+              clearCart();
+              return;
+            }
+          }
+          setOrderPlaced({
+            id: orderId || txnid,
+            totalAmount: finalTotal,
+            paymentMethod: 'Easebuzz Online Payment (Paid)',
+            shippingAddress: {
+              fullName: formData.fullName || 'Shopper',
+              addressLine: formData.addressLine || '',
+              city: formData.city || 'Bengaluru',
+              pincode: formData.pincode || ''
+            }
+          });
+          clearCart();
+        } catch (err) {
+          console.error('Error verifying Easebuzz transaction:', err);
+        } finally {
+          setIsProcessing(false);
+        }
+      };
+      verifyEasebuzzOrder();
+    } else if (paymentStatus === 'failed') {
+      setPaymentError('Your Easebuzz payment was cancelled or failed. Please try again or choose another payment mode.');
+    }
+  }, [searchParams]);
 
   if (items.length === 0 && !orderPlaced) {
     return (
@@ -66,6 +118,7 @@ const CheckoutPage = () => {
 
   const handlePlaceOrder = async (e) => {
     e.preventDefault();
+    setPaymentError('');
     if (!formData.fullName || !formData.phone || !formData.addressLine || !formData.pincode) {
       alert('Please fill out all mandatory shipping fields.');
       return;
@@ -90,9 +143,34 @@ const CheckoutPage = () => {
         couponApplied: appliedCoupon?.code || null,
         shippingFee,
         totalAmount: finalTotal,
-        paymentMethod: paymentMethod === 'upi' ? 'Prepaid UPI' : paymentMethod === 'card' ? 'Credit Card' : 'Cash On Delivery'
+        paymentMethod: paymentMethod === 'upi' ? 'Easebuzz UPI' : paymentMethod === 'card' ? 'Easebuzz Card' : 'Cash On Delivery'
       };
 
+      // Online payment via Easebuzz Initiate Payment API
+      if (paymentMethod === 'upi' || paymentMethod === 'card') {
+        const ebInit = await api.initiateEasebuzzPayment({
+          amount: finalTotal,
+          firstname: formData.fullName,
+          email: formData.email || 'shopper@leo.com',
+          phone: formData.phone,
+          productinfo: `LEO Menswear Order (${items.length} items)`,
+          address1: formData.addressLine,
+          city: formData.city || 'Bengaluru',
+          state: formData.state || 'Karnataka',
+          zipcode: formData.pincode,
+          paymentMode: paymentMethod.toUpperCase(),
+          orderPayload
+        });
+
+        if (ebInit && ebInit.success && ebInit.paymentUrl) {
+          window.location.href = ebInit.paymentUrl;
+          return;
+        } else {
+          throw new Error(ebInit?.message || 'Unable to initiate Easebuzz payment');
+        }
+      }
+
+      // Cash On Delivery flow
       const res = await api.createOrder(orderPayload);
       if (res.success) {
         setOrderPlaced(res.data);
@@ -100,7 +178,7 @@ const CheckoutPage = () => {
       }
     } catch (err) {
       console.error(err);
-      alert('Error placing order. Please try again.');
+      setPaymentError(err.message || 'Error placing order. Please try again.');
     } finally {
       setIsProcessing(false);
     }
@@ -133,12 +211,15 @@ const CheckoutPage = () => {
               <span>₹{orderPlaced.totalAmount}</span>
             </div>
             <p className="text-zinc-600"><strong>Deliver to:</strong> {orderPlaced.shippingAddress?.fullName}, {orderPlaced.shippingAddress?.addressLine}, {orderPlaced.shippingAddress?.city} ({orderPlaced.shippingAddress?.pincode})</p>
-            <p className="text-zinc-600"><strong>Payment:</strong> {orderPlaced.paymentMethod}</p>
+            <p className="text-zinc-600"><strong>Payment:</strong> {orderPlaced.paymentMethod} ({orderPlaced.paymentStatus || 'Confirmed'})</p>
+            {orderPlaced.txnid && (
+              <p className="text-zinc-600"><strong>Transaction ID:</strong> {orderPlaced.txnid}</p>
+            )}
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
             <button
-              onClick={() => navigate(`/track-order?orderId=${orderPlaced.id}&phone=${orderPlaced.customerPhone}`)}
+              onClick={() => navigate(`/track-order?orderId=${orderPlaced.id}&phone=${orderPlaced.customerPhone || ''}`)}
               className="flex-1 bg-zinc-900 hover:bg-black text-white py-3 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2"
             >
               TRACK LIVE ORDER <ArrowRight className="w-4 h-4" />
@@ -166,6 +247,12 @@ const CheckoutPage = () => {
             Secure LEO Checkout
           </h1>
         </div>
+
+        {paymentError && (
+          <div className="mb-6 p-4 bg-rose-50 border border-rose-200 text-rose-800 text-xs font-semibold rounded-lg">
+            {paymentError}
+          </div>
+        )}
 
         <form onSubmit={handlePlaceOrder} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
@@ -378,12 +465,12 @@ const CheckoutPage = () => {
               disabled={isProcessing}
               className="w-full bg-[#242F66] hover:bg-[#1a234f] text-white py-3.5 rounded-none font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-xs transition-all disabled:opacity-50"
             >
-              {isProcessing ? 'CONFIRMING ORDER...' : `PAY & COMPLETE ORDER • ₹${finalTotal}`}
+              {isProcessing ? 'REDIRECTING TO EASEBUZZ...' : `PAY & COMPLETE ORDER • ₹${finalTotal}`}
             </button>
 
             <div className="flex items-center justify-center gap-2 text-[10px] text-zinc-400 font-medium">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
-              100% Encrypted & Authenticated Razorpay / COD Gateway
+              100% Encrypted & Authenticated Easebuzz / COD Gateway
             </div>
 
           </div>

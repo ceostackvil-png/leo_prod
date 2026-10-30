@@ -187,24 +187,6 @@ const AdminSidebar = ({
                 <span className="truncate">Swagger API</span>
               </a>
             </div>
-
-            <div className="flex items-center gap-2.5 px-3 py-2 bg-slate-900/90 rounded-xl border border-slate-800">
-              <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center overflow-hidden shrink-0">
-                <img
-                  src="/images/logo (1).png"
-                  alt="LEO Admin"
-                  className="w-full h-full object-cover rounded-full scale-105"
-                />
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="text-xs font-bold text-white truncate">Dhruv Singhal</p>
-                <div className="flex items-center gap-1.5 mt-0.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  <span className="text-[10px] text-emerald-400 font-semibold">Super Admin</span>
-                </div>
-              </div>
-              <ExternalLink className="w-3.5 h-3.5 text-slate-500 shrink-0" />
-            </div>
           </div>
         </div>
       </aside>

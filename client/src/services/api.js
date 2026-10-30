@@ -271,6 +271,24 @@ export const api = {
     return res.json();
   },
 
+  // Easebuzz Payment Gateway (Initiate API, Transaction Status API v2.1)
+  initiateEasebuzzPayment: async (paymentData) => {
+    const res = await fetch(`${API_BASE}/payments/easebuzz/initiate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(paymentData),
+    });
+    return res.json();
+  },
+  getEasebuzzTransactionStatus: async (txnid) => {
+    const res = await fetch(`${API_BASE}/payments/easebuzz/status`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ txnid }),
+    });
+    return res.json();
+  },
+
   // Analytics & Pincode Checker
   getAnalytics: async () => {
     const res = await fetch(`${API_BASE}/analytics`);
