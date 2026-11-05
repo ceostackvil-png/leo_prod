@@ -526,7 +526,7 @@ export function registerEnterpriseRoutes(app, readDB, writeDB, __dirname) {
     const db = readDB();
     const randomDigits = Math.floor(10000 + Math.random() * 90000);
     const newOrderId = req.body.id || `LEO-${randomDigits}`;
-    const initialStatus = req.body.status || req.body.orderStatus || 'Placed';
+    const initialStatus = (req.body.status || req.body.orderStatus || 'PLACED').toUpperCase();
     const newOrder = normalizeOrder({
       id: newOrderId,
       placedAt: new Date().toISOString(),
@@ -534,7 +534,7 @@ export function registerEnterpriseRoutes(app, readDB, writeDB, __dirname) {
       status: initialStatus,
       orderStatus: initialStatus,
       paymentMethod: req.body.paymentMethod || 'Prepaid UPI (Razorpay)',
-      paymentStatus: req.body.paymentStatus || 'Paid',
+      paymentStatus: req.body.paymentStatus || ((req.body.paymentMethod || '').toLowerCase().includes('cod') || (req.body.paymentMethod || '').toLowerCase().includes('cash') ? 'UNPAID' : 'Paid'),
       courier: req.body.courier || 'Delhivery Express',
       trackingNumber: req.body.trackingNumber || `DEL-${Date.now().toString().slice(-9)}`,
       tracking: {

@@ -5,6 +5,9 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { registerEnterpriseRoutes } from './routes.js';
+import { registerEasebuzzRoutes } from './easebuzz.js';
+import { registerAuthRoutes } from './auth.js';
+import { registerCartRoutes } from './pricing.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -1284,6 +1287,9 @@ app.get('/images/products/:filename', (req, res) => {
 
 // Routes
 registerEnterpriseRoutes(app, readDB, writeDB, __dirname);
+registerEasebuzzRoutes(app, readDB, writeDB, __dirname);
+registerAuthRoutes(app, readDB, writeDB);
+registerCartRoutes(app, readDB, writeDB);
 app.get('/api/categories', (req, res) => {
   const db = readDB();
   res.json({ success: true, data: db.categories });

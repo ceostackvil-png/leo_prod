@@ -953743,6 +953743,688 @@
   ],
   "orders": [
     {
+      "id": "LEO-91036",
+      "txnid": "EB_1793769131740_3483",
+      "customerId": null,
+      "placedAt": "2026-11-04T05:12:11.741Z",
+      "createdAt": "2026-11-04T05:12:11.741Z",
+      "status": "PLACED",
+      "orderStatus": "PLACED",
+      "paymentMethod": "Easebuzz UPI",
+      "paymentStatus": "PENDING",
+      "customerName": "Tejaswini Gundapu",
+      "customerEmail": "gundaputejaswini1@gmail.com",
+      "customerPhone": "9392576759",
+      "shippingAddress": {
+        "fullName": "Tejaswini Gundapu",
+        "phone": "9392576759",
+        "addressLine": "Flat 402, Oakwood Residency, Indiranagar",
+        "city": "vijayawada",
+        "state": "Karnataka",
+        "pincode": "520013"
+      },
+      "items": [
+        {
+          "id": "sf-xl-seed",
+          "productId": "leo-sf-1",
+          "title": "Stay Fluid Premium T-Shirt",
+          "price": 1399,
+          "mrp": 1699,
+          "size": "XL",
+          "color": "Electric Violet",
+          "quantity": 1,
+          "image": "/images/stay_fluid_violet_tee.jpg",
+          "sku": "LEO-XL-1"
+        },
+        {
+          "id": "sf-m-seed",
+          "productId": "leo-sf-1",
+          "title": "Stay Fluid Premium T-Shirt",
+          "price": 1399,
+          "mrp": 1699,
+          "size": "M",
+          "color": "Electric Violet",
+          "quantity": 1,
+          "image": "/images/stay_fluid_violet_tee.jpg",
+          "sku": "LEO-M-1"
+        },
+        {
+          "id": "leo-8377047384230-Navy Blue-M-1793695287901",
+          "productId": "leo-8377047384230",
+          "title": "leo Classic Polo T-Shirt",
+          "price": 800,
+          "mrp": 1499,
+          "size": "M",
+          "color": "Navy Blue",
+          "quantity": 2,
+          "image": "/images/products/POLOPDP-5_5c355606-1884-4943-b73a-f1503bc04014.jpg",
+          "sku": "1M-TWPO-R0002-NB2"
+        }
+      ],
+      "subtotal": 4398,
+      "discount": 0,
+      "couponApplied": null,
+      "shippingFee": 0,
+      "totalAmount": 4398,
+      "courier": "Delhivery Express",
+      "trackingNumber": "DEL-769131741",
+      "tracking": {
+        "carrier": "Delhivery Express",
+        "trackingNumber": "DEL-769131741",
+        "currentStep": 1,
+        "history": [
+          {
+            "status": "Order Placed",
+            "location": "LEO Core System",
+            "time": "Just now",
+            "completed": true
+          },
+          {
+            "status": "Processing",
+            "location": "LEO Center",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Shipped",
+            "location": "Transit Hub",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Out for Delivery",
+            "location": "Local Station",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Delivered",
+            "location": "Destination",
+            "time": "Pending",
+            "completed": false
+          }
+        ]
+      },
+      "customer": {
+        "name": "Tejaswini Gundapu",
+        "email": "gundaputejaswini1@gmail.com",
+        "phone": "9392576759"
+      }
+    },
+    {
+      "id": "LEO-70785",
+      "txnid": "EB_TEST_1793695758036",
+      "customerId": null,
+      "placedAt": "2026-11-03T08:49:18.219Z",
+      "createdAt": "2026-11-03T08:49:18.219Z",
+      "status": "CONFIRMED",
+      "orderStatus": "CONFIRMED",
+      "paymentMethod": "Easebuzz Online (UPI)",
+      "paymentStatus": "PAID",
+      "customerName": "Vikram",
+      "customerEmail": "shopper_1793695756339@testleo.com",
+      "customerPhone": "9876543210",
+      "shippingAddress": {
+        "fullName": "Vikram Malhotra",
+        "phone": "9876543210",
+        "addressLine": "Villa 14, Palm Meadows",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "pincode": "560066"
+      },
+      "items": [
+        {
+          "id": "item-1793695758219-sszz",
+          "productId": "leo-8377047384230",
+          "title": "leo Classic Polo T-Shirt",
+          "price": 800,
+          "mrp": 1499,
+          "size": "L",
+          "color": "Standard",
+          "quantity": 1,
+          "image": "/images/products/POLOPDP-5_5c355606-1884-4943-b73a-f1503bc04014.jpg",
+          "sku": "1M-TWPO-R0002-NB2"
+        }
+      ],
+      "subtotal": 800,
+      "discount": 0,
+      "couponApplied": null,
+      "shippingFee": 99,
+      "totalAmount": 899,
+      "courier": "Delhivery Express",
+      "trackingNumber": "DEL-695758219",
+      "tracking": {
+        "carrier": "Delhivery Express",
+        "trackingNumber": "DEL-695758219",
+        "currentStep": 1,
+        "history": [
+          {
+            "status": "Order Placed",
+            "location": "LEO Core System",
+            "time": "Just now",
+            "completed": true
+          },
+          {
+            "status": "Processing",
+            "location": "LEO Center",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Shipped",
+            "location": "Transit Hub",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Out for Delivery",
+            "location": "Local Station",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Delivered",
+            "location": "Destination",
+            "time": "Pending",
+            "completed": false
+          }
+        ]
+      },
+      "customer": {
+        "name": "Vikram",
+        "email": "shopper_1793695756339@testleo.com",
+        "phone": "9876543210"
+      },
+      "easepayid": "EASEPAY_1793695759316",
+      "bank_ref_num": "REF_1793695759766"
+    },
+    {
+      "id": "LEO-69696",
+      "placedAt": "2026-11-03T08:49:17.729Z",
+      "createdAt": "2026-11-03T08:49:17.729Z",
+      "status": "PLACED",
+      "orderStatus": "PLACED",
+      "paymentMethod": "Cash On Delivery",
+      "paymentStatus": "UNPAID",
+      "courier": "Delhivery Express",
+      "trackingNumber": "DEL-695757729",
+      "tracking": {
+        "carrier": "Delhivery Express",
+        "trackingNumber": "DEL-695757729",
+        "currentStep": 1,
+        "history": [
+          {
+            "status": "Order Placed",
+            "location": "LEO Core System",
+            "time": "Just now",
+            "completed": true
+          },
+          {
+            "status": "Processing",
+            "location": "LEO Center",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Shipped",
+            "location": "Transit Hub",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Out for Delivery",
+            "location": "Local Station",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Delivered",
+            "location": "Destination",
+            "time": "Pending",
+            "completed": false
+          }
+        ]
+      },
+      "customerEmail": "shopper_1793695756339@testleo.com",
+      "customerName": "Vikram Malhotra",
+      "shippingAddress": {
+        "fullName": "Vikram Malhotra",
+        "phone": "9876543210",
+        "addressLine": "Villa 14, Palm Meadows",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "pincode": "560066"
+      },
+      "items": [
+        {
+          "productId": "leo-8377047384230",
+          "title": "leo Classic Polo T-Shirt",
+          "price": 1,
+          "size": "XL",
+          "quantity": 2
+        }
+      ],
+      "customerPhone": "9876543210",
+      "customer": {
+        "name": "Vikram Malhotra",
+        "email": "shopper_1793695756339@testleo.com",
+        "phone": "9876543210"
+      }
+    },
+    {
+      "id": "LEO-69475",
+      "txnid": "EB_TEST_1793695595395",
+      "customerId": null,
+      "placedAt": "2026-11-03T08:46:35.601Z",
+      "createdAt": "2026-11-03T08:46:35.601Z",
+      "status": "PLACED",
+      "orderStatus": "PLACED",
+      "paymentMethod": "Easebuzz UPI",
+      "paymentStatus": "PENDING",
+      "customerName": "Vikram",
+      "customerEmail": "shopper_1793695593853@testleo.com",
+      "customerPhone": "9876543210",
+      "shippingAddress": {
+        "fullName": "Vikram Malhotra",
+        "phone": "9876543210",
+        "addressLine": "Villa 14, Palm Meadows",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "pincode": "560066"
+      },
+      "items": [
+        {
+          "id": "item-1793695595601-k97v",
+          "productId": "leo-8377047384230",
+          "title": "leo Classic Polo T-Shirt",
+          "price": 800,
+          "mrp": 1499,
+          "size": "L",
+          "color": "Standard",
+          "quantity": 1,
+          "image": "/images/products/POLOPDP-5_5c355606-1884-4943-b73a-f1503bc04014.jpg",
+          "sku": "1M-TWPO-R0002-NB2"
+        }
+      ],
+      "subtotal": 800,
+      "discount": 0,
+      "couponApplied": null,
+      "shippingFee": 99,
+      "totalAmount": 899,
+      "courier": "Delhivery Express",
+      "trackingNumber": "DEL-695595601",
+      "tracking": {
+        "carrier": "Delhivery Express",
+        "trackingNumber": "DEL-695595601",
+        "currentStep": 1,
+        "history": [
+          {
+            "status": "Order Placed",
+            "location": "LEO Core System",
+            "time": "Just now",
+            "completed": true
+          },
+          {
+            "status": "Processing",
+            "location": "LEO Center",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Shipped",
+            "location": "Transit Hub",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Out for Delivery",
+            "location": "Local Station",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Delivered",
+            "location": "Destination",
+            "time": "Pending",
+            "completed": false
+          }
+        ]
+      },
+      "customer": {
+        "name": "Vikram",
+        "email": "shopper_1793695593853@testleo.com",
+        "phone": "9876543210"
+      }
+    },
+    {
+      "id": "LEO-65023",
+      "placedAt": "2026-11-03T08:46:35.138Z",
+      "createdAt": "2026-11-03T08:46:35.138Z",
+      "status": "PLACED",
+      "orderStatus": "PLACED",
+      "paymentMethod": "Cash On Delivery",
+      "paymentStatus": "UNPAID",
+      "courier": "Delhivery Express",
+      "trackingNumber": "DEL-695595138",
+      "tracking": {
+        "carrier": "Delhivery Express",
+        "trackingNumber": "DEL-695595138",
+        "currentStep": 1,
+        "history": [
+          {
+            "status": "Order Placed",
+            "location": "LEO Core System",
+            "time": "Just now",
+            "completed": true
+          },
+          {
+            "status": "Processing",
+            "location": "LEO Center",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Shipped",
+            "location": "Transit Hub",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Out for Delivery",
+            "location": "Local Station",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Delivered",
+            "location": "Destination",
+            "time": "Pending",
+            "completed": false
+          }
+        ]
+      },
+      "customerEmail": "shopper_1793695593853@testleo.com",
+      "customerName": "Vikram Malhotra",
+      "shippingAddress": {
+        "fullName": "Vikram Malhotra",
+        "phone": "9876543210",
+        "addressLine": "Villa 14, Palm Meadows",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "pincode": "560066"
+      },
+      "items": [
+        {
+          "productId": "leo-8377047384230",
+          "title": "leo Classic Polo T-Shirt",
+          "price": 1,
+          "size": "XL",
+          "quantity": 2
+        }
+      ],
+      "customerPhone": "9876543210",
+      "customer": {
+        "name": "Vikram Malhotra",
+        "email": "shopper_1793695593853@testleo.com",
+        "phone": "9876543210"
+      }
+    },
+    {
+      "id": "LEO-77486",
+      "placedAt": "2026-11-03T08:45:18.468Z",
+      "createdAt": "2026-11-03T08:45:18.468Z",
+      "status": "Placed",
+      "orderStatus": "Placed",
+      "paymentMethod": "Cash On Delivery",
+      "paymentStatus": "UNPAID",
+      "courier": "Delhivery Express",
+      "trackingNumber": "DEL-695518468",
+      "tracking": {
+        "carrier": "Delhivery Express",
+        "trackingNumber": "DEL-695518468",
+        "currentStep": 1,
+        "history": [
+          {
+            "status": "Order Placed",
+            "location": "LEO Core System",
+            "time": "Just now",
+            "completed": true
+          },
+          {
+            "status": "Processing",
+            "location": "LEO Center",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Shipped",
+            "location": "Transit Hub",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Out for Delivery",
+            "location": "Local Station",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Delivered",
+            "location": "Destination",
+            "time": "Pending",
+            "completed": false
+          }
+        ]
+      },
+      "customerEmail": "shopper_1793695517283@testleo.com",
+      "customerName": "Vikram Malhotra",
+      "shippingAddress": {
+        "fullName": "Vikram Malhotra",
+        "phone": "9876543210",
+        "addressLine": "Villa 14, Palm Meadows",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "pincode": "560066"
+      },
+      "items": [
+        {
+          "productId": "leo-8377047384230",
+          "title": "leo Classic Polo T-Shirt",
+          "price": 1,
+          "size": "XL",
+          "quantity": 2
+        }
+      ],
+      "customerPhone": "9876543210",
+      "customer": {
+        "name": "Vikram Malhotra",
+        "email": "shopper_1793695517283@testleo.com",
+        "phone": "9876543210"
+      }
+    },
+    {
+      "id": "LEO-15928",
+      "placedAt": "2026-11-03T08:44:21.087Z",
+      "createdAt": "2026-11-03T08:44:21.087Z",
+      "status": "Placed",
+      "orderStatus": "Placed",
+      "paymentMethod": "Cash On Delivery",
+      "paymentStatus": "Paid",
+      "courier": "Delhivery Express",
+      "trackingNumber": "DEL-695461087",
+      "tracking": {
+        "carrier": "Delhivery Express",
+        "trackingNumber": "DEL-695461087",
+        "currentStep": 1,
+        "history": [
+          {
+            "status": "Order Placed",
+            "location": "LEO Core System",
+            "time": "Just now",
+            "completed": true
+          },
+          {
+            "status": "Processing",
+            "location": "LEO Center",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Shipped",
+            "location": "Transit Hub",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Out for Delivery",
+            "location": "Local Station",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Delivered",
+            "location": "Destination",
+            "time": "Pending",
+            "completed": false
+          }
+        ]
+      },
+      "customerEmail": "shopper_1793695459712@testleo.com",
+      "customerName": "Vikram Malhotra",
+      "shippingAddress": {
+        "fullName": "Vikram Malhotra",
+        "phone": "9876543210",
+        "addressLine": "Villa 14, Palm Meadows",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "pincode": "560066"
+      },
+      "items": [
+        {
+          "productId": "leo-8377047384230",
+          "title": "leo Classic Polo T-Shirt",
+          "price": 1,
+          "size": "XL",
+          "quantity": 2
+        }
+      ],
+      "customerPhone": "9876543210",
+      "customer": {
+        "name": "Vikram Malhotra",
+        "email": "shopper_1793695459712@testleo.com",
+        "phone": "9876543210"
+      }
+    },
+    {
+      "id": "LEO-51791",
+      "txnid": "EB_1793695321418_1320",
+      "customerId": null,
+      "placedAt": "2026-11-03T08:42:01.418Z",
+      "createdAt": "2026-11-03T08:42:01.419Z",
+      "status": "PLACED",
+      "orderStatus": "PLACED",
+      "paymentMethod": "Easebuzz UPI",
+      "paymentStatus": "PENDING",
+      "customerName": "Tejaswini Gundapu",
+      "customerEmail": "gundaputejaswini1@gmail.com",
+      "customerPhone": "9440451648",
+      "shippingAddress": {
+        "fullName": "Tejaswini Gundapu",
+        "phone": "9440451648",
+        "addressLine": "Flat 402, Oakwood Residency, Indiranagar",
+        "city": "vijayawada",
+        "state": "Karnataka",
+        "pincode": "213456"
+      },
+      "items": [
+        {
+          "id": "sf-xl-seed",
+          "productId": "leo-sf-1",
+          "title": "Stay Fluid Premium T-Shirt",
+          "price": 1399,
+          "mrp": 1699,
+          "size": "XL",
+          "color": "Electric Violet",
+          "quantity": 1,
+          "image": "/images/stay_fluid_violet_tee.jpg",
+          "sku": "LEO-XL-1"
+        },
+        {
+          "id": "sf-m-seed",
+          "productId": "leo-sf-1",
+          "title": "Stay Fluid Premium T-Shirt",
+          "price": 1399,
+          "mrp": 1699,
+          "size": "M",
+          "color": "Electric Violet",
+          "quantity": 1,
+          "image": "/images/stay_fluid_violet_tee.jpg",
+          "sku": "LEO-M-1"
+        },
+        {
+          "id": "leo-8377047384230-Navy Blue-M-1793695287901",
+          "productId": "leo-8377047384230",
+          "title": "leo Classic Polo T-Shirt",
+          "price": 800,
+          "mrp": 1499,
+          "size": "M",
+          "color": "Navy Blue",
+          "quantity": 1,
+          "image": "/images/products/POLOPDP-5_5c355606-1884-4943-b73a-f1503bc04014.jpg",
+          "sku": "1M-TWPO-R0002-NB2"
+        }
+      ],
+      "subtotal": 3598,
+      "discount": 0,
+      "couponApplied": null,
+      "shippingFee": 0,
+      "totalAmount": 3598,
+      "courier": "Delhivery Express",
+      "trackingNumber": "DEL-695321419",
+      "tracking": {
+        "carrier": "Delhivery Express",
+        "trackingNumber": "DEL-695321419",
+        "currentStep": 1,
+        "history": [
+          {
+            "status": "Order Placed",
+            "location": "LEO Core System",
+            "time": "Just now",
+            "completed": true
+          },
+          {
+            "status": "Processing",
+            "location": "LEO Center",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Shipped",
+            "location": "Transit Hub",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Out for Delivery",
+            "location": "Local Station",
+            "time": "Pending",
+            "completed": false
+          },
+          {
+            "status": "Delivered",
+            "location": "Destination",
+            "time": "Pending",
+            "completed": false
+          }
+        ]
+      },
+      "customer": {
+        "name": "Tejaswini Gundapu",
+        "email": "gundaputejaswini1@gmail.com",
+        "phone": "9440451648"
+      }
+    },
+    {
       "id": "LEO-98421",
       "customerName": "Rahul Sharma",
       "customerEmail": "rahul.s@example.com",
@@ -953821,6 +954503,152 @@
           }
         ]
       }
+    }
+  ],
+  "paymentTransactions": [
+    {
+      "id": "EB_1793769131740_3483",
+      "orderId": "LEO-PENDING-_3483",
+      "customer": "Tejaswini Gundapu",
+      "method": "UPI",
+      "gateway": "Easebuzz",
+      "gatewayRef": "EB_AK_1793769131746_UP3ZMG",
+      "amount": 4398,
+      "status": "Initiated",
+      "timestamp": "2026-11-04 05:12:11"
+    },
+    {
+      "id": "EB_TEST_1793695758036",
+      "orderId": "LEO-70785",
+      "customer": "Vikram",
+      "method": "Easebuzz (UPI)",
+      "gateway": "Easebuzz",
+      "gatewayRef": "EASEPAY_1793695759316",
+      "amount": 800,
+      "status": "Success",
+      "timestamp": "2026-11-03 08:49:19"
+    },
+    {
+      "id": "EB_TEST_1793695595395",
+      "orderId": "LEO-PENDING-95395",
+      "customer": "Vikram",
+      "method": "UPI",
+      "gateway": "Easebuzz",
+      "gatewayRef": "EB_AK_1793695595602_0JWZ1E",
+      "amount": 899,
+      "status": "Initiated",
+      "timestamp": "2026-11-03 08:46:35"
+    },
+    {
+      "id": "EB_1793695321418_1320",
+      "orderId": "LEO-PENDING-_1320",
+      "customer": "Tejaswini Gundapu",
+      "method": "UPI",
+      "gateway": "Easebuzz",
+      "gatewayRef": "EB_AK_1793695321421_H70FN2",
+      "amount": 3598,
+      "status": "Initiated",
+      "timestamp": "2026-11-03 08:42:01"
+    }
+  ],
+  "users": [
+    {
+      "id": "usr_1793695459903",
+      "name": "Vikram Malhotra",
+      "email": "shopper_1793695459712@testleo.com",
+      "phone": "",
+      "salt": "5024520d2e96a864c88e6f9e57459aae",
+      "passwordHash": "e391e0fbcf6cbc7715b04255af80f786f7ab35ae81dd4fad8b530f565af5960cd603a23ee21344588d18b866a514a6d92cc507cd16fb74b93eb05ed34d27fbc9",
+      "isAdmin": false,
+      "joinedAt": "Nov 2026",
+      "addresses": [],
+      "createdAt": "2026-11-03T08:44:19.913Z"
+    },
+    {
+      "id": "usr_1793695517462",
+      "name": "Vikram Malhotra",
+      "email": "shopper_1793695517283@testleo.com",
+      "phone": "",
+      "salt": "4e4a0cec07d43cb3ec1938a9d8067315",
+      "passwordHash": "8af006141aa7a1a89788589a97071a84a3b019766103756d160fe7acd2f486048c0e4e5b83fe3f65928f51b85390f284c54964470b0bbd51ddaef3f525697d90",
+      "isAdmin": false,
+      "joinedAt": "Nov 2026",
+      "addresses": [],
+      "createdAt": "2026-11-03T08:45:17.473Z"
+    },
+    {
+      "id": "usr_1793695594047",
+      "name": "Vikram Malhotra",
+      "email": "shopper_1793695593853@testleo.com",
+      "phone": "",
+      "salt": "bafa2d64df2c9cf8bf7329fb3240398a",
+      "passwordHash": "8c1a47a9d0a60f14942bc79b73164dd88e55e068ab6498a9b0e7ba97436be7cee2371e87ca6df03a4185db4d7c5646ac3cd076d3a1aed535a81a07d8428d7188",
+      "isAdmin": false,
+      "joinedAt": "Nov 2026",
+      "addresses": [],
+      "createdAt": "2026-11-03T08:46:34.058Z"
+    },
+    {
+      "id": "usr_1793695756525",
+      "name": "Vikram Malhotra",
+      "email": "shopper_1793695756339@testleo.com",
+      "phone": "",
+      "salt": "82dc9acceef028b21b66f49873e7d16c",
+      "passwordHash": "b396784c3d20ebb6bd102f1b9cf0b541088ffd2e3eea4cd33862293428e37de4dda1794ff88a279744e36476aad852872c3482dfd97d7e418a218da8d4f17b06",
+      "isAdmin": false,
+      "joinedAt": "Nov 2026",
+      "addresses": [],
+      "createdAt": "2026-11-03T08:49:16.538Z"
+    }
+  ],
+  "customers": [
+    {
+      "id": "CUST-59903",
+      "userId": "usr_1793695459903",
+      "name": "Vikram Malhotra",
+      "email": "shopper_1793695459712@testleo.com",
+      "phone": "",
+      "joinedDate": "2026-11-03",
+      "lastOrderDate": "2026-11-03",
+      "tier": "Bronze Member",
+      "totalSpent": 0,
+      "totalOrders": 0
+    },
+    {
+      "id": "CUST-17462",
+      "userId": "usr_1793695517462",
+      "name": "Vikram Malhotra",
+      "email": "shopper_1793695517283@testleo.com",
+      "phone": "",
+      "joinedDate": "2026-11-03",
+      "lastOrderDate": "2026-11-03",
+      "tier": "Bronze Member",
+      "totalSpent": 0,
+      "totalOrders": 0
+    },
+    {
+      "id": "CUST-94047",
+      "userId": "usr_1793695594047",
+      "name": "Vikram Malhotra",
+      "email": "shopper_1793695593853@testleo.com",
+      "phone": "",
+      "joinedDate": "2026-11-03",
+      "lastOrderDate": "2026-11-03",
+      "tier": "Bronze Member",
+      "totalSpent": 0,
+      "totalOrders": 0
+    },
+    {
+      "id": "CUST-56525",
+      "userId": "usr_1793695756525",
+      "name": "Vikram Malhotra",
+      "email": "shopper_1793695756339@testleo.com",
+      "phone": "",
+      "joinedDate": "2026-11-03",
+      "lastOrderDate": "2026-11-03",
+      "tier": "Bronze Member",
+      "totalSpent": 0,
+      "totalOrders": 0
     }
   ]
 }
