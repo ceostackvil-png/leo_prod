@@ -15,5 +15,8 @@
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.158.0"
   }
 }
